@@ -1,0 +1,4 @@
+event_id,title,source_url,matched_territories,event_month_index,evaluable,reason,period_role,label_kind
+VC01,Эвакуация жителей Орска после повреждения дамбы,https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/5249015,1,15,True,available,calibration,external_event_not_verified_spending_shift
+VC02,Пожар и нападение в Крокус Сити Холле,https://50.mchs.gov.ru/deyatelnost/press-centr/operativnaya-informaciya/5238882,1,14,True,available,calibration,external_event_not_verified_spending_shift
+VC03,Паводок в Уссурийске,https://27.mchs.gov.ru/deyatelnost/press-centr/smi-o-nas/5096134,1,7,False,no_matched_rows_or_insufficient_history,outside_calibration,external_event_not_verified_spending_shift

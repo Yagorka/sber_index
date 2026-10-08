@@ -1,0 +1,219 @@
+{
+  "directory": "data/inputs",
+  "download": false,
+  "profiles": [
+    "municipal",
+    "national",
+    "weekly",
+    "news",
+    "regional_news",
+    "maps",
+    "audit",
+    "research",
+    "full"
+  ],
+  "files": [
+    {
+      "name": "municipal_consumption.parquet",
+      "description": "Расходы жителей МО: территория, категория, месяц, значение",
+      "required_for": [
+        "municipal",
+        "research"
+      ]
+    },
+    {
+      "name": "municipal_dictionary.xlsx",
+      "description": "Справочник МО: регион, тип, координаты, интервалы действия",
+      "required_for": [
+        "municipal",
+        "audit"
+      ]
+    },
+    {
+      "name": "municipal_market_access.parquet",
+      "description": "Доступность рынков: признаки структурных моделей",
+      "required_for": [
+        "municipal",
+        "research"
+      ]
+    },
+    {
+      "name": "national_spending_monthly.csv.zip",
+      "description": "Месячные национальные расходы: национальные приоры и прогноз",
+      "required_for": [
+        "municipal",
+        "national",
+        "audit",
+        "research"
+      ]
+    },
+    {
+      "name": "spending_growth_weekly.csv.zip",
+      "description": "Недельные изменения расходов: nowcast и детекторы",
+      "required_for": [
+        "weekly",
+        "audit",
+        "research"
+      ]
+    },
+    {
+      "name": "consumer_activity.csv.zip",
+      "description": "Недельная потребительская активность: детекторы",
+      "required_for": [
+        "weekly",
+        "audit"
+      ]
+    },
+    {
+      "name": "cbr_key_rate_daily.csv",
+      "description": "Дневная ключевая ставка: макропризнаки и недельная диагностика",
+      "required_for": [
+        "news",
+        "weekly"
+      ]
+    },
+    {
+      "name": "event_registry.csv",
+      "description": "Исходный реестр событий: новостная абляция и диагностика",
+      "required_for": [
+        "news"
+      ]
+    },
+    {
+      "name": "municipal_boundaries.gpkg",
+      "description": "Геометрии МО: карта в отчёте и аудит границ",
+      "required_for": [
+        "maps",
+        "audit"
+      ]
+    },
+    {
+      "name": "national_spending_growth.csv.zip",
+      "description": "Месячные приросты: аудит потребительских выгрузок",
+      "required_for": [
+        "audit"
+      ]
+    },
+    {
+      "name": "national_spending_real_index.csv.zip",
+      "description": "Индекс реальных расходов: аудит потребительских выгрузок",
+      "required_for": [
+        "audit"
+      ]
+    },
+    {
+      "name": "verified_event_cases.csv",
+      "description": "Проверенные внешние события: реальные примеры исследования",
+      "required_for": [
+        "research"
+      ]
+    },
+    {
+      "name": "cpi_december_2024.csv",
+      "description": "Индексы цен: интерпретация результатов исследования",
+      "required_for": [
+        "research"
+      ]
+    },
+    {
+      "name": "cbr_key_rate_changes.csv",
+      "description": "Даты изменений ставки; дополнительная выгрузка",
+      "required_for": []
+    },
+    {
+      "name": "municipal_metadata.pdf",
+      "description": "Описание справочника МО",
+      "required_for": []
+    },
+    {
+      "name": "municipal_license_and_description.pdf",
+      "description": "Лицензия и описание муниципальных данных",
+      "required_for": []
+    },
+    {
+      "name": "municipal_connections.parquet",
+      "description": "Связи территорий; текущие модели не используют",
+      "required_for": []
+    },
+    {
+      "name": "municipal_source_archive.zip",
+      "description": "Исходный архив муниципальных данных; резервная копия",
+      "required_for": []
+    },
+    {
+      "name": "cbr_key_rate_source.html",
+      "description": "Сохранённая исходная страница ЦБ",
+      "required_for": []
+    },
+    {
+      "name": "spending_growth_weekly.csv",
+      "description": "Дополнительный CSV для сравнения эквивалентных экспортов",
+      "required_for": []
+    },
+    {
+      "name": "spending_growth_weekly.parquet",
+      "description": "Дополнительный Parquet для сравнения эквивалентных экспортов",
+      "required_for": []
+    },
+    {
+      "name": "consumer_activity.csv",
+      "description": "Дополнительный CSV для сравнения эквивалентных экспортов",
+      "required_for": []
+    },
+    {
+      "name": "consumer_activity.parquet",
+      "description": "Дополнительный Parquet для сравнения эквивалентных экспортов",
+      "required_for": []
+    },
+    {
+      "name": "municipal_consumption_2025.parquet",
+      "description": "Будущие фактические расходы 2025 для score_prospective.py; пока отсутствуют",
+      "required_for": []
+    },
+    {
+      "name": "news_orenburg_discovery.json",
+      "description": "Снимок поисковой выборки новостей Оренбургской области",
+      "required_for": []
+    },
+    {
+      "name": "news_orenburg.csv",
+      "description": "Нормализованные региональные новости: дополнительный пилот",
+      "required_for": []
+    },
+    {
+      "name": "news_orenburg_monthly.csv",
+      "description": "Покрытие поисковой выборки по месяцам",
+      "required_for": []
+    },
+    {
+      "name": "news_orenburg_manifest.json",
+      "description": "Хеши, происхождение и параметры обработки новостного пилота",
+      "required_for": []
+    },
+    {
+      "name": "news_orenburg_multisource.csv",
+      "description": "МЧС и архив Оренбург Медиа: заголовки, 10 тем, направления, география и доступность",
+      "required_for": ["regional_news"]
+    },
+    {
+      "name": "news_orenburg_multisource_manifest.json",
+      "description": "Происхождение расширенного корпуса, SHA256 кеша, кода и CSV",
+      "required_for": ["regional_news"]
+    },
+    {
+      "name": "news_orenburg_archive_audit.csv",
+      "description": "Полнота пагинации датированного архива по месяцам",
+      "required_for": ["regional_news"]
+    },
+    {
+      "name": "news_orenburg_multisource_monthly.csv",
+      "description": "Месячное покрытие объединённого корпуса",
+      "required_for": []
+    },
+    {
+      "name": "news_orenburg_source_summary.csv",
+      "description": "Число публикаций и период по источникам",
+      "required_for": []
+    }
+  ]
+}

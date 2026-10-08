@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "case": 1,
+      "passed": true,
+      "forecast_rows": 12
+    },
+    {
+      "case": 2,
+      "passed": true,
+      "forecast_rows": 12
+    },
+    {
+      "case": 3,
+      "passed": true,
+      "forecast_rows": 12
+    }
+  ],
+  "scope": "JavaScript logic with DOM stub; browser rendering not verified"
+}

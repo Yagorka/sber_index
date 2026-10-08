@@ -1,7 +1,7 @@
 """Признаки «новостей» как датированных официальных событий (не текстовый корпус).
 
 Источники: решения Банка России по ключевой ставке (cbr.ru) и реестр региональных событий
-с проверяемыми ссылками (data/external/event_registry.csv). Все признаки в якоре a
+с проверяемыми ссылками (data/inputs/event_registry.csv). Все признаки в якоре a
 используют только события с available_at <= конец месяца a. Плацебо: те же события
 переносятся на случайные МО и случайные месяцы.
 """
@@ -24,7 +24,10 @@ class NewsFeatures:
         rng = np.random.default_rng(placebo_seed) if placebo_seed is not None else None
         regions = meta.region_name.fillna("").to_numpy()
         for ev in registry.itertuples():
-            t = int(panel.months.get_indexer([pd.Timestamp(ev.event_date).to_period("M").to_timestamp()])[0])
+            # Дата события не равна дате доступности источника. Поздняя статья
+            # никогда не превращается в известное ранее событие.
+            available = max(pd.Timestamp(ev.event_date), pd.Timestamp(ev.published_at))
+            t = int(panel.months.get_indexer([available.to_period("M").to_timestamp()])[0])
             if t < 0:
                 continue
             region_hit = np.array([any(rg in r for rg in ev.regions.split(";")) for r in regions])

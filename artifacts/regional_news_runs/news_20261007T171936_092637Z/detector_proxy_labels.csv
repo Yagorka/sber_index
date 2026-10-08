@@ -1,0 +1,50 @@
+penalty,series,territory_id,category,month_index,label_kind
+2,3,1665,Общественное питание,20,offline_financial_proxy_not_verified_shock
+2,10,1666,Продовольствие,18,offline_financial_proxy_not_verified_shock
+2,34,1670,Продовольствие,18,offline_financial_proxy_not_verified_shock
+2,40,1671,Продовольствие,19,offline_financial_proxy_not_verified_shock
+2,45,1672,Общественное питание,20,offline_financial_proxy_not_verified_shock
+2,54,1674,Все категории,18,offline_financial_proxy_not_verified_shock
+2,55,1674,Здоровье,19,offline_financial_proxy_not_verified_shock
+2,56,1674,Маркетплейсы,18,offline_financial_proxy_not_verified_shock
+2,63,1675,Общественное питание,20,offline_financial_proxy_not_verified_shock
+2,74,1678,Маркетплейсы,19,offline_financial_proxy_not_verified_shock
+2,89,1680,Транспорт,20,offline_financial_proxy_not_verified_shock
+2,98,1682,Маркетплейсы,20,offline_financial_proxy_not_verified_shock
+2,99,1682,Общественное питание,20,offline_financial_proxy_not_verified_shock
+2,103,1683,Здоровье,18,offline_financial_proxy_not_verified_shock
+2,106,1683,Продовольствие,19,offline_financial_proxy_not_verified_shock
+2,110,1685,Маркетплейсы,18,offline_financial_proxy_not_verified_shock
+2,117,1686,Общественное питание,20,offline_financial_proxy_not_verified_shock
+2,129,1688,Общественное питание,20,offline_financial_proxy_not_verified_shock
+2,130,1688,Продовольствие,19,offline_financial_proxy_not_verified_shock
+2,134,1689,Маркетплейсы,19,offline_financial_proxy_not_verified_shock
+2,139,1690,Здоровье,18,offline_financial_proxy_not_verified_shock
+2,148,1691,Продовольствие,18,offline_financial_proxy_not_verified_shock
+2,159,1693,Общественное питание,20,offline_financial_proxy_not_verified_shock
+2,163,1694,Здоровье,20,offline_financial_proxy_not_verified_shock
+2,165,1694,Общественное питание,19,offline_financial_proxy_not_verified_shock
+2,170,1696,Маркетплейсы,18,offline_financial_proxy_not_verified_shock
+2,171,1696,Общественное питание,20,offline_financial_proxy_not_verified_shock
+2,201,1701,Общественное питание,20,offline_financial_proxy_not_verified_shock
+2,207,1702,Общественное питание,20,offline_financial_proxy_not_verified_shock
+2,208,1702,Продовольствие,18,offline_financial_proxy_not_verified_shock
+2,212,1703,Маркетплейсы,19,offline_financial_proxy_not_verified_shock
+2,213,1703,Общественное питание,20,offline_financial_proxy_not_verified_shock
+4,10,1666,Продовольствие,18,offline_financial_proxy_not_verified_shock
+4,40,1671,Продовольствие,19,offline_financial_proxy_not_verified_shock
+4,54,1674,Все категории,18,offline_financial_proxy_not_verified_shock
+4,56,1674,Маркетплейсы,18,offline_financial_proxy_not_verified_shock
+4,89,1680,Транспорт,20,offline_financial_proxy_not_verified_shock
+4,98,1682,Маркетплейсы,20,offline_financial_proxy_not_verified_shock
+4,110,1685,Маркетплейсы,18,offline_financial_proxy_not_verified_shock
+4,117,1686,Общественное питание,20,offline_financial_proxy_not_verified_shock
+4,130,1688,Продовольствие,19,offline_financial_proxy_not_verified_shock
+4,134,1689,Маркетплейсы,19,offline_financial_proxy_not_verified_shock
+4,139,1690,Здоровье,18,offline_financial_proxy_not_verified_shock
+4,148,1691,Продовольствие,18,offline_financial_proxy_not_verified_shock
+4,163,1694,Здоровье,20,offline_financial_proxy_not_verified_shock
+4,171,1696,Общественное питание,20,offline_financial_proxy_not_verified_shock
+8,10,1666,Продовольствие,18,offline_financial_proxy_not_verified_shock
+8,40,1671,Продовольствие,19,offline_financial_proxy_not_verified_shock
+8,89,1680,Транспорт,20,offline_financial_proxy_not_verified_shock

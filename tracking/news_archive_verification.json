@@ -1,0 +1,34 @@
+{
+  "checked_at_utc": "2026-10-07T17:43:27.760214+00:00",
+  "passed": false,
+  "checks": {
+    "csv_hash": true,
+    "cache_hashes": true,
+    "collector_code_hashes": true,
+    "collector_config_hash": true,
+    "all_24_archive_months": true,
+    "unique_urls": true,
+    "unique_duplicate_keys": true,
+    "row_count": true,
+    "publication_period": true,
+    "operational_after_publication": true,
+    "operational_after_first_seen": true,
+    "original_mchs_preserved": true,
+    "test_mae_reproduction": false,
+    "experiment_checks": true
+  },
+  "articles": 28900,
+  "cached_pages": 319,
+  "run": "artifacts/regional_news_runs/news_20261007T171936_092637Z",
+  "environment_scope": "fresh_installation_collector_only; full_model_environment_not_reinstalled",
+  "fresh_installation_passed": true,
+  "offline_full_archive_processing_passed": true,
+  "executable": "/tmp/sber-news-clean/bin/python",
+  "packages": {
+    "requests": "2.34.2",
+    "beautifulsoup4": "4.15.0",
+    "pandas": "3.0.6",
+    "numpy": "2.5.3",
+    "openpyxl": "3.1.5"
+  }
+}

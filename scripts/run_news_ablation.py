@@ -43,8 +43,8 @@ def main():
     nat = NationalPriors.from_file(ROOT / json.loads((ROOT / "configs/national_forecast.json").read_text())["input"])
     panel, _ = load_municipal(ROOT)
     grid = make_grid()
-    rate = pd.read_csv(ROOT / "data/external/cbr_key_rate_daily.csv", parse_dates=["date"])
-    registry = pd.read_csv(ROOT / "data/external/event_registry.csv", parse_dates=["event_date"])
+    rate = pd.read_csv(ROOT / "data/inputs/cbr_key_rate_daily.csv", parse_dates=["date"])
+    registry = pd.read_csv(ROOT / "data/inputs/event_registry.csv", parse_dates=["event_date"])
     base3 = np.load(ROOT / "artifacts/municipal_runs/_cache/NatPath_K3.npy")
     rows = []
 

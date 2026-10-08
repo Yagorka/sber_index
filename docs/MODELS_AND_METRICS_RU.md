@@ -15,7 +15,7 @@
 | Chronos2_NatCov | фундаментальная + ковариата | то же, национальный путь как known-future ковариата | та же ревизия | `_foundation/chronos2_nat_*` |
 | TimesFM | фундаментальная, zero-shot | только 200 случайных МО (1 200 рядов) × 19 origin | `google/timesfm-2.5-200m-pytorch`, ревизия `1d952420fba8` | `_foundation/timesfm_sample200_*` |
 | Ensemble | взвешенная смесь | веса — линейная программа (минимум MAE на validation, симплекс), отдельно по горизонтам; h=12 использует пары h=6 и h=12 | кандидаты: Prophet, Chronos2, Chronos2_NatCov, ChronosBolt, StructHGB, NatPath_K3, SeasonalNaive_NatGrowth | `frozen_selection.json`, `ensemble_weights.csv` |
-| Интервалы | split-conformal | относительные ошибки на validation, по (горизонт, категория) | покрытие 0.9 | `intervals_test.csv` |
+| Интервалы | эмпирические квантили (общая validation) | относительные ошибки на validation, по (горизонт, категория) | покрытие 0.9 | `intervals_test.csv` |
 
 Веса ансамбля (h=1 / 3 / 6 / 12): 
 

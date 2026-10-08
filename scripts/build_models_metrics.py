@@ -49,7 +49,7 @@ def main():
 | Chronos2_NatCov | фундаментальная + ковариата | то же, национальный путь как known-future ковариата | та же ревизия | `_foundation/chronos2_nat_*` |
 | TimesFM | фундаментальная, zero-shot | только 200 случайных МО (1 200 рядов) × 19 origin | `{fm['timesfm_sample200']['checkpoint']}`, ревизия `{fm['timesfm_sample200']['revision'][:12]}` | `_foundation/timesfm_sample200_*` |
 | Ensemble | взвешенная смесь | веса — линейная программа (минимум MAE на validation, симплекс), отдельно по горизонтам; h=12 использует пары h=6 и h=12 | кандидаты: {', '.join(fro['ensemble_candidates'])} | `frozen_selection.json`, `ensemble_weights.csv` |
-| Интервалы | split-conformal | относительные ошибки на validation, по (горизонт, категория) | покрытие 0.9 | `intervals_test.csv` |
+| Интервалы | эмпирические квантили (общая validation) | относительные ошибки на validation, по (горизонт, категория) | покрытие 0.9 | `intervals_test.csv` |
 
 Веса ансамбля (h=1 / 3 / 6 / 12): """)
     w = pd.read_csv(run / "ensemble_weights.csv").pivot(index="model", columns="h", values="weight").fillna(0)

@@ -1,0 +1,9 @@
+{
+  "training_targets_not_after_origin": true,
+  "news_available_before_cutoff": true,
+  "all_calibration_alarm_rates_within_budget": true,
+  "all_forecast_metric_rows_full_coverage": true,
+  "input_hashes_match": true,
+  "cached_benchmark_hashes_match": true,
+  "code_hashes_match": true
+}

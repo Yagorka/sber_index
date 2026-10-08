@@ -1,0 +1,49 @@
+event_id,territory_id,mo_name,category,method,detected,delay_months,max_abs_z,background_alarm_share,label_kind
+VC01,1673,Орск,Все категории,CUSUM,False,,3.4266715,0.08994708994708994,external_event_not_verified_spending_shift
+VC01,1673,Орск,Все категории,PageHinkley,False,,3.4266715,0.022817460317460316,external_event_not_verified_spending_shift
+VC01,1673,Орск,Все категории,BOCPD,False,,3.4266715,0.07324735449735449,external_event_not_verified_spending_shift
+VC01,1673,Орск,Все категории,AbsZ,False,,3.4266715,0.00851521164021164,external_event_not_verified_spending_shift
+VC01,1673,Орск,Здоровье,CUSUM,False,,3.0537386,0.08994708994708994,external_event_not_verified_spending_shift
+VC01,1673,Орск,Здоровье,PageHinkley,False,,3.0537386,0.022817460317460316,external_event_not_verified_spending_shift
+VC01,1673,Орск,Здоровье,BOCPD,False,,3.0537386,0.07324735449735449,external_event_not_verified_spending_shift
+VC01,1673,Орск,Здоровье,AbsZ,False,,3.0537386,0.00851521164021164,external_event_not_verified_spending_shift
+VC01,1673,Орск,Маркетплейсы,CUSUM,False,,1.638821,0.08994708994708994,external_event_not_verified_spending_shift
+VC01,1673,Орск,Маркетплейсы,PageHinkley,False,,1.638821,0.022817460317460316,external_event_not_verified_spending_shift
+VC01,1673,Орск,Маркетплейсы,BOCPD,False,,1.638821,0.07324735449735449,external_event_not_verified_spending_shift
+VC01,1673,Орск,Маркетплейсы,AbsZ,False,,1.638821,0.00851521164021164,external_event_not_verified_spending_shift
+VC01,1673,Орск,Общественное питание,CUSUM,False,,1.082592,0.08994708994708994,external_event_not_verified_spending_shift
+VC01,1673,Орск,Общественное питание,PageHinkley,False,,1.082592,0.022817460317460316,external_event_not_verified_spending_shift
+VC01,1673,Орск,Общественное питание,BOCPD,False,,1.082592,0.07324735449735449,external_event_not_verified_spending_shift
+VC01,1673,Орск,Общественное питание,AbsZ,False,,1.082592,0.00851521164021164,external_event_not_verified_spending_shift
+VC01,1673,Орск,Продовольствие,CUSUM,False,,1.5868603,0.08994708994708994,external_event_not_verified_spending_shift
+VC01,1673,Орск,Продовольствие,PageHinkley,False,,1.5868603,0.022817460317460316,external_event_not_verified_spending_shift
+VC01,1673,Орск,Продовольствие,BOCPD,True,3.0,1.5868603,0.07324735449735449,external_event_not_verified_spending_shift
+VC01,1673,Орск,Продовольствие,AbsZ,False,,1.5868603,0.00851521164021164,external_event_not_verified_spending_shift
+VC01,1673,Орск,Транспорт,CUSUM,False,,1.1456642,0.08994708994708994,external_event_not_verified_spending_shift
+VC01,1673,Орск,Транспорт,PageHinkley,False,,1.1456642,0.022817460317460316,external_event_not_verified_spending_shift
+VC01,1673,Орск,Транспорт,BOCPD,False,,1.1456642,0.07324735449735449,external_event_not_verified_spending_shift
+VC01,1673,Орск,Транспорт,AbsZ,False,,1.1456642,0.00851521164021164,external_event_not_verified_spending_shift
+VC02,1459,Красногорск,Все категории,CUSUM,False,,1.9839035,0.06283068783068783,external_event_not_verified_spending_shift
+VC02,1459,Красногорск,Все категории,PageHinkley,False,,1.9839035,0.01273148148148148,external_event_not_verified_spending_shift
+VC02,1459,Красногорск,Все категории,BOCPD,False,,1.9839035,0.06977513227513228,external_event_not_verified_spending_shift
+VC02,1459,Красногорск,Все категории,AbsZ,False,,1.9839035,0.008267195767195767,external_event_not_verified_spending_shift
+VC02,1459,Красногорск,Здоровье,CUSUM,False,,2.7977111,0.06283068783068783,external_event_not_verified_spending_shift
+VC02,1459,Красногорск,Здоровье,PageHinkley,False,,2.7977111,0.01273148148148148,external_event_not_verified_spending_shift
+VC02,1459,Красногорск,Здоровье,BOCPD,False,,2.7977111,0.06977513227513228,external_event_not_verified_spending_shift
+VC02,1459,Красногорск,Здоровье,AbsZ,False,,2.7977111,0.008267195767195767,external_event_not_verified_spending_shift
+VC02,1459,Красногорск,Маркетплейсы,CUSUM,False,,1.2666088,0.06283068783068783,external_event_not_verified_spending_shift
+VC02,1459,Красногорск,Маркетплейсы,PageHinkley,False,,1.2666088,0.01273148148148148,external_event_not_verified_spending_shift
+VC02,1459,Красногорск,Маркетплейсы,BOCPD,False,,1.2666088,0.06977513227513228,external_event_not_verified_spending_shift
+VC02,1459,Красногорск,Маркетплейсы,AbsZ,False,,1.2666088,0.008267195767195767,external_event_not_verified_spending_shift
+VC02,1459,Красногорск,Общественное питание,CUSUM,False,,0.91183704,0.06283068783068783,external_event_not_verified_spending_shift
+VC02,1459,Красногорск,Общественное питание,PageHinkley,False,,0.91183704,0.01273148148148148,external_event_not_verified_spending_shift
+VC02,1459,Красногорск,Общественное питание,BOCPD,False,,0.91183704,0.06977513227513228,external_event_not_verified_spending_shift
+VC02,1459,Красногорск,Общественное питание,AbsZ,False,,0.91183704,0.008267195767195767,external_event_not_verified_spending_shift
+VC02,1459,Красногорск,Продовольствие,CUSUM,False,,1.4593521,0.06283068783068783,external_event_not_verified_spending_shift
+VC02,1459,Красногорск,Продовольствие,PageHinkley,False,,1.4593521,0.01273148148148148,external_event_not_verified_spending_shift
+VC02,1459,Красногорск,Продовольствие,BOCPD,False,,1.4593521,0.06977513227513228,external_event_not_verified_spending_shift
+VC02,1459,Красногорск,Продовольствие,AbsZ,False,,1.4593521,0.008267195767195767,external_event_not_verified_spending_shift
+VC02,1459,Красногорск,Транспорт,CUSUM,False,,1.0648379,0.06283068783068783,external_event_not_verified_spending_shift
+VC02,1459,Красногорск,Транспорт,PageHinkley,False,,1.0648379,0.01273148148148148,external_event_not_verified_spending_shift
+VC02,1459,Красногорск,Транспорт,BOCPD,False,,1.0648379,0.06977513227513228,external_event_not_verified_spending_shift
+VC02,1459,Красногорск,Транспорт,AbsZ,False,,1.0648379,0.008267195767195767,external_event_not_verified_spending_shift

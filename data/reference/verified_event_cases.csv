@@ -1,0 +1,4 @@
+event_id,event_type,title,event_date,published_at,regions,mo_name_patterns,source_url,label_kind,verified_at
+VC01,flood,Эвакуация жителей Орска после повреждения дамбы,2024-04-06,2024-04-06,Оренбургская область,Орск,https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/5249015,external_event_not_verified_spending_shift,2026-10-07
+VC02,terror,Пожар и нападение в Крокус Сити Холле,2024-03-22,2024-03-23,Московская область,Красногорск,https://50.mchs.gov.ru/deyatelnost/press-centr/operativnaya-informaciya/5238882,external_event_not_verified_spending_shift,2026-10-07
+VC03,flood,Паводок в Уссурийске,2023-08-12,2023-08-12,Приморский край,Уссурийск,https://27.mchs.gov.ru/deyatelnost/press-centr/smi-o-nas/5096134,external_event_not_verified_spending_shift,2026-10-07

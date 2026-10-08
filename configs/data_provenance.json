@@ -1,0 +1,337 @@
+{
+  "snapshot_date": "2026-10-08",
+  "files": [
+    {
+      "name": "municipal_consumption.parquet",
+      "sha256": "9833ddaaee7b2a182ed4cceeed16469031700ea87d508bd976150c6770ef8a61",
+      "bytes": 2373939,
+      "required_for": [
+        "municipal",
+        "research"
+      ],
+      "kind": "downloaded",
+      "source": "https://sberindex.ru/ru/research/data-sense-opisanie-nabora-dannikh-khakatona-sberindeksa-po-munitsipalnim-dannim",
+      "restore": "Скачать соответствующий набор и переименовать/извлечь по docs/INPUT_DATA_RU.md; сверить SHA256"
+    },
+    {
+      "name": "municipal_dictionary.xlsx",
+      "sha256": "4150658c3298fbc87ed79838f503f3a5b9a28da33257ff803c7d9231ddb775d6",
+      "bytes": 322024,
+      "required_for": [
+        "municipal",
+        "audit"
+      ],
+      "kind": "downloaded",
+      "source": "https://sberindex.ru/ru/research/data-sense-opisanie-nabora-dannikh-khakatona-sberindeksa-po-munitsipalnim-dannim",
+      "restore": "Скачать соответствующий набор и переименовать/извлечь по docs/INPUT_DATA_RU.md; сверить SHA256"
+    },
+    {
+      "name": "municipal_market_access.parquet",
+      "sha256": "434258afe322b7e6e6610b2552d129ae47094613de72dae3d13f6965a28d1dc1",
+      "bytes": 25163,
+      "required_for": [
+        "municipal",
+        "research"
+      ],
+      "kind": "downloaded",
+      "source": "https://sberindex.ru/ru/research/data-sense-opisanie-nabora-dannikh-khakatona-sberindeksa-po-munitsipalnim-dannim",
+      "restore": "Скачать соответствующий набор и переименовать/извлечь по docs/INPUT_DATA_RU.md; сверить SHA256"
+    },
+    {
+      "name": "national_spending_monthly.csv.zip",
+      "sha256": "cbf4bb5d464a083b95500f4a3d65ce081a8695b7b2966a18d5f199f13c35b3e6",
+      "bytes": 4156,
+      "required_for": [
+        "municipal",
+        "national",
+        "audit",
+        "research"
+      ],
+      "kind": "downloaded_or_derived",
+      "source": "https://sberindex.ru/ru/dashboards",
+      "restore": "Экспорт нужного индикатора; переименовать по docs/INPUT_DATA_RU.md; текущий экспорт может отличаться от снимка"
+    },
+    {
+      "name": "spending_growth_weekly.csv.zip",
+      "sha256": "30313699bb6b99eeb114cf5eca67c40d6222833d8c6e8de44a1c7e0ef0c48bda",
+      "bytes": 71295,
+      "required_for": [
+        "weekly",
+        "audit",
+        "research"
+      ],
+      "kind": "downloaded_or_derived",
+      "source": "https://sberindex.ru/ru/dashboards",
+      "restore": "Экспорт нужного индикатора; переименовать по docs/INPUT_DATA_RU.md; текущий экспорт может отличаться от снимка"
+    },
+    {
+      "name": "consumer_activity.csv.zip",
+      "sha256": "0b7546dac93d2834695ae1109f0d1995a33d782ca3b5ae08be59f12baac90746",
+      "bytes": 17336,
+      "required_for": [
+        "weekly",
+        "audit"
+      ],
+      "kind": "downloaded_or_derived",
+      "source": "https://sberindex.ru/ru/dashboards",
+      "restore": "Экспорт нужного индикатора; переименовать по docs/INPUT_DATA_RU.md; текущий экспорт может отличаться от снимка"
+    },
+    {
+      "name": "cbr_key_rate_daily.csv",
+      "sha256": "fc27ad2d3026f9b15b079b3e910a3a4f5a5f53fff99438e0a76f2b20bde19601",
+      "bytes": 34524,
+      "required_for": [
+        "news",
+        "weekly"
+      ],
+      "kind": "downloaded_or_derived",
+      "source": "https://www.cbr.ru/hd_base/KeyRate/",
+      "restore": "Экспорт и нормализация; для точного повторения использовать исходный снимок"
+    },
+    {
+      "name": "event_registry.csv",
+      "sha256": "49b32edd9ce7e25f9a3ff92cc17351f42a8e37dff4eea57ff947b3b6e6ee91a6",
+      "bytes": 2109,
+      "required_for": [
+        "news"
+      ],
+      "kind": "curated_reference",
+      "reference_path": "data/reference/event_registry.csv",
+      "source": "Авторский реестр/снимок источников; URL и даты внутри файла"
+    },
+    {
+      "name": "municipal_boundaries.gpkg",
+      "sha256": "e62027630d48e4a13f9b6d173dd074d7358706743fe859ca3b7fa30fefa9813a",
+      "bytes": 74334208,
+      "required_for": [
+        "maps",
+        "audit"
+      ],
+      "kind": "downloaded",
+      "source": "https://sberindex.ru/ru/research/dataset-borders-and-changes-of-municipalities",
+      "restore": "Скачать соответствующий набор и переименовать/извлечь по docs/INPUT_DATA_RU.md; сверить SHA256"
+    },
+    {
+      "name": "national_spending_growth.csv.zip",
+      "sha256": "1e6b0600ba0a6a388de747bc2b2b961bad0e75a0b996ae57679e81bb1bc589d8",
+      "bytes": 6425,
+      "required_for": [
+        "audit"
+      ],
+      "kind": "downloaded_or_derived",
+      "source": "https://sberindex.ru/ru/dashboards",
+      "restore": "Экспорт нужного индикатора; переименовать по docs/INPUT_DATA_RU.md; текущий экспорт может отличаться от снимка"
+    },
+    {
+      "name": "national_spending_real_index.csv.zip",
+      "sha256": "1f2d6985aab95fdfc274aca1972dcde76406602187ab3f4205f55b217a6048f7",
+      "bytes": 3465,
+      "required_for": [
+        "audit"
+      ],
+      "kind": "downloaded_or_derived",
+      "source": "https://sberindex.ru/ru/dashboards",
+      "restore": "Экспорт нужного индикатора; переименовать по docs/INPUT_DATA_RU.md; текущий экспорт может отличаться от снимка"
+    },
+    {
+      "name": "verified_event_cases.csv",
+      "sha256": "75f14087610eab77ca0ab36d897f643e34445627541c9bfc1943ff5a95021cd7",
+      "bytes": 934,
+      "required_for": [
+        "research"
+      ],
+      "kind": "curated_reference",
+      "reference_path": "data/reference/verified_event_cases.csv",
+      "source": "Авторский реестр/снимок источников; URL и даты внутри файла"
+    },
+    {
+      "name": "cpi_december_2024.csv",
+      "sha256": "9df881baa17c03de094b484b4402917726e3b6a02ba010e775f63bf3525a0d98",
+      "bytes": 546,
+      "required_for": [
+        "research"
+      ],
+      "kind": "curated_reference",
+      "reference_path": "data/reference/cpi_december_2024.csv",
+      "source": "Авторский реестр/снимок источников; URL и даты внутри файла"
+    },
+    {
+      "name": "cbr_key_rate_changes.csv",
+      "sha256": "07de8d9057e0e719d1a5c017aaf605723e2cd33d2ed1986e44d3109926386eff",
+      "bytes": 3155,
+      "required_for": [],
+      "kind": "downloaded_or_derived",
+      "source": "https://www.cbr.ru/hd_base/KeyRate/",
+      "restore": "Экспорт и нормализация; для точного повторения использовать исходный снимок"
+    },
+    {
+      "name": "municipal_metadata.pdf",
+      "sha256": "05707427a64061552d1f23f74f578a99fdabeff69f0c8a0fc99d924210fee0b3",
+      "bytes": 333567,
+      "required_for": [],
+      "kind": "downloaded",
+      "source": "https://sberindex.ru/ru/research/data-sense-opisanie-nabora-dannikh-khakatona-sberindeksa-po-munitsipalnim-dannim",
+      "restore": "Скачать соответствующий набор и переименовать/извлечь по docs/INPUT_DATA_RU.md; сверить SHA256"
+    },
+    {
+      "name": "municipal_license_and_description.pdf",
+      "sha256": "030269e726f969250b911a1fcb72131a4b61c3952aad10c8470ce9c0736c472f",
+      "bytes": 538791,
+      "required_for": [],
+      "kind": "downloaded",
+      "source": "https://sberindex.ru/ru/research/data-sense-opisanie-nabora-dannikh-khakatona-sberindeksa-po-munitsipalnim-dannim",
+      "restore": "Скачать соответствующий набор и переименовать/извлечь по docs/INPUT_DATA_RU.md; сверить SHA256"
+    },
+    {
+      "name": "municipal_connections.parquet",
+      "sha256": "20cbd5213d3ac1d0a867f097b485431811614b283d7366eb5cba9f65dc80493d",
+      "bytes": 21904682,
+      "required_for": [],
+      "kind": "downloaded",
+      "source": "https://sberindex.ru/ru/research/data-sense-opisanie-nabora-dannikh-khakatona-sberindeksa-po-munitsipalnim-dannim",
+      "restore": "Скачать соответствующий набор и переименовать/извлечь по docs/INPUT_DATA_RU.md; сверить SHA256"
+    },
+    {
+      "name": "municipal_source_archive.zip",
+      "sha256": "a9f932ff4096a7df797d1547987937f34d3995ac445b4748177114488d12b010",
+      "bytes": 19603203,
+      "required_for": [],
+      "kind": "downloaded",
+      "source": "https://sberindex.ru/ru/research/data-sense-opisanie-nabora-dannikh-khakatona-sberindeksa-po-munitsipalnim-dannim",
+      "restore": "Скачать соответствующий набор и переименовать/извлечь по docs/INPUT_DATA_RU.md; сверить SHA256"
+    },
+    {
+      "name": "cbr_key_rate_source.html",
+      "sha256": "fd311c74ab75856700d0190a1ef20f72edd6f9349e4c196a3c4aaad05b143929",
+      "bytes": 243735,
+      "required_for": [],
+      "kind": "downloaded_or_derived",
+      "source": "https://www.cbr.ru/hd_base/KeyRate/",
+      "restore": "Экспорт и нормализация; для точного повторения использовать исходный снимок"
+    },
+    {
+      "name": "spending_growth_weekly.csv",
+      "sha256": "849787e3ea86b93ce29b30893e261f3e5d56d85fb388838f3adf2813102857d5",
+      "bytes": 484616,
+      "required_for": [],
+      "kind": "downloaded_or_derived",
+      "source": "https://sberindex.ru/ru/dashboards",
+      "restore": "Экспорт нужного индикатора; переименовать по docs/INPUT_DATA_RU.md; текущий экспорт может отличаться от снимка"
+    },
+    {
+      "name": "spending_growth_weekly.parquet",
+      "sha256": "4c10c4987d1d826519401615cfefceeac284bdb7d74d9654b04fccb0ad7a0fec",
+      "bytes": 61298,
+      "required_for": [],
+      "kind": "downloaded_or_derived",
+      "source": "https://sberindex.ru/ru/dashboards",
+      "restore": "Экспорт нужного индикатора; переименовать по docs/INPUT_DATA_RU.md; текущий экспорт может отличаться от снимка"
+    },
+    {
+      "name": "consumer_activity.csv",
+      "sha256": "dfd3fa041206f0fe78b3def9a0ca9cf6d5a5dbf9eec9ace28e9a16ca4b58d06b",
+      "bytes": 118755,
+      "required_for": [],
+      "kind": "downloaded_or_derived",
+      "source": "https://sberindex.ru/ru/dashboards",
+      "restore": "Экспорт нужного индикатора; переименовать по docs/INPUT_DATA_RU.md; текущий экспорт может отличаться от снимка"
+    },
+    {
+      "name": "consumer_activity.parquet",
+      "sha256": "94ced7280d744d701659d299acb8ad2ae5104833104e32d82ff57780893b22f7",
+      "bytes": 14618,
+      "required_for": [],
+      "kind": "downloaded_or_derived",
+      "source": "https://sberindex.ru/ru/dashboards",
+      "restore": "Экспорт нужного индикатора; переименовать по docs/INPUT_DATA_RU.md; текущий экспорт может отличаться от снимка"
+    },
+    {
+      "name": "news_orenburg_discovery.json",
+      "sha256": "0e1af54da93511cb1adf166f5c93048e57c9530e0f50d8ebaa7717f4ece1d605",
+      "bytes": 34444,
+      "required_for": [],
+      "kind": "curated_reference",
+      "reference_path": "data/reference/news_orenburg_discovery.json",
+      "source": "Авторский реестр/снимок источников; URL и даты внутри файла"
+    },
+    {
+      "name": "news_orenburg.csv",
+      "sha256": "e1d709a902256981dc7fb160bc3a7070f623b411c9760499338a8d9042f63202",
+      "bytes": 41981,
+      "required_for": [],
+      "kind": "generated_or_downloaded_news",
+      "source": "https://orenburg.media/ ; https://56.mchs.gov.ru/deyatelnost/press-centr/novosti",
+      "restore": "scripts/collect_regional_news.py, затем scripts/collect_news_archive.py; новый сбор не гарантирует исходный SHA256"
+    },
+    {
+      "name": "news_orenburg_monthly.csv",
+      "sha256": "0fb851e1199a7e4d90a5d846598bc13f49b8716bb1b193eec6a5328b5fdbdbd9",
+      "bytes": 998,
+      "required_for": [],
+      "kind": "generated_or_downloaded_news",
+      "source": "https://orenburg.media/ ; https://56.mchs.gov.ru/deyatelnost/press-centr/novosti",
+      "restore": "scripts/collect_regional_news.py, затем scripts/collect_news_archive.py; новый сбор не гарантирует исходный SHA256"
+    },
+    {
+      "name": "news_orenburg_manifest.json",
+      "sha256": "0dc90e0f52688c91d1473ad14c47bea0e5a60ad1cd59f13a61db13ee039d533f",
+      "bytes": 865,
+      "required_for": [],
+      "kind": "generated_or_downloaded_news",
+      "source": "https://orenburg.media/ ; https://56.mchs.gov.ru/deyatelnost/press-centr/novosti",
+      "restore": "scripts/collect_regional_news.py, затем scripts/collect_news_archive.py; новый сбор не гарантирует исходный SHA256"
+    },
+    {
+      "name": "news_orenburg_multisource.csv",
+      "sha256": "808375abf29bb8d47ffd74b5583cf80993cebfee8515e97926a8f6cdbafb9ab1",
+      "bytes": 21093347,
+      "required_for": [
+        "regional_news"
+      ],
+      "kind": "generated_or_downloaded_news",
+      "source": "https://orenburg.media/ ; https://56.mchs.gov.ru/deyatelnost/press-centr/novosti",
+      "restore": "scripts/collect_regional_news.py, затем scripts/collect_news_archive.py; новый сбор не гарантирует исходный SHA256"
+    },
+    {
+      "name": "news_orenburg_multisource_manifest.json",
+      "sha256": "a003a463b95142ba3d99777d8867932cbb33de554617f63f6f6764619b8842aa",
+      "bytes": 43466,
+      "required_for": [
+        "regional_news"
+      ],
+      "kind": "generated_or_downloaded_news",
+      "source": "https://orenburg.media/ ; https://56.mchs.gov.ru/deyatelnost/press-centr/novosti",
+      "restore": "scripts/collect_regional_news.py, затем scripts/collect_news_archive.py; новый сбор не гарантирует исходный SHA256"
+    },
+    {
+      "name": "news_orenburg_archive_audit.csv",
+      "sha256": "c88fa3ad11a10e2106aedb8e01c4a6a7d5229fec00324025088f6a40df36b203",
+      "bytes": 1384,
+      "required_for": [
+        "regional_news"
+      ],
+      "kind": "generated_or_downloaded_news",
+      "source": "https://orenburg.media/ ; https://56.mchs.gov.ru/deyatelnost/press-centr/novosti",
+      "restore": "scripts/collect_regional_news.py, затем scripts/collect_news_archive.py; новый сбор не гарантирует исходный SHA256"
+    },
+    {
+      "name": "news_orenburg_multisource_monthly.csv",
+      "sha256": "7eb420badf8744dce44c378b5c89d94ef809d20a1ddb2585b7643a2334a50a02",
+      "bytes": 985,
+      "required_for": [],
+      "kind": "generated_or_downloaded_news",
+      "source": "https://orenburg.media/ ; https://56.mchs.gov.ru/deyatelnost/press-centr/novosti",
+      "restore": "scripts/collect_regional_news.py, затем scripts/collect_news_archive.py; новый сбор не гарантирует исходный SHA256"
+    },
+    {
+      "name": "news_orenburg_source_summary.csv",
+      "sha256": "d06985715526f0f45c17380a418880fb464c62d14bacb91d4193ac9753b31956",
+      "bytes": 262,
+      "required_for": [],
+      "kind": "generated_or_downloaded_news",
+      "source": "https://orenburg.media/ ; https://56.mchs.gov.ru/deyatelnost/press-centr/novosti",
+      "restore": "scripts/collect_regional_news.py, затем scripts/collect_news_archive.py; новый сбор не гарантирует исходный SHA256"
+    }
+  ],
+  "policy": "Хеши относятся к исходному локальному снимку; новые выгрузки не подменяют его."
+}

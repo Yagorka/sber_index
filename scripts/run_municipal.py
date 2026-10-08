@@ -274,7 +274,7 @@ def main():
     path = ROOT / "tracking/municipal_forecast_metrics.csv"
     journal.to_csv(path, mode="a", header=not path.exists(), index=False)
     manifest = {"run_id": run_id, "elapsed_seconds": time.monotonic() - started,
-                "data_sha256": sha256(ROOT / "data/raw/consumption.parquet"),
+                "data_sha256": sha256(ROOT / "data/inputs/municipal_consumption.parquet"),
                 "config_sha256": sha256(ROOT / "configs/municipal.json"),
                 "models": names, "series": panel.n_series, "incomplete_series_dropped": dropped,
                 "protocol_assumption": cfg["protocol"]["assumption"],

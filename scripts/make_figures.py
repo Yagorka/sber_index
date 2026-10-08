@@ -158,7 +158,7 @@ def fig_weekly():
 
 
 def fig_examples(run):
-    """Три реальных примера: событие (Орск), типичное срабатывание, ложная тревога."""
+    """Три реальных примера: событие (Орск), типичное срабатывание, тревога без события в реестре."""
     panel, _ = load_municipal(ROOT)
     z = np.load(ROOT / "artifacts/shocks/z.npy")
     chosen = json.loads((ROOT / "artifacts/shocks/chosen_thresholds.json").read_text())
@@ -281,7 +281,7 @@ def fig_map(run):
         import geopandas as gpd
     except ImportError:
         return
-    g = gpd.read_file(ROOT / "t_dict_municipal/t_dict_municipal_districts_poly.gpkg")
+    g = gpd.read_file(ROOT / "data/inputs/municipal_boundaries.gpkg")
     panel, _ = load_municipal(ROOT)
     from src.mun_eval import make_grid, pair_errors
     grid = make_grid()

@@ -1,10 +1,24 @@
 __pycache__/
 .ipynb_checkpoints/
 .venv/
+.venv*/
+.env
+.env.*
+!.env.example
+.agents/
+.codex/
+.aws/
+*.log
 .cache/
 .pytest_cache/
 artifacts/runs/
-# исходные данные (лицензия CC BY-SA, скачиваются scripts/get_data.sh)
+# Все локальные входные данные; список — configs/input_files.json.
+data/inputs/
+# Старые места данных также исключены из Git.
+data/external/
+/t_dict_municipal/
+/*.csv.zip
+/metadata_municipal_dict_sberindex_2.pdf
 data/raw/
 # тяжёлые промежуточные массивы и модели
 artifacts/municipal_runs/_cache/
@@ -14,6 +28,9 @@ artifacts/municipal_runs/*/pred_*.npy
 artifacts/**/models/
 *.joblib
 *.pickle
+artifacts/research_prophet/*.npy
+artifacts/research_runs/*/pred_*.npy
+artifacts/research_runs/*/alarms_*.npy
 # тяжёлые файлы, воспроизводимые скриптами/скачиваемые
 t_dict_municipal/*.gpkg
 artifacts/municipal_runs/*/forecast_2025.csv
@@ -21,3 +38,37 @@ artifacts/municipal_runs/_prophet/log.txt
 artifacts/*.log
 artifacts/municipal_runs/_*.log
 data/external/keyrate.html
+
+# Старые дубли входных форматов
+/*.parquet
+/ver-izmenenie-trat-po-kategoriyam.csv
+/potrebitelskaya-aktivnost-po-kategoriyam-tovarov-v-razreze-vozrastov.csv
+# тяжёлые воспроизводимые промежуточные файлы запусков
+artifacts/adaptive_runs/*/predictions.csv
+artifacts/adaptive_runs/*/base_prediction_stream.csv
+artifacts/adaptive_runs/*/adaptive_history_audit.csv
+artifacts/adaptive_runs/*/ets_jobs.json
+artifacts/adaptive_runs/*/ets_results.json
+artifacts/forecast_runs/*/ets_jobs_*.json
+artifacts/forecast_runs/*/ets_results_*.json
+artifacts/forecast_runs/model_comparison.html
+artifacts/consumer_audit/observations_one_copy.csv
+
+# Подробные прогнозы регионального новостного эксперимента; метрики и отчёт сохраняются.
+artifacts/regional_news_runs/*/forecast_predictions.csv
+
+# В Git сохраняются только принятые запуски, указанные в latest.json.
+artifacts/regional_news_runs/*/
+!artifacts/regional_news_runs/news_20261007T171936_092637Z/
+artifacts/research_runs/*/
+!artifacts/research_runs/research_20261007T073840_163667Z/
+# Воспроизводимые бинарные потоки и подробные национальные прогнозы.
+artifacts/**/*.npy
+artifacts/forecast_runs/*/predictions.csv
+artifacts/municipal_runs/_foundation/*limit300_meta.json
+# Генерируемые вспомогательные HTML; финальные материалы защиты сохраняются.
+artifacts/consumer_audit/consumer_data_audit.html
+artifacts/eda/municipal_data_audit.html
+presentation/research_slides.fragment.html
+report/research_audit.html
+report/regional_news_impact.html

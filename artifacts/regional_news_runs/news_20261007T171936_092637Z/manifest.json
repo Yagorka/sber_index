@@ -1,0 +1,37 @@
+{
+  "status": "complete",
+  "elapsed_seconds": 24.685040712356567,
+  "created_at": "2026-10-07T17:20:00.777602+00:00",
+  "n_series": 234,
+  "n_municipalities": 39,
+  "news_articles": 28900,
+  "news_sources": {
+    "Оренбург Медиа": 28847,
+    "ГУ МЧС России по Оренбургской области": 53
+  },
+  "news_months": 24,
+  "feature_count": 58,
+  "evaluation_status": "exploratory_retrospective_after_prior_test_inspection",
+  "availability": "historical_publication_assumption_without_vintages",
+  "cached_benchmark_inputs": {
+    "artifacts/municipal_runs/municipal_20261004T140239Z/pred_Ensemble.npy": "babd1e207652fedef98ab9b292f0547f1806b2b68b03376feb9fad4ad57646b2",
+    "artifacts/municipal_runs/municipal_20261004T140239Z/pred_Prophet.npy": "c4d8fd9090165f50d7e9274aa73cb3726c2bac9de2ad1aca29267745df3f565e"
+  },
+  "inputs_sha256": {
+    "configs/news_impact.json": "d64117f5d52899c540365064ebbfb8ed2ff49a7b303e29e5f3a886658b2373ef",
+    "data/inputs/news_orenburg_multisource.csv": "808375abf29bb8d47ffd74b5583cf80993cebfee8515e97926a8f6cdbafb9ab1",
+    "data/inputs/news_orenburg_multisource_manifest.json": "a003a463b95142ba3d99777d8867932cbb33de554617f63f6f6764619b8842aa",
+    "data/inputs/national_spending_monthly.csv.zip": "cbf4bb5d464a083b95500f4a3d65ce081a8695b7b2966a18d5f199f13c35b3e6",
+    "data/inputs/municipal_consumption.parquet": "9833ddaaee7b2a182ed4cceeed16469031700ea87d508bd976150c6770ef8a61",
+    "data/inputs/municipal_dictionary.xlsx": "4150658c3298fbc87ed79838f503f3a5b9a28da33257ff803c7d9231ddb775d6",
+    "data/inputs/municipal_market_access.parquet": "434258afe322b7e6e6610b2552d129ae47094613de72dae3d13f6965a28d1dc1",
+    "artifacts/shocks/z.npy": "2a87ddda1b33b9c04966f20b6091d335355167a17f967c3def149836ce65aec0"
+  },
+  "code_sha256": {
+    "scripts/evaluate_news_impact.py": "7d99dd61461a5e4f91906cfd4ba2cfb3adf94f12ee7c96f24c9d2d918464bb39",
+    "src/news_impact.py": "dd3fc81c09110cf150c6ba38e5b6b718384416ba68c61477657845d64154a0dd",
+    "src/news_collection.py": "e768c47c2f403460fc9808581854c49cb9d954e5e1cc6309c22342bf79d99f6e",
+    "src/mun_models.py": "adcee37d3eca85d7a39ca468e9047a2f03492caebda8299f98686585a98af9a3",
+    "src/transitions.py": "155ce89c16db130e2971fa916ea9d7173cb36a1e241dc1f6c7c1b5d1e468d1ed"
+  }
+}

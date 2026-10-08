@@ -1,10 +1,10 @@
 # Запуск из корня проекта в окружении `sber` (conda env create -f environment.yml).
 PY ?= python
 
-.PHONY: data test national municipal shocks weekly news nowcast check2025 figures report all
+.PHONY: data test national municipal shocks weekly news nowcast check2025 figures report all research research-prophet research-report verify
 
 data:
-	bash scripts/get_data.sh
+	$(PY) scripts/check_inputs.py --profile full
 
 test:
 	$(PY) -m pytest tests -q
@@ -46,3 +46,29 @@ report: figures
 	$(PY) scripts/build_models_metrics.py
 
 all: data test national foundation municipal shocks news nowcast check2025 report
+
+# Дополнительные эксперименты после просмотра test, исходный запуск сохраняется.
+research-prophet:
+	OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 nice -n 15 $(PY) scripts/prophet_research.py --workers 1
+
+research:
+	OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 nice -n 15 $(PY) scripts/run_research_audit.py
+	$(PY) scripts/research_cases.py
+	$(PY) scripts/build_research_report.py
+
+research-report:
+	$(PY) scripts/build_research_report.py
+
+verify:
+	$(PY) scripts/verify_research.py
+
+.PHONY: regional-news regional-news-archive regional-news-impact
+regional-news:
+	OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 nice -n 15 $(PY) scripts/collect_regional_news.py
+
+regional-news-archive:
+	OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 nice -n 15 $(PY) scripts/collect_news_archive.py
+
+regional-news-impact:
+	OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 nice -n 15 $(PY) scripts/evaluate_news_impact.py
+	OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 nice -n 15 $(PY) scripts/build_news_impact_report.py

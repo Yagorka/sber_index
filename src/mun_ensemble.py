@@ -1,7 +1,9 @@
 """Веса ансамбля (минимизация MAE на симплексе) и split-conformal интервалы."""
 
 import numpy as np
+import warnings
 from scipy.optimize import linprog
+from scipy.optimize import OptimizeWarning
 
 
 def simplex_lad_weights(y, P, max_rows=40000, seed=42):
@@ -23,8 +25,11 @@ def simplex_lad_weights(y, P, max_rows=40000, seed=42):
     I = eye(n, format="csr")
     A = vstack([hstack([Ps, -I]), hstack([-Ps, -I])])
     b = np.r_[y, -y]
-    res = linprog(c, A_ub=A, b_ub=b, A_eq=np.r_[np.ones(k), np.zeros(n)][None, :], b_eq=[1.0],
-                  bounds=[(0, None)] * k + [(0, None)] * n, method="highs")
+    # SciPy передаёт threads в HiGHS; один поток бережёт интерактивную систему.
+    with warnings.catch_warnings():
+        warnings.filterwarnings("ignore", message="Unrecognized options detected.*threads", category=OptimizeWarning)
+        res = linprog(c, A_ub=A, b_ub=b, A_eq=np.r_[np.ones(k), np.zeros(n)][None, :], b_eq=[1.0],
+                      bounds=[(0, None)] * k + [(0, None)] * n, method="highs", options={"threads": 1})
     if res.status != 0:
         raise RuntimeError(res.message)
     w = np.clip(res.x[:k], 0, None)

@@ -20,7 +20,7 @@ body{margin:0;background:#e9edf2}
 .kpi{display:flex;gap:22px;margin:12px 0}.kpi div{background:#f1f4f8;border-radius:10px;padding:14px 22px;min-width:170px}.kpi b{display:block;font-size:46px;color:#1a6fb0}
 </style></head><body><section class="slide"><h1>Прогноз расходов 2 016 муниципалитетов<br>и ранние сигналы структурных сдвигов</h1>
 <div class="kpi"><div><b>−31%</b>MAE к Prophet, 1 мес.</div><div><b>−28%</b>3 мес.</div><div><b>−37%</b>6 мес.</div><div><b>−47%</b>12 мес.</div></div>
-<p>Независимый тест: июль–декабрь 2024, 12 096 рядов (МО × 6 категорий). Выбор заморожен до открытия теста.</p>
+<p>Ретроспективный тест: июль–декабрь 2024, 12 096 рядов. Веса выбраны до подсчёта метрик, но не всегда доступны на историческом origin.</p>
 <p class="muted">Данные: СберИндекс (CC BY-SA 4.0). Протокол «конкурсный»: официальные правила организатора мне неизвестны.</p><div class="foot">СберИндекс · прогноз расходов МО · 1</div></section><section class="slide"><h2>Данные и задача</h2><ul>
 <li><b>Цель:</b> безналичные расходы на жителя, руб./мес. — 2 016 МО × 6 категорий × 24 месяца (2023–2024)</li>
 <li><b>Горизонты:</b> 1, 3, 6, 12 месяцев; метрика — MAE в рублях, R², интервалы</li>
@@ -33,7 +33,7 @@ body{margin:0;background:#e9edf2}
 <li><b>Национальный путь</b> до цели = сезонность прошлого года × темп роста (только данные ≤ origin)</li>
 <li><b>GBM по остатку</b> (импульсы относительно страны, регион, шум), сжатый и без экстраполяции за обученный горизонт</li>
 <li><b>Ансамбль</b> с Prophet и локальной сезонностью; веса — минимум MAE на validation</li>
-<li><b>Интервалы</b> — split-conformal</li></ol></div>
+<li><b>Интервалы</b> — эмпирическая калибровка</li></ol></div>
 <div><p><b>Защита от утечек</b></p><ul><li>признаки и метки ≤ origin (юнит-тесты)</li><li>выбор → заморозка → однократный показ теста</li><li>национальные данные после origin не используются</li><li>bootstrap по МО и по месяцам</li></ul></div></div><div class="foot">СберИндекс · прогноз расходов МО · 3</div></section><section class="slide"><h2>Лидерборд на тесте (MAE, руб./жителя)</h2><div class="grid"><div><img src="../artifacts/figures/mae_by_model_test.png" alt=""></div><div><table class='t' class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -112,10 +112,344 @@ body{margin:0;background:#e9edf2}
 <li>Recall при сдвиге 4σ: CUSUM 0.74</li><li>Ранжирование зависит от способа разметки: на offline-метках лидирует BOCPD</li></ul></div></div><div class="foot">СберИндекс · прогноз расходов МО · 8</div></section><section class="slide"><h2>Три реальных примера</h2><img src="../artifacts/figures/detector_examples.png" alt=""><div class="foot">СберИндекс · прогноз расходов МО · 9</div></section><section class="slide"><h2>Недельные ряды и раннее предупреждение</h2><div class="grid"><div><img src="../artifacts/figures/weekly_detectors_early_warning.png" alt=""></div><div><ul>
 <li>46 категорий, 151 неделя: реальная оценка детекторов (метки — offline-proxy, не истина)</li><li>Page–Hinkley и CUSUM сильнее BOCPD на недельных рядах</li>
 <li><b>Раннее предупреждение: навык не подтверждён</b> — PR-AUC около доли событий, Brier не лучше константы</li></ul><p class="warn">Нужна верифицированная разметка шоков.</p></div></div><div class="foot">СберИндекс · прогноз расходов МО · 10</div></section><section class="slide"><h2>Новости и внешние события</h2><div class="grid"><div><img src="../artifacts/figures/news_ablation.png" alt=""></div><div><ul>
-<li>Датированные официальные события: ключевая ставка ЦБ и реестр из 7 региональных событий</li><li>Только прошлое: available_at = дата вступления в силу / публикации</li><li>Результат: реальные признаки не лучше плацебо</li><li>Текстовый корпус новостей не собирался</li></ul></div></div><div class="foot">СберИндекс · прогноз расходов МО · 11</div></section><section class="slide"><h2>Недельный nowcast и прогноз 2025</h2><div class="grid"><div><img src="../artifacts/figures/forecast_2025_check.png" alt=""></div><div><ul>
+<li>Исходный опыт: ключевая ставка ЦБ и реестр из 7 региональных событий</li><li>Только прошлое: available_at = дата вступления в силу / публикации</li><li>Результат исходного опыта: реальные признаки не лучше плацебо</li><li>Расширенный корпус и экономические темы — в дополнительных слайдах</li></ul></div></div><div class="foot">СберИндекс · прогноз расходов МО · 11</div></section><section class="slide"><h2>Недельный nowcast и прогноз 2025</h2><div class="grid"><div><img src="../artifacts/figures/forecast_2025_check.png" alt=""></div><div><ul>
 <li>Nowcast по полному месяцу: MAE 62.0 против 70.1 у h=1-ансамбля (млрд руб.).</li><li>Прогноз 2025 заморожен (SHA256) — скрипт оценит MAE, когда СберИндекс опубликует факты по МО</li><li>Санити-проверка: ансамбль согласуется с национальным ростом точнее Prophet</li></ul><img src="../artifacts/figures/nowcast.png" alt=""></div></div><div class="foot">СберИндекс · прогноз расходов МО · 12</div></section><section class="slide"><h2>Ограничения</h2><ul>
 <li>24 месяца данных; тест — 6 целевых месяцев; validation h=12 — один месяц</li><li>Протокол валидации — допущение, нужна сверка с официальными правилами</li><li>Последняя версия данных, даты публикации неизвестны</li>
-<li>Нет верифицированных меток шоков; события реестра охватывают 4 оценимых МО</li><li>Новости = решения ЦБ и реестр, не текстовый корпус</li><li>TimesFM — только подвыборка 200 МО</li><li>Маркетплейсы и общественное питание остаются слабым местом</li></ul><div class="foot">СберИндекс · прогноз расходов МО · 13</div></section><section class="slide"><h2>Воспроизведение</h2><pre style="font-size:20px">conda env create -f environment.yml
+<li>Нет верифицированных меток шоков; события реестра охватывают 4 оценимых МО</li><li>Расширенный новостной корпус ограничен одним регионом</li><li>TimesFM — только подвыборка 200 МО</li><li>Маркетплейсы и общественное питание остаются слабым местом</li></ul><div class="foot">СберИндекс · прогноз расходов МО · 13</div></section><section class="slide"><h2>Воспроизведение</h2><pre style="font-size:20px">conda env create -f environment.yml
 conda activate sber
 bash scripts/get_data.sh
-make test municipal shocks report</pre><ul><li>Конфигурации: <code>configs/*.json</code>; хэши данных и кода в <code>manifest.json</code></li><li>Журналы: <code>tracking/*.csv</code>; прогноз 2025: <code>prospective/</code></li><li>Отчёт: <code>report/report.pdf</code>; результаты: <code>docs/MUNICIPAL_RESULTS_RU.md</code></li></ul><div class="foot">СберИндекс · прогноз расходов МО · 14</div></section></body></html>
+make test municipal shocks report</pre><ul><li>Конфигурации: <code>configs/*.json</code>; хэши данных и кода в <code>manifest.json</code></li><li>Журналы: <code>tracking/*.csv</code>; прогноз 2025: <code>prospective/</code></li><li>Отчёт: <code>report/report.pdf</code>; результаты: <code>docs/MUNICIPAL_RESULTS_RU.md</code></li></ul><div class="foot">СберИндекс · прогноз расходов МО · 14</div></section><section class="slide"><h2>Исследовательская гипотеза</h2><p>Длинная национальная история переносит сезонность и рост на короткие муниципальные ряды.</p><p>Проверяем вклад локальной коррекции, доступность параметров и реакцию после тревог.</p><p class="warn">Доработки после просмотра теста: новые результаты исследовательские.</p><div class="foot">СберИндекс · прогноз расходов МО · 15</div></section><section class="slide"><h2>Сильные базы и вклад HGB</h2><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>h</th>
+      <th>Модель</th>
+      <th>h=1</th>
+      <th>h=3</th>
+      <th>h=6</th>
+      <th>h=12</th>
+      <th>Среднее по h</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td>Ensemble</td>
+      <td>440</td>
+      <td>514</td>
+      <td>466</td>
+      <td>583</td>
+      <td>501</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>DevBlend_NoHGB</td>
+      <td>445</td>
+      <td>509</td>
+      <td>463</td>
+      <td>595</td>
+      <td>503</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>EqualBlend_NoHGB</td>
+      <td>454</td>
+      <td>542</td>
+      <td>525</td>
+      <td>628</td>
+      <td>537</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>PastOnlyBlend</td>
+      <td>454</td>
+      <td>539</td>
+      <td>577</td>
+      <td>628</td>
+      <td>549</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>SeasonalNaive_NatGrowth</td>
+      <td>547</td>
+      <td>543</td>
+      <td>529</td>
+      <td>612</td>
+      <td>558</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>Prophet</td>
+      <td>640</td>
+      <td>719</td>
+      <td>736</td>
+      <td>1093</td>
+      <td>797</td>
+    </tr>
+  </tbody>
+</table><p>Без HGB средняя ошибка почти та же. На h=3/12 превосходство над сильной сезонной базой по bootstrap месяцев не подтверждено.</p><div class="foot">СберИндекс · прогноз расходов МО · 16</div></section><section class="slide"><h2>Последовательные веса и интервалы</h2><p>Подбор: target ≤ origin−2. Калибровка: последние два зрелых месяца.</p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>h</th>
+      <th>availability</th>
+      <th>coverage</th>
+      <th>relative_half_width</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table><p>На h=12 нет истории для подбора и калибровки. Фиксированные веса; интервалы недоступны.</p><div class="foot">СберИндекс · прогноз расходов МО · 17</div></section><section class="slide"><h2>Данные по маркетплейсам</h2><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>h</th>
+      <th>Модель</th>
+      <th>1</th>
+      <th>3</th>
+      <th>6</th>
+      <th>12</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td>Ensemble</td>
+      <td>521</td>
+      <td>576</td>
+      <td>661</td>
+      <td>1084</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>PastOnlyBlend</td>
+      <td>561</td>
+      <td>570</td>
+      <td>541</td>
+      <td>1132</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>WeeklyMarketplacePrior</td>
+      <td>617</td>
+      <td>748</td>
+      <td>845</td>
+      <td>1357</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>SeasonalNaive_NatGrowth</td>
+      <td>1014</td>
+      <td>959</td>
+      <td>964</td>
+      <td>1316</td>
+    </tr>
+  </tbody>
+</table><p>Недельный prior помогает относительно прежнего сезонного правила на h=1/3/6. На h=12 улучшения нет.</p><div class="foot">СберИндекс · прогноз расходов МО · 18</div></section><section class="slide"><h2>Детектор → действие</h2><p>Разность MAE после коррекции к NatPath_K3; отрицательная лучше.</p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>h</th>
+      <th>method</th>
+      <th>1</th>
+      <th>3</th>
+      <th>6</th>
+      <th>12</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td>AbsZ</td>
+      <td>-1</td>
+      <td>-1</td>
+      <td>4</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>BOCPD</td>
+      <td>-11</td>
+      <td>-8</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>CUSUM</td>
+      <td>-3</td>
+      <td>5</td>
+      <td>5</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>PageHinkley</td>
+      <td>-8</td>
+      <td>-3</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table><p>Эффект невелик. Два оценимых официальных события относятся к калибровке. Раннее предупреждение не подтверждено.</p><div class="foot">СберИндекс · прогноз расходов МО · 19</div></section><section class="slide"><h2>Готовность к конкурсной проверке</h2><ul><li>Критерии и веса подтверждены пользователем</li><li>Метрики, временной аудит, категории и регионы</li><li>Фиксированные версии и реальные кейсы</li><li>Новостной пилот: обе задачи; эффект неустойчив</li><li>Нужны настройки baseline и новые факты</li></ul><div class="foot">СберИндекс · прогноз расходов МО · 20</div></section><section class="slide"><h2>Региональные новости: прогноз</h2><p>Оренбургская область; Оренбург Медиа: 28847, ГУ МЧС России по Оренбургской области: 53.</p><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>model</th>
+      <th>h</th>
+      <th>with_news</th>
+      <th>without_news</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td>1</td>
+      <td>381</td>
+      <td>395</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>3</td>
+      <td>545</td>
+      <td>573</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>6</td>
+      <td>732</td>
+      <td>555</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>12</td>
+      <td>740</td>
+      <td>755</td>
+    </tr>
+  </tbody>
+</table><p>Одинаковая Ridge-модель и сетка прогноза; MAE, руб./жителя.</p><p class="warn">Тест уже просмотрен; пилот исследовательский. Темы сравниваются с контролем объёма публикаций.</p><div class="foot">СберИндекс · прогноз расходов МО · 21</div></section><section class="slide"><h2>Региональные новости: детекторы</h2><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>variant</th>
+      <th>method</th>
+      <th>with_news</th>
+      <th>without_news</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td>BOCPD</td>
+      <td>0.242</td>
+      <td>0.211</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>CUSUM</td>
+      <td>0.074</td>
+      <td>0.000</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>PageHinkley</td>
+      <td>0.085</td>
+      <td>0.033</td>
+    </tr>
+  </tbody>
+</table><p>Одинаковый калибровочный бюджет тревог. Ориентиры построены только по финансовым данным, без новостей.</p><p>Сравнение чувствительно к штрафу proxy-разметки; полный отчёт включает 7 вариантов.</p><p class="warn">Реальная экспертная разметка отсутствует; основной детектор сохраняется.</p><div class="foot">СберИндекс · прогноз расходов МО · 22</div></section><section class="slide"><h2>ЧС и экономика: отдельные проверки</h2><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>h</th>
+      <th>model</th>
+      <th>1</th>
+      <th>3</th>
+      <th>6</th>
+      <th>12</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td>NatPath_K3</td>
+      <td>396</td>
+      <td>619</td>
+      <td>662</td>
+      <td>585</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>coverage_only</td>
+      <td>393</td>
+      <td>577</td>
+      <td>615</td>
+      <td>656</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>crisis_only</td>
+      <td>377</td>
+      <td>533</td>
+      <td>857</td>
+      <td>766</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>delayed_news_3m</td>
+      <td>376</td>
+      <td>559</td>
+      <td>602</td>
+      <td>797</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>economic_only</td>
+      <td>379</td>
+      <td>554</td>
+      <td>666</td>
+      <td>705</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>mchs_only</td>
+      <td>387</td>
+      <td>558</td>
+      <td>584</td>
+      <td>799</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>with_news</td>
+      <td>381</td>
+      <td>545</td>
+      <td>732</td>
+      <td>740</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>without_news</td>
+      <td>395</td>
+      <td>573</td>
+      <td>555</td>
+      <td>755</td>
+    </tr>
+  </tbody>
+</table><p>crisis_only и economic_only имеют одинаковые признаки покрытия. mchs_only использует прежнюю поисковую выборку.</p><div class="foot">СберИндекс · прогноз расходов МО · 23</div></section><section class="slide"><h2>Как получать дополнительные признаки</h2><ul><li>requests → JSON-архив; BeautifulSoup очищает заголовки</li><li>Даты GMT, кеш страниц, проверка полноты пагинации</li><li>10 тем: ЧС, цены, доходы, выплаты, торговля, предприятия, транспорт/жильё</li><li>Счётчики за 1/3 месяца; направления цен, доходов, открытия/закрытия бизнеса</li><li>Явные география и прошлый cutoff; федеральные перепечатки без привязки дают только покрытие</li></ul><p>Заголовки и правила, без браузера и LLM. Новостные метки не служат эталоном шоков.</p><div class="foot">СберИндекс · прогноз расходов МО · 24</div></section></body></html>

@@ -1,0 +1,102 @@
+{
+  "seed": 42,
+  "region_code": 56,
+  "news_file": "data/inputs/news_orenburg_multisource.csv",
+  "corpus_manifest": "data/inputs/news_orenburg_multisource_manifest.json",
+  "validation_targets": [
+    12,
+    17
+  ],
+  "test_targets": [
+    18,
+    23
+  ],
+  "evaluation_status": "exploratory_retrospective_after_prior_test_inspection",
+  "availability": "historical_publication_assumption_without_vintages",
+  "forecast": {
+    "alpha": 1000.0,
+    "shrink": 0.25,
+    "maximum_abs_log_correction": 0.3,
+    "maximum_training_rows": 30000,
+    "minimum_training_rows": 234,
+    "variants": [
+      "without_news",
+      "coverage_only",
+      "with_news",
+      "delayed_news_3m",
+      "mchs_only",
+      "crisis_only",
+      "economic_only"
+    ],
+    "hyperparameter_policy": "same_fixed_alpha_and_shrink_for_all_variants_declared_before_new_run"
+  },
+  "detectors": {
+    "methods": [
+      "CUSUM",
+      "PageHinkley",
+      "BOCPD"
+    ],
+    "variants": [
+      "without_news",
+      "coverage_only",
+      "with_news",
+      "delayed_news_3m",
+      "mchs_only",
+      "crisis_only",
+      "economic_only"
+    ],
+    "news_gain": 0.5,
+    "news_input_rule": "multiply_financial_z_by_1_plus_gain_if_current_month_has_relevant_confirmed_news_for_MO_or_region",
+    "calibration_months": [
+      10,
+      17
+    ],
+    "alarm_budget_per_100_series_months": 1.0,
+    "cooldown_months": 3,
+    "max_delay_months": 3,
+    "thresholds": {
+      "CUSUM": [
+        3,
+        4,
+        5,
+        6,
+        8,
+        10,
+        12,
+        16,
+        24,
+        40
+      ],
+      "PageHinkley": [
+        3,
+        5,
+        8,
+        12,
+        16,
+        24,
+        40
+      ],
+      "BOCPD": [
+        0.3,
+        0.5,
+        0.7,
+        0.9,
+        0.99
+      ]
+    },
+    "proxy_penalties": [
+      2,
+      4,
+      8
+    ],
+    "proxy_min_segment": 4,
+    "proxy_min_shift_sigma": 1.5,
+    "proxy_policy": "same_offline_financial_only_labels_for_all_variants_not_verified_real_shocks"
+  },
+  "bootstrap_replicates": 1000,
+  "resource_limits": {
+    "threads": 1,
+    "nice": 15
+  },
+  "cached_benchmark_run": "artifacts/municipal_runs/municipal_20261004T140239Z"
+}

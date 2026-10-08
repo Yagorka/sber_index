@@ -1,0 +1,5 @@
+# Проверки без тяжёлых foundation-моделей. Версии полной среды — requirements.lock.txt.
+-r requirements.txt
+scikit-learn>=1.6,<2
+scipy>=1.14,<2
+pytest>=8,<10

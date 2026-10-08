@@ -12,6 +12,13 @@ from src.municipal import sha256
 
 
 def dataset_group(filename):
+    for prefix, group in [("consumer_activity", "activity"),
+                          ("spending_growth_weekly", "weekly_growth"),
+                          ("national_spending_growth", "monthly_growth"),
+                          ("national_spending_real_index", "monthly_real_index"),
+                          ("national_spending_monthly", "monthly_spending")]:
+        if filename.startswith(prefix):
+            return group
     if filename.startswith("potrebitelskaya-aktivnost"):
         return "activity"
     if filename.startswith("ver-izmenenie-trat"):
@@ -83,18 +90,27 @@ def compare_observations(left, right, atol=1e-10):
 
 
 def audit_exports(root: Path):
-    paths = sorted(p for p in root.iterdir() if p.is_file() and
-                   (p.name.endswith(".csv") or p.name.endswith(".csv.zip") or p.name.endswith(".parquet")))
+    paths = []
+    for path in (root / "data/inputs").iterdir():
+        if not path.is_file() or not path.name.endswith((".csv", ".csv.zip", ".parquet")):
+            continue
+        try:
+            dataset_group(path.name)
+        except ValueError:
+            continue
+        paths.append(path)
+    paths.sort()
     raw_tables, tables, records, series_records = {}, {}, [], []
     for path in paths:
         group = dataset_group(path.name)
+        filename = path.relative_to(root).as_posix()
         raw, member = read_export(path)
         table, dimensions = canonical_observations(raw, group)
-        raw_tables[path.name], tables[path.name] = raw, table
+        raw_tables[filename], tables[filename] = raw, table
         frequency = "weekly" if group in ["activity", "weekly_growth"] else "monthly"
         key = ["period", "series_id"]
         conflicts = table.groupby(key).value.nunique(dropna=False).gt(1).sum()
-        records.append({"file": path.name, "group": group, "rows": len(raw), "columns": len(raw.columns),
+        records.append({"file": filename, "group": group, "rows": len(raw), "columns": len(raw.columns),
                         "series": table.series_id.nunique(), "dates": table.period.nunique(),
                         "start": table.period.min().date().isoformat(), "end": table.period.max().date().isoformat(),
                         "frequency": frequency, "unit": " | ".join(map(str, raw.unit_measure.unique())) if "unit_measure" in raw else "не указана в упрощённом CSV",
@@ -111,7 +127,7 @@ def audit_exports(root: Path):
             expected = pd.date_range(current.period.min(), current.period.max(),
                                      freq="7D" if frequency == "weekly" else "MS")
             observed = pd.DatetimeIndex(current.period.unique())
-            series_records.append({"file": path.name, "group": group, "series_id": series_id,
+            series_records.append({"file": filename, "group": group, "series_id": series_id,
                                    "n_observations": len(current), "missing_periods": len(expected.difference(observed)),
                                    "off_grid_periods": len(observed.difference(expected)),
                                    "start": current.period.min().date().isoformat(),

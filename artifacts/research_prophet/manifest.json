@@ -1,0 +1,50 @@
+{
+  "data_sha256": "9833ddaaee7b2a182ed4cceeed16469031700ea87d508bd976150c6770ef8a61",
+  "sample_territories": [
+    307,
+    317,
+    330,
+    408,
+    550,
+    591,
+    1128,
+    1260,
+    1272,
+    1303,
+    1456,
+    1492,
+    1528,
+    1856,
+    1952,
+    2000,
+    2043,
+    2105,
+    2125,
+    2161,
+    2163,
+    2288,
+    2320,
+    2490,
+    2577
+  ],
+  "variants": [
+    {
+      "id": "seasonal_regularized",
+      "yearly_seasonality": 2,
+      "seasonality_prior_scale": 0.1,
+      "changepoint_prior_scale": 0.01
+    },
+    {
+      "id": "seasonal_flexible",
+      "yearly_seasonality": 2,
+      "seasonality_prior_scale": 1.0,
+      "changepoint_prior_scale": 0.05
+    }
+  ],
+  "status": "exploratory_after_test_inspection",
+  "selected_on_validation": "seasonal_regularized",
+  "fallbacks": 0,
+  "sample_series": 150,
+  "fits": 5700,
+  "note": "25 случайных МО; все сравнения на той же выборке; официальный baseline неизвестен"
+}

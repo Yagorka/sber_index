@@ -18,6 +18,7 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from src.mun_data import NationalPriors, load_municipal
+from src.frozen_artifacts import preserve_or_create
 
 PAIR = {"Все категории": "Всего", "Продовольствие": "Продовольственные товары",
         "Общественное питание": "Общественное питание"}
@@ -56,13 +57,17 @@ def main():
     frozen.mkdir(exist_ok=True)
     target = frozen / "forecast_2025_frozen.csv"
     keep = ["territory_id", "category", "target_month", "horizon_months", "y_pred_ensemble", "y_pred_prophet", "lo90", "hi90"]
-    f[keep].to_csv(target, index=False)
-    digest = hashlib.sha256(target.read_bytes()).hexdigest()
+    created,different,digest = preserve_or_create(target,f[keep].to_csv(index=False),run / "forecast_2025_candidate.csv")
+    if not created:
+        print("Исходный frozen-файл сохранён; новый вариант отличается:",different)
+        if different:
+            print("Новый вариант:",run / "forecast_2025_candidate.csv")
+        return
     (frozen / "forecast_2025_frozen.sha256").write_text(f"{digest}  forecast_2025_frozen.csv\n")
     (frozen / "README.md").write_text(
         "# Замороженный прогноз 2025\n\nФайл `forecast_2025_frozen.csv` построен по данным до 2024-12 (origin = 2024-12), "
         f"run `{run.name}`, SHA256 `{digest}`.\n\nКогда СберИндекс опубликует муниципальные расходы за 2025 г., "
-        "положите файл в `data/raw/consumption_2025.parquet` и запустите `python scripts/score_prospective.py` — "
+        "положите файл в `data/inputs/municipal_consumption_2025.parquet` и запустите `python scripts/score_prospective.py` — "
         "скрипт посчитает MAE по горизонтам и сравнение с Prophet из того же запуска.\n"
         "Для независимой временной метки добавьте файл в git-коммит/релиз до публикации новых данных.\n")
     print("заморожено", target, digest[:16])

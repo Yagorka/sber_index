@@ -3,7 +3,7 @@
 Три независимых способа оценки (синтетика не выдаётся за реальные шоки):
   A. semi-synthetic injection: известные сдвиги добавляются в реальные остатки 5% рядов;
      метрики event precision/recall/F1, задержка, ложные тревоги на 100 ряд-месяцев;
-  B. реестр датированных событий (data/external/event_registry.csv): совпадение тревог с
+  B. реестр датированных событий (data/inputs/event_registry.csv): совпадение тревог с
      реальными событиями у сопоставленных МО против базовой частоты у остальных;
   C. offline-proxy разметка (оптимальная сегментация по полным данным) — только чувствительность.
 Затем раннее предупреждение: вероятность сдвига в (t, t+k] для k=1,3 по proxy-меткам.
@@ -127,7 +127,7 @@ def main():
     by_mag.to_csv(out / "injection_recall_by_magnitude.csv", index=False)
 
     # --- B. реестр реальных событий ----------------------------------------------------------------
-    registry = pd.read_csv(ROOT / "data/external/event_registry.csv", parse_dates=["event_date"])
+    registry = pd.read_csv(ROOT / "data/inputs/event_registry.csv", parse_dates=["event_date"])
     meta = panel.meta
     reg_rows = []
     for ev in registry.itertuples():

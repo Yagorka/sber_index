@@ -1,0 +1,383 @@
+{
+  "coverage": "incomplete_search_discovery",
+  "source": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti",
+  "queries": [
+    "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"января 2023\"",
+    "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"февраля 2023\"",
+    "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"марта 2023\"",
+    "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"апреля 2023\"",
+    "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"мая 2023\"",
+    "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"июня 2023\"",
+    "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"июля 2023\"",
+    "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"августа 2023\"",
+    "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"сентября 2023\"",
+    "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"октября 2023\"",
+    "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"ноября 2023\"",
+    "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"декабря 2023\"",
+    "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"января 2024\"",
+    "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"февраля 2024\"",
+    "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"марта 2024\"",
+    "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"апреля 2024\"",
+    "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"мая 2024\"",
+    "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"июня 2024\"",
+    "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"июля 2024\"",
+    "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"августа 2024\"",
+    "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"сентября 2024\"",
+    "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"октября 2024\"",
+    "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"ноября 2024\"",
+    "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"декабря 2024\""
+  ],
+  "records": [
+    {
+      "title": "Сотрудники ГИМС проверяют соблюдение безопасности на водоемах области",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/5184151",
+      "published_text": "5 января 2024, 13:44"
+    },
+    {
+      "title": "Как уберечься от молнии во время грозы",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/5060724",
+      "published_text": "15 июля 2023, 11:58"
+    },
+    {
+      "title": "Региональное управление МЧС предупреждает: фокусировка лучей может стать причиной пожара",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/5069973",
+      "published_text": "28 июля 2023, 09:31"
+    },
+    {
+      "title": "Важно знать! Первичные средства пожаротушения",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/5055817",
+      "published_text": "9 июля 2023, 09:43"
+    },
+    {
+      "title": "Пожар у сёл Городище и Никольское полностью ликвидирован",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/5059016",
+      "published_text": "12 июля 2023, 09:41"
+    },
+    {
+      "title": "Уроки пожарной безопасности провели для детей сотрудники МЧС",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/5070304",
+      "published_text": "30 июля 2023, 15:06"
+    },
+    {
+      "title": "Аварийное отключение электроэнергии в нескольких СНТ Оренбурга",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/4925346",
+      "published_text": "10 января 2023, 08:41"
+    },
+    {
+      "title": "Пожар в автомобиле: как предотвратить?",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/5396707",
+      "published_text": "9 ноября 2024, 11:00"
+    },
+    {
+      "title": "На востоке Оренбуржья аттестовали спасателей",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/5070224",
+      "published_text": "28 июля 2023, 13:46"
+    },
+    {
+      "title": "В Главном управлении состоялось мероприятие, посвященное Дню ГПН",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/5063356",
+      "published_text": "18 июля 2023, 15:45"
+    },
+    {
+      "title": "На пожаре в Оренбурге погибли женщина и ребёнок",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/4964603",
+      "published_text": "6 марта 2023, 13:29",
+      "discovery_query": "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"января 2023\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"февраля 2023\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"марта 2023\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"апреля 2023\"",
+      "metadata_source": "web_search_source_excerpt"
+    },
+    {
+      "title": "В Оренбуржье завершился региональный этап всероссийских командно-штабных учений",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/4972040",
+      "published_text": "16 марта 2023, 19:25",
+      "discovery_query": "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"января 2023\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"февраля 2023\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"марта 2023\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"апреля 2023\"",
+      "metadata_source": "web_search_source_excerpt"
+    },
+    {
+      "title": "За нарушение требований пожарной безопасности предусмотрена ответственность",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/4997543",
+      "published_text": "20 апреля 2023, 16:42",
+      "discovery_query": "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"января 2023\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"февраля 2023\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"марта 2023\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"апреля 2023\"",
+      "metadata_source": "web_search_source_excerpt"
+    },
+    {
+      "title": "В Ясненском городском округе идёт подготовка к летнему пожароопасному периоду",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/4967651",
+      "published_text": "15 марта 2023, 08:57",
+      "discovery_query": "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"января 2023\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"февраля 2023\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"марта 2023\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"апреля 2023\"",
+      "metadata_source": "web_search_source_excerpt"
+    },
+    {
+      "title": "При использовании открытого огня необходимо соблюдать требования пожарной безопасности",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/4990303",
+      "published_text": "11 апреля 2023, 16:23",
+      "discovery_query": "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"января 2023\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"февраля 2023\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"марта 2023\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"апреля 2023\"",
+      "metadata_source": "web_search_source_excerpt"
+    },
+    {
+      "title": "В Главном управлении прошло торжественное собрание, посвящённое Дню защитника Отечества",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/4955841",
+      "published_text": "22 февраля 2023, 11:25",
+      "discovery_query": "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"января 2023\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"февраля 2023\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"марта 2023\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"апреля 2023\"",
+      "metadata_source": "web_search_source_excerpt"
+    },
+    {
+      "title": "Сотрудники МЧС продолжают профилактическую работу с населением",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/5035327",
+      "published_text": "9 июня 2023, 09:30",
+      "discovery_query": "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"мая 2023\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"июня 2023\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"июля 2023\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"августа 2023\"",
+      "metadata_source": "web_search_source_excerpt"
+    },
+    {
+      "title": "Сегодня стартовал XIV Международный салон средств обеспечения безопасности «Комплексная безопасность-2023»",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/5030057",
+      "published_text": "1 июня 2023, 18:04",
+      "discovery_query": "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"мая 2023\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"июня 2023\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"июля 2023\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"августа 2023\"",
+      "metadata_source": "web_search_source_excerpt"
+    },
+    {
+      "title": "Аэромобильная группировка готова к выполнению самых сложных задач",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/5113171",
+      "published_text": "28 сентября 2023, 09:03",
+      "discovery_query": "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"сентября 2023\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"октября 2023\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"ноября 2023\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"декабря 2023\"",
+      "metadata_source": "web_search_source_excerpt"
+    },
+    {
+      "title": "Новые погоны и назначения в Главном управлении",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/5175931",
+      "published_text": "25 декабря 2023, 15:01",
+      "discovery_query": "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"сентября 2023\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"октября 2023\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"ноября 2023\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"декабря 2023\"",
+      "metadata_source": "web_search_source_excerpt"
+    },
+    {
+      "title": "В Главном управлении состоялась торжественная церемония в честь Дня Спасателя",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/5177565",
+      "published_text": "27 декабря 2023, 13:21",
+      "discovery_query": "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"сентября 2023\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"октября 2023\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"ноября 2023\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"декабря 2023\"",
+      "metadata_source": "web_search_source_excerpt"
+    },
+    {
+      "title": "В Красногвардейском районе продолжаются командно-штабные учения",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/5103345",
+      "published_text": "14 сентября 2023, 12:34",
+      "discovery_query": "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"сентября 2023\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"октября 2023\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"ноября 2023\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"декабря 2023\"",
+      "metadata_source": "web_search_source_excerpt"
+    },
+    {
+      "title": "Инструктажи в преддверие новогодних праздников и особый противопожарный режим",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/5173017",
+      "published_text": "21 декабря 2023, 09:57",
+      "discovery_query": "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"сентября 2023\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"октября 2023\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"ноября 2023\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"декабря 2023\"",
+      "metadata_source": "web_search_source_excerpt"
+    },
+    {
+      "title": "Набор абитуриентов в образовательные учреждения МЧС России",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/5112775",
+      "published_text": "27 сентября 2023, 17:06",
+      "discovery_query": "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"сентября 2023\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"октября 2023\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"ноября 2023\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"декабря 2023\"",
+      "metadata_source": "web_search_source_excerpt"
+    },
+    {
+      "title": "На пожаре в Кваркенском районе ликвидировано открытое горение",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/5166091",
+      "published_text": "12 декабря 2023, 06:39",
+      "discovery_query": "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"сентября 2023\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"октября 2023\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"ноября 2023\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"декабря 2023\"",
+      "metadata_source": "web_search_source_excerpt"
+    },
+    {
+      "title": "Поздравление начальника Главного управления Александра Зенова с Днем спасателя Российской Федерации",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/5176873",
+      "published_text": "27 декабря 2023, 08:00",
+      "discovery_query": "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"сентября 2023\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"октября 2023\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"ноября 2023\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"декабря 2023\"",
+      "metadata_source": "web_search_source_excerpt"
+    },
+    {
+      "title": "Сотрудники МЧС России продолжают ликвидировать последствия весеннего половодья и оказывать адресную помощь населению",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/5247402",
+      "published_text": "4 апреля 2024, 10:21",
+      "discovery_query": "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"января 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"февраля 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"марта 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"апреля 2024\"",
+      "metadata_source": "web_search_source_excerpt"
+    },
+    {
+      "title": "Глава МЧС России Александр Куренков и Губернатор Оренбургской области Денис Паслер на вертолете облетели территории Орска, пострадавшие от весеннего половодья",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/5262150",
+      "published_text": "23 апреля 2024, 11:41",
+      "discovery_query": "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"января 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"февраля 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"марта 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"апреля 2024\"",
+      "metadata_source": "web_search_source_excerpt"
+    },
+    {
+      "title": "Сотрудники МЧС России продолжают работы в подтопленных регионах",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/5256784",
+      "published_text": "16 апреля 2024, 20:25",
+      "discovery_query": "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"января 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"февраля 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"марта 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"апреля 2024\"",
+      "metadata_source": "web_search_source_excerpt"
+    },
+    {
+      "title": "МЧС России наращивает группировки сил и средств в местах возможного осложнения обстановки",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/5250366",
+      "published_text": "8 апреля 2024, 15:28",
+      "discovery_query": "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"января 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"февраля 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"марта 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"апреля 2024\"",
+      "metadata_source": "web_search_source_excerpt"
+    },
+    {
+      "title": "Спасатели МЧС России круглосуточно работают в зоне паводков",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/5250181",
+      "published_text": "8 апреля 2024, 11:39",
+      "discovery_query": "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"января 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"февраля 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"марта 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"апреля 2024\"",
+      "metadata_source": "web_search_source_excerpt"
+    },
+    {
+      "title": "Соблюдайте правила пожарной безопасности при хранении и эксплуатации газовых баллонов",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/5208959",
+      "published_text": "10 февраля 2024, 09:01",
+      "discovery_query": "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"января 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"февраля 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"марта 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"апреля 2024\"",
+      "metadata_source": "web_search_source_excerpt"
+    },
+    {
+      "title": "В Орске спасатели МЧС России продолжают эвакуировать жителей из-за размыва дамбы",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/5249015",
+      "published_text": "6 апреля 2024, 08:42",
+      "discovery_query": "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"января 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"февраля 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"марта 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"апреля 2024\"",
+      "metadata_source": "web_search_source_excerpt"
+    },
+    {
+      "title": "О ситуации с паводком. Эвакуировано 46 человек",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/5245568",
+      "published_text": "2 апреля 2024, 00:46",
+      "discovery_query": "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"января 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"февраля 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"марта 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"апреля 2024\"",
+      "metadata_source": "web_search_source_excerpt"
+    },
+    {
+      "title": "МЧС России призывает население заранее эвакуироваться из районов возможных подтоплений",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/5249810",
+      "published_text": "7 апреля 2024, 20:08",
+      "discovery_query": "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"января 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"февраля 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"марта 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"апреля 2024\"",
+      "metadata_source": "web_search_source_excerpt"
+    },
+    {
+      "title": "Работы на подтопленных территориях ведутся круглосуточно",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/5254101",
+      "published_text": "13 апреля 2024, 10:05",
+      "discovery_query": "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"января 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"февраля 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"марта 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"апреля 2024\"",
+      "metadata_source": "web_search_source_excerpt"
+    },
+    {
+      "title": "24 человека погибли на пожарах в Оренбуржье с начала 2024 года",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/5236138",
+      "published_text": "19 марта 2024, 13:39",
+      "discovery_query": "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"января 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"февраля 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"марта 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"апреля 2024\"",
+      "metadata_source": "web_search_source_excerpt"
+    },
+    {
+      "title": "Спасатели МЧС России ликвидируют последствия паводка в пострадавших регионах",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/5268756",
+      "published_text": "3 мая 2024, 09:31",
+      "discovery_query": "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"мая 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"июня 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"июля 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"августа 2024\"",
+      "metadata_source": "web_search_source_excerpt"
+    },
+    {
+      "title": "Очередная неделя в Главном управлении МЧС России по Оренбургской области началась с торжественного события",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/5326709",
+      "published_text": "22 июля 2024, 17:38",
+      "discovery_query": "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"мая 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"июня 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"июля 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"августа 2024\"",
+      "metadata_source": "web_search_source_excerpt"
+    },
+    {
+      "title": "Не упусти свой шанс! Стань курсантoм вуза МЧС России",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/5294851",
+      "published_text": "9 июня 2024, 09:23",
+      "discovery_query": "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"мая 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"июня 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"июля 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"августа 2024\"",
+      "metadata_source": "web_search_source_excerpt"
+    },
+    {
+      "title": "Пожарная безопасность в жару: защитите себя и свой дом!",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/5323081",
+      "published_text": "17 июля 2024, 14:59",
+      "discovery_query": "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"мая 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"июня 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"июля 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"августа 2024\"",
+      "metadata_source": "web_search_source_excerpt"
+    },
+    {
+      "title": "Глава МЧС России посетил пункт длительного проживания в Орске",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/5308390",
+      "published_text": "26 июня 2024, 14:36",
+      "discovery_query": "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"мая 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"июня 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"июля 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"августа 2024\"",
+      "metadata_source": "web_search_source_excerpt"
+    },
+    {
+      "title": "54 человека погибли на пожарах в Оренбургской области с начала 2024 года",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/5348814",
+      "published_text": "26 августа 2024, 12:55",
+      "discovery_query": "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"мая 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"июня 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"июля 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"августа 2024\"",
+      "metadata_source": "web_search_source_excerpt"
+    },
+    {
+      "title": "Ночная тренировка пожарных Абдулино",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/5289817",
+      "published_text": "2 июня 2024, 08:40",
+      "discovery_query": "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"мая 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"июня 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"июля 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"августа 2024\"",
+      "metadata_source": "web_search_source_excerpt"
+    },
+    {
+      "title": "В Тоцком районе на пожаре погибли два человека",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/5312247",
+      "published_text": "2 июля 2024, 09:15",
+      "discovery_query": "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"мая 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"июня 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"июля 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"августа 2024\"",
+      "metadata_source": "web_search_source_excerpt"
+    },
+    {
+      "title": "В Оренбуржье огнем уничтожено более 600 гектаров сухой растительности",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/5292785",
+      "published_text": "4 июня 2024, 16:55",
+      "discovery_query": "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"мая 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"июня 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"июля 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"августа 2024\"",
+      "metadata_source": "web_search_source_excerpt"
+    },
+    {
+      "title": "Глава МЧС России Александр Куренков провел заседание Правительственной комиссии по предупреждению и ликвидации последствий паводка",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/5363855",
+      "published_text": "18 сентября 2024, 18:12",
+      "discovery_query": "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"сентября 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"октября 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"ноября 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"декабря 2024\"",
+      "metadata_source": "web_search_source_excerpt"
+    },
+    {
+      "title": "Будь внимателен и предельно осторожен за рулём!",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/5374472",
+      "published_text": "5 октября 2024, 14:50",
+      "discovery_query": "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"сентября 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"октября 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"ноября 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"декабря 2024\"",
+      "metadata_source": "web_search_source_excerpt"
+    },
+    {
+      "title": "Сотрудникам ГУ МЧС России вручили специальные звания и медали",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/5354100",
+      "published_text": "3 сентября 2024, 12:59",
+      "discovery_query": "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"сентября 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"октября 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"ноября 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"декабря 2024\"",
+      "metadata_source": "web_search_source_excerpt"
+    },
+    {
+      "title": "74 человека погибли на пожарах в Оренбургской области с начала 2024 года",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/5391354",
+      "published_text": "31 октября 2024, 13:17",
+      "discovery_query": "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"сентября 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"октября 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"ноября 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"декабря 2024\"",
+      "metadata_source": "web_search_source_excerpt"
+    },
+    {
+      "title": "Глава МЧС России Александр Куренков поздравляет сотрудников ведомства с Днем спасателя",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/5427133",
+      "published_text": "27 декабря 2024, 07:30",
+      "discovery_query": "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"сентября 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"октября 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"ноября 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"декабря 2024\"",
+      "metadata_source": "web_search_source_excerpt"
+    },
+    {
+      "title": "Не забывай о безопасности в быту",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/5356055",
+      "published_text": "7 сентября 2024, 09:41",
+      "discovery_query": "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"сентября 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"октября 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"ноября 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"декабря 2024\"",
+      "metadata_source": "web_search_source_excerpt"
+    },
+    {
+      "title": "В Оренбурге подвели итоги работы по координации деятельности всех видов пожарной охраны",
+      "url": "https://56.mchs.gov.ru/deyatelnost/press-centr/novosti/5422220",
+      "published_text": "19 декабря 2024, 08:51",
+      "discovery_query": "site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"сентября 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"октября 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"ноября 2024\" | site:56.mchs.gov.ru/deyatelnost/press-centr/novosti/ \"декабря 2024\"",
+      "metadata_source": "web_search_source_excerpt"
+    }
+  ]
+}

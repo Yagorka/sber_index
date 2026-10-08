@@ -1,5 +1,5 @@
 {
-  "source_document": "metadata_municipal_dict_sberindex_2.pdf",
+  "source_document": "data/inputs/municipal_metadata.pdf",
   "extraction": "Manually verified against all 3 pages of the supplied PDF",
   "coverage_start_snapshot": "2018-01-01",
   "coverage_end_snapshot": "2024-01-01",

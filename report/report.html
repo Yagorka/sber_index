@@ -10,6 +10,7 @@ img{max-width:100%;height:auto}figure{margin:18px 0}figcaption{color:var(--muted
 </style></head><body><main><h1>Прогноз потребительских расходов муниципалитетов и ранние сигналы сдвигов</h1>
 <p>Отчёт построен автоматически из результатов запуска <code>municipal_20261004T140239Z</code>. Данные: СберИндекс, безналичные расходы на жителя по 12 096 рядам (2016 МО × 6 категорий), январь 2023 – декабрь 2024. Численные утверждения ниже прочитаны из файлов результатов. Каталог обученных моделей и все метрики: <code>docs/MODELS_AND_METRICS_RU.md</code>.</p>
 <h2>Резюме</h2>
+<p>Исходные результаты ниже сохранены. Аудит от 07.10.2026 уточнил ретроспективный характер весов и отсутствие стандартной гарантии исходных интервалов; новые эксперименты выполнены после просмотра теста и приведены в разделе 11.</p>
 <ul>
 <li><strong>Прогнозы 1/3/6/12 мес.</strong> Ансамбль на тесте имеет MAE 440/514/466/583 руб. против 640/719/736/1093 у Prophet, то есть на 31/28/37/47% меньше. Выбор моделей и весов заморожен до открытия теста.</li>
 <li><strong>Откуда выигрыш.</strong> Основной вклад — национальные ряды с 2018 г.: у МО всего 24 месяца, поэтому сезонность и рост берутся из страны, а по МО оценивается уровень и небольшая поправка. Абляция показывает вклад в явном виде.</li>
@@ -74,12 +75,12 @@ img{max-width:100%;height:auto}figure{margin:18px 0}figcaption{color:var(--muted
 </tr>
 </tbody>
 </table>
-<p>Лицензия данных СберИндекса — CC BY-SA 4.0. Муниципальные файлы в репозиторий не включены (<code>scripts/get_data.sh</code> скачивает их в <code>data/raw/</code>); небольшие национальные и недельные выгрузки лежат в корне проекта.</p>
+<p>Лицензия данных СберИндекса — CC BY-SA 4.0. Все входные данные хранятся локально в <code>data/inputs/</code> и исключены из Git. <code>make data</code> проверяет их наличие без скачивания; список файлов — <code>docs/INPUT_DATA_RU.md</code>.</p>
 <h2>2. Протокол оценки</h2>
 <p>Правила организатора мне неизвестны, поэтому использован «конкурсный» протокол, описанный в открытых работах участников: validation — цели янв.–июнь 2024, test — цели июль–декабрь 2024, расширяющееся окно, прогноз горизонтов 1/3/6/12 из каждого origin с историей не менее 6 месяцев. <strong>Допущение подлежит сверке с официальными правилами.</strong></p>
 <ol>
 <li>Для каждого origin и каждого ряда используются только значения ≤ origin; direct-метки обучения — только с целью ≤ origin (проверено тестами <code>tests/test_municipal.py</code>: изменение будущих значений не меняет признаки, метки и национальные приоры).</li>
-<li>Конфигурация структурной модели и веса ансамбля выбраны <strong>по validation</strong>; <code>frozen_selection.json</code> записан до подсчёта метрик теста. После первого показа теста модели, кандидаты и веса не менялись; изменения касались только расчёта Prophet для origin 12.2024 (нужен для прогноза 2025, на тест не влияет) и оформления. Значительная часть решений (дрейф без экстраполяции за обученный горизонт, сжатие 0.25) принята по validation после того, как первая версия модели провалилась на h=6.</li>
+<li>Конфигурация структурной модели и веса ансамбля выбраны <strong>по validation</strong>; <code>frozen_selection.json</code> записан до подсчёта метрик теста. В исходном запуске после первого показа теста модели, кандидаты и веса не менялись; изменения касались только расчёта Prophet для origin 12.2024 (нужен для прогноза 2025, на тест не влияет) и оформления. Значительная часть решений (дрейф без экстраполяции за обученный горизонт, сжатие 0.25) принята по validation после того, как первая версия модели провалилась на h=6.</li>
 <li>Метрика — MAE в рублях на жителя по всей сетке (сетки у всех моделей совпадают, покрытие 100%), дополнительно R² по уровню и по изменению.</li>
 <li>Неопределённость — парный bootstrap по МО (1000 повторов) и по целевым месяцам (6 месяцев).</li>
 <li>Допущения: значение месяца origin известно на origin; актуальная версия данных (без пересмотров); validation для h=12 содержит один целевой месяц (2024-06).</li>
@@ -92,10 +93,10 @@ img{max-width:100%;height:auto}figure{margin:18px 0}figcaption{color:var(--muted
 <li><strong>StructHGB:</strong> градиентный бустинг (MAE) по остатку относительно NatPath: признаки — локальные импульсы относительно страны, шум, сезонные разности, региональные и категорийные средние, статические признаки МО. Дрейф на месяц умножается на горизонт, <strong>но не дальше обученного</strong> (h ≤ origin−5) и сжимается на валидации (коэффициент 0.25).</li>
 <li><strong>Foundation:</strong> Chronos-Bolt-small, Chronos-2 (zero-shot), Chronos-2 + национальный путь как ковариата, TimesFM-2.5 (подвыборка). Ревизии чекпойнтов в <code>artifacts/municipal_runs/_foundation/*_meta.json</code>.</li>
 <li><strong>Ансамбль:</strong> веса минимизируют MAE на validation (линейная программа, симплекс), отдельно по горизонтам.</li>
-<li><strong>Интервалы:</strong> split-conformal по относительной ошибке на validation, по (горизонту, категории).</li>
+<li><strong>Интервалы:</strong> эмпирические квантили на общей validation; стандартная conformal-гарантия не заявляется.</li>
 </ul>
 <h2>4. Прогноз 1/3/6/12 мес.</h2>
-<p><strong>Главный результат.</strong> На независимом тесте (цели июль–декабрь 2024, 12 096 рядов) замороженный ансамбль имеет MAE <strong>440 / 514 / 466 / 583 руб. на жителя</strong> для горизонтов 1 / 3 / 6 / 12 мес. против <strong>640 / 719 / 736 / 1093</strong> у Prophet. Снижение — <strong>31% / 28% / 37% / 47%</strong>.
+<p><strong>Результат исходного запуска.</strong> На ретроспективном тесте (цели июль–декабрь 2024, 12 096 рядов) замороженный ансамбль имеет MAE <strong>440 / 514 / 466 / 583 руб. на жителя</strong> для горизонтов 1 / 3 / 6 / 12 мес. против <strong>640 / 719 / 736 / 1093</strong> у Prophet по умолчанию. Снижение — <strong>31% / 28% / 37% / 47%</strong>.
 Парный bootstrap по МО (1000 повторов) даёт 95% интервалы разности MAE строго ниже нуля на всех горизонтах; bootstrap по шести целевым месяцам (общий шок месяца не усредняется по МО) также исключает ноль на всех горизонтах.
 R² по изменению относительно origin (динамика, а не масштаб МО): ансамбль 0.67 / 0.74 / 0.84 / 0.69, Prophet 0.13 / 0.42 / 0.53 / -0.44. Обычный R² по уровню 0.97–0.996 у всех моделей и почти ничего не показывает: уровень определяется масштабом МО.</p>
 <h3>Таблица теста</h3>
@@ -428,7 +429,7 @@ R² по изменению относительно origin (динамика, �
 </tr>
 </tbody>
 </table>
-<p>Интервалы split-conformal по относительной ошибке на validation, отдельно для горизонта и категории. На тесте покрытие близко к номиналу 0.9.</p>
+<p>Исходные интервалы используют ту же validation, где выбирались веса. Стандартная гарантия split-conformal не заявляется. Отдельная последовательная калибровка проверена в дополнении от 07.10.2026.</p>
 <h3>Фундаментальные модели (zero-shot)</h3>
 <table>
 <thead>
@@ -562,7 +563,7 @@ R² по изменению относительно origin (динамика, �
 <figure><img src="../artifacts/figures/map_gain_vs_prophet.png" alt="Карта выигрыша у Prophet по МО (категория «Все категории»)"><figcaption>Карта выигрыша у Prophet по МО (категория «Все категории»)</figcaption></figure>
 
 <h2>5. Структурные изменения: обнаружение и предупреждение</h2>
-<p>Детекторы CUSUM, Page–Hinkley и BOCPD подаются стандартизированными остатками прогноза h=1, выпущенного до наблюдения (национальный путь × локальный уровень). Масштаб остатка считается только по прошлому и сжимается к масштабу категории. Пороги подобраны на месяцах 10–17 при бюджете <strong>1 ложная тревога на 100 ряд-месяцев</strong>, оценка — на месяцах 18–23. Реальных размеченных шоков по МО у нас нет, поэтому оценка идёт тремя независимыми способами, и ни один из них не называется «истиной».</p>
+<p>Детекторы CUSUM, Page–Hinkley и BOCPD подаются стандартизированными остатками прогноза h=1, выпущенного до наблюдения (национальный путь × локальный уровень). Масштаб остатка считается только по прошлому и сжимается к масштабу категории. Пороги подобраны на месяцах 10–17 при бюджете <strong>1 ложная тревога на 100 ряд-месяцев</strong>, оценка — на месяцах 18–23. Реальных размеченных шоков по МО у нас нет, поэтому оценка идёт тремя способами диагностики, и ни один из них не называется «истиной».</p>
 <h3>A. Инъекция известных сдвигов в реальные остатки</h3>
 <p>Сдвиг ±1.5/2.5/4σ добавляется в 5% рядов (604 события) на месяцы 18–20; остальные 95% остаются реальными и служат фоном для ложных тревог. Пять независимых повторов.</p>
 <table>
@@ -643,7 +644,7 @@ R² по изменению относительно origin (динамика, �
 </table>
 <p>Частота тревог на тесте выше, чем на калибровке (~2 против ≤1 на 100 ряд-месяцев): в тесте часть тревог — настоящие шоки или сезонные промахи прогноза (Дек–Янв), а не ложные. Поэтому precision здесь консервативна.</p>
 <h3>B. Реестр датированных событий</h3>
-<p>В реестре 7 событий (паводки, теракты, обстрелы; ссылки в <code>data/external/event_registry.csv</code>). Сопоставление с МО по названию внутри региона нашло 6 территорий. Белгорода, Курска и Суджи в панели нет (не прошли порог качества СберИндекса), а для Севастополя, Дербента и Махачкалы сопоставление по названию МО не нашло. Оценимы Орск, Оренбург, Новотроицк (паводок, 04.2024) и Красногорск («Крокус», 03.2024).</p>
+<p>В реестре 7 событий (паводки, теракты, обстрелы; ссылки в <code>data/inputs/event_registry.csv</code>). Сопоставление с МО по названию внутри региона нашло 6 территорий. Белгорода, Курска и Суджи в панели нет (не прошли порог качества СберИндекса), а для Севастополя, Дербента и Махачкалы сопоставление по названию МО не нашло. Оценимы Орск, Оренбург, Новотроицк (паводок, 04.2024) и Красногорск («Крокус», 03.2024).</p>
 <table>
 <thead>
 <tr>
@@ -940,7 +941,7 @@ R² по изменению относительно origin (динамика, �
 <p><strong>Навык раннего предупреждения не подтверждён</strong>: PR-AUC лишь немного выше доли событий, Brier не лучше константного прогноза, а при бюджете ложных тревог recall низкий. Нужны размеченные события и ряды длиннее; сейчас честный вывод — детекторы реагируют на уже начавшийся сдвиг, предсказывать его заранее по этим признакам не получается.</p>
 <figure><img src="../artifacts/figures/detectors_injection.png" alt="Детекторы на инъекциях в реальные остатки"><figcaption>Детекторы на инъекциях в реальные остатки</figcaption></figure>
 
-<figure><img src="../artifacts/figures/detector_examples.png" alt="Три реальных примера: событие, ложная тревога, срабатывание"><figcaption>Три реальных примера: событие, ложная тревога, срабатывание</figcaption></figure>
+<figure><img src="../artifacts/figures/detector_examples.png" alt="Три примера: событие, тревога без события в реестре, срабатывание"><figcaption>Три примера: событие, тревога без события в реестре, срабатывание</figcaption></figure>
 
 <figure><img src="../artifacts/figures/weekly_detectors_early_warning.png" alt="Недельные ряды: детекторы и раннее предупреждение"><figcaption>Недельные ряды: детекторы и раннее предупреждение</figcaption></figure>
 
@@ -1218,7 +1219,7 @@ R² по изменению относительно origin (динамика, �
 <p>Без поправки смещения недельный nowcast плох (MAE 125–137): ряды СберИндекса по транзакциям не равны месячному набору, согласованному с Росстатом, и поправка по прошлым месяцам обязательна. С поправкой: по одной неделе месяца — хуже h=1-ансамбля и SeasonalGrowth, по двум — лучше ансамбля, по трём сравним с SeasonalGrowth, по полному месяцу — ниже обоих (62.0 против 70.1 и 66.0). Выигрыш скромный и на 60 наблюдениях; это nowcast с частичной информацией целевого месяца, а не прогноз h=1.</p>
 <figure><img src="../artifacts/figures/nowcast.png" alt="Недельный nowcast против h=1"><figcaption>Недельный nowcast против h=1</figcaption></figure>
 
-<h2>8. Прогноз 2025 и независимая проверка</h2>
+<h2>8. Ретроспективный прогноз 2025 и ожидаемая проверка</h2>
 <p>Прогноз на 12 месяцев 2025 г. построен от origin = 12.2024 и заморожен вместе с SHA256 (<code>prospective/</code>); фактов по МО за 2025 нет, и скрипт <code>scripts/score_prospective.py</code> посчитает MAE, когда они появятся.</p>
 <p>Санити-проверка по национальным фактам 2025 г. (модель их не видела): средний по МО г/г рост прогноза против национального г/г роста, среднее модуля разницы, п.п.:</p>
 <table>
@@ -1265,13 +1266,1680 @@ R² по изменению относительно origin (динамика, �
 <li>Модели обучались на последней версии данных; даты публикации и пересмотры неизвестны.</li>
 <li>Foundation-модели оценены без дообучения; TimesFM — только на подвыборке 200 МО; возможное пересечение их обучающих данных с 2023–2024 гг. проверить нельзя.</li>
 <li>Метки шоков по МО отсутствуют: оценка детекторов опирается на инъекцию, 4 события из реестра и proxy-разметку.</li>
-<li>«Новости» — не текстовый корпус, а короткий реестр и решения ЦБ.</li>
+<li>В исходном опыте новости представлены коротким реестром и решениями ЦБ; расширенный региональный корпус проверен отдельно в дополнении.</li>
 <li>В панели 2 016 МО из 2 594 в справочнике (73 региона из 85): МО, не прошедшие порог качества СберИндекса, отсутствуют (например, Белгород, Курск, Краснодар); 1 044 неполных ряда исключены.</li>
 </ul>
 <h2>10. Воспроизведение</h2>
 <pre><code class="language-bash">conda env create -f environment.yml &amp;&amp; conda activate sber   # Python 3.12
-bash scripts/get_data.sh                                     # открытые данные конкурса -&gt; data/raw/
+make data                                                   # локальные входы в data/inputs/, без скачивания
 make municipal                                               # Prophet, Chronos, структурная модель, ансамбль, метрики
 make shocks                                                  # детекторы и недельные ряды
 make report                                                  # отчёт, слайды, лендинг
-</code></pre></main></body></html>
+</code></pre>
+<h2>11. Доработка исследования после аудита</h2>
+<p>Перенос национальной динамики на короткие муниципальные ряды</p>
+<p>Дополнение от 07.10.2026, запуск <code>research_20261007T073840_163667Z</code>. <strong>Все эксперименты этого дополнения выполнены после просмотра теста 2024H2.</strong> Это анализ устойчивости и новые исследовательские результаты; они не превращают просмотренный тест в независимый. Исходные прогнозы и файлы <code>prospective/</code> сохранены.</p>
+<h3>Исследовательский вопрос и вклад</h3>
+<p>Можно ли прогнозировать расходы муниципалитета с 6–24 месяцами истории, перенося сезонность и рост из длинных национальных рядов? Гипотеза: основную пользу приносит общий национальный путь, а локальная нелинейная коррекция даёт небольшую прибавку. Проверяем MAE в рублях, WAPE, медианную относительную ошибку и долю выигравших территорий на общей сетке.</p>
+<p>Это прикладная проверка переноса информации между уровнями, а не заявка на новый алгоритм ансамблирования или conformal prediction. Общие и локальные модели обсуждаются в <a href="https://arxiv.org/abs/2008.00444">Montero-Manso и Hyndman</a>. Наше отличие — явное разложение на муниципальный уровень и национальную траекторию, проверка доступности параметров и разбор короткой истории в этой панели. Полноценного обзора всех решений конкурса нет.</p>
+<h3>Сильные базы и цена усложнения</h3>
+<p>MAE на просмотренном тесте, полная панель 2 016 МО × 6 категорий:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Модель</th>
+<th style="text-align: right;">h=1</th>
+<th style="text-align: right;">h=3</th>
+<th style="text-align: right;">h=6</th>
+<th style="text-align: right;">h=12</th>
+<th style="text-align: right;">Среднее по h</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Ensemble</td>
+<td style="text-align: right;">439.606</td>
+<td style="text-align: right;">513.868</td>
+<td style="text-align: right;">466.104</td>
+<td style="text-align: right;">583.405</td>
+<td style="text-align: right;">500.746</td>
+</tr>
+<tr>
+<td style="text-align: left;">DevBlend_NoHGB</td>
+<td style="text-align: right;">445.466</td>
+<td style="text-align: right;">508.998</td>
+<td style="text-align: right;">462.879</td>
+<td style="text-align: right;">595.033</td>
+<td style="text-align: right;">503.094</td>
+</tr>
+<tr>
+<td style="text-align: left;">EqualBlend_NoHGB</td>
+<td style="text-align: right;">454.374</td>
+<td style="text-align: right;">541.812</td>
+<td style="text-align: right;">525.439</td>
+<td style="text-align: right;">628.111</td>
+<td style="text-align: right;">537.434</td>
+</tr>
+<tr>
+<td style="text-align: left;">PastOnlyBlend</td>
+<td style="text-align: right;">454.006</td>
+<td style="text-align: right;">539.040</td>
+<td style="text-align: right;">576.824</td>
+<td style="text-align: right;">628.111</td>
+<td style="text-align: right;">549.495</td>
+</tr>
+<tr>
+<td style="text-align: left;">SeasonalNaive_NatGrowth</td>
+<td style="text-align: right;">546.714</td>
+<td style="text-align: right;">542.560</td>
+<td style="text-align: right;">528.960</td>
+<td style="text-align: right;">612.419</td>
+<td style="text-align: right;">557.664</td>
+</tr>
+<tr>
+<td style="text-align: left;">Prophet</td>
+<td style="text-align: right;">640.425</td>
+<td style="text-align: right;">718.560</td>
+<td style="text-align: right;">736.483</td>
+<td style="text-align: right;">1092.845</td>
+<td style="text-align: right;">797.078</td>
+</tr>
+<tr>
+<td style="text-align: left;">RidgeSeasonal_DevSelected</td>
+<td style="text-align: right;">601.014</td>
+<td style="text-align: right;">713.457</td>
+<td style="text-align: right;">787.697</td>
+<td style="text-align: right;">969.596</td>
+<td style="text-align: right;">767.941</td>
+</tr>
+<tr>
+<td style="text-align: left;">WeeklyMarketplacePrior</td>
+<td style="text-align: right;">480.561</td>
+<td style="text-align: right;">507.459</td>
+<td style="text-align: right;">509.180</td>
+<td style="text-align: right;">619.345</td>
+<td style="text-align: right;">529.136</td>
+</tr>
+</tbody>
+</table>
+<p>DevBlend_NoHGB: Prophet + SeasonalNaive_NatGrowth + NatPath_K3, LAD-веса на validation. EqualBlend_NoHGB: те же три модели с фиксированными равными весами. Прибавка исходного ансамбля с HGB относительно DevBlend_NoHGB по средней MAE — <strong>0.47%</strong>. Уникальный вклад HGB мал; дополнительная сложность пока не обоснована большим выигрышем.</p>
+<p>NatPath_K1 имеет MAE 402.8 на h=1, ниже 439.6 у исходного ансамбля. Исходный ансамбль не является лучшим на каждом горизонте; выбирать победителя по текущему тесту для финального утверждения нельзя.</p>
+<p>Разность MAE исходного ансамбля и сильного SeasonalNaive_NatGrowth, 95% bootstrap по шести целевым месяцам (отрицательное — лучше ансамбль):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">h</th>
+<th style="text-align: right;">mae_difference</th>
+<th style="text-align: right;">month_ci_low</th>
+<th style="text-align: right;">month_ci_high</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">-107.108</td>
+<td style="text-align: right;">-162.146</td>
+<td style="text-align: right;">-38.208</td>
+</tr>
+<tr>
+<td style="text-align: right;">3.000</td>
+<td style="text-align: right;">-28.693</td>
+<td style="text-align: right;">-93.034</td>
+<td style="text-align: right;">32.860</td>
+</tr>
+<tr>
+<td style="text-align: right;">6.000</td>
+<td style="text-align: right;">-62.856</td>
+<td style="text-align: right;">-106.250</td>
+<td style="text-align: right;">-18.664</td>
+</tr>
+<tr>
+<td style="text-align: right;">12.000</td>
+<td style="text-align: right;">-29.015</td>
+<td style="text-align: right;">-83.609</td>
+<td style="text-align: right;">19.080</td>
+</tr>
+</tbody>
+</table>
+<p>На h=3 и h=12 интервалы включают ноль. Шесть месяцев недостаточны для уверенного вывода об устойчивости по времени; пространственный размер панели не добавляет независимых временных режимов. Bootstrap по месяцам здесь диагностический: временная зависимость и малое число месяцев ограничивают его интерпретацию.</p>
+<p>Явно сезонный Prophet проверен с Fourier order=2, двумя вариантами регуляризации, выбранными по validation. Все модели сравнены на <strong>одних и тех же 25 случайных МО / 150 рядах</strong>, seed=42; выполнено 5 700 подгонок. Это ограниченное исследование чувствительности, не официальный baseline и не полный поиск параметров.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">model</th>
+<th style="text-align: right;">1</th>
+<th style="text-align: right;">3</th>
+<th style="text-align: right;">6</th>
+<th style="text-align: right;">12</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Ensemble</td>
+<td style="text-align: right;">446.395</td>
+<td style="text-align: right;">520.725</td>
+<td style="text-align: right;">445.846</td>
+<td style="text-align: right;">547.694</td>
+</tr>
+<tr>
+<td style="text-align: left;">PastOnlyBlend</td>
+<td style="text-align: right;">459.294</td>
+<td style="text-align: right;">551.593</td>
+<td style="text-align: right;">570.228</td>
+<td style="text-align: right;">597.779</td>
+</tr>
+<tr>
+<td style="text-align: left;">Prophet</td>
+<td style="text-align: right;">674.727</td>
+<td style="text-align: right;">754.886</td>
+<td style="text-align: right;">732.361</td>
+<td style="text-align: right;">1016.425</td>
+</tr>
+<tr>
+<td style="text-align: left;">ProphetSeasonal_DevSelected</td>
+<td style="text-align: right;">581.839</td>
+<td style="text-align: right;">628.093</td>
+<td style="text-align: right;">690.507</td>
+<td style="text-align: right;">1917.265</td>
+</tr>
+<tr>
+<td style="text-align: left;">RidgeSeasonal_DevSelected</td>
+<td style="text-align: right;">626.596</td>
+<td style="text-align: right;">743.277</td>
+<td style="text-align: right;">790.271</td>
+<td style="text-align: right;">995.276</td>
+</tr>
+<tr>
+<td style="text-align: left;">SeasonalNaive_NatGrowth</td>
+<td style="text-align: right;">510.407</td>
+<td style="text-align: right;">504.155</td>
+<td style="text-align: right;">495.496</td>
+<td style="text-align: right;">623.672</td>
+</tr>
+</tbody>
+</table>
+<h3>Доступность параметров во времени</h3>
+<p>Исходные веса выбирались по целям до июня 2024 включительно. На h=12 прогнозы тестовых целей июля–декабря 2024 имеют origin июль–декабрь 2023: выбранные позднее веса тогда были недоступны. Это ретроспективная проверка метода, отделённая от численного as-of backtest.</p>
+<p>PastOnlyBlend подбирает веса только по ошибкам с target ≤ origin−2; последние два зрелых месяца оставлены калибровке. При менее двух месяцев подбора используются фиксированные равные веса. Для h=12 на данном тесте нет зрелых меток: используется именно fallback, а не параметры, обученные на будущих фактах. Случайная подвыборка подбора ограничена 3 000 строками, seed=42. Модели в этом сравнении не используют статические признаки среза 2024.</p>
+<p>Сохраняются: <code>past_only_selection_audit.csv</code>, <code>calibration_audit.csv</code>, <code>original_selection_time_audit.csv</code>. Ограничения: последняя версия данных, неизвестные задержки публикаций месячных значений и выбор полных рядов по всей истории. «As-of» относится к численным входам и весам при допущении доступности месяца origin; историческую доступность современного кода или винтажей оно не доказывает.</p>
+<h3>Интервалы: калибровка отделена от подбора</h3>
+<p>Последовательная калибровка использует ошибки ранее выданных прогнозов; её целевые месяцы исключены из текущего подбора весов. Из-за коррелированных территорий, короткой истории и изменения распределения гарантии обменного split-conformal не заявляются. <a href="https://arxiv.org/abs/2106.00170">Adaptive Conformal Inference</a> показывает важность отдельного рассмотрения изменения распределения; адаптивный алгоритм этой статьи здесь не реализован.</p>
+<p>Среднее эмпирическое покрытие по категориям и месяцам:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">h</th>
+<th style="text-align: right;">availability</th>
+<th style="text-align: right;">coverage</th>
+<th style="text-align: right;">relative_half_width</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">0.859</td>
+<td style="text-align: right;">0.159</td>
+</tr>
+<tr>
+<td style="text-align: right;">3.000</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">0.867</td>
+<td style="text-align: right;">0.244</td>
+</tr>
+<tr>
+<td style="text-align: right;">6.000</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">0.927</td>
+<td style="text-align: right;">0.304</td>
+</tr>
+<tr>
+<td style="text-align: right;">12.000</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">nan</td>
+</tr>
+</tbody>
+</table>
+<p>На h=1 и h=3 есть недопокрытие относительно 90%. На h=12 интервал недоступен: нулевую доступность нельзя заменять высоким покрытием. Полный разрез по категориям и месяцам — <code>past_only_intervals.csv</code>.</p>
+<p>Исходные интервалы были рассчитаны по той же validation, где выбирались веса. Их старые значения сохранены как эмпирическая диагностика; стандартная гарантия split-conformal к ним неприменима.</p>
+<h3>Внешние данные: маркетплейсы и инфляция</h3>
+<p>В имеющейся выгрузке найден недельный рост расходов на маркетплейсах с 12.11.2023. Новый prior использует медиану доступных недель последних 13 недель (минимум 4) и расход МО того же месяца год назад. Доступность недели = период + 7 дней; неизвестный или недоступный prior заменяется SeasonalNaive_NatGrowth. Чужая будущая неделя не используется. Для остальных категорий прогноз базы не меняется.</p>
+<p>MAE только по маркетплейсам, одна сетка:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Модель</th>
+<th style="text-align: right;">1</th>
+<th style="text-align: right;">3</th>
+<th style="text-align: right;">6</th>
+<th style="text-align: right;">12</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Ensemble</td>
+<td style="text-align: right;">521.442</td>
+<td style="text-align: right;">575.929</td>
+<td style="text-align: right;">661.425</td>
+<td style="text-align: right;">1083.842</td>
+</tr>
+<tr>
+<td style="text-align: left;">PastOnlyBlend</td>
+<td style="text-align: right;">561.048</td>
+<td style="text-align: right;">569.589</td>
+<td style="text-align: right;">541.311</td>
+<td style="text-align: right;">1131.560</td>
+</tr>
+<tr>
+<td style="text-align: left;">WeeklyMarketplacePrior</td>
+<td style="text-align: right;">617.427</td>
+<td style="text-align: right;">747.900</td>
+<td style="text-align: right;">845.292</td>
+<td style="text-align: right;">1357.207</td>
+</tr>
+<tr>
+<td style="text-align: left;">SeasonalNaive_NatGrowth</td>
+<td style="text-align: right;">1014.348</td>
+<td style="text-align: right;">958.511</td>
+<td style="text-align: right;">963.972</td>
+<td style="text-align: right;">1315.653</td>
+</tr>
+</tbody>
+</table>
+<p>Источник категории «Непродовольственные товары» слишком широк для маркетплейсов; недельная категория совпадает по названию, но равенство транзакционного охвата не подтверждено. Улучшение относительно прежнего сезонного правила есть на h=1/3/6, на h=12 его нет; замена всего исходного ансамбля этим правилом не обоснована. Такой prior теперь можно проверять на следующем независимом периоде.</p>
+<p>Для интерпретации добавлен национальный ИПЦ декабря 2024 к декабрю 2023 из <a href="https://rosstat.gov.ru/storage/mediabank/1_15-01-2025.html">Росстата</a>, опубликованный 15.01.2025. Он не подаётся в исторические прогнозы 2024 года.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">category</th>
+<th style="text-align: left;">price_group</th>
+<th style="text-align: right;">nominal_yoy_mean_pct</th>
+<th style="text-align: right;">deflated_proxy_yoy_mean_pct</th>
+<th style="text-align: right;">cpi_yoy_pct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Все категории</td>
+<td style="text-align: left;">Все товары и услуги</td>
+<td style="text-align: right;">14.353</td>
+<td style="text-align: right;">4.413</td>
+<td style="text-align: right;">9.520</td>
+</tr>
+<tr>
+<td style="text-align: left;">Продовольствие</td>
+<td style="text-align: left;">Продовольственные товары</td>
+<td style="text-align: right;">5.958</td>
+<td style="text-align: right;">-4.585</td>
+<td style="text-align: right;">11.050</td>
+</tr>
+</tbody>
+</table>
+<p>Дефлированный показатель — диагностический proxy. Он не отделяет объём потребления от изменений структуры корзины, охвата платежей и состава клиентов. Для общепита, здоровья и маркетплейсов соответствующий точный дефлятор не найден; широкие индексы не подставляются как эквивалент.</p>
+<h3>Экономическая интерпретация и устойчивость</h3>
+<p>Средний г/г рост по месяцам 2024: национальный proxy и муниципальная панель отличаются; соответствие категорий является допущением.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">category</th>
+<th style="text-align: right;">mean_local_yoy_pct</th>
+<th style="text-align: right;">median_local_yoy_pct</th>
+<th style="text-align: right;">national_proxy_yoy_pct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Все категории</td>
+<td style="text-align: right;">14.867</td>
+<td style="text-align: right;">14.928</td>
+<td style="text-align: right;">16.088</td>
+</tr>
+<tr>
+<td style="text-align: left;">Здоровье</td>
+<td style="text-align: right;">10.227</td>
+<td style="text-align: right;">10.702</td>
+<td style="text-align: right;">17.328</td>
+</tr>
+<tr>
+<td style="text-align: left;">Маркетплейсы</td>
+<td style="text-align: right;">64.686</td>
+<td style="text-align: right;">56.594</td>
+<td style="text-align: right;">17.328</td>
+</tr>
+<tr>
+<td style="text-align: left;">Общественное питание</td>
+<td style="text-align: right;">19.925</td>
+<td style="text-align: right;">17.378</td>
+<td style="text-align: right;">23.131</td>
+</tr>
+<tr>
+<td style="text-align: left;">Продовольствие</td>
+<td style="text-align: right;">10.126</td>
+<td style="text-align: right;">10.695</td>
+<td style="text-align: right;">14.773</td>
+</tr>
+<tr>
+<td style="text-align: left;">Транспорт</td>
+<td style="text-align: right;">8.598</td>
+<td style="text-align: right;">9.157</td>
+<td style="text-align: right;">14.952</td>
+</tr>
+</tbody>
+</table>
+<p>Прогноз 2025: чувствительность к агрегированию (среднее по 12 месяцам):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">category</th>
+<th style="text-align: right;">mean_mo_yoy_pct</th>
+<th style="text-align: right;">ratio_of_sums_yoy_pct</th>
+<th style="text-align: right;">national_actual_yoy_pct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Все категории</td>
+<td style="text-align: right;">16.026</td>
+<td style="text-align: right;">16.166</td>
+<td style="text-align: right;">14.153</td>
+</tr>
+<tr>
+<td style="text-align: left;">Общественное питание</td>
+<td style="text-align: right;">20.753</td>
+<td style="text-align: right;">20.349</td>
+<td style="text-align: right;">49.456</td>
+</tr>
+<tr>
+<td style="text-align: left;">Продовольствие</td>
+<td style="text-align: right;">12.490</td>
+<td style="text-align: right;">12.581</td>
+<td style="text-align: right;">12.343</td>
+</tr>
+</tbody>
+</table>
+<p>По общепиту переход от среднего роста МО к отношению сумм почти не устраняет разрыв с национальным фактом. <strong>Различие весов этих двух способов не объясняет расхождение.</strong> Причина остаётся неустановленной: нужны проверка определений категорий, охвата и возможных изменений измерения. Отношение сумм расходов на жителя не является суммой денежных расходов страны: для неё нужны веса населения.</p>
+<p>Доля МО с улучшением против сильной сезонной базы:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">model</th>
+<th style="text-align: left;">comparator</th>
+<th style="text-align: right;">h</th>
+<th style="text-align: right;">municipal_win_share</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Ensemble</td>
+<td style="text-align: left;">SeasonalNaive_NatGrowth</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.804</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ensemble</td>
+<td style="text-align: left;">SeasonalNaive_NatGrowth</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.569</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ensemble</td>
+<td style="text-align: left;">SeasonalNaive_NatGrowth</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0.833</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ensemble</td>
+<td style="text-align: left;">SeasonalNaive_NatGrowth</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">0.603</td>
+</tr>
+<tr>
+<td style="text-align: left;">PastOnlyBlend</td>
+<td style="text-align: left;">SeasonalNaive_NatGrowth</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.760</td>
+</tr>
+<tr>
+<td style="text-align: left;">PastOnlyBlend</td>
+<td style="text-align: left;">SeasonalNaive_NatGrowth</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.519</td>
+</tr>
+<tr>
+<td style="text-align: left;">PastOnlyBlend</td>
+<td style="text-align: left;">SeasonalNaive_NatGrowth</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0.322</td>
+</tr>
+<tr>
+<td style="text-align: left;">PastOnlyBlend</td>
+<td style="text-align: left;">SeasonalNaive_NatGrowth</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">0.481</td>
+</tr>
+</tbody>
+</table>
+<p>Категории: MAE, WAPE и медианная относительная ошибка; значения усреднены по месяцам и горизонтам:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">model</th>
+<th style="text-align: left;">value</th>
+<th style="text-align: right;">mae</th>
+<th style="text-align: right;">wape</th>
+<th style="text-align: right;">median_ape</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Ensemble</td>
+<td style="text-align: left;">Все категории</td>
+<td style="text-align: right;">1236.331</td>
+<td style="text-align: right;">0.039</td>
+<td style="text-align: right;">0.033</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ensemble</td>
+<td style="text-align: left;">Здоровье</td>
+<td style="text-align: right;">137.634</td>
+<td style="text-align: right;">0.093</td>
+<td style="text-align: right;">0.085</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ensemble</td>
+<td style="text-align: left;">Маркетплейсы</td>
+<td style="text-align: right;">710.659</td>
+<td style="text-align: right;">0.132</td>
+<td style="text-align: right;">0.124</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ensemble</td>
+<td style="text-align: left;">Общественное питание</td>
+<td style="text-align: right;">132.715</td>
+<td style="text-align: right;">0.099</td>
+<td style="text-align: right;">0.104</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ensemble</td>
+<td style="text-align: left;">Продовольствие</td>
+<td style="text-align: right;">652.107</td>
+<td style="text-align: right;">0.052</td>
+<td style="text-align: right;">0.046</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ensemble</td>
+<td style="text-align: left;">Транспорт</td>
+<td style="text-align: right;">135.029</td>
+<td style="text-align: right;">0.071</td>
+<td style="text-align: right;">0.061</td>
+</tr>
+<tr>
+<td style="text-align: left;">PastOnlyBlend</td>
+<td style="text-align: left;">Все категории</td>
+<td style="text-align: right;">1399.182</td>
+<td style="text-align: right;">0.044</td>
+<td style="text-align: right;">0.038</td>
+</tr>
+<tr>
+<td style="text-align: left;">PastOnlyBlend</td>
+<td style="text-align: left;">Здоровье</td>
+<td style="text-align: right;">165.339</td>
+<td style="text-align: right;">0.112</td>
+<td style="text-align: right;">0.106</td>
+</tr>
+<tr>
+<td style="text-align: left;">PastOnlyBlend</td>
+<td style="text-align: left;">Маркетплейсы</td>
+<td style="text-align: right;">700.877</td>
+<td style="text-align: right;">0.129</td>
+<td style="text-align: right;">0.121</td>
+</tr>
+<tr>
+<td style="text-align: left;">PastOnlyBlend</td>
+<td style="text-align: left;">Общественное питание</td>
+<td style="text-align: right;">153.981</td>
+<td style="text-align: right;">0.114</td>
+<td style="text-align: right;">0.119</td>
+</tr>
+<tr>
+<td style="text-align: left;">PastOnlyBlend</td>
+<td style="text-align: left;">Продовольствие</td>
+<td style="text-align: right;">726.011</td>
+<td style="text-align: right;">0.058</td>
+<td style="text-align: right;">0.053</td>
+</tr>
+<tr>
+<td style="text-align: left;">PastOnlyBlend</td>
+<td style="text-align: left;">Транспорт</td>
+<td style="text-align: right;">151.581</td>
+<td style="text-align: right;">0.080</td>
+<td style="text-align: right;">0.070</td>
+</tr>
+</tbody>
+</table>
+<p>Десять регионов с наибольшим средним WAPE исходного ансамбля:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">value</th>
+<th style="text-align: right;">mae</th>
+<th style="text-align: right;">wape</th>
+<th style="text-align: right;">median_ape</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Республика Калмыкия</td>
+<td style="text-align: right;">564.178</td>
+<td style="text-align: right;">0.088</td>
+<td style="text-align: right;">0.116</td>
+</tr>
+<tr>
+<td style="text-align: left;">Республика Саха (Якутия)</td>
+<td style="text-align: right;">945.527</td>
+<td style="text-align: right;">0.082</td>
+<td style="text-align: right;">0.095</td>
+</tr>
+<tr>
+<td style="text-align: left;">Сахалинская область</td>
+<td style="text-align: right;">933.798</td>
+<td style="text-align: right;">0.081</td>
+<td style="text-align: right;">0.105</td>
+</tr>
+<tr>
+<td style="text-align: left;">Чукотский автономный округ</td>
+<td style="text-align: right;">1610.064</td>
+<td style="text-align: right;">0.081</td>
+<td style="text-align: right;">0.105</td>
+</tr>
+<tr>
+<td style="text-align: left;">Амурская область</td>
+<td style="text-align: right;">690.194</td>
+<td style="text-align: right;">0.079</td>
+<td style="text-align: right;">0.096</td>
+</tr>
+<tr>
+<td style="text-align: left;">Республика Тыва</td>
+<td style="text-align: right;">591.815</td>
+<td style="text-align: right;">0.079</td>
+<td style="text-align: right;">0.092</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ненецкий автономный округ</td>
+<td style="text-align: right;">1014.389</td>
+<td style="text-align: right;">0.078</td>
+<td style="text-align: right;">0.077</td>
+</tr>
+<tr>
+<td style="text-align: left;">Магаданская область</td>
+<td style="text-align: right;">1160.715</td>
+<td style="text-align: right;">0.077</td>
+<td style="text-align: right;">0.089</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ямало-Ненецкий автономный округ</td>
+<td style="text-align: right;">975.719</td>
+<td style="text-align: right;">0.071</td>
+<td style="text-align: right;">0.090</td>
+</tr>
+<tr>
+<td style="text-align: left;">Республика Марий Эл</td>
+<td style="text-align: right;">450.369</td>
+<td style="text-align: right;">0.070</td>
+<td style="text-align: right;">0.085</td>
+</tr>
+</tbody>
+</table>
+<p>Результаты относятся к полной наблюдаемой когорте, а не ко всем МО России. В «Все категории» входят расходы подкатегорий; средняя метрика по шести категориям не является суммой экономической полезности. Итоговые веса категорий следует согласовать с регламентом.</p>
+<h3>Официальные события и действие после тревоги</h3>
+<p>Добавлены три кейса с подтверждающими официальными публикациями. Дата события, дата публикации и дата проверки сохранены отдельно. Это внешние события, <strong>не независимые подтверждённые метки сдвига расходов</strong>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">event_id</th>
+<th style="text-align: left;">title</th>
+<th style="text-align: right;">matched_territories</th>
+<th style="text-align: left;">evaluable</th>
+<th style="text-align: left;">period_role</th>
+<th style="text-align: left;">reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">VC01</td>
+<td style="text-align: left;">Эвакуация жителей Орска после повреждения дамбы</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">True</td>
+<td style="text-align: left;">calibration</td>
+<td style="text-align: left;">available</td>
+</tr>
+<tr>
+<td style="text-align: left;">VC02</td>
+<td style="text-align: left;">Пожар и нападение в Крокус Сити Холле</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">True</td>
+<td style="text-align: left;">calibration</td>
+<td style="text-align: left;">available</td>
+</tr>
+<tr>
+<td style="text-align: left;">VC03</td>
+<td style="text-align: left;">Паводок в Уссурийске</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">False</td>
+<td style="text-align: left;">outside_calibration</td>
+<td style="text-align: left;">no_matched_rows_or_insufficient_history</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">event_id</th>
+<th style="text-align: left;">method</th>
+<th style="text-align: right;">series</th>
+<th style="text-align: right;">detected_share</th>
+<th style="text-align: right;">median_delay</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">VC01</td>
+<td style="text-align: left;">AbsZ</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">nan</td>
+</tr>
+<tr>
+<td style="text-align: left;">VC01</td>
+<td style="text-align: left;">BOCPD</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0.167</td>
+<td style="text-align: right;">3.000</td>
+</tr>
+<tr>
+<td style="text-align: left;">VC01</td>
+<td style="text-align: left;">CUSUM</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">nan</td>
+</tr>
+<tr>
+<td style="text-align: left;">VC01</td>
+<td style="text-align: left;">PageHinkley</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">nan</td>
+</tr>
+<tr>
+<td style="text-align: left;">VC02</td>
+<td style="text-align: left;">AbsZ</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">nan</td>
+</tr>
+<tr>
+<td style="text-align: left;">VC02</td>
+<td style="text-align: left;">BOCPD</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">nan</td>
+</tr>
+<tr>
+<td style="text-align: left;">VC02</td>
+<td style="text-align: left;">CUSUM</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">nan</td>
+</tr>
+<tr>
+<td style="text-align: left;">VC02</td>
+<td style="text-align: left;">PageHinkley</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">nan</td>
+</tr>
+</tbody>
+</table>
+<p>Два оценимых события относятся к периоду настройки порогов: это описательные кейсы, а не независимый событийный тест. Уссурийск сопоставлен, но история для стандартизации слишком коротка. BOCPD реагирует на одну из шести категорий Орска; реакция остальных методов и на Красногорск слабая. Отсутствие тревоги не доказывает отсутствие экономического воздействия.</p>
+<p>Добавлена база AbsZ: порог абсолютного стандартизованного остатка, подобранный по той же калибровке при бюджете 1 тревога на 100 ряд-месяцев; cooldown=3 месяца. Тревоги без события в коротком реестре сохранены в <code>unmatched_alarms.csv</code>; достоверно назвать их ложными нельзя.</p>
+<p>Проверена связка «тревога → коррекция будущего прогноза». После сигнала используем только доступный остаток, сжатие 0.5, ограничение log-коррекции ±0.3 и затухание за 3 месяца. Параметры заданы для этого исследовательского опыта, по тесту не оптимизировались. Разность MAE относительно неизменённого NatPath_K3 (отрицательное — лучше):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">method</th>
+<th style="text-align: right;">1</th>
+<th style="text-align: right;">3</th>
+<th style="text-align: right;">6</th>
+<th style="text-align: right;">12</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">AbsZ</td>
+<td style="text-align: right;">-0.553</td>
+<td style="text-align: right;">-0.696</td>
+<td style="text-align: right;">3.683</td>
+<td style="text-align: right;">-0.884</td>
+</tr>
+<tr>
+<td style="text-align: left;">BOCPD</td>
+<td style="text-align: right;">-11.453</td>
+<td style="text-align: right;">-7.820</td>
+<td style="text-align: right;">0.363</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr>
+<td style="text-align: left;">CUSUM</td>
+<td style="text-align: right;">-2.826</td>
+<td style="text-align: right;">4.705</td>
+<td style="text-align: right;">5.372</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr>
+<td style="text-align: left;">PageHinkley</td>
+<td style="text-align: right;">-7.708</td>
+<td style="text-align: right;">-3.424</td>
+<td style="text-align: right;">0.030</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+</tbody>
+</table>
+<p>Эффект небольшой и зависит от горизонта; раннее предупреждение будущего события этим не доказано. Действие начинается после наблюдения сигнала. Сравнение не заменяет существующую оценку детекторов на инъекциях и недельных proxy-метках.</p>
+<h3>Сценарий использования</h3>
+<p>Пользователь — региональный аналитик спроса. Он выбирает МО и категорию, смотрит прогноз расходов и диапазон неопределённости, сопоставляет отклонение с общим национальным ростом. При тревоге проверяет качество данных и официальные события; решение о коррекции принимает после проверки. Возможный результат — приоритет территории для ручного анализа. Экономия бюджета или эффект для бизнеса не измерены и не заявляются.</p>
+<p>Демонстрация: <code>presentation/research_demo.html</code>, без сервера и внешних библиотек. Три реальных кейса показывают факт, прогноз до наблюдения и тревоги; отдельная таблица показывает замороженный ретроспективный прогноз 2025, фактов МО за этот год нет.</p>
+<h3>Воспроизводимость и границы готовности</h3>
+<p>Полный снимок среды в <code>requirements.lock.txt</code>; <code>environment.yml</code> теперь использует его. HiGHS и BLAS ограничены одним потоком; команды Make используют пониженный приоритет. Исходный запуск воспроизведён по сохранённым прогнозам. <code>make verify</code> проверяет версии пакетов, SHA256 входов, доступность недельных данных, зрелость/разделение меток, сохранность файлов <code>prospective/</code> и совпадение исходных метрик.</p>
+<pre><code class="language-bash">conda env create -f environment.yml
+conda activate sber
+make test
+make research-prophet   # 1 worker; совместимый кэш используется повторно
+make research
+make verify
+make report
+</code></pre>
+<p>Перед research нужны исходные данные и прогнозы source_run. Полное воспроизведение с нуля: <code>make all</code>, затем команды выше; оно существенно дороже лёгкого повторного анализа. Установка зависимостей в новой среде с нуля и независимая внешняя временная отметка пока не подтверждены. Просмотренный тест не используется для заявления нового независимого выигрыша.</p>
+<p>Критерии и веса подтверждены пользователем 07.10.2026. Точный baseline и правила валидации ещё не предоставлены; подробной шкалы качества внутри критериев нет. Итоговое сопоставление — <code>docs/CRITERIA_AUDIT_RU.md</code>; баллы жюри и численный шанс на приз не оцениваются.</p>
+<hr />
+<h1>Влияние региональных новостей на прогнозы и детекторы</h1>
+<p>Пилот: Оренбургская область, 39 МО, 234 ряда, 24 месяца (2023–2024). Корпус — 28900 заголовков, 2 источника; публикации найдены в 24 из 24 месяцев. Запуск: <code>artifacts/regional_news_runs/news_20261007T171936_092637Z</code>. Расчёт занял 24.7 секунды, один вычислительный поток; обучение фундаментальных моделей не повторялось.</p>
+<p><strong>Вывод:</strong> Новостной вариант снижает MAE относительно without_news на горизонтах 1, 3, 12; повышает на 6. Сохранённый ансамбль точнее with_news на всех горизонтах. Результат исследовательский; детекторные сравнения чувствительны к финансовой proxy-разметке.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">source</th>
+<th style="text-align: right;">Публикаций</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">ГУ МЧС России по Оренбургской области</td>
+<td style="text-align: right;">53</td>
+</tr>
+<tr>
+<td style="text-align: left;">Оренбург Медиа</td>
+<td style="text-align: right;">28847</td>
+</tr>
+</tbody>
+</table>
+<h3>Протокол</h3>
+<p>Конфигурация — configs/news_impact.json. Обучение прогнозов: расширяющееся окно, метки только до origin включительно. Валидация — цели 01–06.2024, тест — 07–12.2024; горизонты 1/3/6/12. Ridge alpha=1000, shrink=0.25 и ограничение коррекции ±0.3 log заданы одинаково для вариантов до запуска. Категории кодируются индикаторами; заполнение пропусков и масштабирование обучаются только на прошлых строках. Будущий горизонт не усиливает дрейф дальше максимального обученного горизонта.</p>
+<p>Прогнозная база — национальный сезонный путь NatPath_K3; Ridge оценивает муниципальное отклонение. Сравниваются одинаковые модели: without_news, coverage_only (объём по источникам), with_news (все признаки), delayed_news_3m (задержка на 3 месяца), mchs_only (исходный корпус), crisis_only (ЧС из расширенного корпуса), economic_only (экономические темы). Последние два варианта сохраняют одинаковые признаки покрытия, изолируя темы. Задержанный контроль не использует будущие публикации раньше оригинала; он не является доказательством причинности.</p>
+<p>Новостные признаки: log(1+количество) за последние 1 и 3 календарных месяца, по источникам, десяти темам и известному МО. Четыре темы ЧС дополнены ценами, доходами/работой, выплатами, торговлей/услугами, предприятиями, транспортом/жильём. Пять признаков направления: рост/снижение цен, рост доходов, открытие/закрытие бизнеса. Всего 58 признаков; имена — news_feature_schema.json. Правила фиксированы без подбора по тесту. Материалы с неподтверждённой географией не создают тематический сигнал. При известном МО событие не переносится на все МО области. Заголовок может иметь несколько тем; упоминание суммы не превращается в финансовый показатель.</p>
+<p>Для детекторов используется сохранённый финансовый стандартизованный остаток z, рассчитанный по прошлой истории. Новостной вариант усиливает z в 1.5 раза только в месяц доступной тематической публикации соответствующей географии; нулевой финансовый остаток не превращается в тревогу. Пороги каждого варианта выбираются только на калибровке 11.2023–06.2024 при одном максимальном бюджете 1 тревога на 100 ряд-месяцев. Это бюджет общего количества тревог, а не доказанных ложных тревог. Реализованный бюджет может различаться из-за дискретной сетки. Тестовые частоты не обязаны соблюдать калибровочный бюджет.</p>
+<h3>Насыщение новостного входа</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">variant</th>
+<th style="text-align: right;">mean_fraction_series_with_signal</th>
+<th style="text-align: right;">months_same_as_coverage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">coverage_only</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr>
+<td style="text-align: left;">crisis_only</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr>
+<td style="text-align: left;">delayed_news_3m</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr>
+<td style="text-align: left;">economic_only</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr>
+<td style="text-align: left;">mchs_only</td>
+<td style="text-align: right;">0.004</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td style="text-align: left;">with_news</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr>
+<td style="text-align: left;">without_news</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+<p>При большом корпусе правило «есть хотя бы одна тематическая новость» может включаться во всех ряд-месяцах. Тогда новостной вариант лишь постоянно масштабирует финансовый остаток; изменение тревог объясняется масштабом и дискретной сеткой порогов. Совпадение с coverage_only означает, что дополнительная польза содержания новостей для детектора не показана. Следующий содержательный вариант должен проверять локальную интенсивность или новизну тем на новых данных; правило после просмотра теста здесь не подбиралось.</p>
+<h3>Прогнозы: основной контроль</h3>
+<p>Меньшая MAE лучше. Изменение положительное означает ухудшение.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Горизонт, мес</th>
+<th style="text-align: right;">MAE без новостей</th>
+<th style="text-align: right;">MAE с новостями</th>
+<th style="text-align: right;">Изменение MAE, %</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">394.555</td>
+<td style="text-align: right;">380.665</td>
+<td style="text-align: right;">-3.520</td>
+</tr>
+<tr>
+<td style="text-align: right;">3.000</td>
+<td style="text-align: right;">573.485</td>
+<td style="text-align: right;">545.454</td>
+<td style="text-align: right;">-4.888</td>
+</tr>
+<tr>
+<td style="text-align: right;">6.000</td>
+<td style="text-align: right;">555.054</td>
+<td style="text-align: right;">731.825</td>
+<td style="text-align: right;">31.848</td>
+</tr>
+<tr>
+<td style="text-align: right;">12.000</td>
+<td style="text-align: right;">755.427</td>
+<td style="text-align: right;">740.189</td>
+<td style="text-align: right;">-2.017</td>
+</tr>
+</tbody>
+</table>
+<p>Валидационные MAE:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">model</th>
+<th style="text-align: right;">1</th>
+<th style="text-align: right;">3</th>
+<th style="text-align: right;">6</th>
+<th style="text-align: right;">12</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">NatPath_K3</td>
+<td style="text-align: right;">358.540</td>
+<td style="text-align: right;">524.403</td>
+<td style="text-align: right;">739.684</td>
+<td style="text-align: right;">677.480</td>
+</tr>
+<tr>
+<td style="text-align: left;">coverage_only</td>
+<td style="text-align: right;">367.454</td>
+<td style="text-align: right;">436.039</td>
+<td style="text-align: right;">836.198</td>
+<td style="text-align: right;">677.480</td>
+</tr>
+<tr>
+<td style="text-align: left;">crisis_only</td>
+<td style="text-align: right;">340.679</td>
+<td style="text-align: right;">429.548</td>
+<td style="text-align: right;">744.357</td>
+<td style="text-align: right;">677.480</td>
+</tr>
+<tr>
+<td style="text-align: left;">delayed_news_3m</td>
+<td style="text-align: right;">332.770</td>
+<td style="text-align: right;">345.747</td>
+<td style="text-align: right;">720.716</td>
+<td style="text-align: right;">677.480</td>
+</tr>
+<tr>
+<td style="text-align: left;">economic_only</td>
+<td style="text-align: right;">349.545</td>
+<td style="text-align: right;">401.819</td>
+<td style="text-align: right;">748.919</td>
+<td style="text-align: right;">677.480</td>
+</tr>
+<tr>
+<td style="text-align: left;">mchs_only</td>
+<td style="text-align: right;">340.036</td>
+<td style="text-align: right;">349.436</td>
+<td style="text-align: right;">801.735</td>
+<td style="text-align: right;">677.480</td>
+</tr>
+<tr>
+<td style="text-align: left;">with_news</td>
+<td style="text-align: right;">347.913</td>
+<td style="text-align: right;">407.696</td>
+<td style="text-align: right;">753.600</td>
+<td style="text-align: right;">677.480</td>
+</tr>
+<tr>
+<td style="text-align: left;">without_news</td>
+<td style="text-align: right;">348.193</td>
+<td style="text-align: right;">336.700</td>
+<td style="text-align: right;">764.989</td>
+<td style="text-align: right;">677.480</td>
+</tr>
+</tbody>
+</table>
+<p>Выбор между without_news и with_news по валидации допускает новости на h=1,6; при равенстве выбирает without_news. Это исследовательский выбор внутри пилота, а не новая глобальная модель проекта.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">h</th>
+<th style="text-align: left;">selected_on_validation</th>
+<th style="text-align: right;">validation_mae_without_news</th>
+<th style="text-align: right;">validation_mae_with_news</th>
+<th style="text-align: right;">test_mae_selected</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">with_news</td>
+<td style="text-align: right;">348.193</td>
+<td style="text-align: right;">347.913</td>
+<td style="text-align: right;">380.665</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">without_news</td>
+<td style="text-align: right;">336.700</td>
+<td style="text-align: right;">407.696</td>
+<td style="text-align: right;">573.485</td>
+</tr>
+<tr>
+<td style="text-align: right;">6</td>
+<td style="text-align: left;">with_news</td>
+<td style="text-align: right;">764.989</td>
+<td style="text-align: right;">753.600</td>
+<td style="text-align: right;">731.825</td>
+</tr>
+<tr>
+<td style="text-align: right;">12</td>
+<td style="text-align: left;">without_news</td>
+<td style="text-align: right;">677.480</td>
+<td style="text-align: right;">677.480</td>
+<td style="text-align: right;">755.427</td>
+</tr>
+</tbody>
+</table>
+<p>Bootstrap по шести целевым месяцам, delta=MAE варианта − MAE без новостей:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">variant</th>
+<th style="text-align: right;">h</th>
+<th style="text-align: right;">delta_mae_vs_without_news</th>
+<th style="text-align: right;">month_ci_low</th>
+<th style="text-align: right;">month_ci_high</th>
+<th style="text-align: right;">municipality_ci_low</th>
+<th style="text-align: right;">municipality_ci_high</th>
+<th style="text-align: right;">target_months</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">with_news</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">-13.890</td>
+<td style="text-align: right;">-25.082</td>
+<td style="text-align: right;">-2.758</td>
+<td style="text-align: right;">-17.025</td>
+<td style="text-align: right;">-10.550</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr>
+<td style="text-align: left;">with_news</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">-28.032</td>
+<td style="text-align: right;">-85.514</td>
+<td style="text-align: right;">24.344</td>
+<td style="text-align: right;">-37.697</td>
+<td style="text-align: right;">-18.987</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr>
+<td style="text-align: left;">with_news</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">176.771</td>
+<td style="text-align: right;">-0.460</td>
+<td style="text-align: right;">356.405</td>
+<td style="text-align: right;">157.977</td>
+<td style="text-align: right;">197.515</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr>
+<td style="text-align: left;">with_news</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">-15.238</td>
+<td style="text-align: right;">-96.736</td>
+<td style="text-align: right;">64.117</td>
+<td style="text-align: right;">-28.701</td>
+<td style="text-align: right;">-5.708</td>
+<td style="text-align: right;">6</td>
+</tr>
+</tbody>
+</table>
+<p>Месячный интервал разности news−coverage целиком ниже нуля на h=1. Сравнения множественные и исследовательские. Узкие интервалы по МО не устраняют зависимость от общих региональных месяцев; шестимесячный тест не подтверждает устойчивость эффекта.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">h</th>
+<th style="text-align: right;">delta_mae_news_vs_coverage_only</th>
+<th style="text-align: right;">month_ci_low</th>
+<th style="text-align: right;">month_ci_high</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">-12.466</td>
+<td style="text-align: right;">-22.805</td>
+<td style="text-align: right;">-2.325</td>
+</tr>
+<tr>
+<td style="text-align: right;">3.000</td>
+<td style="text-align: right;">-31.763</td>
+<td style="text-align: right;">-99.907</td>
+<td style="text-align: right;">27.439</td>
+</tr>
+<tr>
+<td style="text-align: right;">6.000</td>
+<td style="text-align: right;">116.572</td>
+<td style="text-align: right;">9.876</td>
+<td style="text-align: right;">253.543</td>
+</tr>
+<tr>
+<td style="text-align: right;">12.000</td>
+<td style="text-align: right;">84.490</td>
+<td style="text-align: right;">22.628</td>
+<td style="text-align: right;">165.432</td>
+</tr>
+</tbody>
+</table>
+<p>Все новые варианты и сохранённые ориентиры на тех же рядах:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">model</th>
+<th style="text-align: right;">1</th>
+<th style="text-align: right;">3</th>
+<th style="text-align: right;">6</th>
+<th style="text-align: right;">12</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">CachedEnsemble</td>
+<td style="text-align: right;">367.332</td>
+<td style="text-align: right;">425.870</td>
+<td style="text-align: right;">424.662</td>
+<td style="text-align: right;">511.778</td>
+</tr>
+<tr>
+<td style="text-align: left;">CachedProphet</td>
+<td style="text-align: right;">466.109</td>
+<td style="text-align: right;">527.422</td>
+<td style="text-align: right;">533.743</td>
+<td style="text-align: right;">781.341</td>
+</tr>
+<tr>
+<td style="text-align: left;">NatPath_K3</td>
+<td style="text-align: right;">396.493</td>
+<td style="text-align: right;">619.356</td>
+<td style="text-align: right;">661.799</td>
+<td style="text-align: right;">584.683</td>
+</tr>
+<tr>
+<td style="text-align: left;">coverage_only</td>
+<td style="text-align: right;">393.131</td>
+<td style="text-align: right;">577.217</td>
+<td style="text-align: right;">615.254</td>
+<td style="text-align: right;">655.699</td>
+</tr>
+<tr>
+<td style="text-align: left;">crisis_only</td>
+<td style="text-align: right;">376.935</td>
+<td style="text-align: right;">533.075</td>
+<td style="text-align: right;">856.565</td>
+<td style="text-align: right;">765.625</td>
+</tr>
+<tr>
+<td style="text-align: left;">delayed_news_3m</td>
+<td style="text-align: right;">375.862</td>
+<td style="text-align: right;">559.070</td>
+<td style="text-align: right;">601.959</td>
+<td style="text-align: right;">797.093</td>
+</tr>
+<tr>
+<td style="text-align: left;">economic_only</td>
+<td style="text-align: right;">379.265</td>
+<td style="text-align: right;">554.430</td>
+<td style="text-align: right;">665.790</td>
+<td style="text-align: right;">704.811</td>
+</tr>
+<tr>
+<td style="text-align: left;">mchs_only</td>
+<td style="text-align: right;">386.594</td>
+<td style="text-align: right;">558.411</td>
+<td style="text-align: right;">583.609</td>
+<td style="text-align: right;">798.802</td>
+</tr>
+<tr>
+<td style="text-align: left;">with_news</td>
+<td style="text-align: right;">380.665</td>
+<td style="text-align: right;">545.454</td>
+<td style="text-align: right;">731.825</td>
+<td style="text-align: right;">740.189</td>
+</tr>
+<tr>
+<td style="text-align: left;">without_news</td>
+<td style="text-align: right;">394.555</td>
+<td style="text-align: right;">573.485</td>
+<td style="text-align: right;">555.054</td>
+<td style="text-align: right;">755.427</td>
+</tr>
+</tbody>
+</table>
+<p>CachedEnsemble/CachedProphet — ранее сохранённые прогнозы, они не переобучались и не являются парной абляцией архитектуры Ridge. Их ретроспективные ограничения описаны в основном аудите. Сохранённый ансамбль точнее with_news на всех горизонтах.</p>
+<h3>Какие признаки использовала модель</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">feature</th>
+<th style="text-align: right;">mean_abs_coefficient</th>
+<th style="text-align: right;">mean_signed_coefficient</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">log_local_fire_3m</td>
+<td style="text-align: right;">0.002</td>
+<td style="text-align: right;">0.002</td>
+</tr>
+<tr>
+<td style="text-align: left;">log_relevant_transport_housing_3m</td>
+<td style="text-align: right;">0.002</td>
+<td style="text-align: right;">-0.002</td>
+</tr>
+<tr>
+<td style="text-align: left;">log_relevant_weather_1m</td>
+<td style="text-align: right;">0.002</td>
+<td style="text-align: right;">-0.002</td>
+</tr>
+<tr>
+<td style="text-align: left;">log_business_closure_1m</td>
+<td style="text-align: right;">0.002</td>
+<td style="text-align: right;">0.002</td>
+</tr>
+<tr>
+<td style="text-align: left;">log_relevant_business_industry_3m</td>
+<td style="text-align: right;">0.002</td>
+<td style="text-align: right;">-0.002</td>
+</tr>
+<tr>
+<td style="text-align: left;">log_local_infrastructure_3m</td>
+<td style="text-align: right;">0.002</td>
+<td style="text-align: right;">0.002</td>
+</tr>
+<tr>
+<td style="text-align: left;">log_relevant_flood_or_evacuation_1m</td>
+<td style="text-align: right;">0.002</td>
+<td style="text-align: right;">0.001</td>
+</tr>
+<tr>
+<td style="text-align: left;">log_local_retail_services_3m</td>
+<td style="text-align: right;">0.002</td>
+<td style="text-align: right;">0.002</td>
+</tr>
+<tr>
+<td style="text-align: left;">log_relevant_payments_support_1m</td>
+<td style="text-align: right;">0.002</td>
+<td style="text-align: right;">-0.001</td>
+</tr>
+<tr>
+<td style="text-align: left;">log_relevant_fire_3m</td>
+<td style="text-align: right;">0.002</td>
+<td style="text-align: right;">-0.002</td>
+</tr>
+<tr>
+<td style="text-align: left;">log_local_payments_support_3m</td>
+<td style="text-align: right;">0.002</td>
+<td style="text-align: right;">0.002</td>
+</tr>
+<tr>
+<td style="text-align: left;">log_relevant_business_industry_1m</td>
+<td style="text-align: right;">0.002</td>
+<td style="text-align: right;">0.002</td>
+</tr>
+</tbody>
+</table>
+<p>Средние коэффициенты Ridge после стандартизации на origin≤17, до тестового периода. Это диагностика модели, не причинный эффект: темы коррелируют между собой и со временем.</p>
+<h3>Детекторы</h3>
+<p>Независимая от новостей ориентировочная разметка: DP-сегментация финансового z, минимальная длина сегмента 4, минимальный сдвиг 1.5σ. Проверены штрафы 2/4/8·log(T). Сами эти метки используют весь ряд и не являются доказанными реальными шоками. Новости не используются для формирования эталона. Совпадения считаются один-к-одному, задержка до 3 месяцев, только события и тревоги тестового периода.</p>
+<p>Основной срез штрафа 4:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">method</th>
+<th style="text-align: left;">variant</th>
+<th style="text-align: right;">n_proxy_events</th>
+<th style="text-align: right;">n_alarms</th>
+<th style="text-align: right;">matched_proxy_events</th>
+<th style="text-align: right;">proxy_precision</th>
+<th style="text-align: right;">proxy_recall</th>
+<th style="text-align: right;">proxy_f1</th>
+<th style="text-align: right;">median_delay_months</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">CUSUM</td>
+<td style="text-align: left;">without_news</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">nan</td>
+</tr>
+<tr>
+<td style="text-align: left;">PageHinkley</td>
+<td style="text-align: left;">without_news</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">47</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.021</td>
+<td style="text-align: right;">0.071</td>
+<td style="text-align: right;">0.033</td>
+<td style="text-align: right;">1.000</td>
+</tr>
+<tr>
+<td style="text-align: left;">BOCPD</td>
+<td style="text-align: left;">without_news</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.400</td>
+<td style="text-align: right;">0.143</td>
+<td style="text-align: right;">0.211</td>
+<td style="text-align: right;">1.000</td>
+</tr>
+<tr>
+<td style="text-align: left;">CUSUM</td>
+<td style="text-align: left;">with_news</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.077</td>
+<td style="text-align: right;">0.071</td>
+<td style="text-align: right;">0.074</td>
+<td style="text-align: right;">2.000</td>
+</tr>
+<tr>
+<td style="text-align: left;">PageHinkley</td>
+<td style="text-align: left;">with_news</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">57</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.053</td>
+<td style="text-align: right;">0.214</td>
+<td style="text-align: right;">0.085</td>
+<td style="text-align: right;">2.000</td>
+</tr>
+<tr>
+<td style="text-align: left;">BOCPD</td>
+<td style="text-align: left;">with_news</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0.211</td>
+<td style="text-align: right;">0.286</td>
+<td style="text-align: right;">0.242</td>
+<td style="text-align: right;">1.500</td>
+</tr>
+</tbody>
+</table>
+<p>Уменьшение числа тревог само по себе не доказывает рост качества. Оценивать нужно precision, recall и чувствительность к варианту разметки совместно.</p>
+<p>Чувствительность F1 к штрафу разметки:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">method</th>
+<th style="text-align: right;">proxy_penalty</th>
+<th style="text-align: right;">n_proxy_events</th>
+<th style="text-align: right;">with_news</th>
+<th style="text-align: right;">without_news</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">BOCPD</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">0.314</td>
+<td style="text-align: right;">0.162</td>
+</tr>
+<tr>
+<td style="text-align: left;">BOCPD</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">0.242</td>
+<td style="text-align: right;">0.211</td>
+</tr>
+<tr>
+<td style="text-align: left;">BOCPD</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.182</td>
+<td style="text-align: right;">0.500</td>
+</tr>
+<tr>
+<td style="text-align: left;">CUSUM</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">0.044</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr>
+<td style="text-align: left;">CUSUM</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">0.074</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr>
+<td style="text-align: left;">CUSUM</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.000</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr>
+<td style="text-align: left;">PageHinkley</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">0.135</td>
+<td style="text-align: right;">0.101</td>
+</tr>
+<tr>
+<td style="text-align: left;">PageHinkley</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">0.085</td>
+<td style="text-align: right;">0.033</td>
+</tr>
+<tr>
+<td style="text-align: left;">PageHinkley</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.067</td>
+<td style="text-align: right;">0.040</td>
+</tr>
+</tbody>
+</table>
+<p>Полная таблица всех тематических контролей и методов сохранена в detector_metrics.csv. Универсального победителя по одному выбранному штрафу не устанавливаем.</p>
+<p>Выбранные пороги и фактические частоты:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">variant</th>
+<th style="text-align: left;">method</th>
+<th style="text-align: right;">threshold</th>
+<th style="text-align: right;">calibration_alarm_rate_per_100</th>
+<th style="text-align: right;">test_alarm_rate_per_100</th>
+<th style="text-align: right;">test_alarms</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">without_news</td>
+<td style="text-align: left;">CUSUM</td>
+<td style="text-align: right;">12.000</td>
+<td style="text-align: right;">0.588</td>
+<td style="text-align: right;">1.353</td>
+<td style="text-align: right;">19</td>
+</tr>
+<tr>
+<td style="text-align: left;">without_news</td>
+<td style="text-align: left;">PageHinkley</td>
+<td style="text-align: right;">12.000</td>
+<td style="text-align: right;">0.214</td>
+<td style="text-align: right;">3.348</td>
+<td style="text-align: right;">47</td>
+</tr>
+<tr>
+<td style="text-align: left;">without_news</td>
+<td style="text-align: left;">BOCPD</td>
+<td style="text-align: right;">0.700</td>
+<td style="text-align: right;">0.160</td>
+<td style="text-align: right;">0.356</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr>
+<td style="text-align: left;">coverage_only</td>
+<td style="text-align: left;">CUSUM</td>
+<td style="text-align: right;">24.000</td>
+<td style="text-align: right;">0.214</td>
+<td style="text-align: right;">0.926</td>
+<td style="text-align: right;">13</td>
+</tr>
+<tr>
+<td style="text-align: left;">coverage_only</td>
+<td style="text-align: left;">PageHinkley</td>
+<td style="text-align: right;">16.000</td>
+<td style="text-align: right;">0.641</td>
+<td style="text-align: right;">4.060</td>
+<td style="text-align: right;">57</td>
+</tr>
+<tr>
+<td style="text-align: left;">coverage_only</td>
+<td style="text-align: left;">BOCPD</td>
+<td style="text-align: right;">0.700</td>
+<td style="text-align: right;">0.801</td>
+<td style="text-align: right;">1.353</td>
+<td style="text-align: right;">19</td>
+</tr>
+<tr>
+<td style="text-align: left;">with_news</td>
+<td style="text-align: left;">CUSUM</td>
+<td style="text-align: right;">24.000</td>
+<td style="text-align: right;">0.214</td>
+<td style="text-align: right;">0.926</td>
+<td style="text-align: right;">13</td>
+</tr>
+<tr>
+<td style="text-align: left;">with_news</td>
+<td style="text-align: left;">PageHinkley</td>
+<td style="text-align: right;">16.000</td>
+<td style="text-align: right;">0.641</td>
+<td style="text-align: right;">4.060</td>
+<td style="text-align: right;">57</td>
+</tr>
+<tr>
+<td style="text-align: left;">with_news</td>
+<td style="text-align: left;">BOCPD</td>
+<td style="text-align: right;">0.700</td>
+<td style="text-align: right;">0.801</td>
+<td style="text-align: right;">1.353</td>
+<td style="text-align: right;">19</td>
+</tr>
+<tr>
+<td style="text-align: left;">delayed_news_3m</td>
+<td style="text-align: left;">CUSUM</td>
+<td style="text-align: right;">24.000</td>
+<td style="text-align: right;">0.214</td>
+<td style="text-align: right;">0.926</td>
+<td style="text-align: right;">13</td>
+</tr>
+<tr>
+<td style="text-align: left;">delayed_news_3m</td>
+<td style="text-align: left;">PageHinkley</td>
+<td style="text-align: right;">16.000</td>
+<td style="text-align: right;">0.641</td>
+<td style="text-align: right;">4.060</td>
+<td style="text-align: right;">57</td>
+</tr>
+<tr>
+<td style="text-align: left;">delayed_news_3m</td>
+<td style="text-align: left;">BOCPD</td>
+<td style="text-align: right;">0.700</td>
+<td style="text-align: right;">0.801</td>
+<td style="text-align: right;">1.353</td>
+<td style="text-align: right;">19</td>
+</tr>
+<tr>
+<td style="text-align: left;">mchs_only</td>
+<td style="text-align: left;">CUSUM</td>
+<td style="text-align: right;">16.000</td>
+<td style="text-align: right;">0.321</td>
+<td style="text-align: right;">0.427</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr>
+<td style="text-align: left;">mchs_only</td>
+<td style="text-align: left;">PageHinkley</td>
+<td style="text-align: right;">12.000</td>
+<td style="text-align: right;">0.481</td>
+<td style="text-align: right;">3.276</td>
+<td style="text-align: right;">46</td>
+</tr>
+<tr>
+<td style="text-align: left;">mchs_only</td>
+<td style="text-align: left;">BOCPD</td>
+<td style="text-align: right;">0.700</td>
+<td style="text-align: right;">0.267</td>
+<td style="text-align: right;">0.285</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr>
+<td style="text-align: left;">crisis_only</td>
+<td style="text-align: left;">CUSUM</td>
+<td style="text-align: right;">24.000</td>
+<td style="text-align: right;">0.214</td>
+<td style="text-align: right;">0.926</td>
+<td style="text-align: right;">13</td>
+</tr>
+<tr>
+<td style="text-align: left;">crisis_only</td>
+<td style="text-align: left;">PageHinkley</td>
+<td style="text-align: right;">16.000</td>
+<td style="text-align: right;">0.641</td>
+<td style="text-align: right;">4.060</td>
+<td style="text-align: right;">57</td>
+</tr>
+<tr>
+<td style="text-align: left;">crisis_only</td>
+<td style="text-align: left;">BOCPD</td>
+<td style="text-align: right;">0.700</td>
+<td style="text-align: right;">0.801</td>
+<td style="text-align: right;">1.353</td>
+<td style="text-align: right;">19</td>
+</tr>
+<tr>
+<td style="text-align: left;">economic_only</td>
+<td style="text-align: left;">CUSUM</td>
+<td style="text-align: right;">24.000</td>
+<td style="text-align: right;">0.214</td>
+<td style="text-align: right;">0.926</td>
+<td style="text-align: right;">13</td>
+</tr>
+<tr>
+<td style="text-align: left;">economic_only</td>
+<td style="text-align: left;">PageHinkley</td>
+<td style="text-align: right;">16.000</td>
+<td style="text-align: right;">0.641</td>
+<td style="text-align: right;">4.060</td>
+<td style="text-align: right;">57</td>
+</tr>
+<tr>
+<td style="text-align: left;">economic_only</td>
+<td style="text-align: left;">BOCPD</td>
+<td style="text-align: right;">0.700</td>
+<td style="text-align: right;">0.801</td>
+<td style="text-align: right;">1.353</td>
+<td style="text-align: right;">19</td>
+</tr>
+</tbody>
+</table>
+<p>Изменившиеся тревоги могут появляться и позже месяца новости из-за состояния детектора, cooldown и нового порога. Их нельзя все объяснять конкретным событием. Ниже два локальных примера изменившихся тестовых тревог, не доказательство правильного обнаружения:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">method</th>
+<th style="text-align: right;">territory_id</th>
+<th style="text-align: left;">mo_name</th>
+<th style="text-align: left;">category</th>
+<th style="text-align: right;">month_index</th>
+<th style="text-align: left;">month</th>
+<th style="text-align: left;">baseline_alarm</th>
+<th style="text-align: left;">news_alarm</th>
+<th style="text-align: right;">news_signal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">BOCPD</td>
+<td style="text-align: right;">1665</td>
+<td style="text-align: left;">Оренбург</td>
+<td style="text-align: left;">Общественное питание</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: left;">2024-09-01</td>
+<td style="text-align: left;">False</td>
+<td style="text-align: left;">True</td>
+<td style="text-align: right;">1.000</td>
+</tr>
+<tr>
+<td style="text-align: left;">BOCPD</td>
+<td style="text-align: right;">1668</td>
+<td style="text-align: left;">Бузулук</td>
+<td style="text-align: left;">Общественное питание</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: left;">2024-10-01</td>
+<td style="text-align: left;">False</td>
+<td style="text-align: left;">True</td>
+<td style="text-align: right;">1.000</td>
+</tr>
+</tbody>
+</table>
+<h3>Ограничения и решение</h3>
+<ul>
+<li>Регион и тест уже рассматривались ранее; результат исследовательский, не независимая финальная оценка. Региональная выборка не обосновывает улучшение по всей России.</li>
+<li>МЧС — неполная поисковая выборка; Оренбург Медиа — датированный архив JSON, охватывающий также экономику и общество. Полнота страниц проверяется по X-WP-TotalPages в news_orenburg_archive_audit.csv; это не полнота всех новостей региона. Ноль найденных публикаций не означает отсутствие событий.</li>
+<li>API возвращает текущие версии заголовков; дата публикации берётся из date_gmt, история исправлений неизвестна. Региональные СМИ могут перепечатывать федеральные новости: тематические признаки требуют явной географии.</li>
+<li>Историческая доступность принимается по дате публикации. Фактический first_seen_at — 2026 год; в строгом онлайн-режиме эти сообщения не были получены системой в 2023–2024.</li>
+<li>Годовые версии географии не позволяют установить точный месяц административного изменения. Финансовые proxy-метки требуют экспертной проверки.</li>
+<li>Для h=12 валидация содержит один целевой месяц; доступные новости относятся к ранним origin, а не к будущему паводку. Будущие сообщения не подставлялись.</li>
+</ul>
+<p><strong>Практическое решение:</strong> основной ансамбль и выбранный основной детектор сохраняются. Новостной корпус расширен экономическим источником; следующий шаг — новые неиспользованные целевые месяцы, независимый источник экономики и экспертная проверка географии/тем.</p>
+<h3>Воспроизведение и проверка</h3>
+<pre><code class="language-bash">python scripts/collect_news_archive.py --offline # повторная обработка кеша без сети
+OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 nice -n 15 python scripts/evaluate_news_impact.py
+OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 nice -n 15 python scripts/build_news_impact_report.py
+</code></pre>
+<p>Нужны локальный CSV новостей, муниципальные входы и сохранённые z/прогнозы из исходного запуска. Хеши всех входов и кода сохранены в manifest.json, конфигурация — в config.json. forecast_predictions.csv содержит прогнозы теста, detector_alarms.csv — тревоги, detector_proxy_labels.csv — независимые от новостей ориентиры, detector_changed_alarms.csv — изменившиеся тревоги. Предыдущие запуски не перезаписываются.</p>
+<p>Проверки текущего запуска: 7/7 выполнено; метки обучения не позже origin, новости до cutoff, калибровочные частоты в бюджете, полное покрытие прогнозов и совпадение хешей. Первый технический запуск помечен superseded_invalid_geography_numeric_csv_cast: исправлена интерпретация числовых territory_id из CSV; его результаты не используются.</p></main></body></html>

@@ -43,7 +43,7 @@ class MunicipalPanel:
 
 
 def load_municipal(root: Path):
-    raw = pd.read_parquet(root / "data/raw/consumption.parquet")
+    raw = pd.read_parquet(root / "data/inputs/municipal_consumption.parquet")
     raw["date"] = pd.to_datetime(raw.date + "-01")
     wide = raw.pivot_table(index=["territory_id", "category"], columns="date", values="value")
     months = wide.columns
@@ -62,7 +62,7 @@ def load_municipal(root: Path):
 
 def load_attributes(root: Path):
     """Статические признаки МО: регион, тип, координаты центра, доступность рынков."""
-    dictionary = pd.read_excel(root / "t_dict_municipal/t_dict_municipal_districts.xlsx")
+    dictionary = pd.read_excel(root / "data/inputs/municipal_dictionary.xlsx")
     # Для 2024 берём актуальную версию территории (интервал [year_from, year_to)).
     active = dictionary[(dictionary.year_from <= 2024) & (dictionary.year_to > 2024)]
     active = active.sort_values("year_from").drop_duplicates("territory_id", keep="last")
@@ -71,7 +71,7 @@ def load_attributes(root: Path):
                   "municipal_district_center_lon"]].rename(
         columns={"municipal_district_type": "mo_type", "municipal_district_name_short": "mo_name",
                  "municipal_district_center_lat": "lat", "municipal_district_center_lon": "lon"})
-    access_path = root / "data/raw/market_access.parquet"
+    access_path = root / "data/inputs/municipal_market_access.parquet"
     if access_path.exists():
         out = out.merge(pd.read_parquet(access_path), on="territory_id", how="left")
     else:

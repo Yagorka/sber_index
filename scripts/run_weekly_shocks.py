@@ -109,7 +109,7 @@ def main():
     panels = {"weekly_growth": weekly, "activity_yoy": act}
     out = ROOT / "artifacts/weekly_shocks"
     out.mkdir(parents=True, exist_ok=True)
-    rate = pd.read_csv(ROOT / "data/external/cbr_key_rate_daily.csv", parse_dates=["date"]).set_index("date").rate_pct
+    rate = pd.read_csv(ROOT / "data/inputs/cbr_key_rate_daily.csv", parse_dates=["date"]).set_index("date").rate_pct
     results, tuning, proxy_rows, ew_rows, ew_curve, series_examples = [], [], [], [], [], {}
     all_z = {}
     for pname, df in panels.items():

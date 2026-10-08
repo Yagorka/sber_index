@@ -1,0 +1,819 @@
+{
+  "checked_at_utc": "2026-10-08T10:29:20.364993+00:00",
+  "python": "3.12.15 | packaged by Anaconda, Inc. | (main, Oct  1 2026, 20:20:25) [GCC 14.3.0]",
+  "executable": "/home/bugor/miniconda3/envs/sber/bin/python",
+  "run": "artifacts/research_runs/research_20261007T073840_163667Z",
+  "passed": true,
+  "checks": [
+    {
+      "check": "package:accelerate",
+      "passed": true,
+      "expected": "1.15.0",
+      "actual": "1.15.0"
+    },
+    {
+      "check": "package:annotated-doc",
+      "passed": true,
+      "expected": "0.0.5",
+      "actual": "0.0.5"
+    },
+    {
+      "check": "package:anyio",
+      "passed": true,
+      "expected": "4.15.1",
+      "actual": "4.15.1"
+    },
+    {
+      "check": "package:asttokens",
+      "passed": true,
+      "expected": "3.0.2",
+      "actual": "3.0.2"
+    },
+    {
+      "check": "package:attrs",
+      "passed": true,
+      "expected": "26.1.0",
+      "actual": "26.1.0"
+    },
+    {
+      "check": "package:beautifulsoup4",
+      "passed": true,
+      "expected": "4.15.0",
+      "actual": "4.15.0"
+    },
+    {
+      "check": "package:bleach",
+      "passed": true,
+      "expected": "6.4.0",
+      "actual": "6.4.0"
+    },
+    {
+      "check": "package:catboost",
+      "passed": true,
+      "expected": "1.2.10",
+      "actual": "1.2.10"
+    },
+    {
+      "check": "package:certifi",
+      "passed": true,
+      "expected": "2026.7.22",
+      "actual": "2026.7.22"
+    },
+    {
+      "check": "package:charset-normalizer",
+      "passed": true,
+      "expected": "3.5.2",
+      "actual": "3.5.2"
+    },
+    {
+      "check": "package:chronos-forecasting",
+      "passed": true,
+      "expected": "2.3.2",
+      "actual": "2.3.2"
+    },
+    {
+      "check": "package:click",
+      "passed": true,
+      "expected": "8.5.0",
+      "actual": "8.5.0"
+    },
+    {
+      "check": "package:cloudpickle",
+      "passed": true,
+      "expected": "3.1.2",
+      "actual": "3.1.2"
+    },
+    {
+      "check": "package:cmdstanpy",
+      "passed": true,
+      "expected": "1.3.0",
+      "actual": "1.3.0"
+    },
+    {
+      "check": "package:contourpy",
+      "passed": true,
+      "expected": "1.4.0",
+      "actual": "1.4.0"
+    },
+    {
+      "check": "package:cycler",
+      "passed": true,
+      "expected": "0.12.1",
+      "actual": "0.12.1"
+    },
+    {
+      "check": "package:defusedxml",
+      "passed": true,
+      "expected": "0.7.1",
+      "actual": "0.7.1"
+    },
+    {
+      "check": "package:einops",
+      "passed": true,
+      "expected": "0.8.2",
+      "actual": "0.8.2"
+    },
+    {
+      "check": "package:et_xmlfile",
+      "passed": true,
+      "expected": "2.0.0",
+      "actual": "2.0.0"
+    },
+    {
+      "check": "package:executing",
+      "passed": true,
+      "expected": "2.2.1",
+      "actual": "2.2.1"
+    },
+    {
+      "check": "package:fastjsonschema",
+      "passed": true,
+      "expected": "2.22.2",
+      "actual": "2.22.2"
+    },
+    {
+      "check": "package:filelock",
+      "passed": true,
+      "expected": "3.32.3",
+      "actual": "3.32.3"
+    },
+    {
+      "check": "package:fonttools",
+      "passed": true,
+      "expected": "4.66.1",
+      "actual": "4.66.1"
+    },
+    {
+      "check": "package:formulaic",
+      "passed": true,
+      "expected": "1.2.2",
+      "actual": "1.2.2"
+    },
+    {
+      "check": "package:fsspec",
+      "passed": true,
+      "expected": "2026.7.0",
+      "actual": "2026.7.0"
+    },
+    {
+      "check": "package:geopandas",
+      "passed": true,
+      "expected": "1.2.0",
+      "actual": "1.2.0"
+    },
+    {
+      "check": "package:graphviz",
+      "passed": true,
+      "expected": "0.21",
+      "actual": "0.21"
+    },
+    {
+      "check": "package:h11",
+      "passed": true,
+      "expected": "0.16.0",
+      "actual": "0.16.0"
+    },
+    {
+      "check": "package:hf-xet",
+      "passed": true,
+      "expected": "1.6.0",
+      "actual": "1.6.0"
+    },
+    {
+      "check": "package:holidays",
+      "passed": true,
+      "expected": "0.105",
+      "actual": "0.105"
+    },
+    {
+      "check": "package:html5lib",
+      "passed": true,
+      "expected": "1.1",
+      "actual": "1.1"
+    },
+    {
+      "check": "package:httpcore",
+      "passed": true,
+      "expected": "1.0.9",
+      "actual": "1.0.9"
+    },
+    {
+      "check": "package:httpx",
+      "passed": true,
+      "expected": "0.28.1",
+      "actual": "0.28.1"
+    },
+    {
+      "check": "package:huggingface_hub",
+      "passed": true,
+      "expected": "1.33.0",
+      "actual": "1.33.0"
+    },
+    {
+      "check": "package:idna",
+      "passed": true,
+      "expected": "3.20",
+      "actual": "3.20"
+    },
+    {
+      "check": "package:iniconfig",
+      "passed": true,
+      "expected": "2.3.0",
+      "actual": "2.3.0"
+    },
+    {
+      "check": "package:interface_meta",
+      "passed": true,
+      "expected": "2.0.1",
+      "actual": "2.0.1"
+    },
+    {
+      "check": "package:ipython",
+      "passed": true,
+      "expected": "9.17.1",
+      "actual": "9.17.1"
+    },
+    {
+      "check": "package:ipython_pygments_lexers",
+      "passed": true,
+      "expected": "1.1.1",
+      "actual": "1.1.1"
+    },
+    {
+      "check": "package:jedi",
+      "passed": true,
+      "expected": "0.20.0",
+      "actual": "0.20.0"
+    },
+    {
+      "check": "package:Jinja2",
+      "passed": true,
+      "expected": "3.1.6",
+      "actual": "3.1.6"
+    },
+    {
+      "check": "package:joblib",
+      "passed": true,
+      "expected": "1.6.0",
+      "actual": "1.6.0"
+    },
+    {
+      "check": "package:jsonschema",
+      "passed": true,
+      "expected": "4.26.0",
+      "actual": "4.26.0"
+    },
+    {
+      "check": "package:jsonschema-specifications",
+      "passed": true,
+      "expected": "2025.9.1",
+      "actual": "2025.9.1"
+    },
+    {
+      "check": "package:jupyter_client",
+      "passed": true,
+      "expected": "8.10.0",
+      "actual": "8.10.0"
+    },
+    {
+      "check": "package:jupyter_core",
+      "passed": true,
+      "expected": "5.9.1",
+      "actual": "5.9.1"
+    },
+    {
+      "check": "package:jupyterlab_pygments",
+      "passed": true,
+      "expected": "0.3.0",
+      "actual": "0.3.0"
+    },
+    {
+      "check": "package:kiwisolver",
+      "passed": true,
+      "expected": "1.5.1",
+      "actual": "1.5.1"
+    },
+    {
+      "check": "package:lxml",
+      "passed": true,
+      "expected": "6.1.3",
+      "actual": "6.1.3"
+    },
+    {
+      "check": "package:Markdown",
+      "passed": true,
+      "expected": "3.11",
+      "actual": "3.11"
+    },
+    {
+      "check": "package:markdown-it-py",
+      "passed": true,
+      "expected": "4.2.0",
+      "actual": "4.2.0"
+    },
+    {
+      "check": "package:MarkupSafe",
+      "passed": true,
+      "expected": "3.0.4",
+      "actual": "3.0.4"
+    },
+    {
+      "check": "package:matplotlib",
+      "passed": true,
+      "expected": "3.11.2",
+      "actual": "3.11.2"
+    },
+    {
+      "check": "package:matplotlib-inline",
+      "passed": true,
+      "expected": "0.2.2",
+      "actual": "0.2.2"
+    },
+    {
+      "check": "package:mdurl",
+      "passed": true,
+      "expected": "0.1.2",
+      "actual": "0.1.2"
+    },
+    {
+      "check": "package:mistune",
+      "passed": true,
+      "expected": "3.3.4",
+      "actual": "3.3.4"
+    },
+    {
+      "check": "package:mpmath",
+      "passed": true,
+      "expected": "1.3.0",
+      "actual": "1.3.0"
+    },
+    {
+      "check": "package:narwhals",
+      "passed": true,
+      "expected": "2.26.0",
+      "actual": "2.26.0"
+    },
+    {
+      "check": "package:nbclient",
+      "passed": true,
+      "expected": "0.11.0",
+      "actual": "0.11.0"
+    },
+    {
+      "check": "package:nbconvert",
+      "passed": true,
+      "expected": "7.17.1",
+      "actual": "7.17.1"
+    },
+    {
+      "check": "package:nbformat",
+      "passed": true,
+      "expected": "5.11.1",
+      "actual": "5.11.1"
+    },
+    {
+      "check": "package:networkx",
+      "passed": true,
+      "expected": "3.6.1",
+      "actual": "3.6.1"
+    },
+    {
+      "check": "package:numpy",
+      "passed": true,
+      "expected": "2.5.3",
+      "actual": "2.5.3"
+    },
+    {
+      "check": "package:openpyxl",
+      "passed": true,
+      "expected": "3.1.5",
+      "actual": "3.1.5"
+    },
+    {
+      "check": "package:packaging",
+      "passed": true,
+      "expected": "26.3",
+      "actual": "26.3"
+    },
+    {
+      "check": "package:pandas",
+      "passed": true,
+      "expected": "3.0.6",
+      "actual": "3.0.6"
+    },
+    {
+      "check": "package:pandocfilters",
+      "passed": true,
+      "expected": "1.5.1",
+      "actual": "1.5.1"
+    },
+    {
+      "check": "package:parso",
+      "passed": true,
+      "expected": "0.8.7",
+      "actual": "0.8.7"
+    },
+    {
+      "check": "package:patsy",
+      "passed": true,
+      "expected": "1.0.3",
+      "actual": "1.0.3"
+    },
+    {
+      "check": "package:pexpect",
+      "passed": true,
+      "expected": "4.9.0",
+      "actual": "4.9.0"
+    },
+    {
+      "check": "package:pillow",
+      "passed": true,
+      "expected": "12.3.0",
+      "actual": "12.3.0"
+    },
+    {
+      "check": "package:platformdirs",
+      "passed": true,
+      "expected": "4.12.3",
+      "actual": "4.12.3"
+    },
+    {
+      "check": "package:plotly",
+      "passed": true,
+      "expected": "7.1.0",
+      "actual": "7.1.0"
+    },
+    {
+      "check": "package:pluggy",
+      "passed": true,
+      "expected": "1.6.0",
+      "actual": "1.6.0"
+    },
+    {
+      "check": "package:prompt_toolkit",
+      "passed": true,
+      "expected": "3.0.53",
+      "actual": "3.0.53"
+    },
+    {
+      "check": "package:prophet",
+      "passed": true,
+      "expected": "1.4.0",
+      "actual": "1.4.0"
+    },
+    {
+      "check": "package:psutil",
+      "passed": true,
+      "expected": "7.2.2",
+      "actual": "7.2.2"
+    },
+    {
+      "check": "package:ptyprocess",
+      "passed": true,
+      "expected": "0.7.0",
+      "actual": "0.7.0"
+    },
+    {
+      "check": "package:pure_eval",
+      "passed": true,
+      "expected": "0.2.4",
+      "actual": "0.2.4"
+    },
+    {
+      "check": "package:pyarrow",
+      "passed": true,
+      "expected": "25.0.1",
+      "actual": "25.0.1"
+    },
+    {
+      "check": "package:Pygments",
+      "passed": true,
+      "expected": "2.21.0",
+      "actual": "2.21.0"
+    },
+    {
+      "check": "package:pyogrio",
+      "passed": true,
+      "expected": "0.13.0",
+      "actual": "0.13.0"
+    },
+    {
+      "check": "package:pyparsing",
+      "passed": true,
+      "expected": "3.3.3",
+      "actual": "3.3.3"
+    },
+    {
+      "check": "package:pyproj",
+      "passed": true,
+      "expected": "3.8.0",
+      "actual": "3.8.0"
+    },
+    {
+      "check": "package:pytest",
+      "passed": true,
+      "expected": "9.1.1",
+      "actual": "9.1.1"
+    },
+    {
+      "check": "package:python-dateutil",
+      "passed": true,
+      "expected": "2.9.0.post0",
+      "actual": "2.9.0.post0"
+    },
+    {
+      "check": "package:PyYAML",
+      "passed": true,
+      "expected": "6.0.3",
+      "actual": "6.0.3"
+    },
+    {
+      "check": "package:pyzmq",
+      "passed": true,
+      "expected": "27.2.0",
+      "actual": "27.2.0"
+    },
+    {
+      "check": "package:referencing",
+      "passed": true,
+      "expected": "0.37.0",
+      "actual": "0.37.0"
+    },
+    {
+      "check": "package:regex",
+      "passed": true,
+      "expected": "2026.9.29",
+      "actual": "2026.9.29"
+    },
+    {
+      "check": "package:requests",
+      "passed": true,
+      "expected": "2.34.2",
+      "actual": "2.34.2"
+    },
+    {
+      "check": "package:rich",
+      "passed": true,
+      "expected": "15.0.0",
+      "actual": "15.0.0"
+    },
+    {
+      "check": "package:rpds-py",
+      "passed": true,
+      "expected": "2026.6.3",
+      "actual": "2026.6.3"
+    },
+    {
+      "check": "package:ruptures",
+      "passed": true,
+      "expected": "1.1.10",
+      "actual": "1.1.10"
+    },
+    {
+      "check": "package:safetensors",
+      "passed": true,
+      "expected": "0.8.0",
+      "actual": "0.8.0"
+    },
+    {
+      "check": "package:scikit-learn",
+      "passed": true,
+      "expected": "1.9.1",
+      "actual": "1.9.1"
+    },
+    {
+      "check": "package:scipy",
+      "passed": true,
+      "expected": "1.18.1",
+      "actual": "1.18.1"
+    },
+    {
+      "check": "package:setuptools",
+      "passed": true,
+      "expected": "83.0.0",
+      "actual": "83.0.0"
+    },
+    {
+      "check": "package:shapely",
+      "passed": true,
+      "expected": "2.1.2",
+      "actual": "2.1.2"
+    },
+    {
+      "check": "package:shellingham",
+      "passed": true,
+      "expected": "1.5.4",
+      "actual": "1.5.4"
+    },
+    {
+      "check": "package:six",
+      "passed": true,
+      "expected": "1.17.0",
+      "actual": "1.17.0"
+    },
+    {
+      "check": "package:soupsieve",
+      "passed": true,
+      "expected": "2.10",
+      "actual": "2.10"
+    },
+    {
+      "check": "package:stack-data",
+      "passed": true,
+      "expected": "0.6.3",
+      "actual": "0.6.3"
+    },
+    {
+      "check": "package:stanio",
+      "passed": true,
+      "expected": "0.5.1",
+      "actual": "0.5.1"
+    },
+    {
+      "check": "package:statsmodels",
+      "passed": true,
+      "expected": "0.15.0",
+      "actual": "0.15.0"
+    },
+    {
+      "check": "package:sympy",
+      "passed": true,
+      "expected": "1.14.0",
+      "actual": "1.14.0"
+    },
+    {
+      "check": "package:tabulate",
+      "passed": true,
+      "expected": "0.10.0",
+      "actual": "0.10.0"
+    },
+    {
+      "check": "package:threadpoolctl",
+      "passed": true,
+      "expected": "3.7.0",
+      "actual": "3.7.0"
+    },
+    {
+      "check": "package:timesfm",
+      "passed": true,
+      "expected": "3.0.2",
+      "actual": "3.0.2"
+    },
+    {
+      "check": "package:tinycss2",
+      "passed": true,
+      "expected": "1.5.1",
+      "actual": "1.5.1"
+    },
+    {
+      "check": "package:tokenizers",
+      "passed": true,
+      "expected": "0.23.2",
+      "actual": "0.23.2"
+    },
+    {
+      "check": "package:torch",
+      "passed": true,
+      "expected": "2.14.1+cpu",
+      "actual": "2.14.1+cpu"
+    },
+    {
+      "check": "package:tornado",
+      "passed": true,
+      "expected": "6.5.10",
+      "actual": "6.5.10"
+    },
+    {
+      "check": "package:tqdm",
+      "passed": true,
+      "expected": "4.70.1",
+      "actual": "4.70.1"
+    },
+    {
+      "check": "package:traitlets",
+      "passed": true,
+      "expected": "5.16.1",
+      "actual": "5.16.1"
+    },
+    {
+      "check": "package:transformers",
+      "passed": true,
+      "expected": "5.18.0",
+      "actual": "5.18.0"
+    },
+    {
+      "check": "package:typer",
+      "passed": true,
+      "expected": "0.27.2",
+      "actual": "0.27.2"
+    },
+    {
+      "check": "package:typing_extensions",
+      "passed": true,
+      "expected": "4.16.0",
+      "actual": "4.16.0"
+    },
+    {
+      "check": "package:urllib3",
+      "passed": true,
+      "expected": "2.8.0",
+      "actual": "2.8.0"
+    },
+    {
+      "check": "package:wcwidth",
+      "passed": true,
+      "expected": "0.9.1",
+      "actual": "0.9.1"
+    },
+    {
+      "check": "package:webencodings",
+      "passed": true,
+      "expected": "0.6.1",
+      "actual": "0.6.1"
+    },
+    {
+      "check": "package:wheel",
+      "passed": true,
+      "expected": "0.47.0",
+      "actual": "0.47.0"
+    },
+    {
+      "check": "package:wrapt",
+      "passed": true,
+      "expected": "2.5.0",
+      "actual": "2.5.0"
+    },
+    {
+      "check": "sha256:data/raw/consumption.parquet",
+      "passed": true,
+      "expected": "9833ddaaee7b2a182ed4cceeed16469031700ea87d508bd976150c6770ef8a61",
+      "actual": "9833ddaaee7b2a182ed4cceeed16469031700ea87d508bd976150c6770ef8a61"
+    },
+    {
+      "check": "sha256:configs/research_audit.json",
+      "passed": true,
+      "expected": "d03dcf6ef5863151c50ecde145383b61c105361139b5360f2b183ef60518d40c",
+      "actual": "d03dcf6ef5863151c50ecde145383b61c105361139b5360f2b183ef60518d40c"
+    },
+    {
+      "check": "sha256:consumer-spending_ru_1788769445732.csv.zip",
+      "passed": true,
+      "expected": "cbf4bb5d464a083b95500f4a3d65ce081a8695b7b2966a18d5f199f13c35b3e6",
+      "actual": "cbf4bb5d464a083b95500f4a3d65ce081a8695b7b2966a18d5f199f13c35b3e6"
+    },
+    {
+      "check": "sha256:ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip",
+      "passed": true,
+      "expected": "30313699bb6b99eeb114cf5eca67c40d6222833d8c6e8de44a1c7e0ef0c48bda",
+      "actual": "30313699bb6b99eeb114cf5eca67c40d6222833d8c6e8de44a1c7e0ef0c48bda"
+    },
+    {
+      "check": "sha256:data/external/verified_event_cases.csv",
+      "passed": true,
+      "expected": "75f14087610eab77ca0ab36d897f643e34445627541c9bfc1943ff5a95021cd7",
+      "actual": "75f14087610eab77ca0ab36d897f643e34445627541c9bfc1943ff5a95021cd7"
+    },
+    {
+      "check": "sha256:data/external/cpi_december_2024.csv",
+      "passed": true,
+      "expected": "9df881baa17c03de094b484b4402917726e3b6a02ba010e775f63bf3525a0d98",
+      "actual": "9df881baa17c03de094b484b4402917726e3b6a02ba010e775f63bf3525a0d98"
+    },
+    {
+      "check": "sha256:requirements.lock.txt",
+      "passed": true,
+      "expected": "e78676c1ffc3eded984a52f9b3fcfb93ee85434c21dd7b89ef6d36b863324ecc",
+      "actual": "e78676c1ffc3eded984a52f9b3fcfb93ee85434c21dd7b89ef6d36b863324ecc"
+    },
+    {
+      "check": "past_only_selection",
+      "passed": true
+    },
+    {
+      "check": "mature_calibration",
+      "passed": true
+    },
+    {
+      "check": "selection_calibration_disjoint",
+      "passed": true
+    },
+    {
+      "check": "weekly_published_before_origin",
+      "passed": true
+    },
+    {
+      "check": "original_metric_reproduction",
+      "passed": true,
+      "max_difference": 5.684341886080803e-14
+    },
+    {
+      "check": "frozen:forecast_2025_frozen",
+      "passed": true
+    },
+    {
+      "check": "frozen:national_2026-09_frozen",
+      "passed": true
+    }
+  ],
+  "limitations": "Проверка текущей среды; установка зависимостей с нуля и внешняя временная отметка не подтверждены."
+}

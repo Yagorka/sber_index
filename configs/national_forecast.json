@@ -1,7 +1,7 @@
 {
   "experiment_name": "national_spending_forecast",
   "seed": 42,
-  "input": "consumer-spending_ru_1788769445732.csv.zip",
+  "input": "data/inputs/national_spending_monthly.csv.zip",
   "target": "value",
   "unit": "млрд руб.",
   "geography": "Россия",

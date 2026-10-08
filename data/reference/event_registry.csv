@@ -1,0 +1,8 @@
+event_id,event_type,title,event_date,published_at,scope,regions,mo_name_patterns,severity,source_url
+EV01,flood,"Паводок и прорыв дамбы в Орске (Урал, Курганская, Тюменская обл.)",2024-04-05,2024-04-05,region,Оренбургская область; Курганская область; Тюменская область,Орск;Оренбург;Новотроицк;Курган;Тобольск,3,https://ru.wikipedia.org/wiki/Наводнение_на_Урале_(2024)
+EV02,flood,"Наводнение в Приморье после тайфуна «Ханун» (Уссурийск, Спасск-Дальний)",2023-08-12,2023-08-12,region,Приморский край,Уссурийск;Спасск-Дальний,3,https://www.eastrussia.ru/material/bedstvie-kraevogo-masshtaba/
+EV03,security,"Вторжение ВСУ в Курскую область, эвакуация Суджи",2024-08-06,2024-08-06,region,Курская область,Суджанский;Курск,3,https://www.vedomosti.ru/politics/articles/2024/08/08/1054482-kak-vsu-atakovali-kurskuyu-oblast
+EV04,security,Обстрел Белгорода 30 декабря 2023,2023-12-30,2023-12-30,municipality,Белгородская область,Белгород,2,https://ru.wikipedia.org/wiki/Обстрел_Белгорода_30_декабря_2023_года
+EV05,terror,Теракт в «Крокус Сити Холле» (Красногорск),2024-03-22,2024-03-22,municipality,Московская область,Красногорск,1,https://www.kommersant.ru/doc/7601816
+EV06,terror,Нападения в Дербенте и Махачкале 23.06.2024,2024-06-23,2024-06-23,municipality,Республика Дагестан,Дербент;Махачкала,2,https://en.wikipedia.org/wiki/2024_Dagestan_attacks
+EV07,security,Ракетный удар по пляжу в Севастополе 23.06.2024,2024-06-23,2024-06-23,municipality,Севастополь,Севастополь,2,https://en.wikipedia.org/wiki/June_2024_Sevastopol_missile_attack

@@ -1,0 +1,36 @@
+{
+  "run": "artifacts/research_runs/research_20261007T073840_163667Z",
+  "completed": [
+    "strong_baselines",
+    "past_only_weights",
+    "separate_calibration",
+    "weekly_marketplace_prior",
+    "inflation_interpretation",
+    "official_event_cases",
+    "shock_action",
+    "economic_diagnostics",
+    "criteria_evidence",
+    "locked_environment",
+    "interactive_demo",
+    "regional_news_collection",
+    "regional_news_forecast_and_detector_comparison"
+  ],
+  "pending_external": [
+    "official_baseline",
+    "unseen_municipal_facts",
+    "publication_destination"
+  ],
+  "not_verified": [
+    "fresh_dependency_installation",
+    "external_timestamp",
+    "independent_real_shock_labels"
+  ],
+  "resource_mode": "one compute thread; nice 15; Prophet default workers=1; completed training reused",
+  "tests_passed": 22,
+  "verification_checks_passed": 137,
+  "demo_logic_cases_passed": 3,
+  "frozen_forecasts_protected_from_overwrite": true,
+  "official_rubric_confirmed": true,
+  "regional_news_comparison_checks_passed": 7,
+  "regional_news_run": "artifacts/regional_news_runs/news_20261007T171936_092637Z"
+}

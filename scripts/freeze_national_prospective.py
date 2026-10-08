@@ -17,6 +17,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from scripts.nowcast_weekly import load_weekly, month_estimates, BIAS_MONTHS, MIN_BIAS_MONTHS
 from src.forecasting import load_panel
+from src.frozen_artifacts import preserve_or_create
 
 
 def main():
@@ -54,8 +55,10 @@ def main():
     out = ROOT / "prospective"
     out.mkdir(exist_ok=True)
     path = out / "national_2026-09_frozen.csv"
-    df.to_csv(path, index=False)
-    digest = hashlib.sha256(path.read_bytes()).hexdigest()
+    created,different,digest = preserve_or_create(path,df.to_csv(index=False),run / "national_2026-09_candidate.csv")
+    if not created:
+        print("Исходный frozen-файл сохранён; новый вариант отличается:",different)
+        return
     (out / "national_2026-09_frozen.sha256").write_text(f"{digest}  national_2026-09_frozen.csv\n")
     (out / "national_2026-09_frozen.meta.json").write_text(json.dumps({
         "frozen_at_utc": datetime.now(timezone.utc).isoformat(), "last_weekly_period": str(weekly.period.max().date()),

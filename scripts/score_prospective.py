@@ -1,6 +1,6 @@
 """Оценка замороженного прогноза 2025 г. по фактам, когда они появятся (честный out-of-time тест).
 
-Ожидается файл data/raw/consumption_2025.parquet с теми же колонками, что consumption.parquet
+Ожидается файл data/inputs/municipal_consumption_2025.parquet с теми же колонками, что consumption.parquet
 (date 'YYYY-MM', territory_id, category, value). Целевые месяцы и горизонты берутся из прогноза
 (origin = 2024-12, horizon = номер месяца 2025). Проверяется хэш замороженного файла.
 """
@@ -21,9 +21,9 @@ def main():
     expected = (ROOT / "prospective/forecast_2025_frozen.sha256").read_text().split()[0]
     if hashlib.sha256(frozen.read_bytes()).hexdigest() != expected:
         sys.exit("Хэш замороженного прогноза не совпал: файл менялся")
-    facts_path = ROOT / "data/raw/consumption_2025.parquet"
+    facts_path = ROOT / "data/inputs/municipal_consumption_2025.parquet"
     if not facts_path.exists():
-        sys.exit("Фактов за 2025 г. по МО ещё нет: положите data/raw/consumption_2025.parquet")
+        sys.exit("Фактов за 2025 г. по МО ещё нет: положите data/inputs/municipal_consumption_2025.parquet")
     facts = pd.read_parquet(facts_path)
     facts["target_month"] = pd.to_datetime(facts.date + "-01")
     full = pd.read_csv(frozen, parse_dates=["target_month"])

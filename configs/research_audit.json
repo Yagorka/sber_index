@@ -1,0 +1,18 @@
+{
+  "seed": 42,
+  "source_run": "artifacts/municipal_runs/municipal_20261004T140239Z",
+  "evaluation_status": "exploratory_after_test_inspection",
+  "calibration_months": 2,
+  "minimum_selection_months": 2,
+  "minimum_calibration_months": 2,
+  "bootstrap_replicates": 1000,
+  "weight_fit_max_rows": 3000,
+  "prophet_sample_municipalities": 25,
+  "prophet_variants": [
+    {"id": "seasonal_regularized", "yearly_seasonality": 2, "seasonality_prior_scale": 0.1, "changepoint_prior_scale": 0.01},
+    {"id": "seasonal_flexible", "yearly_seasonality": 2, "seasonality_prior_scale": 1.0, "changepoint_prior_scale": 0.05}
+  ],
+  "shock_action": {"max_log_correction": 0.3, "shrink": 0.5, "decay_months": 3},
+  "official_criteria_verified": false,
+  "official_baseline_available": false
+}
