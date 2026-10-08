@@ -1,0 +1,13 @@
+origin_index,horizon_months,max_training_target_index,training_examples,stage,variant
+92,1,92,345,future,ridge_10
+92,3,92,335,future,ridge_10
+92,6,92,320,future,ridge_10
+92,12,92,290,future,ridge_10
+92,1,92,345,future,forest
+92,3,92,335,future,forest
+92,6,92,320,future,forest
+92,12,92,290,future,forest
+92,1,92,345,future,catboost_d3
+92,3,92,335,future,catboost_d3
+92,6,92,320,future,catboost_d3
+92,12,92,290,future,catboost_d3

@@ -1,0 +1,11 @@
+{
+ "model": "bolt",
+ "checkpoint": "amazon/chronos-bolt-small",
+ "revision": "772f3d25d38aec6d914c8949dab4462e2d46f5d8",
+ "zero_shot": true,
+ "context": "history[:origin+1], raw rubles",
+ "covariates": null,
+ "elapsed_seconds": 110.80995559692383,
+ "series": 12096,
+ "torch": "2.14.1+cpu"
+}

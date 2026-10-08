@@ -1,0 +1,16 @@
+{
+  "run_id": "adaptive_20261003T125544_858704Z",
+  "baseline_run": "artifacts/forecast_runs/national_20261003T112832_522037Z",
+  "data_sha256": "cbf4bb5d464a083b95500f4a3d65ce081a8695b7b2966a18d5f199f13c35b3e6",
+  "config_sha256": "66ac5b0012d4fd1f5d9efdda2c8276325db8abc91e665ca4abd6e84aedbb87b0",
+  "code_sha256": "912029d484f61e15bc2664a9050f78248d4f0a8d6d375010303d5d7f3eb006bb",
+  "selected_model": "CalibratedStatic_bottom_up",
+  "statsmodels_version": "0.15.0",
+  "holdout_status": "previously_viewed_recheck_not_independent",
+  "elapsed_seconds": 144.39167037800144,
+  "n_base_models": 12,
+  "n_total_models": 25,
+  "markov_parameters_known_through": "2024-02-01",
+  "independent_future_test": false,
+  "information_assumption": "context_month_value_known_at_origin; latest_vintage_only; actual_publication_delays_unknown"
+}

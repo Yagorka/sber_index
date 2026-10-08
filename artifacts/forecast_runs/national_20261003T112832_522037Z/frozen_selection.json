@@ -1,0 +1,75 @@
+{
+  "frozen_before_holdout_at": "2026-10-03T11:29:12.459643+00:00",
+  "best_variant_per_family": [
+    {
+      "model": "CatBoostDirect",
+      "variant": "catboost_d3",
+      "macro_mae": 90.71636436185997
+    },
+    {
+      "model": "RandomForestDirect",
+      "variant": "forest",
+      "macro_mae": 95.05863606640771
+    },
+    {
+      "model": "HoltWinters",
+      "variant": "hw_add",
+      "macro_mae": 97.22964938893647
+    },
+    {
+      "model": "FourierRidge",
+      "variant": "fourier_36",
+      "macro_mae": 125.08349094323509
+    },
+    {
+      "model": "SeasonalGrowth",
+      "variant": "seasonal_growth",
+      "macro_mae": 135.6575162278045
+    },
+    {
+      "model": "RidgeDirect",
+      "variant": "ridge_10",
+      "macro_mae": 137.24883998651663
+    },
+    {
+      "model": "LastValue",
+      "variant": "last_value",
+      "macro_mae": 187.3904117647059
+    },
+    {
+      "model": "SeasonalNaive",
+      "variant": "seasonal_naive",
+      "macro_mae": 280.5353382352941
+    }
+  ],
+  "ensemble_variants": [
+    "catboost_d3",
+    "forest",
+    "hw_add"
+  ],
+  "ensemble_weights": {
+    "1": {
+      "catboost_d3": 0.2837318254463927,
+      "forest": 0.28428087561996634,
+      "hw_add": 0.4319872989336409
+    },
+    "3": {
+      "catboost_d3": 0.3263566238356206,
+      "forest": 0.30259760267097624,
+      "hw_add": 0.3710457734934031
+    },
+    "6": {
+      "catboost_d3": 0.3432643495135098,
+      "forest": 0.3245451389871279,
+      "hw_add": 0.33219051149936224
+    },
+    "12": {
+      "catboost_d3": 0.3774038035132394,
+      "forest": 0.36187647890589436,
+      "hw_add": 0.26071971758086626
+    }
+  },
+  "selected_model_on_development": "DevWeightedEnsemble",
+  "rule": "equal_weight_mean_of_macro_mae_by_horizon",
+  "holdout_hyperparameters_changed": false
+}

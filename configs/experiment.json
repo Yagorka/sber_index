@@ -1,0 +1,65 @@
+{
+  "experiment_name": "municipal_consumption_v1",
+  "seed": 42,
+  "data": {
+    "municipal_dictionary": "t_dict_municipal/t_dict_municipal_districts.xlsx",
+    "municipal_geometry": "t_dict_municipal/t_dict_municipal_districts_poly.gpkg",
+    "municipal_metadata": "configs/municipal_metadata.json",
+    "municipal_metadata_pdf": "metadata_municipal_dict_sberindex_2.pdf",
+    "consumption": "data/raw/consumption.csv",
+    "frequency": "MS",
+    "target": "y",
+    "target_unit": "must_be_confirmed_from_consumption_metadata",
+    "require_available_at": true,
+    "municipal_id_mapping": "must_be_confirmed_before_join",
+    "snapshot_last_verified_year": 2024,
+    "snapshot_last_verified_date": "2024-01-01",
+    "administrative_center_reference_year": 2018,
+    "chechnya_boundary_transfer_policy": "flag_and_report_sensitivity_separately",
+    "administrative_change_month": "unknown_without_independent_date_source"
+  },
+  "validation": {
+    "split_type": "expanding_window",
+    "horizons_months": [1, 3, 6, 12],
+    "horizon_semantics": "point_at_origin_plus_h_calendar_months",
+    "minimum_train_months": 36,
+    "origin_step_months": 1,
+    "holdout_months": 12,
+    "minimum_dev_origins": 6,
+    "same_origins_and_series_for_models": true,
+    "require_training_target_available_by_origin": true,
+    "require_feature_available_by_origin": true,
+    "selection_metric": "macro_mae",
+    "horizon_weights": {"1": 0.25, "3": 0.25, "6": 0.25, "12": 0.25}
+  },
+  "forecast_candidates": [
+    "last_value", "seasonal_naive", "prophet", "ets",
+    "catboost_direct", "chronos_frozen", "timesfm_frozen", "validation_weighted_ensemble"
+  ],
+  "features": {
+    "lags_months": [1, 2, 3, 6, 12, 18, 24],
+    "trailing_windows_months": [3, 6, 12],
+    "calendar": true,
+    "rosstat_asof": false,
+    "regional_lagged_features": false,
+    "news_asof": false
+  },
+  "shock": {
+    "online_candidates": ["cusum", "page_hinkley", "bocpd"],
+    "offline_reference": "pelt_with_sensitivity_analysis_and_expert_review",
+    "early_warning_windows_months": [1, 3],
+    "alarm_threshold_source": "development_folds_only",
+    "false_alarm_budget_per_100_series_months": 1.0,
+    "cooldown_months": 3,
+    "event_matching": "one_to_one",
+    "administrative_changes_are_separate_events": true
+  },
+  "tracking": {
+    "runs_directory": "artifacts/runs",
+    "leaderboard": "tracking/forecast_metrics.csv",
+    "shock_leaderboard": "tracking/shock_metrics.csv",
+    "store_predictions": true,
+    "store_config_and_data_hashes": true,
+    "holdout_status": "not_opened"
+  }
+}

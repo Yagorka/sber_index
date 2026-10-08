@@ -1,0 +1,7 @@
+group,left,right,same_file_bytes,same_full_table_with_tolerance,same_keys,same_values_with_tolerance,max_abs_difference,n_common,n_left_only,n_right_only,comparison_status
+activity,potrebitelskaya-aktivnost-po-kategoriyam-tovarov-v-razreze-vozrastov.csv,potrebitelskaya-aktivnost-po-kategoriyam-tovarov-v-razreze-vozrastov_ru_1790951484974.csv.zip,False,False,True,True,0.0,1495,0,0,compared
+activity,potrebitelskaya-aktivnost-po-kategoriyam-tovarov-v-razreze-vozrastov.csv,potrebitelskaya-aktivnost-po-kategoriyam-tovarov-v-razreze-vozrastov_ru_1790951484974.parquet,False,False,True,True,0.0,1495,0,0,compared
+activity,potrebitelskaya-aktivnost-po-kategoriyam-tovarov-v-razreze-vozrastov_ru_1790951484974.csv.zip,potrebitelskaya-aktivnost-po-kategoriyam-tovarov-v-razreze-vozrastov_ru_1790951484974.parquet,False,True,True,True,0.0,1495,0,0,compared
+weekly_growth,ver-izmenenie-trat-po-kategoriyam.csv,ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip,False,False,True,True,0.0,6946,0,0,compared
+weekly_growth,ver-izmenenie-trat-po-kategoriyam.csv,ver-izmenenie-trat-po-kategoriyam_ru_1790579497561.parquet,False,False,True,True,0.0,6946,0,0,compared
+weekly_growth,ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip,ver-izmenenie-trat-po-kategoriyam_ru_1790579497561.parquet,False,True,True,True,0.0,6946,0,0,compared

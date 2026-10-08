@@ -1,0 +1,4 @@
+kind,events,rows_before,rows_after,description
+disunion,1,1,2,разделение/выделение
+transfer,9,18,18,передача части территории
+union,23,47,23,объединение/присоединение

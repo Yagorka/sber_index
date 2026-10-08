@@ -1,0 +1,14 @@
+{
+  "files_checked": 9,
+  "distinct_datasets": 5,
+  "equivalent_observation_pairs": 6,
+  "full_table_equivalent_pairs": 2,
+  "byte_identical_pairs": 0,
+  "duplicate_keys_within_files": 0,
+  "conflicting_keys_within_files": 0,
+  "missing_cells": 0,
+  "missing_series_periods": 0,
+  "municipal_consumption_present": false,
+  "unique_dataset_observations": 10301,
+  "numeric_comparison_atol": 1e-10
+}

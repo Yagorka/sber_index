@@ -1,0 +1,4 @@
+panel,method,threshold
+weekly_growth,CUSUM,20.0
+weekly_growth,PageHinkley,24.0
+weekly_growth,BOCPD,0.9

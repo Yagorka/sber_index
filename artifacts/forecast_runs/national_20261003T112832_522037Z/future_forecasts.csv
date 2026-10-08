@@ -1,0 +1,181 @@
+stage,variant,model,series_id,origin,target_date,horizon_months,y_true,y_pred,fallback,run_id
+future,last_value,LastValue,Всего,2026-08-01,2026-09-01,1,,8625.05,False,national_20261003T112832_522037Z
+future,last_value,LastValue,Всего,2026-08-01,2026-11-01,3,,8625.05,False,national_20261003T112832_522037Z
+future,last_value,LastValue,Всего,2026-08-01,2027-02-01,6,,8625.05,False,national_20261003T112832_522037Z
+future,last_value,LastValue,Всего,2026-08-01,2027-08-01,12,,8625.05,False,national_20261003T112832_522037Z
+future,last_value,LastValue,Непродовольственные товары,2026-08-01,2026-09-01,1,,3376.62,False,national_20261003T112832_522037Z
+future,last_value,LastValue,Непродовольственные товары,2026-08-01,2026-11-01,3,,3376.62,False,national_20261003T112832_522037Z
+future,last_value,LastValue,Непродовольственные товары,2026-08-01,2027-02-01,6,,3376.62,False,national_20261003T112832_522037Z
+future,last_value,LastValue,Непродовольственные товары,2026-08-01,2027-08-01,12,,3376.62,False,national_20261003T112832_522037Z
+future,last_value,LastValue,Общественное питание,2026-08-01,2026-09-01,1,,529.71,False,national_20261003T112832_522037Z
+future,last_value,LastValue,Общественное питание,2026-08-01,2026-11-01,3,,529.71,False,national_20261003T112832_522037Z
+future,last_value,LastValue,Общественное питание,2026-08-01,2027-02-01,6,,529.71,False,national_20261003T112832_522037Z
+future,last_value,LastValue,Общественное питание,2026-08-01,2027-08-01,12,,529.71,False,national_20261003T112832_522037Z
+future,last_value,LastValue,Продовольственные товары,2026-08-01,2026-09-01,1,,2816.95,False,national_20261003T112832_522037Z
+future,last_value,LastValue,Продовольственные товары,2026-08-01,2026-11-01,3,,2816.95,False,national_20261003T112832_522037Z
+future,last_value,LastValue,Продовольственные товары,2026-08-01,2027-02-01,6,,2816.95,False,national_20261003T112832_522037Z
+future,last_value,LastValue,Продовольственные товары,2026-08-01,2027-08-01,12,,2816.95,False,national_20261003T112832_522037Z
+future,last_value,LastValue,Услуги,2026-08-01,2026-09-01,1,,1901.77,False,national_20261003T112832_522037Z
+future,last_value,LastValue,Услуги,2026-08-01,2026-11-01,3,,1901.77,False,national_20261003T112832_522037Z
+future,last_value,LastValue,Услуги,2026-08-01,2027-02-01,6,,1901.77,False,national_20261003T112832_522037Z
+future,last_value,LastValue,Услуги,2026-08-01,2027-08-01,12,,1901.77,False,national_20261003T112832_522037Z
+future,seasonal_naive,SeasonalNaive,Всего,2026-08-01,2026-09-01,1,,7436.81,False,national_20261003T112832_522037Z
+future,seasonal_naive,SeasonalNaive,Всего,2026-08-01,2026-11-01,3,,7394.23,False,national_20261003T112832_522037Z
+future,seasonal_naive,SeasonalNaive,Всего,2026-08-01,2027-02-01,6,,7082.19,False,national_20261003T112832_522037Z
+future,seasonal_naive,SeasonalNaive,Всего,2026-08-01,2027-08-01,12,,8625.05,False,national_20261003T112832_522037Z
+future,seasonal_naive,SeasonalNaive,Непродовольственные товары,2026-08-01,2026-09-01,1,,2846.68,False,national_20261003T112832_522037Z
+future,seasonal_naive,SeasonalNaive,Непродовольственные товары,2026-08-01,2026-11-01,3,,2803.17,False,national_20261003T112832_522037Z
+future,seasonal_naive,SeasonalNaive,Непродовольственные товары,2026-08-01,2027-02-01,6,,2521.6,False,national_20261003T112832_522037Z
+future,seasonal_naive,SeasonalNaive,Непродовольственные товары,2026-08-01,2027-08-01,12,,3376.62,False,national_20261003T112832_522037Z
+future,seasonal_naive,SeasonalNaive,Общественное питание,2026-08-01,2026-09-01,1,,466.02,False,national_20261003T112832_522037Z
+future,seasonal_naive,SeasonalNaive,Общественное питание,2026-08-01,2026-11-01,3,,440.39,False,national_20261003T112832_522037Z
+future,seasonal_naive,SeasonalNaive,Общественное питание,2026-08-01,2027-02-01,6,,454.18,False,national_20261003T112832_522037Z
+future,seasonal_naive,SeasonalNaive,Общественное питание,2026-08-01,2027-08-01,12,,529.71,False,national_20261003T112832_522037Z
+future,seasonal_naive,SeasonalNaive,Продовольственные товары,2026-08-01,2026-09-01,1,,2417.2,False,national_20261003T112832_522037Z
+future,seasonal_naive,SeasonalNaive,Продовольственные товары,2026-08-01,2026-11-01,3,,2437.83,False,national_20261003T112832_522037Z
+future,seasonal_naive,SeasonalNaive,Продовольственные товары,2026-08-01,2027-02-01,6,,2322.8,False,national_20261003T112832_522037Z
+future,seasonal_naive,SeasonalNaive,Продовольственные товары,2026-08-01,2027-08-01,12,,2816.95,False,national_20261003T112832_522037Z
+future,seasonal_naive,SeasonalNaive,Услуги,2026-08-01,2026-09-01,1,,1706.91,False,national_20261003T112832_522037Z
+future,seasonal_naive,SeasonalNaive,Услуги,2026-08-01,2026-11-01,3,,1712.85,False,national_20261003T112832_522037Z
+future,seasonal_naive,SeasonalNaive,Услуги,2026-08-01,2027-02-01,6,,1783.61,False,national_20261003T112832_522037Z
+future,seasonal_naive,SeasonalNaive,Услуги,2026-08-01,2027-08-01,12,,1901.77,False,national_20261003T112832_522037Z
+future,seasonal_growth,SeasonalGrowth,Всего,2026-08-01,2026-09-01,1,,8358.951429473766,False,national_20261003T112832_522037Z
+future,seasonal_growth,SeasonalGrowth,Всего,2026-08-01,2026-11-01,3,,8311.091641222218,False,national_20261003T112832_522037Z
+future,seasonal_growth,SeasonalGrowth,Всего,2026-08-01,2027-02-01,6,,7960.35964671745,False,national_20261003T112832_522037Z
+future,seasonal_growth,SeasonalGrowth,Всего,2026-08-01,2027-08-01,12,,9694.52951289366,False,national_20261003T112832_522037Z
+future,seasonal_growth,SeasonalGrowth,Непродовольственные товары,2026-08-01,2026-09-01,1,,3218.7903488064526,False,national_20261003T112832_522037Z
+future,seasonal_growth,SeasonalGrowth,Непродовольственные товары,2026-08-01,2026-11-01,3,,3169.592838697635,False,national_20261003T112832_522037Z
+future,seasonal_growth,SeasonalGrowth,Непродовольственные товары,2026-08-01,2027-02-01,6,,2851.216766039861,False,national_20261003T112832_522037Z
+future,seasonal_growth,SeasonalGrowth,Непродовольственные товары,2026-08-01,2027-08-01,12,,3818.0026794676055,False,national_20261003T112832_522037Z
+future,seasonal_growth,SeasonalGrowth,Общественное питание,2026-08-01,2026-09-01,1,,580.7578126218827,False,national_20261003T112832_522037Z
+future,seasonal_growth,SeasonalGrowth,Общественное питание,2026-08-01,2026-11-01,3,,548.8175037563859,False,national_20261003T112832_522037Z
+future,seasonal_growth,SeasonalGrowth,Общественное питание,2026-08-01,2027-02-01,6,,566.0027109064133,False,national_20261003T112832_522037Z
+future,seasonal_growth,SeasonalGrowth,Общественное питание,2026-08-01,2027-08-01,12,,660.1287947382892,False,national_20261003T112832_522037Z
+future,seasonal_growth,SeasonalGrowth,Продовольственные товары,2026-08-01,2026-09-01,1,,2635.672471528093,False,national_20261003T112832_522037Z
+future,seasonal_growth,SeasonalGrowth,Продовольственные товары,2026-08-01,2026-11-01,3,,2658.167061585856,False,national_20261003T112832_522037Z
+future,seasonal_growth,SeasonalGrowth,Продовольственные товары,2026-08-01,2027-02-01,6,,2532.7403677252423,False,national_20261003T112832_522037Z
+future,seasonal_growth,SeasonalGrowth,Продовольственные товары,2026-08-01,2027-08-01,12,,3071.5528581296794,False,national_20261003T112832_522037Z
+future,seasonal_growth,SeasonalGrowth,Услуги,2026-08-01,2026-09-01,1,,1934.8781273095901,False,national_20261003T112832_522037Z
+future,seasonal_growth,SeasonalGrowth,Услуги,2026-08-01,2026-11-01,3,,1941.611450142205,False,national_20261003T112832_522037Z
+future,seasonal_growth,SeasonalGrowth,Услуги,2026-08-01,2027-02-01,6,,2021.8218749967236,False,national_20261003T112832_522037Z
+future,seasonal_growth,SeasonalGrowth,Услуги,2026-08-01,2027-08-01,12,,2155.7628557882717,False,national_20261003T112832_522037Z
+future,fourier_36,FourierRidge,Всего,2026-08-01,2026-09-01,1,,8368.938097999657,False,national_20261003T112832_522037Z
+future,fourier_36,FourierRidge,Всего,2026-08-01,2026-11-01,3,,8899.814691050828,False,national_20261003T112832_522037Z
+future,fourier_36,FourierRidge,Всего,2026-08-01,2027-02-01,6,,8247.900479163096,False,national_20261003T112832_522037Z
+future,fourier_36,FourierRidge,Всего,2026-08-01,2027-08-01,12,,9829.689269863333,False,national_20261003T112832_522037Z
+future,fourier_36,FourierRidge,Непродовольственные товары,2026-08-01,2026-09-01,1,,3197.2812604456617,False,national_20261003T112832_522037Z
+future,fourier_36,FourierRidge,Непродовольственные товары,2026-08-01,2026-11-01,3,,3354.5308031388463,False,national_20261003T112832_522037Z
+future,fourier_36,FourierRidge,Непродовольственные товары,2026-08-01,2027-02-01,6,,2961.8429893758903,False,national_20261003T112832_522037Z
+future,fourier_36,FourierRidge,Непродовольственные товары,2026-08-01,2027-08-01,12,,3730.0071092744884,False,national_20261003T112832_522037Z
+future,fourier_36,FourierRidge,Общественное питание,2026-08-01,2026-09-01,1,,590.642986737846,False,national_20261003T112832_522037Z
+future,fourier_36,FourierRidge,Общественное питание,2026-08-01,2026-11-01,3,,597.413553610903,False,national_20261003T112832_522037Z
+future,fourier_36,FourierRidge,Общественное питание,2026-08-01,2027-02-01,6,,641.2736691047337,False,national_20261003T112832_522037Z
+future,fourier_36,FourierRidge,Общественное питание,2026-08-01,2027-08-01,12,,753.084904397501,False,national_20261003T112832_522037Z
+future,fourier_36,FourierRidge,Продовольственные товары,2026-08-01,2026-09-01,1,,2665.6233886100313,False,national_20261003T112832_522037Z
+future,fourier_36,FourierRidge,Продовольственные товары,2026-08-01,2026-11-01,3,,2962.28875554917,False,national_20261003T112832_522037Z
+future,fourier_36,FourierRidge,Продовольственные товары,2026-08-01,2027-02-01,6,,2653.850219107037,False,national_20261003T112832_522037Z
+future,fourier_36,FourierRidge,Продовольственные товары,2026-08-01,2027-08-01,12,,3163.4796398252793,False,national_20261003T112832_522037Z
+future,fourier_36,FourierRidge,Услуги,2026-08-01,2026-09-01,1,,1931.5017555334055,False,national_20261003T112832_522037Z
+future,fourier_36,FourierRidge,Услуги,2026-08-01,2026-11-01,3,,1990.185087654122,False,national_20261003T112832_522037Z
+future,fourier_36,FourierRidge,Услуги,2026-08-01,2027-02-01,6,,2028.48909996208,False,national_20261003T112832_522037Z
+future,fourier_36,FourierRidge,Услуги,2026-08-01,2027-08-01,12,,2216.745225870139,False,national_20261003T112832_522037Z
+future,ridge_10,RidgeDirect,Всего,2026-08-01,2026-09-01,1,,8530.547400830423,False,national_20261003T112832_522037Z
+future,ridge_10,RidgeDirect,Непродовольственные товары,2026-08-01,2026-09-01,1,,3275.6451312095683,False,national_20261003T112832_522037Z
+future,ridge_10,RidgeDirect,Общественное питание,2026-08-01,2026-09-01,1,,532.6627070153053,False,national_20261003T112832_522037Z
+future,ridge_10,RidgeDirect,Продовольственные товары,2026-08-01,2026-09-01,1,,2815.0415765098974,False,national_20261003T112832_522037Z
+future,ridge_10,RidgeDirect,Услуги,2026-08-01,2026-09-01,1,,1924.6333783523091,False,national_20261003T112832_522037Z
+future,ridge_10,RidgeDirect,Всего,2026-08-01,2026-11-01,3,,8650.217916286581,False,national_20261003T112832_522037Z
+future,ridge_10,RidgeDirect,Непродовольственные товары,2026-08-01,2026-11-01,3,,3242.7211100411046,False,national_20261003T112832_522037Z
+future,ridge_10,RidgeDirect,Общественное питание,2026-08-01,2026-11-01,3,,567.9789537459392,False,national_20261003T112832_522037Z
+future,ridge_10,RidgeDirect,Продовольственные товары,2026-08-01,2026-11-01,3,,2846.9209035508416,False,national_20261003T112832_522037Z
+future,ridge_10,RidgeDirect,Услуги,2026-08-01,2026-11-01,3,,2024.8719586750228,False,national_20261003T112832_522037Z
+future,ridge_10,RidgeDirect,Всего,2026-08-01,2027-02-01,6,,8508.312900647568,False,national_20261003T112832_522037Z
+future,ridge_10,RidgeDirect,Непродовольственные товары,2026-08-01,2027-02-01,6,,3163.214142853401,False,national_20261003T112832_522037Z
+future,ridge_10,RidgeDirect,Общественное питание,2026-08-01,2027-02-01,6,,572.9166386124463,False,national_20261003T112832_522037Z
+future,ridge_10,RidgeDirect,Продовольственные товары,2026-08-01,2027-02-01,6,,2759.070984546602,False,national_20261003T112832_522037Z
+future,ridge_10,RidgeDirect,Услуги,2026-08-01,2027-02-01,6,,2020.268498869253,False,national_20261003T112832_522037Z
+future,ridge_10,RidgeDirect,Всего,2026-08-01,2027-08-01,12,,10072.602357736605,False,national_20261003T112832_522037Z
+future,ridge_10,RidgeDirect,Непродовольственные товары,2026-08-01,2027-08-01,12,,3828.9942988122225,False,national_20261003T112832_522037Z
+future,ridge_10,RidgeDirect,Общественное питание,2026-08-01,2027-08-01,12,,710.7389543514688,False,national_20261003T112832_522037Z
+future,ridge_10,RidgeDirect,Продовольственные товары,2026-08-01,2027-08-01,12,,3290.953273497761,False,national_20261003T112832_522037Z
+future,ridge_10,RidgeDirect,Услуги,2026-08-01,2027-08-01,12,,2288.18211684009,False,national_20261003T112832_522037Z
+future,forest,RandomForestDirect,Всего,2026-08-01,2026-09-01,1,,8434.026260048033,False,national_20261003T112832_522037Z
+future,forest,RandomForestDirect,Непродовольственные товары,2026-08-01,2026-09-01,1,,3235.965191802189,False,national_20261003T112832_522037Z
+future,forest,RandomForestDirect,Общественное питание,2026-08-01,2026-09-01,1,,551.1243828839768,False,national_20261003T112832_522037Z
+future,forest,RandomForestDirect,Продовольственные товары,2026-08-01,2026-09-01,1,,2742.6482654535257,False,national_20261003T112832_522037Z
+future,forest,RandomForestDirect,Услуги,2026-08-01,2026-09-01,1,,1942.1979214631945,False,national_20261003T112832_522037Z
+future,forest,RandomForestDirect,Всего,2026-08-01,2026-11-01,3,,8424.183561355436,False,national_20261003T112832_522037Z
+future,forest,RandomForestDirect,Непродовольственные товары,2026-08-01,2026-11-01,3,,3208.0546951422375,False,national_20261003T112832_522037Z
+future,forest,RandomForestDirect,Общественное питание,2026-08-01,2026-11-01,3,,562.953486582129,False,national_20261003T112832_522037Z
+future,forest,RandomForestDirect,Продовольственные товары,2026-08-01,2026-11-01,3,,2777.3990545843344,False,national_20261003T112832_522037Z
+future,forest,RandomForestDirect,Услуги,2026-08-01,2026-11-01,3,,1950.6641381484174,False,national_20261003T112832_522037Z
+future,forest,RandomForestDirect,Всего,2026-08-01,2027-02-01,6,,8020.59601586853,False,national_20261003T112832_522037Z
+future,forest,RandomForestDirect,Непродовольственные товары,2026-08-01,2027-02-01,6,,3026.563515674616,False,national_20261003T112832_522037Z
+future,forest,RandomForestDirect,Общественное питание,2026-08-01,2027-02-01,6,,635.093385337491,False,national_20261003T112832_522037Z
+future,forest,RandomForestDirect,Продовольственные товары,2026-08-01,2027-02-01,6,,2699.6721926284945,False,national_20261003T112832_522037Z
+future,forest,RandomForestDirect,Услуги,2026-08-01,2027-02-01,6,,2012.248472233034,False,national_20261003T112832_522037Z
+future,forest,RandomForestDirect,Всего,2026-08-01,2027-08-01,12,,9771.66684299074,False,national_20261003T112832_522037Z
+future,forest,RandomForestDirect,Непродовольственные товары,2026-08-01,2027-08-01,12,,3817.103568231778,False,national_20261003T112832_522037Z
+future,forest,RandomForestDirect,Общественное питание,2026-08-01,2027-08-01,12,,779.8286318008264,False,national_20261003T112832_522037Z
+future,forest,RandomForestDirect,Продовольственные товары,2026-08-01,2027-08-01,12,,3189.231569231702,False,national_20261003T112832_522037Z
+future,forest,RandomForestDirect,Услуги,2026-08-01,2027-08-01,12,,2166.328910259966,False,national_20261003T112832_522037Z
+future,catboost_d3,CatBoostDirect,Всего,2026-08-01,2026-09-01,1,,8499.638157116755,False,national_20261003T112832_522037Z
+future,catboost_d3,CatBoostDirect,Непродовольственные товары,2026-08-01,2026-09-01,1,,3260.9207666892858,False,national_20261003T112832_522037Z
+future,catboost_d3,CatBoostDirect,Общественное питание,2026-08-01,2026-09-01,1,,541.8917778620337,False,national_20261003T112832_522037Z
+future,catboost_d3,CatBoostDirect,Продовольственные товары,2026-08-01,2026-09-01,1,,2762.6976490095667,False,national_20261003T112832_522037Z
+future,catboost_d3,CatBoostDirect,Услуги,2026-08-01,2026-09-01,1,,1920.154186788322,False,national_20261003T112832_522037Z
+future,catboost_d3,CatBoostDirect,Всего,2026-08-01,2026-11-01,3,,8359.931016478782,False,national_20261003T112832_522037Z
+future,catboost_d3,CatBoostDirect,Непродовольственные товары,2026-08-01,2026-11-01,3,,3159.8464364372267,False,national_20261003T112832_522037Z
+future,catboost_d3,CatBoostDirect,Общественное питание,2026-08-01,2026-11-01,3,,527.2230721819524,False,national_20261003T112832_522037Z
+future,catboost_d3,CatBoostDirect,Продовольственные товары,2026-08-01,2026-11-01,3,,2739.2143179931722,False,national_20261003T112832_522037Z
+future,catboost_d3,CatBoostDirect,Услуги,2026-08-01,2026-11-01,3,,1921.025723003365,False,national_20261003T112832_522037Z
+future,catboost_d3,CatBoostDirect,Всего,2026-08-01,2027-02-01,6,,8008.074666152041,False,national_20261003T112832_522037Z
+future,catboost_d3,CatBoostDirect,Непродовольственные товары,2026-08-01,2027-02-01,6,,3022.7187406088965,False,national_20261003T112832_522037Z
+future,catboost_d3,CatBoostDirect,Общественное питание,2026-08-01,2027-02-01,6,,542.0096217745006,False,national_20261003T112832_522037Z
+future,catboost_d3,CatBoostDirect,Продовольственные товары,2026-08-01,2027-02-01,6,,2678.1516123429556,False,national_20261003T112832_522037Z
+future,catboost_d3,CatBoostDirect,Услуги,2026-08-01,2027-02-01,6,,2009.1252442725752,False,national_20261003T112832_522037Z
+future,catboost_d3,CatBoostDirect,Всего,2026-08-01,2027-08-01,12,,9725.272250499143,False,national_20261003T112832_522037Z
+future,catboost_d3,CatBoostDirect,Непродовольственные товары,2026-08-01,2027-08-01,12,,3791.7923057306384,False,national_20261003T112832_522037Z
+future,catboost_d3,CatBoostDirect,Общественное питание,2026-08-01,2027-08-01,12,,639.9802958247342,False,national_20261003T112832_522037Z
+future,catboost_d3,CatBoostDirect,Продовольственные товары,2026-08-01,2027-08-01,12,,3136.8184225462937,False,national_20261003T112832_522037Z
+future,catboost_d3,CatBoostDirect,Услуги,2026-08-01,2027-08-01,12,,2167.866386835304,False,national_20261003T112832_522037Z
+future,hw_add,HoltWinters,Всего,2026-08-01,2026-09-01,1,,8528.263845509318,False,national_20261003T112832_522037Z
+future,hw_add,HoltWinters,Непродовольственные товары,2026-08-01,2026-09-01,1,,3314.6368034327174,False,national_20261003T112832_522037Z
+future,hw_add,HoltWinters,Общественное питание,2026-08-01,2026-09-01,1,,544.8593013848348,False,national_20261003T112832_522037Z
+future,hw_add,HoltWinters,Продовольственные товары,2026-08-01,2026-09-01,1,,2770.794786295747,False,national_20261003T112832_522037Z
+future,hw_add,HoltWinters,Услуги,2026-08-01,2026-09-01,1,,1898.8057254138598,False,national_20261003T112832_522037Z
+future,hw_add,HoltWinters,Всего,2026-08-01,2026-11-01,3,,8559.76466439098,False,national_20261003T112832_522037Z
+future,hw_add,HoltWinters,Непродовольственные товары,2026-08-01,2026-11-01,3,,3296.686612779809,False,national_20261003T112832_522037Z
+future,hw_add,HoltWinters,Общественное питание,2026-08-01,2026-11-01,3,,540.0763992018701,False,national_20261003T112832_522037Z
+future,hw_add,HoltWinters,Продовольственные товары,2026-08-01,2026-11-01,3,,2835.6753796618946,False,national_20261003T112832_522037Z
+future,hw_add,HoltWinters,Услуги,2026-08-01,2026-11-01,3,,1904.9622480582834,False,national_20261003T112832_522037Z
+future,hw_add,HoltWinters,Всего,2026-08-01,2027-02-01,6,,8396.233797920273,False,national_20261003T112832_522037Z
+future,hw_add,HoltWinters,Непродовольственные товары,2026-08-01,2027-02-01,6,,3159.1406113759363,False,national_20261003T112832_522037Z
+future,hw_add,HoltWinters,Общественное питание,2026-08-01,2027-02-01,6,,554.6156178941278,False,national_20261003T112832_522037Z
+future,hw_add,HoltWinters,Продовольственные товары,2026-08-01,2027-02-01,6,,2772.1813665444765,False,national_20261003T112832_522037Z
+future,hw_add,HoltWinters,Услуги,2026-08-01,2027-02-01,6,,1949.1592138496171,False,national_20261003T112832_522037Z
+future,hw_add,HoltWinters,Всего,2026-08-01,2027-08-01,12,,9243.529845205503,False,national_20261003T112832_522037Z
+future,hw_add,HoltWinters,Непродовольственные товары,2026-08-01,2027-08-01,12,,3605.3651675033007,False,national_20261003T112832_522037Z
+future,hw_add,HoltWinters,Общественное питание,2026-08-01,2027-08-01,12,,610.371900485852,False,national_20261003T112832_522037Z
+future,hw_add,HoltWinters,Продовольственные товары,2026-08-01,2027-08-01,12,,3077.0753042532997,False,national_20261003T112832_522037Z
+future,hw_add,HoltWinters,Услуги,2026-08-01,2027-08-01,12,,2039.0796041991139,False,national_20261003T112832_522037Z
+future,ensemble,DevWeightedEnsemble,Всего,2026-08-01,2026-09-01,1,,8493.35188337579,False,national_20261003T112832_522037Z
+future,ensemble,DevWeightedEnsemble,Непродовольственные товары,2026-08-01,2026-09-01,1,,3277.0310196309974,False,national_20261003T112832_522037Z
+future,ensemble,DevWeightedEnsemble,Общественное питание,2026-08-01,2026-09-01,1,,545.7983633730619,False,national_20261003T112832_522037Z
+future,ensemble,DevWeightedEnsemble,Продовольственные товары,2026-08-01,2026-09-01,1,,2760.495853161967,False,national_20261003T112832_522037Z
+future,ensemble,DevWeightedEnsemble,Услуги,2026-08-01,2026-09-01,1,,1917.1985348180858,False,national_20261003T112832_522037Z
+future,ensemble,DevWeightedEnsemble,Всего,2026-08-01,2026-11-01,3,,8453.521112983555,False,national_20261003T112832_522037Z
+future,ensemble,DevWeightedEnsemble,Непродовольственные товары,2026-08-01,2026-11-01,3,,3225.2081090263123,False,national_20261003T112832_522037Z
+future,ensemble,DevWeightedEnsemble,Общественное питание,2026-08-01,2026-11-01,3,,542.8041825879554,False,national_20261003T112832_522037Z
+future,ensemble,DevWeightedEnsemble,Продовольственные товары,2026-08-01,2026-11-01,3,,2786.5603969831463,False,national_20261003T112832_522037Z
+future,ensemble,DevWeightedEnsemble,Услуги,2026-08-01,2026-11-01,3,,1924.0339518872352,False,national_20261003T112832_522037Z
+future,ensemble,DevWeightedEnsemble,Всего,2026-08-01,2027-02-01,6,,8141.081189861323,False,national_20261003T112832_522037Z
+future,ensemble,DevWeightedEnsemble,Непродовольственные товары,2026-08-01,2027-02-01,6,,3069.2845946967773,False,national_20261003T112832_522037Z
+future,ensemble,DevWeightedEnsemble,Общественное питание,2026-08-01,2027-02-01,6,,576.4070970564342,False,national_20261003T112832_522037Z
+future,ensemble,DevWeightedEnsemble,Продовольственные товары,2026-08-01,2027-02-01,6,,2716.371804207172,False,national_20261003T112832_522037Z
+future,ensemble,DevWeightedEnsemble,Услуги,2026-08-01,2027-02-01,6,,1990.2187264063018,False,national_20261003T112832_522037Z
+future,ensemble,DevWeightedEnsemble,Всего,2026-08-01,2027-08-01,12,,9616.461618415391,False,national_20261003T112832_522037Z
+future,ensemble,DevWeightedEnsemble,Непродовольственные товары,2026-08-01,2027-08-01,12,,3752.346625453173,False,national_20261003T112832_522037Z
+future,ensemble,DevWeightedEnsemble,Общественное питание,2026-08-01,2027-08-01,12,,682.868626757835,False,national_20261003T112832_522037Z
+future,ensemble,DevWeightedEnsemble,Продовольственные товары,2026-08-01,2027-08-01,12,,3140.209298588438,False,national_20261003T112832_522037Z
+future,ensemble,DevWeightedEnsemble,Услуги,2026-08-01,2027-08-01,12,,2133.7327566287645,False,national_20261003T112832_522037Z

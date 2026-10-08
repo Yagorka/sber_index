@@ -1,0 +1,121 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><title>Слайды: прогноз расходов МО</title><style>
+:root{--bg:#fff;--fg:#1c2330;--muted:#5d6675;--line:#dfe3ea;--acc:#1a6fb0}
+@media (prefers-color-scheme: dark){:root{--bg:#10151d;--fg:#e8ecf2;--muted:#9aa4b2;--line:#2a3340;--acc:#6db3ee}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:980px;margin:0 auto;padding:28px 18px 64px}h1{font-size:28px;line-height:1.2}h2{margin-top:2.2em;border-bottom:1px solid var(--line);padding-bottom:.25em}h3{margin-top:1.6em}
+table{border-collapse:collapse;width:100%;font-size:13.5px;margin:12px 0;display:block;overflow-x:auto}th,td{border:1px solid var(--line);padding:5px 8px;text-align:right;white-space:nowrap}th:first-child,td:first-child{text-align:left}
+th{background:rgba(127,127,127,.12)}code{background:rgba(127,127,127,.15);padding:1px 4px;border-radius:4px;font-size:90%}pre{background:rgba(127,127,127,.12);padding:12px;border-radius:8px;overflow-x:auto}
+img{max-width:100%;height:auto}figure{margin:18px 0}figcaption{color:var(--muted);font-size:13px}a{color:var(--acc)}
+@media print{main{max-width:none;padding:0}h2{break-after:avoid}table{font-size:10.5px;display:table}img{break-inside:avoid}}
+
+@page{size:1280px 720px;margin:0}
+body{margin:0;background:#e9edf2}
+.slide{width:1280px;height:720px;box-sizing:border-box;padding:44px 60px;background:#fff;color:#1c2330;page-break-after:always;break-after:page;overflow:hidden;position:relative;margin:0 auto;font:25px/1.42 system-ui,"Segoe UI",Roboto,sans-serif}
+.slide h1{font-size:44px;line-height:1.1;margin:0 0 14px}.slide h2{font-size:32px;margin:0 0 14px;color:#1a6fb0}
+.slide .grid{display:grid;grid-template-columns:1.55fr 1fr;gap:26px;align-items:start}
+.slide img{max-width:100%;max-height:600px;object-fit:contain}.slide table{border-collapse:collapse;font-size:19px;width:100%}
+.slide th,.slide td{border:1px solid #dfe3ea;padding:4px 8px;text-align:right}.slide th:first-child,.slide td:first-child{text-align:left}th{background:#f1f4f8}
+.slide ul{margin:6px 0;padding-left:22px}.slide li{margin:4px 0}.big{font-size:62px;font-weight:700;color:#1a6fb0}.muted{color:#5d6675;font-size:19px}
+.foot{position:absolute;left:60px;bottom:16px;color:#8a93a1;font-size:13px}.warn{background:#fff4e0;border-left:5px solid #e9a23b;padding:10px 16px;font-size:22px}
+.kpi{display:flex;gap:22px;margin:12px 0}.kpi div{background:#f1f4f8;border-radius:10px;padding:14px 22px;min-width:170px}.kpi b{display:block;font-size:46px;color:#1a6fb0}
+</style></head><body><section class="slide"><h1>Прогноз расходов 2 016 муниципалитетов<br>и ранние сигналы структурных сдвигов</h1>
+<div class="kpi"><div><b>−31%</b>MAE к Prophet, 1 мес.</div><div><b>−28%</b>3 мес.</div><div><b>−37%</b>6 мес.</div><div><b>−47%</b>12 мес.</div></div>
+<p>Независимый тест: июль–декабрь 2024, 12 096 рядов (МО × 6 категорий). Выбор заморожен до открытия теста.</p>
+<p class="muted">Данные: СберИндекс (CC BY-SA 4.0). Протокол «конкурсный»: официальные правила организатора мне неизвестны.</p><div class="foot">СберИндекс · прогноз расходов МО · 1</div></section><section class="slide"><h2>Данные и задача</h2><ul>
+<li><b>Цель:</b> безналичные расходы на жителя, руб./мес. — 2 016 МО × 6 категорий × 24 месяца (2023–2024)</li>
+<li><b>Горизонты:</b> 1, 3, 6, 12 месяцев; метрика — MAE в рублях, R², интервалы</li>
+<li><b>Проблема:</b> по МО всего 6–23 месяца истории — сезонность и рост по ряду не оценить</li>
+<li><b>Решение:</b> национальные ряды с 2018 г. (сезонность, темп роста) + уровень МО + небольшая поправка</li>
+<li><b>Дополнительно:</b> недельные ряды, решения ЦБ, реестр событий, справочник МО, индекс доступности рынков</li></ul>
+<p class="warn">Из 13 140 рядов в панель вошли 12 096 полных: крупные города, не прошедшие порог качества СберИндекса, отсутствуют.</p><div class="foot">СберИндекс · прогноз расходов МО · 2</div></section><section class="slide"><h2>Методология одним взглядом</h2>
+<div class="grid"><div><ol>
+<li><b>Уровень МО</b> = среднее трёх последних месяцев, очищенное от реального национального изменения</li>
+<li><b>Национальный путь</b> до цели = сезонность прошлого года × темп роста (только данные ≤ origin)</li>
+<li><b>GBM по остатку</b> (импульсы относительно страны, регион, шум), сжатый и без экстраполяции за обученный горизонт</li>
+<li><b>Ансамбль</b> с Prophet и локальной сезонностью; веса — минимум MAE на validation</li>
+<li><b>Интервалы</b> — split-conformal</li></ol></div>
+<div><p><b>Защита от утечек</b></p><ul><li>признаки и метки ≤ origin (юнит-тесты)</li><li>выбор → заморозка → однократный показ теста</li><li>национальные данные после origin не используются</li><li>bootstrap по МО и по месяцам</li></ul></div></div><div class="foot">СберИндекс · прогноз расходов МО · 3</div></section><section class="slide"><h2>Лидерборд на тесте (MAE, руб./жителя)</h2><div class="grid"><div><img src="../artifacts/figures/mae_by_model_test.png" alt=""></div><div><table class='t' class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Модель</th>
+      <th>MAE h=1</th>
+      <th>MAE h=3</th>
+      <th>MAE h=6</th>
+      <th>MAE h=12</th>
+      <th>Среднее</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ensemble</td>
+      <td>440</td>
+      <td>514</td>
+      <td>466</td>
+      <td>583</td>
+      <td>501</td>
+    </tr>
+    <tr>
+      <td>SeasonalNaive_NatGrowth</td>
+      <td>547</td>
+      <td>543</td>
+      <td>529</td>
+      <td>612</td>
+      <td>558</td>
+    </tr>
+    <tr>
+      <td>NatPath_K1</td>
+      <td>403</td>
+      <td>724</td>
+      <td>873</td>
+      <td>612</td>
+      <td>653</td>
+    </tr>
+    <tr>
+      <td>StructHGB</td>
+      <td>500</td>
+      <td>736</td>
+      <td>883</td>
+      <td>606</td>
+      <td>681</td>
+    </tr>
+    <tr>
+      <td>NatPath_K3</td>
+      <td>526</td>
+      <td>758</td>
+      <td>757</td>
+      <td>687</td>
+      <td>682</td>
+    </tr>
+    <tr>
+      <td>Prophet</td>
+      <td>640</td>
+      <td>719</td>
+      <td>736</td>
+      <td>1093</td>
+      <td>797</td>
+    </tr>
+  </tbody>
+</table><p class="muted">R² по изменению: ансамбль 0.73, Prophet 0.16 (среднее по h).</p></div></div><div class="foot">СберИндекс · прогноз расходов МО · 4</div></section><section class="slide"><h2>Выигрыш у Prophet статистически устойчив</h2><div class="grid"><div><img src="../artifacts/figures/gain_vs_prophet.png" alt=""></div><div><ul>
+<li>95% bootstrap по МО исключает ноль на всех горизонтах</li><li>Bootstrap по 6 целевым месяцам (общий шок месяца) тоже исключает ноль для ансамбля</li>
+<li>Одиночные модели нестабильны: структурная GBM и NatPath выигрывают на h=1 и h=12, но не на h=3–6</li>
+<li>Слабое место — «Маркетплейсы»: ансамбль не лучше Prophet</li></ul></div></div><div class="foot">СберИндекс · прогноз расходов МО · 5</div></section><section class="slide"><h2>Откуда выигрыш: национальная информация</h2><div class="grid"><div>
+<table><tr><th>Вариант</th><th>MAE, ср. по h</th></tr>
+<tr><td>Локальный уровень</td><td>1012</td></tr><tr><td>+ GBM без национальных данных</td><td>884</td></tr>
+<tr><td>Национальный путь (NatPath)</td><td>682</td></tr><tr><td>NatPath + остаточный GBM</td><td>681</td></tr>
+<tr><td><b>Ансамбль</b></td><td><b>501</b></td></tr><tr><td>Prophet</td><td>797</td></tr></table></div>
+<div><img src="../artifacts/figures/ensemble_weights.png" alt=""><p class="muted">Нелинейная модель по МО добавляет мало; главное — сезонность и рост из национальных рядов.</p></div></div><div class="foot">СберИндекс · прогноз расходов МО · 6</div></section><section class="slide"><h2>Фундаментальные модели zero-shot</h2><ul>
+<li>Chronos-Bolt-small, Chronos-2, Chronos-2 + национальный путь как ковариата</li><li>Ревизии чекпойнтов зафиксированы; контекст — только история ≤ origin</li>
+<li>На 6–23 точках <b>хуже Prophet</b> на h≥3; ковариата заметно помогает Chronos-2 (h=1: 506 против 613)</li><li>Вес в ансамбле — 0</li></ul><p>TimesFM-2.5 (200M) на подвыборке 200 МО: MAE 549/786/1245/1630; Prophet на тех же рядах 622/695/709/1078.</p>
+<p class="warn">Возможное пересечение обучающих корпусов с 2023–2024 гг. проверить нельзя: это оценка современной модели, а не исторического deployment.</p><div class="foot">СберИндекс · прогноз расходов МО · 7</div></section><section class="slide"><h2>Детекторы: инъекция сдвигов в реальные остатки</h2><div class="grid"><div><img src="../artifacts/figures/detectors_injection.png" alt=""></div><div><ul>
+<li>Остатки h=1 вне обучения; порог — при бюджете 1 ложная тревога на 100 ряд-месяцев</li>
+<li>F1: CUSUM 0.24, BOCPD 0.19, Page–Hinkley 0.14</li>
+<li>Recall при сдвиге 4σ: CUSUM 0.74</li><li>Ранжирование зависит от способа разметки: на offline-метках лидирует BOCPD</li></ul></div></div><div class="foot">СберИндекс · прогноз расходов МО · 8</div></section><section class="slide"><h2>Три реальных примера</h2><img src="../artifacts/figures/detector_examples.png" alt=""><div class="foot">СберИндекс · прогноз расходов МО · 9</div></section><section class="slide"><h2>Недельные ряды и раннее предупреждение</h2><div class="grid"><div><img src="../artifacts/figures/weekly_detectors_early_warning.png" alt=""></div><div><ul>
+<li>46 категорий, 151 неделя: реальная оценка детекторов (метки — offline-proxy, не истина)</li><li>Page–Hinkley и CUSUM сильнее BOCPD на недельных рядах</li>
+<li><b>Раннее предупреждение: навык не подтверждён</b> — PR-AUC около доли событий, Brier не лучше константы</li></ul><p class="warn">Нужна верифицированная разметка шоков.</p></div></div><div class="foot">СберИндекс · прогноз расходов МО · 10</div></section><section class="slide"><h2>Новости и внешние события</h2><div class="grid"><div><img src="../artifacts/figures/news_ablation.png" alt=""></div><div><ul>
+<li>Датированные официальные события: ключевая ставка ЦБ и реестр из 7 региональных событий</li><li>Только прошлое: available_at = дата вступления в силу / публикации</li><li>Результат: реальные признаки не лучше плацебо</li><li>Текстовый корпус новостей не собирался</li></ul></div></div><div class="foot">СберИндекс · прогноз расходов МО · 11</div></section><section class="slide"><h2>Недельный nowcast и прогноз 2025</h2><div class="grid"><div><img src="../artifacts/figures/forecast_2025_check.png" alt=""></div><div><ul>
+<li>Nowcast по полному месяцу: MAE 62.0 против 70.1 у h=1-ансамбля (млрд руб.).</li><li>Прогноз 2025 заморожен (SHA256) — скрипт оценит MAE, когда СберИндекс опубликует факты по МО</li><li>Санити-проверка: ансамбль согласуется с национальным ростом точнее Prophet</li></ul><img src="../artifacts/figures/nowcast.png" alt=""></div></div><div class="foot">СберИндекс · прогноз расходов МО · 12</div></section><section class="slide"><h2>Ограничения</h2><ul>
+<li>24 месяца данных; тест — 6 целевых месяцев; validation h=12 — один месяц</li><li>Протокол валидации — допущение, нужна сверка с официальными правилами</li><li>Последняя версия данных, даты публикации неизвестны</li>
+<li>Нет верифицированных меток шоков; события реестра охватывают 4 оценимых МО</li><li>Новости = решения ЦБ и реестр, не текстовый корпус</li><li>TimesFM — только подвыборка 200 МО</li><li>Маркетплейсы и общественное питание остаются слабым местом</li></ul><div class="foot">СберИндекс · прогноз расходов МО · 13</div></section><section class="slide"><h2>Воспроизведение</h2><pre style="font-size:20px">conda env create -f environment.yml
+conda activate sber
+bash scripts/get_data.sh
+make test municipal shocks report</pre><ul><li>Конфигурации: <code>configs/*.json</code>; хэши данных и кода в <code>manifest.json</code></li><li>Журналы: <code>tracking/*.csv</code>; прогноз 2025: <code>prospective/</code></li><li>Отчёт: <code>report/report.pdf</code>; результаты: <code>docs/MUNICIPAL_RESULTS_RU.md</code></li></ul><div class="foot">СберИндекс · прогноз расходов МО · 14</div></section></body></html>

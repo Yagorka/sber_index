@@ -1,0 +1,12 @@
+model,status,reason
+CatBoostDirect,available,
+FourierRidge,available,
+HoltWinters,available,
+LastValue,available,
+RandomForestDirect,available,
+RidgeDirect,available,
+SeasonalGrowth,available,
+SeasonalNaive,available,
+Prophet,not_run,Пакет/checkpoint недоступен в текущем окружении; результат не имитируется
+Chronos,not_run,Пакет/checkpoint недоступен в текущем окружении; результат не имитируется
+TimesFM,not_run,Пакет/checkpoint недоступен в текущем окружении; результат не имитируется

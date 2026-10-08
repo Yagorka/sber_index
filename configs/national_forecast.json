@@ -1,0 +1,40 @@
+{
+  "experiment_name": "national_spending_forecast",
+  "seed": 42,
+  "input": "consumer-spending_ru_1788769445732.csv.zip",
+  "target": "value",
+  "unit": "млрд руб.",
+  "geography": "Россия",
+  "series_dimension": "type",
+  "validation": {
+    "minimum_train_months": 36,
+    "holdout_months": 12,
+    "origin_step_months": 1,
+    "horizons_months": [1, 3, 6, 12],
+    "selection_metric": "equal_weight_mean_of_macro_mae_by_horizon",
+    "holdout_mode": "rolling_refit_with_frozen_hyperparameters",
+    "information_assumption": "context_month_value_known_at_origin; latest_vintage_only; actual_publication_delays_unknown",
+    "direct_training_label_rule": "anchor_plus_horizon_not_later_than_origin",
+    "bootstrap_replicates": 1000,
+    "bootstrap_block_months": 3
+  },
+  "variants": [
+    {"id": "last_value", "family": "LastValue", "params": {}},
+    {"id": "seasonal_naive", "family": "SeasonalNaive", "params": {}},
+    {"id": "seasonal_growth", "family": "SeasonalGrowth", "params": {}},
+    {"id": "fourier_36", "family": "FourierRidge", "params": {"window": 36, "alpha": 0.1, "harmonics": 3}},
+    {"id": "fourier_60", "family": "FourierRidge", "params": {"window": 60, "alpha": 0.1, "harmonics": 3}},
+    {"id": "ridge_1", "family": "RidgeDirect", "params": {"alpha": 1.0}},
+    {"id": "ridge_10", "family": "RidgeDirect", "params": {"alpha": 10.0}},
+    {"id": "forest", "family": "RandomForestDirect", "params": {"n_estimators": 100, "max_depth": 6, "min_samples_leaf": 3}},
+    {"id": "catboost_d3", "family": "CatBoostDirect", "params": {"iterations": 200, "depth": 3, "learning_rate": 0.04, "l2_leaf_reg": 5}},
+    {"id": "catboost_d5", "family": "CatBoostDirect", "params": {"iterations": 200, "depth": 5, "learning_rate": 0.04, "l2_leaf_reg": 5}},
+    {"id": "hw_add", "family": "HoltWinters", "params": {"seasonal": "add", "damped_trend": false}},
+    {"id": "hw_mul_damped", "family": "HoltWinters", "params": {"seasonal": "mul", "damped_trend": true}}
+  ],
+  "ensemble": {"top_families": 3, "weight_rule": "inverse_development_macro_mae_for_each_horizon"},
+  "statsmodels_python": "auto",
+  "optional_models": ["Prophet", "Chronos", "TimesFM"],
+  "future_prediction_months": 12,
+  "output_root": "artifacts/forecast_runs"
+}

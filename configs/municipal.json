@@ -1,0 +1,26 @@
+{
+  "seed": 42,
+  "panel": {"file": "data/raw/consumption.parquet", "unit": "руб. на жителя в месяц", "n_months": 24,
+            "first_month": "2023-01", "last_month": "2024-12", "series_rule": "полные 24 месяца"},
+  "protocol": {
+    "assumption": "Правила организатора неизвестны: используется конкурсный протокол, описанный в открытых работах участников (validation 2024-01..06, test 2024-07..12).",
+    "min_origin_index": 5, "horizons": [1, 3, 6, 12],
+    "validation_targets": ["2024-01", "2024-06"], "test_targets": ["2024-07", "2024-12"],
+    "mode": "rolling_refit_expanding_window",
+    "information_assumption": "значение месяца origin известно на origin; недели/новости позже origin не используются"
+  },
+  "structural": {
+    "level_k": 3,
+    "max_train_rows": 300000,
+    "hgb_params": {"max_iter": 120, "learning_rate": 0.05, "max_depth": 4, "min_samples_leaf": 200, "l2_regularization": 1.0},
+    "weight_powers": [0.0, 0.5, 1.0],
+    "shrinks": [0.1, 0.25, 0.5, 0.75, 1.0],
+    "extrapolation_rule": "дрейф не умножается на горизонт больше обученного (h <= origin-5)",
+    "min_train_rows": 3000
+  },
+  "ensemble": {"candidates": ["Prophet", "Chronos2", "Chronos2_NatCov", "ChronosBolt", "TimesFM", "StructHGB", "NatPath_K3", "SeasonalNaive_NatGrowth"],
+               "method": "simplex-weights minimising validation MAE per horizon; h=12 pooled with h=6 (validation has one target month)",
+               "weight_grid_step": 0.05},
+  "intervals": {"method": "split conformal on validation relative absolute errors, per horizon", "coverage": 0.9},
+  "bootstrap": {"replicates": 1000, "cluster": "territory_id"}
+}

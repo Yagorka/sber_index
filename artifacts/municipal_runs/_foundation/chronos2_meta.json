@@ -1,0 +1,11 @@
+{
+ "model": "chronos2",
+ "checkpoint": "amazon/chronos-2",
+ "revision": "29ec3766d36d6f73f0696f85560a422f50e8498c",
+ "zero_shot": true,
+ "context": "history[:origin+1], raw rubles",
+ "covariates": null,
+ "elapsed_seconds": 838.4072015285492,
+ "series": 12096,
+ "torch": "2.14.1+cpu"
+}

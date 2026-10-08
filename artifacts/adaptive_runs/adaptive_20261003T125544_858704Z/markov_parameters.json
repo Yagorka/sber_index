@@ -1,0 +1,97 @@
+[
+  {
+    "series_id": "Всего",
+    "params": {
+      "p[0->0]": 0.8797224573003072,
+      "p[1->0]": 0.06126658196573343,
+      "const[0]": 6.3787538581907635,
+      "const[1]": 10.592381410941448,
+      "sigma2[0]": 2.712981810244874,
+      "sigma2[1]": 180.29104046679834
+    },
+    "high_state": 1,
+    "converged": true,
+    "prefix_filtering_check": true,
+    "warnings": [
+      "No frequency information was provided, so inferred frequency MS will be used.",
+      "No frequency information was provided, so inferred frequency MS will be used.",
+      "No frequency information was provided, so inferred frequency MS will be used."
+    ]
+  },
+  {
+    "series_id": "Непродовольственные товары",
+    "params": {
+      "p[0->0]": 0.8831871738360064,
+      "p[1->0]": 0.08511072155505447,
+      "const[0]": 1.2669973466007234,
+      "const[1]": 15.410249214102958,
+      "sigma2[0]": 15.078545784036965,
+      "sigma2[1]": 312.470889240642
+    },
+    "high_state": 1,
+    "converged": true,
+    "prefix_filtering_check": true,
+    "warnings": [
+      "No frequency information was provided, so inferred frequency MS will be used.",
+      "No frequency information was provided, so inferred frequency MS will be used.",
+      "No frequency information was provided, so inferred frequency MS will be used."
+    ]
+  },
+  {
+    "series_id": "Общественное питание",
+    "params": {
+      "p[0->0]": 0.9816131516060997,
+      "p[1->0]": 0.022821887294640634,
+      "const[0]": 20.189351078455562,
+      "const[1]": -1.4924057247981168,
+      "sigma2[0]": 11.193583380119042,
+      "sigma2[1]": 1879.1908483999678
+    },
+    "high_state": 0,
+    "converged": true,
+    "prefix_filtering_check": true,
+    "warnings": [
+      "No frequency information was provided, so inferred frequency MS will be used.",
+      "No frequency information was provided, so inferred frequency MS will be used.",
+      "No frequency information was provided, so inferred frequency MS will be used."
+    ]
+  },
+  {
+    "series_id": "Продовольственные товары",
+    "params": {
+      "p[0->0]": 0.9400447493177914,
+      "p[1->0]": 0.06158637491133551,
+      "const[0]": 4.823831859702242,
+      "const[1]": 13.403270724232073,
+      "sigma2[0]": 12.943818648823274,
+      "sigma2[1]": 6.218415718075835
+    },
+    "high_state": 1,
+    "converged": true,
+    "prefix_filtering_check": true,
+    "warnings": [
+      "No frequency information was provided, so inferred frequency MS will be used.",
+      "No frequency information was provided, so inferred frequency MS will be used.",
+      "No frequency information was provided, so inferred frequency MS will be used."
+    ]
+  },
+  {
+    "series_id": "Услуги",
+    "params": {
+      "p[0->0]": 0.9815587505801019,
+      "p[1->0]": 0.022849283538516785,
+      "const[0]": 14.747875149823738,
+      "const[1]": 0.6565113424650733,
+      "sigma2[0]": 6.543026783308124,
+      "sigma2[1]": 651.2229603364738
+    },
+    "high_state": 0,
+    "converged": true,
+    "prefix_filtering_check": true,
+    "warnings": [
+      "No frequency information was provided, so inferred frequency MS will be used.",
+      "No frequency information was provided, so inferred frequency MS will be used.",
+      "No frequency information was provided, so inferred frequency MS will be used."
+    ]
+  }
+]

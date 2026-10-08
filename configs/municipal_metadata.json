@@ -1,0 +1,41 @@
+{
+  "source_document": "metadata_municipal_dict_sberindex_2.pdf",
+  "extraction": "Manually verified against all 3 pages of the supplied PDF",
+  "coverage_start_snapshot": "2018-01-01",
+  "coverage_end_snapshot": "2024-01-01",
+  "time_resolution": "annual_january_1_snapshot",
+  "changes_within_year_recorded_at": "start_of_next_year",
+  "update_schedule_described_in_document": "annually_in_July",
+  "expected_update_in_document": "July 2025; this is a historical expectation, not proof of an available update",
+  "interval_semantics": "year_from_inclusive_year_to_exclusive",
+  "territory_id": "municipality_with_constant_boundaries",
+  "version_reasons": ["oktmo", "type", "name", "status", "boundaries"],
+  "administrative_centers": {
+    "reference_year": 2018,
+    "historical_changes_not_tracked": true,
+    "coordinates_crs": "EPSG:4326",
+    "coordinates_not_provided_for": ["Москва", "Санкт-Петербург", "Севастополь"],
+    "polygon_centroid_is_not_administrative_center": true
+  },
+  "shape_values": {
+    "1": "administrative center inside the municipality",
+    "2": "administrative center in a neighboring municipality",
+    "3": "center also serves a neighboring municipality"
+  },
+  "transformation_types": {
+    "union": "объединение/присоединение",
+    "disunion": "разделение/выделение",
+    "transfer": "передача части территории"
+  },
+  "scope": {
+    "municipal_level": "upper_level_only",
+    "new_regions_not_included": true,
+    "chechen_republic_territory_transfers_not_tracked": true,
+    "counts_may_differ_between_sources": true,
+    "source_of_snapshot_dates": "Rosstat municipal population publication"
+  },
+  "geometry": {
+    "manual_boundary_adjustments_described": true,
+    "full_coverage_is_author_statement_not_independently_verified": true
+  }
+}

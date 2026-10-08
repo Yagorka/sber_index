@@ -1,0 +1,28 @@
+{
+ "run_id": "municipal_20261004T140239Z",
+ "elapsed_seconds": 253.92082343900074,
+ "data_sha256": "9833ddaaee7b2a182ed4cceeed16469031700ea87d508bd976150c6770ef8a61",
+ "config_sha256": "afa9133e20e344b4471877335cc1d64b3a707802b76f5ccbf4ee3af43b198979",
+ "models": [
+  "LastValue",
+  "SeasonalNaive",
+  "SeasonalNaive_NatGrowth",
+  "NatPath_K1",
+  "NatPath_K3",
+  "Prophet",
+  "Chronos2",
+  "Chronos2_NatCov",
+  "ChronosBolt",
+  "StructHGB",
+  "LocalOnlyHGB",
+  "LocalBase_K3",
+  "Ensemble"
+ ],
+ "series": 12096,
+ "incomplete_series_dropped": 1044,
+ "protocol_assumption": "Правила организатора неизвестны: используется конкурсный протокол, описанный в открытых работах участников (validation 2024-01..06, test 2024-07..12).",
+ "selected_structural": {
+  "weight_power": 0.0,
+  "shrink": 0.25
+ }
+}

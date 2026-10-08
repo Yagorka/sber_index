@@ -1,0 +1,181 @@
+model,h,group,value,mae
+Prophet,1,category,Все категории,1856.357410007053
+Prophet,1,category,Продовольствие,1024.1351579534944
+Prophet,1,category,Здоровье,108.39657744907197
+Prophet,1,category,Маркетплейсы,541.6165315991357
+Prophet,1,category,Общественное питание,160.70329533052194
+Prophet,1,category,Транспорт,151.34281342622467
+Prophet,1,size_tercile,T1,487.70005498510056
+Prophet,1,size_tercile,T2,578.4601241616234
+Prophet,1,size_tercile,T3,855.2293767794224
+Prophet,3,category,Все категории,2021.9253230826566
+Prophet,3,category,Продовольствие,1140.343015115728
+Prophet,3,category,Здоровье,137.23639463999913
+Prophet,3,category,Маркетплейсы,622.3044117417916
+Prophet,3,category,Общественное питание,201.3245119247881
+Prophet,3,category,Транспорт,188.22421325199187
+Prophet,3,size_tercile,T1,543.6132504812175
+Prophet,3,size_tercile,T2,645.9463349644151
+Prophet,3,size_tercile,T3,966.2495501729677
+Prophet,6,category,Все категории,2171.799455350038
+Prophet,6,category,Продовольствие,991.1212937289445
+Prophet,6,category,Здоровье,121.19135701340971
+Prophet,6,category,Маркетплейсы,712.7969539354718
+Prophet,6,category,Общественное питание,208.69451564237497
+Prophet,6,category,Транспорт,213.2922332684199
+Prophet,6,size_tercile,T1,578.1047746235749
+Prophet,6,size_tercile,T2,673.5973523058805
+Prophet,6,size_tercile,T3,957.8636474432725
+Prophet,12,category,Все категории,3229.2042359851657
+Prophet,12,category,Продовольствие,1398.431802295503
+Prophet,12,category,Здоровье,437.3755783411704
+Prophet,12,category,Маркетплейсы,719.4349019987874
+Prophet,12,category,Общественное питание,332.4100463588367
+Prophet,12,category,Транспорт,440.2107345791406
+Prophet,12,size_tercile,T1,894.6622055999244
+Prophet,12,size_tercile,T2,929.000203011419
+Prophet,12,size_tercile,T3,1455.0187348501663
+Ensemble,1,category,Все категории,1137.5868585172784
+Ensemble,1,category,Продовольствие,635.1601923786143
+Ensemble,1,category,Здоровье,114.47655492611031
+Ensemble,1,category,Маркетплейсы,521.4415778306426
+Ensemble,1,category,Общественное питание,122.00154348845204
+Ensemble,1,category,Транспорт,106.97080344245548
+Ensemble,1,size_tercile,T1,371.2976984983239
+Ensemble,1,size_tercile,T2,395.54292560382765
+Ensemble,1,size_tercile,T3,552.0289786170121
+Ensemble,3,category,Все категории,1328.5038200257316
+Ensemble,3,category,Продовольствие,789.3885077420997
+Ensemble,3,category,Здоровье,120.23020031590941
+Ensemble,3,category,Маркетплейсы,575.9285234673313
+Ensemble,3,category,Общественное питание,141.10291575738992
+Ensemble,3,category,Транспорт,128.05344739035954
+Ensemble,3,size_tercile,T1,425.43138747553337
+Ensemble,3,size_tercile,T2,459.5438145579391
+Ensemble,3,size_tercile,T3,656.6943226180773
+Ensemble,6,category,Все категории,1129.8418654184493
+Ensemble,6,category,Продовольствие,637.2993134998139
+Ensemble,6,category,Здоровье,140.79300271897088
+Ensemble,6,category,Маркетплейсы,661.425117628915
+Ensemble,6,category,Общественное питание,111.85264005579015
+Ensemble,6,category,Транспорт,115.41308346501104
+Ensemble,6,size_tercile,T1,431.35202825918526
+Ensemble,6,size_tercile,T2,431.870054540411
+Ensemble,6,size_tercile,T3,535.1162922571425
+Ensemble,12,category,Все категории,1349.390136476547
+Ensemble,12,category,Продовольствие,546.5781966920883
+Ensemble,12,category,Здоровье,175.0374020243448
+Ensemble,12,category,Маркетплейсы,1083.8424443719248
+Ensemble,12,category,Общественное питание,155.90303960615998
+Ensemble,12,category,Транспорт,189.67726950796825
+Ensemble,12,size_tercile,T1,559.677613699186
+Ensemble,12,size_tercile,T2,560.0213471193975
+Ensemble,12,size_tercile,T3,630.5329420183882
+StructHGB,1,category,Все категории,1443.0218051325078
+StructHGB,1,category,Продовольствие,621.121722145686
+StructHGB,1,category,Здоровье,156.10342897183048
+StructHGB,1,category,Маркетплейсы,491.1985356870782
+StructHGB,1,category,Общественное питание,166.42148561578577
+StructHGB,1,category,Транспорт,121.44560568168681
+StructHGB,1,size_tercile,T1,389.42368349999833
+StructHGB,1,size_tercile,T2,439.05310628353624
+StructHGB,1,size_tercile,T3,671.261711022817
+StructHGB,3,category,Все категории,2083.715733846029
+StructHGB,3,category,Продовольствие,1008.5315466986763
+StructHGB,3,category,Здоровье,231.23469609305968
+StructHGB,3,category,Маркетплейсы,685.6173896890468
+StructHGB,3,category,Общественное питание,235.54012728525845
+StructHGB,3,category,Транспорт,173.46909727369035
+StructHGB,3,size_tercile,T1,567.4840881066802
+StructHGB,3,size_tercile,T2,646.1326854014668
+StructHGB,3,size_tercile,T3,995.5631984495243
+StructHGB,6,category,Все категории,2344.42800523869
+StructHGB,6,category,Продовольствие,1412.4251190266282
+StructHGB,6,category,Здоровье,404.7426644052778
+StructHGB,6,category,Маркетплейсы,763.1805889164959
+StructHGB,6,category,Общественное питание,206.03294771878177
+StructHGB,6,category,Транспорт,168.01903904052008
+StructHGB,6,size_tercile,T1,690.0856915238948
+StructHGB,6,size_tercile,T2,781.2709548705409
+StructHGB,6,size_tercile,T3,1178.2012115682926
+StructHGB,12,category,Все категории,1405.9107931631581
+StructHGB,12,category,Продовольствие,528.0140294069967
+StructHGB,12,category,Здоровье,127.12237705250897
+StructHGB,12,category,Маркетплейсы,1316.897237447204
+StructHGB,12,category,Общественное питание,125.99629357819835
+StructHGB,12,category,Транспорт,133.37793665335926
+StructHGB,12,size_tercile,T1,529.5786701061178
+StructHGB,12,size_tercile,T2,580.1034996501468
+StructHGB,12,size_tercile,T3,709.0342026747338
+NatPath_K3,1,category,Все категории,1522.6085720163176
+NatPath_K3,1,category,Продовольствие,659.3700558697735
+NatPath_K3,1,category,Здоровье,163.3545049296485
+NatPath_K3,1,category,Маркетплейсы,500.464249363652
+NatPath_K3,1,category,Общественное питание,178.0081770234007
+NatPath_K3,1,category,Транспорт,129.68422424477873
+NatPath_K3,1,size_tercile,T1,405.8863301370936
+NatPath_K3,1,size_tercile,T2,462.0543008241406
+NatPath_K3,1,size_tercile,T3,708.8933418593789
+NatPath_K3,3,category,Все категории,2088.646242091265
+NatPath_K3,3,category,Продовольствие,1098.4103029442842
+NatPath_K3,3,category,Здоровье,236.11842518761046
+NatPath_K3,3,category,Маркетплейсы,681.13467987
+NatPath_K3,3,category,Общественное питание,253.70732295560458
+NatPath_K3,3,category,Транспорт,189.42883839430633
+NatPath_K3,3,size_tercile,T1,586.5161989325039
+NatPath_K3,3,size_tercile,T2,668.006277246648
+NatPath_K3,3,size_tercile,T3,1019.3279845681644
+NatPath_K3,6,category,Все категории,2007.2280114390862
+NatPath_K3,6,category,Продовольствие,1229.8383260656285
+NatPath_K3,6,category,Здоровье,302.6609739727444
+NatPath_K3,6,category,Маркетплейсы,595.6245188309401
+NatPath_K3,6,category,Общественное питание,227.15678243646545
+NatPath_K3,6,category,Транспорт,180.16241707120622
+NatPath_K3,6,size_tercile,T1,612.6706003747171
+NatPath_K3,6,size_tercile,T2,675.6715791033996
+NatPath_K3,6,size_tercile,T3,983.1008332502573
+NatPath_K3,12,category,Все категории,1521.9134065335388
+NatPath_K3,12,category,Продовольствие,533.5864089885087
+NatPath_K3,12,category,Здоровье,129.13219414816962
+NatPath_K3,12,category,Маркетплейсы,1602.9886640367054
+NatPath_K3,12,category,Общественное питание,158.7335165805287
+NatPath_K3,12,category,Транспорт,172.80260064109925
+NatPath_K3,12,size_tercile,T1,576.5658563818149
+NatPath_K3,12,size_tercile,T2,658.3697390943152
+NatPath_K3,12,size_tercile,T3,824.7246359658973
+Chronos2,1,category,Все категории,1954.8511601200812
+Chronos2,1,category,Продовольствие,853.5222988633251
+Chronos2,1,category,Здоровье,95.10129643748046
+Chronos2,1,category,Маркетплейсы,551.9123065585181
+Chronos2,1,category,Общественное питание,97.3680413277061
+Chronos2,1,category,Транспорт,124.7335168167397
+Chronos2,1,size_tercile,T1,484.91370991079737
+Chronos2,1,size_tercile,T2,574.5041067138712
+Chronos2,1,size_tercile,T3,779.4217559478818
+Chronos2,3,category,Все категории,2521.5536528895136
+Chronos2,3,category,Продовольствие,1127.0929133904674
+Chronos2,3,category,Здоровье,163.1038387692164
+Chronos2,3,category,Маркетплейсы,1061.5408824638087
+Chronos2,3,category,Общественное питание,193.33699552060432
+Chronos2,3,category,Транспорт,196.26518957198613
+Chronos2,3,size_tercile,T1,668.9371998037825
+Chronos2,3,size_tercile,T2,818.174619594086
+Chronos2,3,size_tercile,T3,1144.4898747657317
+Chronos2,6,category,Все категории,4288.585152035668
+Chronos2,6,category,Продовольствие,1251.7729793326566
+Chronos2,6,category,Здоровье,152.87495475345187
+Chronos2,6,category,Маркетплейсы,1875.008377816942
+Chronos2,6,category,Общественное питание,272.2148830635207
+Chronos2,6,category,Транспорт,323.47670288439156
+Chronos2,6,size_tercile,T1,964.6192066895235
+Chronos2,6,size_tercile,T2,1246.4155660257204
+Chronos2,6,size_tercile,T3,1871.2264951962864
+Chronos2,12,category,Все категории,5999.695868759558
+Chronos2,12,category,Продовольствие,1915.981080716249
+Chronos2,12,category,Здоровье,209.13071788555732
+Chronos2,12,category,Маркетплейсы,2105.3775152050002
+Chronos2,12,category,Общественное питание,338.633501670348
+Chronos2,12,category,Транспорт,333.4130117300327
+Chronos2,12,size_tercile,T1,1275.9293032220485
+Chronos2,12,size_tercile,T2,1672.5737764495266
+Chronos2,12,size_tercile,T3,2503.0154792863245

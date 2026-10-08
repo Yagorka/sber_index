@@ -1,0 +1,23 @@
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+.cache/
+.pytest_cache/
+artifacts/runs/
+# исходные данные (лицензия CC BY-SA, скачиваются scripts/get_data.sh)
+data/raw/
+# тяжёлые промежуточные массивы и модели
+artifacts/municipal_runs/_cache/
+artifacts/municipal_runs/_foundation/*.npy
+artifacts/municipal_runs/_prophet/*.parquet
+artifacts/municipal_runs/*/pred_*.npy
+artifacts/**/models/
+*.joblib
+*.pickle
+# тяжёлые файлы, воспроизводимые скриптами/скачиваемые
+t_dict_municipal/*.gpkg
+artifacts/municipal_runs/*/forecast_2025.csv
+artifacts/municipal_runs/_prophet/log.txt
+artifacts/*.log
+artifacts/municipal_runs/_*.log
+data/external/keyrate.html

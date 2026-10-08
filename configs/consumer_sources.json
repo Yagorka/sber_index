@@ -1,0 +1,39 @@
+{
+  "description_provenance": "Descriptions and update dates supplied by the user; file contents audited separately",
+  "datasets": {
+    "activity": {
+      "title": "Потребительская активность",
+      "description": "Изменение активности потребителей в части разнообразия потребления",
+      "reported_updated_at": "2026-10-02",
+      "preferred_file": "potrebitelskaya-aktivnost-po-kategoriyam-tovarov-v-razreze-vozrastov_ru_1790951484974.csv.zip"
+    },
+    "weekly_growth": {
+      "title": "Изменение потребительских расходов",
+      "description": "Изменение расходов по категориям на основе агрегированных и анонимизированных транзакций клиентов Сбера",
+      "reported_updated_at": "2026-09-28",
+      "preferred_file": "ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip"
+    },
+    "monthly_real_index": {
+      "title": "Индекс реальных потребительских расходов",
+      "description": "Сезонно-сглаженный индекс реальных расходов на товары и услуги, гармонизированный с Росстатом",
+      "reported_updated_at": "2026-09-07",
+      "preferred_file": "consumper-spending-index-sa_ru_1788769455069.csv.zip"
+    },
+    "monthly_growth": {
+      "title": "Потребительские расходы, приросты",
+      "description": "Приросты в номинальных и реальных величинах, гармонизированные с Росстатом",
+      "reported_updated_at": "2026-09-07",
+      "preferred_file": "consumer-spending-growth_ru_1788769451293.csv.zip"
+    },
+    "monthly_spending": {
+      "title": "Потребительские расходы",
+      "description": "Оценка расходов на товары и услуги в абсолютном выражении на основе данных Сбера",
+      "reported_updated_at": "2026-09-07",
+      "preferred_file": "consumer-spending_ru_1788769445732.csv.zip"
+    }
+  },
+  "available_at_per_observation": "not_provided",
+  "historical_vintage_status": "single_current_snapshot",
+  "do_not_concatenate_equivalent_exports": true,
+  "numeric_comparison_absolute_tolerance": 1e-10
+}

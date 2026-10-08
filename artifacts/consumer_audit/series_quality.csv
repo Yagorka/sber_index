@@ -1,0 +1,174 @@
+file,group,series_id,n_observations,missing_periods,off_grid_periods,start,end
+consumer-spending-growth_ru_1788769451293.csv.zip,monthly_growth,"{""type"": ""Всего"", ""value_type"": ""Номинальное""}",93,0,0,2018-12-01,2026-08-01
+consumer-spending-growth_ru_1788769451293.csv.zip,monthly_growth,"{""type"": ""Всего"", ""value_type"": ""Реальное""}",93,0,0,2018-12-01,2026-08-01
+consumer-spending-growth_ru_1788769451293.csv.zip,monthly_growth,"{""type"": ""Непродовольственные товары"", ""value_type"": ""Номинальное""}",93,0,0,2018-12-01,2026-08-01
+consumer-spending-growth_ru_1788769451293.csv.zip,monthly_growth,"{""type"": ""Непродовольственные товары"", ""value_type"": ""Реальное""}",93,0,0,2018-12-01,2026-08-01
+consumer-spending-growth_ru_1788769451293.csv.zip,monthly_growth,"{""type"": ""Общественное питание"", ""value_type"": ""Номинальное""}",93,0,0,2018-12-01,2026-08-01
+consumer-spending-growth_ru_1788769451293.csv.zip,monthly_growth,"{""type"": ""Общественное питание"", ""value_type"": ""Реальное""}",93,0,0,2018-12-01,2026-08-01
+consumer-spending-growth_ru_1788769451293.csv.zip,monthly_growth,"{""type"": ""Продовольственные товары"", ""value_type"": ""Номинальное""}",93,0,0,2018-12-01,2026-08-01
+consumer-spending-growth_ru_1788769451293.csv.zip,monthly_growth,"{""type"": ""Продовольственные товары"", ""value_type"": ""Реальное""}",93,0,0,2018-12-01,2026-08-01
+consumer-spending-growth_ru_1788769451293.csv.zip,monthly_growth,"{""type"": ""Услуги"", ""value_type"": ""Номинальное""}",93,0,0,2018-12-01,2026-08-01
+consumer-spending-growth_ru_1788769451293.csv.zip,monthly_growth,"{""type"": ""Услуги"", ""value_type"": ""Реальное""}",93,0,0,2018-12-01,2026-08-01
+consumer-spending_ru_1788769445732.csv.zip,monthly_spending,"{""type"": ""Всего""}",93,0,0,2018-12-01,2026-08-01
+consumer-spending_ru_1788769445732.csv.zip,monthly_spending,"{""type"": ""Непродовольственные товары""}",93,0,0,2018-12-01,2026-08-01
+consumer-spending_ru_1788769445732.csv.zip,monthly_spending,"{""type"": ""Общественное питание""}",93,0,0,2018-12-01,2026-08-01
+consumer-spending_ru_1788769445732.csv.zip,monthly_spending,"{""type"": ""Продовольственные товары""}",93,0,0,2018-12-01,2026-08-01
+consumer-spending_ru_1788769445732.csv.zip,monthly_spending,"{""type"": ""Услуги""}",93,0,0,2018-12-01,2026-08-01
+consumper-spending-index-sa_ru_1788769455069.csv.zip,monthly_real_index,"{""type"": ""Всего""}",93,0,0,2018-12-01,2026-08-01
+consumper-spending-index-sa_ru_1788769455069.csv.zip,monthly_real_index,"{""type"": ""Непродовольственные товары""}",93,0,0,2018-12-01,2026-08-01
+consumper-spending-index-sa_ru_1788769455069.csv.zip,monthly_real_index,"{""type"": ""Общественное питание""}",93,0,0,2018-12-01,2026-08-01
+consumper-spending-index-sa_ru_1788769455069.csv.zip,monthly_real_index,"{""type"": ""Продовольственные товары""}",93,0,0,2018-12-01,2026-08-01
+consumper-spending-index-sa_ru_1788769455069.csv.zip,monthly_real_index,"{""type"": ""Услуги""}",93,0,0,2018-12-01,2026-08-01
+potrebitelskaya-aktivnost-po-kategoriyam-tovarov-v-razreze-vozrastov.csv,activity,"{""age"": ""15 - 24 лет"", ""ipa_type"": ""Категории товаров""}",299,0,0,2021-01-10,2026-09-27
+potrebitelskaya-aktivnost-po-kategoriyam-tovarov-v-razreze-vozrastov.csv,activity,"{""age"": ""25 - 34 лет"", ""ipa_type"": ""Категории товаров""}",299,0,0,2021-01-10,2026-09-27
+potrebitelskaya-aktivnost-po-kategoriyam-tovarov-v-razreze-vozrastov.csv,activity,"{""age"": ""35 - 64 лет"", ""ipa_type"": ""Категории товаров""}",299,0,0,2021-01-10,2026-09-27
+potrebitelskaya-aktivnost-po-kategoriyam-tovarov-v-razreze-vozrastov.csv,activity,"{""age"": ""65+ лет"", ""ipa_type"": ""Категории товаров""}",299,0,0,2021-01-10,2026-09-27
+potrebitelskaya-aktivnost-po-kategoriyam-tovarov-v-razreze-vozrastov.csv,activity,"{""age"": ""Все возрасты"", ""ipa_type"": ""Категории товаров""}",299,0,0,2021-01-10,2026-09-27
+potrebitelskaya-aktivnost-po-kategoriyam-tovarov-v-razreze-vozrastov_ru_1790951484974.csv.zip,activity,"{""age"": ""15 - 24 лет"", ""ipa_type"": ""Категории товаров""}",299,0,0,2021-01-10,2026-09-27
+potrebitelskaya-aktivnost-po-kategoriyam-tovarov-v-razreze-vozrastov_ru_1790951484974.csv.zip,activity,"{""age"": ""25 - 34 лет"", ""ipa_type"": ""Категории товаров""}",299,0,0,2021-01-10,2026-09-27
+potrebitelskaya-aktivnost-po-kategoriyam-tovarov-v-razreze-vozrastov_ru_1790951484974.csv.zip,activity,"{""age"": ""35 - 64 лет"", ""ipa_type"": ""Категории товаров""}",299,0,0,2021-01-10,2026-09-27
+potrebitelskaya-aktivnost-po-kategoriyam-tovarov-v-razreze-vozrastov_ru_1790951484974.csv.zip,activity,"{""age"": ""65+ лет"", ""ipa_type"": ""Категории товаров""}",299,0,0,2021-01-10,2026-09-27
+potrebitelskaya-aktivnost-po-kategoriyam-tovarov-v-razreze-vozrastov_ru_1790951484974.csv.zip,activity,"{""age"": ""Все возрасты"", ""ipa_type"": ""Категории товаров""}",299,0,0,2021-01-10,2026-09-27
+potrebitelskaya-aktivnost-po-kategoriyam-tovarov-v-razreze-vozrastov_ru_1790951484974.parquet,activity,"{""age"": ""15 - 24 лет"", ""ipa_type"": ""Категории товаров""}",299,0,0,2021-01-10,2026-09-27
+potrebitelskaya-aktivnost-po-kategoriyam-tovarov-v-razreze-vozrastov_ru_1790951484974.parquet,activity,"{""age"": ""25 - 34 лет"", ""ipa_type"": ""Категории товаров""}",299,0,0,2021-01-10,2026-09-27
+potrebitelskaya-aktivnost-po-kategoriyam-tovarov-v-razreze-vozrastov_ru_1790951484974.parquet,activity,"{""age"": ""35 - 64 лет"", ""ipa_type"": ""Категории товаров""}",299,0,0,2021-01-10,2026-09-27
+potrebitelskaya-aktivnost-po-kategoriyam-tovarov-v-razreze-vozrastov_ru_1790951484974.parquet,activity,"{""age"": ""65+ лет"", ""ipa_type"": ""Категории товаров""}",299,0,0,2021-01-10,2026-09-27
+potrebitelskaya-aktivnost-po-kategoriyam-tovarov-v-razreze-vozrastov_ru_1790951484974.parquet,activity,"{""age"": ""Все возрасты"", ""ipa_type"": ""Категории товаров""}",299,0,0,2021-01-10,2026-09-27
+ver-izmenenie-trat-po-kategoriyam.csv,weekly_growth,"{""category"": ""Авиабилеты""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam.csv,weekly_growth,"{""category"": ""Активный отдых и спорт""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam.csv,weekly_growth,"{""category"": ""Ателье, химчистка и ремонт одежды""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam.csv,weekly_growth,"{""category"": ""Бытовая техника""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam.csv,weekly_growth,"{""category"": ""Ветеринарные услуги""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam.csv,weekly_growth,"{""category"": ""Винные магазины""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam.csv,weekly_growth,"{""category"": ""Все категории""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam.csv,weekly_growth,"{""category"": ""Домашние животные""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam.csv,weekly_growth,"{""category"": ""Ж/д билеты""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam.csv,weekly_growth,"{""category"": ""Канцтовары""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam.csv,weekly_growth,"{""category"": ""Компьютерные услуги""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam.csv,weekly_growth,"{""category"": ""Контент и СМИ – Услуги""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam.csv,weekly_growth,"{""category"": ""Контент и СМИ – Физические товары""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam.csv,weekly_growth,"{""category"": ""Контент и СМИ – Цифровые товары""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam.csv,weekly_growth,"{""category"": ""Лекарства и медицинские товары""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam.csv,weekly_growth,"{""category"": ""Локальный транспорт""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam.csv,weekly_growth,"{""category"": ""Маркетплейсы""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam.csv,weekly_growth,"{""category"": ""Мебель и предметы интерьера""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam.csv,weekly_growth,"{""category"": ""Медицинские услуги""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam.csv,weekly_growth,"{""category"": ""Налоговые и юридические консультации и услуги""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam.csv,weekly_growth,"{""category"": ""Непродовольственные товары""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam.csv,weekly_growth,"{""category"": ""Образование""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam.csv,weekly_growth,"{""category"": ""Общественное питание""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam.csv,weekly_growth,"{""category"": ""Одежда, обувь и аксессуары""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam.csv,weekly_growth,"{""category"": ""Отели""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam.csv,weekly_growth,"{""category"": ""Подарки и цветы""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam.csv,weekly_growth,"{""category"": ""Продовольственные магазины""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam.csv,weekly_growth,"{""category"": ""Продовольственные товары""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam.csv,weekly_growth,"{""category"": ""Путешествия и туризм""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam.csv,weekly_growth,"{""category"": ""Развлечения""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam.csv,weekly_growth,"{""category"": ""Салоны красоты, массаж, SPA""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam.csv,weekly_growth,"{""category"": ""Сервис и обслуживание автомобилей""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam.csv,weekly_growth,"{""category"": ""Спортивные товары""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam.csv,weekly_growth,"{""category"": ""Табачные магазины""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam.csv,weekly_growth,"{""category"": ""Такси, каршеринг, аренда автомобилей""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam.csv,weekly_growth,"{""category"": ""Телекоммуникационные услуги""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam.csv,weekly_growth,"{""category"": ""Товары для красоты и здоровья""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam.csv,weekly_growth,"{""category"": ""Товары для строительства, ремонта и дачи""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam.csv,weekly_growth,"{""category"": ""Топливо""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam.csv,weekly_growth,"{""category"": ""Универсальные магазины""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam.csv,weekly_growth,"{""category"": ""Услуги фото и печати""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam.csv,weekly_growth,"{""category"": ""Услуги""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam.csv,weekly_growth,"{""category"": ""Хобби и увлечения""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam.csv,weekly_growth,"{""category"": ""Хранение и доставка грузов и корреспонденции""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam.csv,weekly_growth,"{""category"": ""Электроника и телекоммуникационное оборудование""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam.csv,weekly_growth,"{""category"": ""Ювелирные изделия и часы""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip,weekly_growth,"{""category"": ""Авиабилеты""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip,weekly_growth,"{""category"": ""Активный отдых и спорт""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip,weekly_growth,"{""category"": ""Ателье, химчистка и ремонт одежды""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip,weekly_growth,"{""category"": ""Бытовая техника""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip,weekly_growth,"{""category"": ""Ветеринарные услуги""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip,weekly_growth,"{""category"": ""Винные магазины""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip,weekly_growth,"{""category"": ""Все категории""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip,weekly_growth,"{""category"": ""Домашние животные""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip,weekly_growth,"{""category"": ""Ж/д билеты""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip,weekly_growth,"{""category"": ""Канцтовары""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip,weekly_growth,"{""category"": ""Компьютерные услуги""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip,weekly_growth,"{""category"": ""Контент и СМИ – Услуги""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip,weekly_growth,"{""category"": ""Контент и СМИ – Физические товары""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip,weekly_growth,"{""category"": ""Контент и СМИ – Цифровые товары""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip,weekly_growth,"{""category"": ""Лекарства и медицинские товары""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip,weekly_growth,"{""category"": ""Локальный транспорт""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip,weekly_growth,"{""category"": ""Маркетплейсы""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip,weekly_growth,"{""category"": ""Мебель и предметы интерьера""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip,weekly_growth,"{""category"": ""Медицинские услуги""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip,weekly_growth,"{""category"": ""Налоговые и юридические консультации и услуги""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip,weekly_growth,"{""category"": ""Непродовольственные товары""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip,weekly_growth,"{""category"": ""Образование""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip,weekly_growth,"{""category"": ""Общественное питание""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip,weekly_growth,"{""category"": ""Одежда, обувь и аксессуары""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip,weekly_growth,"{""category"": ""Отели""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip,weekly_growth,"{""category"": ""Подарки и цветы""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip,weekly_growth,"{""category"": ""Продовольственные магазины""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip,weekly_growth,"{""category"": ""Продовольственные товары""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip,weekly_growth,"{""category"": ""Путешествия и туризм""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip,weekly_growth,"{""category"": ""Развлечения""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip,weekly_growth,"{""category"": ""Салоны красоты, массаж, SPA""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip,weekly_growth,"{""category"": ""Сервис и обслуживание автомобилей""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip,weekly_growth,"{""category"": ""Спортивные товары""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip,weekly_growth,"{""category"": ""Табачные магазины""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip,weekly_growth,"{""category"": ""Такси, каршеринг, аренда автомобилей""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip,weekly_growth,"{""category"": ""Телекоммуникационные услуги""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip,weekly_growth,"{""category"": ""Товары для красоты и здоровья""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip,weekly_growth,"{""category"": ""Товары для строительства, ремонта и дачи""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip,weekly_growth,"{""category"": ""Топливо""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip,weekly_growth,"{""category"": ""Универсальные магазины""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip,weekly_growth,"{""category"": ""Услуги фото и печати""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip,weekly_growth,"{""category"": ""Услуги""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip,weekly_growth,"{""category"": ""Хобби и увлечения""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip,weekly_growth,"{""category"": ""Хранение и доставка грузов и корреспонденции""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip,weekly_growth,"{""category"": ""Электроника и телекоммуникационное оборудование""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497553.csv.zip,weekly_growth,"{""category"": ""Ювелирные изделия и часы""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497561.parquet,weekly_growth,"{""category"": ""Авиабилеты""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497561.parquet,weekly_growth,"{""category"": ""Активный отдых и спорт""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497561.parquet,weekly_growth,"{""category"": ""Ателье, химчистка и ремонт одежды""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497561.parquet,weekly_growth,"{""category"": ""Бытовая техника""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497561.parquet,weekly_growth,"{""category"": ""Ветеринарные услуги""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497561.parquet,weekly_growth,"{""category"": ""Винные магазины""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497561.parquet,weekly_growth,"{""category"": ""Все категории""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497561.parquet,weekly_growth,"{""category"": ""Домашние животные""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497561.parquet,weekly_growth,"{""category"": ""Ж/д билеты""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497561.parquet,weekly_growth,"{""category"": ""Канцтовары""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497561.parquet,weekly_growth,"{""category"": ""Компьютерные услуги""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497561.parquet,weekly_growth,"{""category"": ""Контент и СМИ – Услуги""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497561.parquet,weekly_growth,"{""category"": ""Контент и СМИ – Физические товары""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497561.parquet,weekly_growth,"{""category"": ""Контент и СМИ – Цифровые товары""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497561.parquet,weekly_growth,"{""category"": ""Лекарства и медицинские товары""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497561.parquet,weekly_growth,"{""category"": ""Локальный транспорт""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497561.parquet,weekly_growth,"{""category"": ""Маркетплейсы""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497561.parquet,weekly_growth,"{""category"": ""Мебель и предметы интерьера""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497561.parquet,weekly_growth,"{""category"": ""Медицинские услуги""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497561.parquet,weekly_growth,"{""category"": ""Налоговые и юридические консультации и услуги""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497561.parquet,weekly_growth,"{""category"": ""Непродовольственные товары""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497561.parquet,weekly_growth,"{""category"": ""Образование""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497561.parquet,weekly_growth,"{""category"": ""Общественное питание""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497561.parquet,weekly_growth,"{""category"": ""Одежда, обувь и аксессуары""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497561.parquet,weekly_growth,"{""category"": ""Отели""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497561.parquet,weekly_growth,"{""category"": ""Подарки и цветы""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497561.parquet,weekly_growth,"{""category"": ""Продовольственные магазины""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497561.parquet,weekly_growth,"{""category"": ""Продовольственные товары""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497561.parquet,weekly_growth,"{""category"": ""Путешествия и туризм""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497561.parquet,weekly_growth,"{""category"": ""Развлечения""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497561.parquet,weekly_growth,"{""category"": ""Салоны красоты, массаж, SPA""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497561.parquet,weekly_growth,"{""category"": ""Сервис и обслуживание автомобилей""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497561.parquet,weekly_growth,"{""category"": ""Спортивные товары""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497561.parquet,weekly_growth,"{""category"": ""Табачные магазины""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497561.parquet,weekly_growth,"{""category"": ""Такси, каршеринг, аренда автомобилей""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497561.parquet,weekly_growth,"{""category"": ""Телекоммуникационные услуги""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497561.parquet,weekly_growth,"{""category"": ""Товары для красоты и здоровья""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497561.parquet,weekly_growth,"{""category"": ""Товары для строительства, ремонта и дачи""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497561.parquet,weekly_growth,"{""category"": ""Топливо""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497561.parquet,weekly_growth,"{""category"": ""Универсальные магазины""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497561.parquet,weekly_growth,"{""category"": ""Услуги фото и печати""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497561.parquet,weekly_growth,"{""category"": ""Услуги""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497561.parquet,weekly_growth,"{""category"": ""Хобби и увлечения""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497561.parquet,weekly_growth,"{""category"": ""Хранение и доставка грузов и корреспонденции""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497561.parquet,weekly_growth,"{""category"": ""Электроника и телекоммуникационное оборудование""}",151,0,0,2023-11-12,2026-09-27
+ver-izmenenie-trat-po-kategoriyam_ru_1790579497561.parquet,weekly_growth,"{""category"": ""Ювелирные изделия и часы""}",151,0,0,2023-11-12,2026-09-27

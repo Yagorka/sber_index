@@ -1,0 +1,4 @@
+panel,method,threshold
+activity_yoy,CUSUM,14.0
+activity_yoy,PageHinkley,16.0
+activity_yoy,BOCPD,0.9

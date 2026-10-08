@@ -1,0 +1,12 @@
+{
+ "model": "timesfm",
+ "checkpoint": "google/timesfm-2.5-200m-pytorch",
+ "revision": "1d952420fba87f3c6dee4f240de0f1a0fbc790e3",
+ "zero_shot": true,
+ "context": "history[:origin+1], raw rubles",
+ "covariates": null,
+ "elapsed_seconds": 4190.899601221085,
+ "series": 1200,
+ "sample_mo": 200,
+ "torch": "2.14.1+cpu"
+}

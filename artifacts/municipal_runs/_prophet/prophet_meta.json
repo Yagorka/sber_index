@@ -1,0 +1,6 @@
+{
+ "config": "Prophet(weekly_seasonality=False, daily_seasonality=False), остальное по умолчанию",
+ "fallbacks": 0,
+ "rows": 2757888,
+ "elapsed_seconds": 146.6565968990326
+}

@@ -1,0 +1,42 @@
+{
+  "seed": 42,
+  "baseline_pointer": "artifacts/forecast_runs/latest.json",
+  "output_root": "artifacts/adaptive_runs",
+  "calibration_origins": [35, 50],
+  "validation_origins": [63, 68],
+  "holdout_status": "previously_viewed_recheck_not_independent",
+  "catboost_variants": [
+    {"id": "cb_full", "window": null, "half_life": null, "calendar": false},
+    {"id": "cb_w24", "window": 24, "half_life": null, "calendar": false},
+    {"id": "cb_w36", "window": 36, "half_life": null, "calendar": false},
+    {"id": "cb_w48", "window": 48, "half_life": null, "calendar": false},
+    {"id": "cb_decay12", "window": null, "half_life": 12, "calendar": false},
+    {"id": "cb_calendar36", "window": 36, "half_life": null, "calendar": true}
+  ],
+  "catboost_params": {"iterations": 200, "depth": 3, "learning_rate": 0.04, "l2_leaf_reg": 5},
+  "ets_windows": [null, 24, 36, 48],
+  "adaptive_error_windows": [6, 12],
+  "bias_windows": [6, 12],
+  "bias_shrinkage": 0.5,
+  "minimum_matured_errors": 3,
+  "regime_fast_window": 3,
+  "regime_slow_window": 12,
+  "reconciliation_covariance_shrinkage": 0.2,
+  "detectors": {
+    "warmup_observations": 12,
+    "residual_scale_window": 24,
+    "minimum_log_scale": 0.02,
+    "cooldown_observations": 3,
+    "alarm_budget_per_100_observations": 3,
+    "thresholds": {"CUSUM": [4, 6, 8], "PageHinkley": [6, 9, 12], "BOCPD": [0.3, 0.5, 0.7]},
+    "bocpd_hazard": 0.041666666666666664,
+    "synthetic_calibration_scenarios": 60,
+    "synthetic_test_scenarios": 120,
+    "synthetic_length": 120,
+    "synthetic_transition_index": 60,
+    "matching_max_delay": 12,
+    "reference_min_segment": 6,
+    "reference_penalty_multipliers": [1, 2, 4]
+  },
+  "markov_states": {"n_states": 2, "confidence": 0.8, "confirmation_observations": 2}
+}

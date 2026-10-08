@@ -1,0 +1,361 @@
+stage,variant,model,series_id,horizon_months,mae,r2,n_predictions
+development,catboost_d3,CatBoostDirect,Всего,1,129.21705001141643,0.9383235426183865,34
+development,catboost_d3,CatBoostDirect,Всего,3,189.60460395618333,0.8913007789640066,34
+development,catboost_d3,CatBoostDirect,Всего,6,246.6713148298771,0.8479101977654846,34
+development,catboost_d3,CatBoostDirect,Всего,12,257.84216626318863,0.8480052381219216,34
+development,catboost_d3,CatBoostDirect,Непродовольственные товары,1,106.31837348798872,0.8020621606272403,34
+development,catboost_d3,CatBoostDirect,Непродовольственные товары,3,148.03806504388726,0.653277157251026,34
+development,catboost_d3,CatBoostDirect,Непродовольственные товары,6,176.2841344606501,0.5553126266897925,34
+development,catboost_d3,CatBoostDirect,Непродовольственные товары,12,199.07641695378322,0.4413483018916008,34
+development,catboost_d3,CatBoostDirect,Общественное питание,1,6.026317360524072,0.9614236826845319,34
+development,catboost_d3,CatBoostDirect,Общественное питание,3,7.286586542483427,0.9564816282547297,34
+development,catboost_d3,CatBoostDirect,Общественное питание,6,12.931716264194879,0.8498814972228284,34
+development,catboost_d3,CatBoostDirect,Общественное питание,12,30.686467366710676,0.6352554396790834,34
+development,catboost_d3,CatBoostDirect,Продовольственные товары,1,39.60775412170013,0.937444857427927,34
+development,catboost_d3,CatBoostDirect,Продовольственные товары,3,45.401874157528226,0.9208581971099012,34
+development,catboost_d3,CatBoostDirect,Продовольственные товары,6,58.00552026166752,0.9012890426701943,34
+development,catboost_d3,CatBoostDirect,Продовольственные товары,12,65.51692787155525,0.8938099520921569,34
+development,catboost_d3,CatBoostDirect,Услуги,1,14.410351912516884,0.9865798983457378,34
+development,catboost_d3,CatBoostDirect,Услуги,3,18.31023089353953,0.975147246380832,34
+development,catboost_d3,CatBoostDirect,Услуги,6,27.33888166877297,0.9563899925926818,34
+development,catboost_d3,CatBoostDirect,Услуги,12,35.75253380903117,0.9218457132674936,34
+development,ensemble,DevWeightedEnsemble,Всего,1,96.12413592335042,0.9702206609336456,34
+development,ensemble,DevWeightedEnsemble,Всего,3,157.21708909364838,0.9315266957261893,34
+development,ensemble,DevWeightedEnsemble,Всего,6,221.86861436722774,0.8855663235606418,34
+development,ensemble,DevWeightedEnsemble,Всего,12,291.9025583221315,0.8271306085959986,34
+development,ensemble,DevWeightedEnsemble,Непродовольственные товары,1,73.5794606325041,0.9030937827527415,34
+development,ensemble,DevWeightedEnsemble,Непродовольственные товары,3,118.7106450706176,0.7897162846623478,34
+development,ensemble,DevWeightedEnsemble,Непродовольственные товары,6,169.06105455157575,0.6278613527832984,34
+development,ensemble,DevWeightedEnsemble,Непродовольственные товары,12,198.10487664616375,0.4366591157446609,34
+development,ensemble,DevWeightedEnsemble,Общественное питание,1,5.2016156762256225,0.9759899762263491,34
+development,ensemble,DevWeightedEnsemble,Общественное питание,3,7.449563676922874,0.9537435741738766,34
+development,ensemble,DevWeightedEnsemble,Общественное питание,6,14.551187707900143,0.8313031162878178,34
+development,ensemble,DevWeightedEnsemble,Общественное питание,12,35.24021200530219,0.5721361749789782,34
+development,ensemble,DevWeightedEnsemble,Продовольственные товары,1,31.953677748195734,0.9598525830032796,34
+development,ensemble,DevWeightedEnsemble,Продовольственные товары,3,43.97484291247976,0.9379531670366452,34
+development,ensemble,DevWeightedEnsemble,Продовольственные товары,6,50.23724477915918,0.9346924731802372,34
+development,ensemble,DevWeightedEnsemble,Продовольственные товары,12,70.80064084550867,0.9040646003685853,34
+development,ensemble,DevWeightedEnsemble,Услуги,1,12.571999268876596,0.9893071343909781,34
+development,ensemble,DevWeightedEnsemble,Услуги,3,18.29641688081909,0.9738856138311283,34
+development,ensemble,DevWeightedEnsemble,Услуги,6,28.214800378629814,0.9466995382522504,34
+development,ensemble,DevWeightedEnsemble,Услуги,12,44.56169488085325,0.8978679834286052,34
+development,forest,RandomForestDirect,Всего,1,128.27196951925953,0.9451700402504312,34
+development,forest,RandomForestDirect,Всего,3,204.65788585172345,0.8775453408884966,34
+development,forest,RandomForestDirect,Всего,6,236.77536204206834,0.8564966545267131,34
+development,forest,RandomForestDirect,Всего,12,270.54007106583356,0.8276327539117636,34
+development,forest,RandomForestDirect,Непродовольственные товары,1,103.26702808558498,0.8041557473179818,34
+development,forest,RandomForestDirect,Непродовольственные товары,3,157.14857281579475,0.6339930978680743,34
+development,forest,RandomForestDirect,Непродовольственные товары,6,216.3282008694806,0.4186288178384808,34
+development,forest,RandomForestDirect,Непродовольственные товары,12,217.60182206470265,0.32061409203944724,34
+development,forest,RandomForestDirect,Общественное питание,1,6.552395520075517,0.9639147092524836,34
+development,forest,RandomForestDirect,Общественное питание,3,8.379130991713305,0.9434285273372072,34
+development,forest,RandomForestDirect,Общественное питание,6,12.756745857059835,0.8537768290174939,34
+development,forest,RandomForestDirect,Общественное питание,12,29.3183288823424,0.6563529448460865,34
+development,forest,RandomForestDirect,Продовольственные товары,1,40.235687521813425,0.940542593306708,34
+development,forest,RandomForestDirect,Продовольственные товары,3,49.72637413880394,0.9081259277878511,34
+development,forest,RandomForestDirect,Продовольственные товары,6,54.85623450345648,0.9082195779501008,34
+development,forest,RandomForestDirect,Продовольственные товары,12,65.21694997460916,0.892740745572188,34
+development,forest,RandomForestDirect,Услуги,1,16.681893634585123,0.9798307534857423,34
+development,forest,RandomForestDirect,Услуги,3,20.81464350406644,0.9726028188453765,34
+development,forest,RandomForestDirect,Услуги,6,30.578772741889264,0.9515057703594786,34
+development,forest,RandomForestDirect,Услуги,12,31.464651743291764,0.9389259277565665,34
+development,fourier_36,FourierRidge,Всего,1,292.2453719253503,0.7168706992847618,34
+development,fourier_36,FourierRidge,Всего,3,302.74222229083335,0.7440245142416113,34
+development,fourier_36,FourierRidge,Всего,6,246.5988882177347,0.8216805624927864,34
+development,fourier_36,FourierRidge,Всего,12,263.31556119017887,0.8385339473393538,34
+development,fourier_36,FourierRidge,Непродовольственные товары,1,175.65432153251345,0.49313903204510434,34
+development,fourier_36,FourierRidge,Непродовольственные товары,3,197.5395212970655,0.46360759461050627,34
+development,fourier_36,FourierRidge,Непродовольственные товары,6,185.94079650060135,0.551100698122438,34
+development,fourier_36,FourierRidge,Непродовольственные товары,12,147.27935090424148,0.6445902376775194,34
+development,fourier_36,FourierRidge,Общественное питание,1,15.749077319494049,0.7400411324930923,34
+development,fourier_36,FourierRidge,Общественное питание,3,16.853263568830616,0.7137553777167995,34
+development,fourier_36,FourierRidge,Общественное питание,6,23.610035328528497,0.6196445681436258,34
+development,fourier_36,FourierRidge,Общественное питание,12,44.41245687306311,0.49800884476818674,34
+development,fourier_36,FourierRidge,Продовольственные товары,1,90.05371900877627,0.6870108142566697,34
+development,fourier_36,FourierRidge,Продовольственные товары,3,89.08952797994176,0.7314209273910625,34
+development,fourier_36,FourierRidge,Продовольственные товары,6,94.83907514177072,0.7695580486261353,34
+development,fourier_36,FourierRidge,Продовольственные товары,12,80.64293712267434,0.8516806857904962,34
+development,fourier_36,FourierRidge,Услуги,1,51.43954532264614,0.7770976903680272,34
+development,fourier_36,FourierRidge,Услуги,3,52.6327441539314,0.7629884470168014,34
+development,fourier_36,FourierRidge,Услуги,6,55.984546877016655,0.7665611703470177,34
+development,fourier_36,FourierRidge,Услуги,12,75.04685630950914,0.5666106479699462,34
+development,hw_add,HoltWinters,Всего,1,85.1869787479783,0.9704510482205272,34
+development,hw_add,HoltWinters,Всего,3,161.56356535385316,0.915984175954335,34
+development,hw_add,HoltWinters,Всего,6,241.14185731931758,0.8355080548398628,34
+development,hw_add,HoltWinters,Всего,12,408.1782539536214,0.6828049656105792,34
+development,hw_add,HoltWinters,Непродовольственные товары,1,50.48067020780257,0.9429510677810435,34
+development,hw_add,HoltWinters,Непродовольственные товары,3,93.08534896280784,0.8496657726034058,34
+development,hw_add,HoltWinters,Непродовольственные товары,6,147.612710885474,0.6784951277855756,34
+development,hw_add,HoltWinters,Непродовольственные товары,12,192.4435016767978,0.4695233654639579,34
+development,hw_add,HoltWinters,Общественное питание,1,6.028810419115475,0.961125876387732,34
+development,hw_add,HoltWinters,Общественное питание,3,12.756416036658573,0.8663205193417519,34
+development,hw_add,HoltWinters,Общественное питание,6,21.566013823331353,0.6819212161143273,34
+development,hw_add,HoltWinters,Общественное питание,12,53.43459124156692,0.2715306334878558,34
+development,hw_add,HoltWinters,Продовольственные товары,1,33.88461760727855,0.9544795653710682,34
+development,hw_add,HoltWinters,Продовольственные товары,3,52.09479709651964,0.917832731170355,34
+development,hw_add,HoltWinters,Продовольственные товары,6,71.10265718736169,0.8904463355508424,34
+development,hw_add,HoltWinters,Продовольственные товары,12,97.88033438308014,0.8235197861038474,34
+development,hw_add,HoltWinters,Услуги,1,18.55752323006017,0.9728118108287946,34
+development,hw_add,HoltWinters,Услуги,3,39.92403078086992,0.8940453125565508,34
+development,hw_add,HoltWinters,Услуги,6,57.18400200622896,0.8016760726540477,34
+development,hw_add,HoltWinters,Услуги,12,100.48630685900515,0.6106479091884243,34
+development,last_value,LastValue,Всего,1,277.82911764705887,0.6163727536121579,34
+development,last_value,LastValue,Всего,3,295.3147058823529,0.7253493427557585,34
+development,last_value,LastValue,Всего,6,463.63147058823535,0.401890742510967,34
+development,last_value,LastValue,Всего,12,780.9008823529412,-0.07234988267927078,34
+development,last_value,LastValue,Непродовольственные товары,1,133.94970588235296,0.5942442582229441,34
+development,last_value,LastValue,Непродовольственные товары,3,153.24676470588238,0.6604744375519679,34
+development,last_value,LastValue,Непродовольственные товары,6,226.43294117647068,0.2418140316189643,34
+development,last_value,LastValue,Непродовольственные товары,12,297.90176470588233,-0.1275615154039058,34
+development,last_value,LastValue,Общественное питание,1,9.256176470588239,0.917177803082524,34
+development,last_value,LastValue,Общественное питание,3,14.485882352941177,0.8325036777377895,34
+development,last_value,LastValue,Общественное питание,6,29.893235294117652,0.5022341118303024,34
+development,last_value,LastValue,Общественное питание,12,71.62,-0.1732546118778564,34
+development,last_value,LastValue,Продовольственные товары,1,115.76294117647056,0.14698321289773753,34
+development,last_value,LastValue,Продовольственные товары,3,118.53529411764707,0.37867441619261644,34
+development,last_value,LastValue,Продовольственные товары,6,174.67911764705883,0.14530733578953425,34
+development,last_value,LastValue,Продовольственные товары,12,235.60235294117646,0.13914155230543357,34
+development,last_value,LastValue,Услуги,1,28.550000000000008,0.9402996361385394,34
+development,last_value,LastValue,Услуги,3,42.775,0.8836374300658013,34
+development,last_value,LastValue,Услуги,6,88.4064705882353,0.6322394965618904,34
+development,last_value,LastValue,Услуги,12,189.03441176470588,-0.3567084202031563,34
+development,ridge_10,RidgeDirect,Всего,1,183.96621321773645,0.8810158314255525,34
+development,ridge_10,RidgeDirect,Всего,3,266.64100520765606,0.7590315272151187,34
+development,ridge_10,RidgeDirect,Всего,6,312.0236042194522,0.7321812850166547,34
+development,ridge_10,RidgeDirect,Всего,12,497.09874081399755,0.4267590340911649,34
+development,ridge_10,RidgeDirect,Непродовольственные товары,1,107.62578047658174,0.7910534056262303,34
+development,ridge_10,RidgeDirect,Непродовольственные товары,3,158.03686554039956,0.5485875539957394,34
+development,ridge_10,RidgeDirect,Непродовольственные товары,6,217.26748278246123,0.3227223755491122,34
+development,ridge_10,RidgeDirect,Непродовольственные товары,12,310.126900959271,-0.44979303782766156,34
+development,ridge_10,RidgeDirect,Общественное питание,1,10.910534240073703,0.8639338227340232,34
+development,ridge_10,RidgeDirect,Общественное питание,3,11.860507169820343,0.8746432549952068,34
+development,ridge_10,RidgeDirect,Общественное питание,6,17.649224141706053,0.7205191527357457,34
+development,ridge_10,RidgeDirect,Общественное питание,12,31.1106836141316,0.7103987721846713,34
+development,ridge_10,RidgeDirect,Продовольственные товары,1,77.49766728020687,0.7729122156287686,34
+development,ridge_10,RidgeDirect,Продовольственные товары,3,103.25827711669108,0.6304761131747592,34
+development,ridge_10,RidgeDirect,Продовольственные товары,6,87.67073076248452,0.8079521814821208,34
+development,ridge_10,RidgeDirect,Продовольственные товары,12,122.5377154409911,0.6899028289897522,34
+development,ridge_10,RidgeDirect,Услуги,1,34.32705410716951,0.866833258067733,34
+development,ridge_10,RidgeDirect,Услуги,3,56.75000099345354,0.7833856791699679,34
+development,ridge_10,RidgeDirect,Услуги,6,72.29346688244529,0.6952494410972361,34
+development,ridge_10,RidgeDirect,Услуги,12,66.3243447636032,0.7478756036510157,34
+development,seasonal_growth,SeasonalGrowth,Всего,1,232.5747192028877,0.8234859124425304,34
+development,seasonal_growth,SeasonalGrowth,Всего,3,300.38816488169925,0.7583949620994594,34
+development,seasonal_growth,SeasonalGrowth,Всего,6,352.47868072614096,0.711474662668869,34
+development,seasonal_growth,SeasonalGrowth,Всего,12,322.71352380189745,0.7580036644433288,34
+development,seasonal_growth,SeasonalGrowth,Непродовольственные товары,1,186.20229328205806,0.4156668595806692,34
+development,seasonal_growth,SeasonalGrowth,Непродовольственные товары,3,238.30497149862532,0.2074100603051965,34
+development,seasonal_growth,SeasonalGrowth,Непродовольственные товары,6,287.89398644173696,0.010653254742016949,34
+development,seasonal_growth,SeasonalGrowth,Непродовольственные товары,12,278.7911959649719,-0.05396568256459022,34
+development,seasonal_growth,SeasonalGrowth,Общественное питание,1,10.145964203557226,0.8928861852681369,34
+development,seasonal_growth,SeasonalGrowth,Общественное питание,3,11.345238226234422,0.8816141074549402,34
+development,seasonal_growth,SeasonalGrowth,Общественное питание,6,14.689801839067279,0.8100407172098512,34
+development,seasonal_growth,SeasonalGrowth,Общественное питание,12,26.236922685231,0.6809617962840013,34
+development,seasonal_growth,SeasonalGrowth,Продовольственные товары,1,64.12133465357432,0.8640315185714993,34
+development,seasonal_growth,SeasonalGrowth,Продовольственные товары,3,77.09759776618841,0.818679884222707,34
+development,seasonal_growth,SeasonalGrowth,Продовольственные товары,6,83.53387038348787,0.8302416359465207,34
+development,seasonal_growth,SeasonalGrowth,Продовольственные товары,12,78.15115724411007,0.8806679324407691,34
+development,seasonal_growth,SeasonalGrowth,Услуги,1,36.775406510189526,0.8891189639342717,34
+development,seasonal_growth,SeasonalGrowth,Услуги,3,41.34730550193127,0.8648060802862771,34
+development,seasonal_growth,SeasonalGrowth,Услуги,6,41.223431575021394,0.8687847673065628,34
+development,seasonal_growth,SeasonalGrowth,Услуги,12,29.13475816747939,0.9310536619891786,34
+development,seasonal_naive,SeasonalNaive,Всего,1,650.6497058823528,-0.12727532932802355,34
+development,seasonal_naive,SeasonalNaive,Всего,3,656.7688235294117,-0.049934114603031876,34
+development,seasonal_naive,SeasonalNaive,Всего,6,674.5108823529412,0.04313135098068133,34
+development,seasonal_naive,SeasonalNaive,Всего,12,780.9008823529412,-0.07234988267927078,34
+development,seasonal_naive,SeasonalNaive,Непродовольственные товары,1,255.49058823529413,-0.1276133057913289,34
+development,seasonal_naive,SeasonalNaive,Непродовольственные товары,3,255.0020588235294,-0.021405830793408187,34
+development,seasonal_naive,SeasonalNaive,Непродовольственные товары,6,259.6070588235293,0.06029268177533287,34
+development,seasonal_naive,SeasonalNaive,Непродовольственные товары,12,297.90176470588233,-0.1275615154039058,34
+development,seasonal_naive,SeasonalNaive,Общественное питание,1,42.95558823529412,-0.20199592005586053,34
+development,seasonal_naive,SeasonalNaive,Общественное питание,3,44.11705882352941,-0.16812990316929244,34
+development,seasonal_naive,SeasonalNaive,Общественное питание,6,51.00176470588235,-0.18313413070692897,34
+development,seasonal_naive,SeasonalNaive,Общественное питание,12,71.62,-0.1732546118778564,34
+development,seasonal_naive,SeasonalNaive,Продовольственные товары,1,212.85911764705884,-0.14573423013376452,34
+development,seasonal_naive,SeasonalNaive,Продовольственные товары,3,216.49911764705882,-0.14245674809720987,34
+development,seasonal_naive,SeasonalNaive,Продовольственные товары,6,216.28911764705882,0.10197420448031491,34
+development,seasonal_naive,SeasonalNaive,Продовольственные товары,12,235.60235294117646,0.13914155230543357,34
+development,seasonal_naive,SeasonalNaive,Услуги,1,163.27352941176474,-0.2671263006332152,34
+development,seasonal_naive,SeasonalNaive,Услуги,3,165.08058823529407,-0.22710643926849716,34
+development,seasonal_naive,SeasonalNaive,Услуги,6,171.54235294117646,-0.2063313584725417,34
+development,seasonal_naive,SeasonalNaive,Услуги,12,189.03441176470588,-0.3567084202031563,34
+holdout,catboost_d3,CatBoostDirect,Всего,1,147.92593301278984,0.8423071567941316,12
+holdout,catboost_d3,CatBoostDirect,Всего,3,160.8582391575143,0.8329761494646499,12
+holdout,catboost_d3,CatBoostDirect,Всего,6,177.58198249372413,0.824383978481584,12
+holdout,catboost_d3,CatBoostDirect,Всего,12,201.45125492630055,0.8098410973918679,12
+holdout,catboost_d3,CatBoostDirect,Непродовольственные товары,1,82.55560742700573,0.8355080922145561,12
+holdout,catboost_d3,CatBoostDirect,Непродовольственные товары,3,129.89210192337916,0.5791951218823983,12
+holdout,catboost_d3,CatBoostDirect,Непродовольственные товары,6,92.48030973334444,0.7622341582409073,12
+holdout,catboost_d3,CatBoostDirect,Непродовольственные товары,12,65.95126094411637,0.871562334777479,12
+holdout,catboost_d3,CatBoostDirect,Общественное питание,1,13.67519245010036,0.6155438952557051,12
+holdout,catboost_d3,CatBoostDirect,Общественное питание,3,22.695474845654704,-0.07415946252988648,12
+holdout,catboost_d3,CatBoostDirect,Общественное питание,6,36.8993694130284,-1.353970622804494,12
+holdout,catboost_d3,CatBoostDirect,Общественное питание,12,39.66804980879974,-2.4799630833360604,12
+holdout,catboost_d3,CatBoostDirect,Продовольственные товары,1,54.62389293261015,0.8858881645023644,12
+holdout,catboost_d3,CatBoostDirect,Продовольственные товары,3,55.137651578423366,0.8931637294473336,12
+holdout,catboost_d3,CatBoostDirect,Продовольственные товары,6,98.22726840183157,0.6765716986362668,12
+holdout,catboost_d3,CatBoostDirect,Продовольственные товары,12,96.19524199845061,0.7467784004780479,12
+holdout,catboost_d3,CatBoostDirect,Услуги,1,14.805702594070397,0.9094865355781134,12
+holdout,catboost_d3,CatBoostDirect,Услуги,3,24.06978012962499,0.7941902010639563,12
+holdout,catboost_d3,CatBoostDirect,Услуги,6,28.459177864614674,0.7515392629188956,12
+holdout,catboost_d3,CatBoostDirect,Услуги,12,35.0296680975213,0.6098285705105064,12
+holdout,ensemble,DevWeightedEnsemble,Всего,1,166.67800228796423,0.8314193898399382,12
+holdout,ensemble,DevWeightedEnsemble,Всего,3,167.0810131911394,0.8284295109126988,12
+holdout,ensemble,DevWeightedEnsemble,Всего,6,155.28846108496109,0.8351935768023612,12
+holdout,ensemble,DevWeightedEnsemble,Всего,12,97.42927162904509,0.9388065548436757,12
+holdout,ensemble,DevWeightedEnsemble,Непродовольственные товары,1,99.44898457665606,0.7905487308399878,12
+holdout,ensemble,DevWeightedEnsemble,Непродовольственные товары,3,141.29395104159434,0.5643625447464573,12
+holdout,ensemble,DevWeightedEnsemble,Непродовольственные товары,6,117.65483873718215,0.6852697259425238,12
+holdout,ensemble,DevWeightedEnsemble,Непродовольственные товары,12,55.82517430950759,0.9089941922304599,12
+holdout,ensemble,DevWeightedEnsemble,Общественное питание,1,12.336841864959743,0.6644701733169436,12
+holdout,ensemble,DevWeightedEnsemble,Общественное питание,3,20.958952926172145,0.061865082736154764,12
+holdout,ensemble,DevWeightedEnsemble,Общественное питание,6,41.10920426226627,-1.8299554507511502,12
+holdout,ensemble,DevWeightedEnsemble,Общественное питание,12,67.54453989154517,-6.335350555734995,12
+holdout,ensemble,DevWeightedEnsemble,Продовольственные товары,1,54.77698377676222,0.8787242224107892,12
+holdout,ensemble,DevWeightedEnsemble,Продовольственные товары,3,62.62206831069974,0.8606376793008088,12
+holdout,ensemble,DevWeightedEnsemble,Продовольственные товары,6,80.82640800949075,0.7345469037334837,12
+holdout,ensemble,DevWeightedEnsemble,Продовольственные товары,12,81.57870476363018,0.8109314358828104,12
+holdout,ensemble,DevWeightedEnsemble,Услуги,1,17.024644933298458,0.8985281419918721,12
+holdout,ensemble,DevWeightedEnsemble,Услуги,3,22.37920369791588,0.7960807636255361,12
+holdout,ensemble,DevWeightedEnsemble,Услуги,6,15.011325753838682,0.9316650583987134,12
+holdout,ensemble,DevWeightedEnsemble,Услуги,12,16.42036935922933,0.8985177112959989,12
+holdout,forest,RandomForestDirect,Всего,1,137.5517087385891,0.893881823049238,12
+holdout,forest,RandomForestDirect,Всего,3,153.03262384731906,0.8582574335442987,12
+holdout,forest,RandomForestDirect,Всего,6,158.88080513447144,0.8617869737616637,12
+holdout,forest,RandomForestDirect,Всего,12,197.999124260905,0.826394109944535,12
+holdout,forest,RandomForestDirect,Непродовольственные товары,1,94.77058356798848,0.7664282188047598,12
+holdout,forest,RandomForestDirect,Непродовольственные товары,3,149.53569345672122,0.49604104449773134,12
+holdout,forest,RandomForestDirect,Непродовольственные товары,6,103.70210999397666,0.7373661209315252,12
+holdout,forest,RandomForestDirect,Непродовольственные товары,12,65.31270166542083,0.8754058432651408,12
+holdout,forest,RandomForestDirect,Общественное питание,1,17.972531181458567,0.2237946011080174,12
+holdout,forest,RandomForestDirect,Общественное питание,3,47.52733972957164,-3.357712754586152,12
+holdout,forest,RandomForestDirect,Общественное питание,6,98.57768452335308,-16.405723323744596,12
+holdout,forest,RandomForestDirect,Общественное питание,12,97.64601789358964,-15.256011700499052,12
+holdout,forest,RandomForestDirect,Продовольственные товары,1,69.88306005096422,0.8514841583338844,12
+holdout,forest,RandomForestDirect,Продовольственные товары,3,86.19520845018674,0.7702954126884546,12
+holdout,forest,RandomForestDirect,Продовольственные товары,6,101.99416876150288,0.6646055862575365,12
+holdout,forest,RandomForestDirect,Продовольственные товары,12,110.70959156995025,0.6699661932656031,12
+holdout,forest,RandomForestDirect,Услуги,1,18.24814200055179,0.8548627955675505,12
+holdout,forest,RandomForestDirect,Услуги,3,22.252822175380857,0.812090002283519,12
+holdout,forest,RandomForestDirect,Услуги,6,21.223286551887252,0.8289720573882178,12
+holdout,forest,RandomForestDirect,Услуги,12,35.56148360495248,0.5922500005418472,12
+holdout,fourier_36,FourierRidge,Всего,1,270.4194652576727,0.544664909614133,12
+holdout,fourier_36,FourierRidge,Всего,3,243.01849823902762,0.5770936595903173,12
+holdout,fourier_36,FourierRidge,Всего,6,285.72661410660675,0.4615655483309884,12
+holdout,fourier_36,FourierRidge,Всего,12,352.15292856632885,0.4196762949230409,12
+holdout,fourier_36,FourierRidge,Непродовольственные товары,1,148.32448565231604,0.5524524789731451,12
+holdout,fourier_36,FourierRidge,Непродовольственные товары,3,142.3012776077886,0.5803991784254985,12
+holdout,fourier_36,FourierRidge,Непродовольственные товары,6,138.80716903568472,0.42541822092889736,12
+holdout,fourier_36,FourierRidge,Непродовольственные товары,12,198.01280920143128,0.12728458751519878,12
+holdout,fourier_36,FourierRidge,Общественное питание,1,35.344012910793786,-1.0401596209219726,12
+holdout,fourier_36,FourierRidge,Общественное питание,3,40.15001532306105,-1.579756864495394,12
+holdout,fourier_36,FourierRidge,Общественное питание,6,38.79004557336237,-1.6677491414811536,12
+holdout,fourier_36,FourierRidge,Общественное питание,12,40.1768887142134,-2.0285593242993167,12
+holdout,fourier_36,FourierRidge,Продовольственные товары,1,106.92581897568607,0.4213641968492,12
+holdout,fourier_36,FourierRidge,Продовольственные товары,3,101.7218899238507,0.4481966478393056,12
+holdout,fourier_36,FourierRidge,Продовольственные товары,6,117.58117594218736,0.39403977937070855,12
+holdout,fourier_36,FourierRidge,Продовольственные товары,12,112.552116472181,0.596581898091022,12
+holdout,fourier_36,FourierRidge,Услуги,1,31.17211558639273,0.6483219623162617,12
+holdout,fourier_36,FourierRidge,Услуги,3,31.420085002957098,0.6093269505884715,12
+holdout,fourier_36,FourierRidge,Услуги,6,32.716792500355666,0.5896253717734754,12
+holdout,fourier_36,FourierRidge,Услуги,12,44.485474067148665,0.2852054642547469,12
+holdout,hw_add,HoltWinters,Всего,1,217.51001792302372,0.7289291581544016,12
+holdout,hw_add,HoltWinters,Всего,3,248.97383248355436,0.6178652819013053,12
+holdout,hw_add,HoltWinters,Всего,6,332.55551752864625,0.4109035686527879,12
+holdout,hw_add,HoltWinters,Всего,12,330.09262660142235,0.5264122707786809,12
+holdout,hw_add,HoltWinters,Непродовольственные товары,1,113.62340286854794,0.7057069900999229,12
+holdout,hw_add,HoltWinters,Непродовольственные товары,3,160.24054315404854,0.45765961587329673,12
+holdout,hw_add,HoltWinters,Непродовольственные товары,6,169.44176276737298,0.2955902844209398,12
+holdout,hw_add,HoltWinters,Непродовольственные товары,12,159.03839368035185,0.49651916633612425,12
+holdout,hw_add,HoltWinters,Общественное питание,1,14.625617413172705,0.5949245470506332,12
+holdout,hw_add,HoltWinters,Общественное питание,3,19.263056886700095,0.16706094084230427,12
+holdout,hw_add,HoltWinters,Общественное питание,6,29.833754368188636,-1.126737078957078,12
+holdout,hw_add,HoltWinters,Общественное питание,12,66.11647957117306,-7.44760338269807,12
+holdout,hw_add,HoltWinters,Продовольственные товары,1,83.4208247934477,0.7789764822736154,12
+holdout,hw_add,HoltWinters,Продовольственные товары,3,100.03422273730537,0.6949320590246628,12
+holdout,hw_add,HoltWinters,Продовольственные товары,6,113.07540732747755,0.49597540573541943,12
+holdout,hw_add,HoltWinters,Продовольственные товары,12,45.94157034993983,0.9286464648139605,12
+holdout,hw_add,HoltWinters,Услуги,1,24.278434096779716,0.8089077583508257,12
+holdout,hw_add,HoltWinters,Услуги,3,33.4569616687128,0.5051498963882561,12
+holdout,hw_add,HoltWinters,Услуги,6,43.59908982154197,0.33073398595819714,12
+holdout,hw_add,HoltWinters,Услуги,12,90.25281976199504,-1.0368910471340431,12
+holdout,last_value,LastValue,Всего,1,431.22750000000013,-0.5250893601197062,12
+holdout,last_value,LastValue,Всего,3,531.8858333333334,-0.4380143243630845,12
+holdout,last_value,LastValue,Всего,6,694.6241666666668,-1.6029126789054655,12
+holdout,last_value,LastValue,Всего,12,866.5499999999998,-1.9569440486959206,12
+holdout,last_value,LastValue,Непродовольственные товары,1,220.85750000000004,-0.4101272421317781,12
+holdout,last_value,LastValue,Непродовольственные товары,3,303.3758333333333,-0.6573112727472039,12
+holdout,last_value,LastValue,Непродовольственные товары,6,366.6833333333334,-1.9822226811296946,12
+holdout,last_value,LastValue,Непродовольственные товары,12,341.4058333333334,-0.9912724750611583,12
+holdout,last_value,LastValue,Общественное питание,1,19.984166666666667,0.1413067813983887,12
+holdout,last_value,LastValue,Общественное питание,3,23.384166666666662,-0.21694959935262825,12
+holdout,last_value,LastValue,Общественное питание,6,38.186666666666675,-1.7633812414547112,12
+holdout,last_value,LastValue,Общественное питание,12,96.2675,-13.427203553461755,12
+holdout,last_value,LastValue,Продовольственные товары,1,175.04000000000005,-0.8203936707653732,12
+holdout,last_value,LastValue,Продовольственные товары,3,206.3258333333333,-0.6600558471171307,12
+holdout,last_value,LastValue,Продовольственные товары,6,249.1925,-1.2165038130748789,12
+holdout,last_value,LastValue,Продовольственные товары,12,216.5433333333333,-0.19115345967097452,12
+holdout,last_value,LastValue,Услуги,1,38.71666666666672,0.3105648283406828,12
+holdout,last_value,LastValue,Услуги,3,51.08416666666665,-0.0013722701090361777,12
+holdout,last_value,LastValue,Услуги,6,103.8358333333333,-1.9847524368951683,12
+holdout,last_value,LastValue,Услуги,12,212.33249999999998,-9.788712124164556,12
+holdout,ridge_10,RidgeDirect,Всего,1,266.3798979381252,0.5743418752466432,12
+holdout,ridge_10,RidgeDirect,Всего,3,321.41664274151435,0.39716260616112886,12
+holdout,ridge_10,RidgeDirect,Всего,6,336.8833312764252,0.3171996853879969,12
+holdout,ridge_10,RidgeDirect,Всего,12,380.2543553757292,0.29491380822617097,12
+holdout,ridge_10,RidgeDirect,Непродовольственные товары,1,137.15550585496646,0.523251174446802,12
+holdout,ridge_10,RidgeDirect,Непродовольственные товары,3,200.82953259885815,0.11217852055964872,12
+holdout,ridge_10,RidgeDirect,Непродовольственные товары,6,181.55925280751683,0.18631407104575237,12
+holdout,ridge_10,RidgeDirect,Непродовольственные товары,12,144.4556772374685,0.5419927550935191,12
+holdout,ridge_10,RidgeDirect,Общественное питание,1,13.688612647930904,0.5931828329113386,12
+holdout,ridge_10,RidgeDirect,Общественное питание,3,19.941648709334448,0.23819144227690714,12
+holdout,ridge_10,RidgeDirect,Общественное питание,6,12.484336653947807,0.692875263164248,12
+holdout,ridge_10,RidgeDirect,Общественное питание,12,31.275396866180312,-1.299195196308092,12
+holdout,ridge_10,RidgeDirect,Продовольственные товары,1,117.84366976469794,0.5322239406563558,12
+holdout,ridge_10,RidgeDirect,Продовольственные товары,3,163.9431511343748,0.1447571182447146,12
+holdout,ridge_10,RidgeDirect,Продовольственные товары,6,151.75400770044078,0.21709991804004436,12
+holdout,ridge_10,RidgeDirect,Продовольственные товары,12,170.56339482495545,0.2340546097546078,12
+holdout,ridge_10,RidgeDirect,Услуги,1,45.44879753105429,0.344576035474759,12
+holdout,ridge_10,RidgeDirect,Услуги,3,65.37400014272886,-0.4857171817789683,12
+holdout,ridge_10,RidgeDirect,Услуги,6,94.87607790783305,-1.3447841549485293,12
+holdout,ridge_10,RidgeDirect,Услуги,12,119.17410392450468,-2.7354547302989887,12
+holdout,seasonal_growth,SeasonalGrowth,Всего,1,99.2848679693637,0.9288568983021298,12
+holdout,seasonal_growth,SeasonalGrowth,Всего,3,116.54537485960236,0.911719919503708,12
+holdout,seasonal_growth,SeasonalGrowth,Всего,6,145.0577443157109,0.8908145695488623,12
+holdout,seasonal_growth,SeasonalGrowth,Всего,12,210.75894785408255,0.7884094097231674,12
+holdout,seasonal_growth,SeasonalGrowth,Непродовольственные товары,1,81.975925764667,0.8704323860594539,12
+holdout,seasonal_growth,SeasonalGrowth,Непродовольственные товары,3,91.84906808188789,0.8388724867012589,12
+holdout,seasonal_growth,SeasonalGrowth,Непродовольственные товары,6,94.63522515320744,0.8362275322532889,12
+holdout,seasonal_growth,SeasonalGrowth,Непродовольственные товары,12,123.68589988360645,0.673675374253911,12
+holdout,seasonal_growth,SeasonalGrowth,Общественное питание,1,64.21708247324192,-6.604976556660066,12
+holdout,seasonal_growth,SeasonalGrowth,Общественное питание,3,77.75588788382852,-10.136081414356159,12
+holdout,seasonal_growth,SeasonalGrowth,Общественное питание,6,90.20591596671382,-13.19837265376325,12
+holdout,seasonal_growth,SeasonalGrowth,Общественное питание,12,74.97985521499513,-7.830637419624836,12
+holdout,seasonal_growth,SeasonalGrowth,Продовольственные товары,1,64.84630699738818,0.863179925276249,12
+holdout,seasonal_growth,SeasonalGrowth,Продовольственные товары,3,78.70870282611334,0.8081211592339145,12
+holdout,seasonal_growth,SeasonalGrowth,Продовольственные товары,6,98.36453309494841,0.7293619681417174,12
+holdout,seasonal_growth,SeasonalGrowth,Продовольственные товары,12,123.74030485654801,0.5997156914530155,12
+holdout,seasonal_growth,SeasonalGrowth,Услуги,1,19.8007074442278,0.854215862609207,12
+holdout,seasonal_growth,SeasonalGrowth,Услуги,3,24.195182527235374,0.7911474701925326,12
+holdout,seasonal_growth,SeasonalGrowth,Услуги,6,28.508764992453013,0.7232313144176552,12
+holdout,seasonal_growth,SeasonalGrowth,Услуги,12,30.630046803812434,0.63100185945446,12
+holdout,seasonal_naive,SeasonalNaive,Всего,1,866.5499999999998,-1.9569440486959206,12
+holdout,seasonal_naive,SeasonalNaive,Всего,3,866.5499999999998,-1.9569440486959206,12
+holdout,seasonal_naive,SeasonalNaive,Всего,6,866.5499999999998,-1.9569440486959206,12
+holdout,seasonal_naive,SeasonalNaive,Всего,12,866.5499999999998,-1.9569440486959206,12
+holdout,seasonal_naive,SeasonalNaive,Непродовольственные товары,1,341.4058333333334,-0.9912724750611583,12
+holdout,seasonal_naive,SeasonalNaive,Непродовольственные товары,3,341.4058333333334,-0.9912724750611583,12
+holdout,seasonal_naive,SeasonalNaive,Непродовольственные товары,6,341.4058333333334,-0.9912724750611583,12
+holdout,seasonal_naive,SeasonalNaive,Непродовольственные товары,12,341.4058333333334,-0.9912724750611583,12
+holdout,seasonal_naive,SeasonalNaive,Общественное питание,1,96.2675,-13.427203553461755,12
+holdout,seasonal_naive,SeasonalNaive,Общественное питание,3,96.2675,-13.427203553461755,12
+holdout,seasonal_naive,SeasonalNaive,Общественное питание,6,96.2675,-13.427203553461755,12
+holdout,seasonal_naive,SeasonalNaive,Общественное питание,12,96.2675,-13.427203553461755,12
+holdout,seasonal_naive,SeasonalNaive,Продовольственные товары,1,216.5433333333333,-0.19115345967097452,12
+holdout,seasonal_naive,SeasonalNaive,Продовольственные товары,3,216.5433333333333,-0.19115345967097452,12
+holdout,seasonal_naive,SeasonalNaive,Продовольственные товары,6,216.5433333333333,-0.19115345967097452,12
+holdout,seasonal_naive,SeasonalNaive,Продовольственные товары,12,216.5433333333333,-0.19115345967097452,12
+holdout,seasonal_naive,SeasonalNaive,Услуги,1,212.33249999999998,-9.788712124164556,12
+holdout,seasonal_naive,SeasonalNaive,Услуги,3,212.33249999999998,-9.788712124164556,12
+holdout,seasonal_naive,SeasonalNaive,Услуги,6,212.33249999999998,-9.788712124164556,12
+holdout,seasonal_naive,SeasonalNaive,Услуги,12,212.33249999999998,-9.788712124164556,12

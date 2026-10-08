@@ -1,0 +1,1277 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Прогноз расходов МО</title><style>
+:root{--bg:#fff;--fg:#1c2330;--muted:#5d6675;--line:#dfe3ea;--acc:#1a6fb0}
+@media (prefers-color-scheme: dark){:root{--bg:#10151d;--fg:#e8ecf2;--muted:#9aa4b2;--line:#2a3340;--acc:#6db3ee}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:980px;margin:0 auto;padding:28px 18px 64px}h1{font-size:28px;line-height:1.2}h2{margin-top:2.2em;border-bottom:1px solid var(--line);padding-bottom:.25em}h3{margin-top:1.6em}
+table{border-collapse:collapse;width:100%;font-size:13.5px;margin:12px 0;display:block;overflow-x:auto}th,td{border:1px solid var(--line);padding:5px 8px;text-align:right;white-space:nowrap}th:first-child,td:first-child{text-align:left}
+th{background:rgba(127,127,127,.12)}code{background:rgba(127,127,127,.15);padding:1px 4px;border-radius:4px;font-size:90%}pre{background:rgba(127,127,127,.12);padding:12px;border-radius:8px;overflow-x:auto}
+img{max-width:100%;height:auto}figure{margin:18px 0}figcaption{color:var(--muted);font-size:13px}a{color:var(--acc)}
+@media print{main{max-width:none;padding:0}h2{break-after:avoid}table{font-size:10.5px;display:table}img{break-inside:avoid}}
+</style></head><body><main><h1>Прогноз потребительских расходов муниципалитетов и ранние сигналы сдвигов</h1>
+<p>Отчёт построен автоматически из результатов запуска <code>municipal_20261004T140239Z</code>. Данные: СберИндекс, безналичные расходы на жителя по 12 096 рядам (2016 МО × 6 категорий), январь 2023 – декабрь 2024. Численные утверждения ниже прочитаны из файлов результатов. Каталог обученных моделей и все метрики: <code>docs/MODELS_AND_METRICS_RU.md</code>.</p>
+<h2>Резюме</h2>
+<ul>
+<li><strong>Прогнозы 1/3/6/12 мес.</strong> Ансамбль на тесте имеет MAE 440/514/466/583 руб. против 640/719/736/1093 у Prophet, то есть на 31/28/37/47% меньше. Выбор моделей и весов заморожен до открытия теста.</li>
+<li><strong>Откуда выигрыш.</strong> Основной вклад — национальные ряды с 2018 г.: у МО всего 24 месяца, поэтому сезонность и рост берутся из страны, а по МО оценивается уровень и небольшая поправка. Абляция показывает вклад в явном виде.</li>
+<li><strong>Фундаментальные модели</strong> (Chronos-Bolt, Chronos-2, Chronos-2 с национальной ковариатой, TimesFM на подвыборке) без дообучения на таких коротких рядах уступают Prophet на горизонтах ≥3 (на h=1 Chronos-2 с ковариатой лучше) и получили нулевой вес в ансамбле.</li>
+<li><strong>Детекторы</strong> CUSUM / Page–Hinkley / BOCPD сравнены тремя способами и на недельных реальных рядах; победитель зависит от способа разметки. <strong>Раннее предупреждение: навык не подтверждён.</strong></li>
+<li><strong>Новости</strong> как датированные официальные события (ставка ЦБ, реестр) не показали пользы относительно плацебо.</li>
+<li><strong>Недельный nowcast</strong> национального уровня с поправкой смещения лучше h=1-ансамбля при ≥2 неделях месяца; без поправки он непригоден.</li>
+<li>Прогноз на 2025 г. по МО заморожен для будущей проверки.</li>
+</ul>
+<h2>1. Данные</h2>
+<table>
+<thead>
+<tr>
+<th>Источник</th>
+<th>Что</th>
+<th>Период</th>
+<th>Использование</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>СберИндекс, <code>consumption.parquet</code></td>
+<td>безналичные расходы на жителя, руб./мес., 6 категорий</td>
+<td>2023-01…2024-12</td>
+<td>цель; 12096 полных рядов, 1044 неполных исключены</td>
+</tr>
+<tr>
+<td>Справочник МО (<code>t_dict_municipal</code>)</td>
+<td>регион, тип, координаты, интервалы действия</td>
+<td>срез 2024</td>
+<td>статические признаки, сопоставление событий</td>
+</tr>
+<tr>
+<td><code>market_access.parquet</code></td>
+<td>индекс доступности рынков</td>
+<td>2024</td>
+<td>статический признак (log)</td>
+</tr>
+<tr>
+<td>Национальные расходы СберИндекса</td>
+<td>5 категорий, млрд руб./мес.</td>
+<td>2018-12…2026-08</td>
+<td>приор: сезонность и рост <strong>только по данным ≤ origin</strong></td>
+</tr>
+<tr>
+<td>Недельный рост г/г (46 категорий), активность</td>
+<td>недельные ряды</td>
+<td>2021/2023…2026-09</td>
+<td>детекторы, nowcast</td>
+</tr>
+<tr>
+<td>ЦБ РФ: ключевая ставка</td>
+<td>по дням</td>
+<td>2018…2026</td>
+<td>новостные/макро-признаки</td>
+</tr>
+<tr>
+<td>Реестр событий</td>
+<td>7 событий со ссылками</td>
+<td>2023–2024</td>
+<td>событийная оценка детекторов</td>
+</tr>
+</tbody>
+</table>
+<p>Лицензия данных СберИндекса — CC BY-SA 4.0. Муниципальные файлы в репозиторий не включены (<code>scripts/get_data.sh</code> скачивает их в <code>data/raw/</code>); небольшие национальные и недельные выгрузки лежат в корне проекта.</p>
+<h2>2. Протокол оценки</h2>
+<p>Правила организатора мне неизвестны, поэтому использован «конкурсный» протокол, описанный в открытых работах участников: validation — цели янв.–июнь 2024, test — цели июль–декабрь 2024, расширяющееся окно, прогноз горизонтов 1/3/6/12 из каждого origin с историей не менее 6 месяцев. <strong>Допущение подлежит сверке с официальными правилами.</strong></p>
+<ol>
+<li>Для каждого origin и каждого ряда используются только значения ≤ origin; direct-метки обучения — только с целью ≤ origin (проверено тестами <code>tests/test_municipal.py</code>: изменение будущих значений не меняет признаки, метки и национальные приоры).</li>
+<li>Конфигурация структурной модели и веса ансамбля выбраны <strong>по validation</strong>; <code>frozen_selection.json</code> записан до подсчёта метрик теста. После первого показа теста модели, кандидаты и веса не менялись; изменения касались только расчёта Prophet для origin 12.2024 (нужен для прогноза 2025, на тест не влияет) и оформления. Значительная часть решений (дрейф без экстраполяции за обученный горизонт, сжатие 0.25) принята по validation после того, как первая версия модели провалилась на h=6.</li>
+<li>Метрика — MAE в рублях на жителя по всей сетке (сетки у всех моделей совпадают, покрытие 100%), дополнительно R² по уровню и по изменению.</li>
+<li>Неопределённость — парный bootstrap по МО (1000 повторов) и по целевым месяцам (6 месяцев).</li>
+<li>Допущения: значение месяца origin известно на origin; актуальная версия данных (без пересмотров); validation для h=12 содержит один целевой месяц (2024-06).</li>
+</ol>
+<h2>3. Модели</h2>
+<ul>
+<li><strong>Baseline'ы:</strong> LastValue; SeasonalNaive (то же значение год назад, а если нет — LastValue); <strong>Prophet</strong> (месячные даты, настройки по умолчанию, годовая сезонность <code>auto</code> включается только при истории &gt;2 лет; настройки организатора неизвестны).</li>
+<li><strong>Национальный путь (NatPath):</strong> прогноз = локальный уровень (среднее по последним 3 месяцам, скорректированное на реализованное национальное изменение) × национальное SeasonalGrowth-изменение от origin до цели (сезонность и темп роста из национальных рядов; соответствие муниципальных категорий национальным задано заранее).</li>
+<li><strong>SeasonalNaive_NatGrowth:</strong> значение того же месяца год назад × национальный годовой рост.</li>
+<li><strong>StructHGB:</strong> градиентный бустинг (MAE) по остатку относительно NatPath: признаки — локальные импульсы относительно страны, шум, сезонные разности, региональные и категорийные средние, статические признаки МО. Дрейф на месяц умножается на горизонт, <strong>но не дальше обученного</strong> (h ≤ origin−5) и сжимается на валидации (коэффициент 0.25).</li>
+<li><strong>Foundation:</strong> Chronos-Bolt-small, Chronos-2 (zero-shot), Chronos-2 + национальный путь как ковариата, TimesFM-2.5 (подвыборка). Ревизии чекпойнтов в <code>artifacts/municipal_runs/_foundation/*_meta.json</code>.</li>
+<li><strong>Ансамбль:</strong> веса минимизируют MAE на validation (линейная программа, симплекс), отдельно по горизонтам.</li>
+<li><strong>Интервалы:</strong> split-conformal по относительной ошибке на validation, по (горизонту, категории).</li>
+</ul>
+<h2>4. Прогноз 1/3/6/12 мес.</h2>
+<p><strong>Главный результат.</strong> На независимом тесте (цели июль–декабрь 2024, 12 096 рядов) замороженный ансамбль имеет MAE <strong>440 / 514 / 466 / 583 руб. на жителя</strong> для горизонтов 1 / 3 / 6 / 12 мес. против <strong>640 / 719 / 736 / 1093</strong> у Prophet. Снижение — <strong>31% / 28% / 37% / 47%</strong>.
+Парный bootstrap по МО (1000 повторов) даёт 95% интервалы разности MAE строго ниже нуля на всех горизонтах; bootstrap по шести целевым месяцам (общий шок месяца не усредняется по МО) также исключает ноль на всех горизонтах.
+R² по изменению относительно origin (динамика, а не масштаб МО): ансамбль 0.67 / 0.74 / 0.84 / 0.69, Prophet 0.13 / 0.42 / 0.53 / -0.44. Обычный R² по уровню 0.97–0.996 у всех моделей и почти ничего не показывает: уровень определяется масштабом МО.</p>
+<h3>Таблица теста</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Модель</th>
+<th style="text-align: right;">MAE h=1</th>
+<th style="text-align: right;">MAE h=3</th>
+<th style="text-align: right;">MAE h=6</th>
+<th style="text-align: right;">MAE h=12</th>
+<th style="text-align: right;">Среднее</th>
+<th style="text-align: right;">Δ к Prophet, % (среднее)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Ensemble</td>
+<td style="text-align: right;">439.6</td>
+<td style="text-align: right;">513.9</td>
+<td style="text-align: right;">466.1</td>
+<td style="text-align: right;">583.4</td>
+<td style="text-align: right;">500.7</td>
+<td style="text-align: right;">37.2</td>
+</tr>
+<tr>
+<td style="text-align: left;">SeasonalNaive_NatGrowth</td>
+<td style="text-align: right;">546.7</td>
+<td style="text-align: right;">542.6</td>
+<td style="text-align: right;">529.0</td>
+<td style="text-align: right;">612.4</td>
+<td style="text-align: right;">557.7</td>
+<td style="text-align: right;">30.0</td>
+</tr>
+<tr>
+<td style="text-align: left;">NatPath_K1</td>
+<td style="text-align: right;">402.8</td>
+<td style="text-align: right;">724.3</td>
+<td style="text-align: right;">873.2</td>
+<td style="text-align: right;">612.4</td>
+<td style="text-align: right;">653.2</td>
+<td style="text-align: right;">18.1</td>
+</tr>
+<tr>
+<td style="text-align: left;">StructHGB</td>
+<td style="text-align: right;">499.9</td>
+<td style="text-align: right;">736.4</td>
+<td style="text-align: right;">883.1</td>
+<td style="text-align: right;">606.2</td>
+<td style="text-align: right;">681.4</td>
+<td style="text-align: right;">14.5</td>
+</tr>
+<tr>
+<td style="text-align: left;">NatPath_K3</td>
+<td style="text-align: right;">525.6</td>
+<td style="text-align: right;">757.9</td>
+<td style="text-align: right;">757.1</td>
+<td style="text-align: right;">686.5</td>
+<td style="text-align: right;">681.8</td>
+<td style="text-align: right;">14.5</td>
+</tr>
+<tr>
+<td style="text-align: left;">Prophet</td>
+<td style="text-align: right;">640.4</td>
+<td style="text-align: right;">718.6</td>
+<td style="text-align: right;">736.5</td>
+<td style="text-align: right;">1092.8</td>
+<td style="text-align: right;">797.1</td>
+<td style="text-align: right;">0.0</td>
+</tr>
+<tr>
+<td style="text-align: left;">LocalOnlyHGB</td>
+<td style="text-align: right;">665.9</td>
+<td style="text-align: right;">774.7</td>
+<td style="text-align: right;">930.3</td>
+<td style="text-align: right;">1165.1</td>
+<td style="text-align: right;">884.0</td>
+<td style="text-align: right;">-10.9</td>
+</tr>
+<tr>
+<td style="text-align: left;">Chronos2_NatCov</td>
+<td style="text-align: right;">506.2</td>
+<td style="text-align: right;">721.8</td>
+<td style="text-align: right;">969.8</td>
+<td style="text-align: right;">1533.3</td>
+<td style="text-align: right;">932.8</td>
+<td style="text-align: right;">-17.0</td>
+</tr>
+<tr>
+<td style="text-align: left;">LastValue</td>
+<td style="text-align: right;">624.4</td>
+<td style="text-align: right;">863.8</td>
+<td style="text-align: right;">1124.2</td>
+<td style="text-align: right;">1288.6</td>
+<td style="text-align: right;">975.3</td>
+<td style="text-align: right;">-22.4</td>
+</tr>
+<tr>
+<td style="text-align: left;">LocalBase_K3</td>
+<td style="text-align: right;">691.0</td>
+<td style="text-align: right;">815.6</td>
+<td style="text-align: right;">1005.7</td>
+<td style="text-align: right;">1534.5</td>
+<td style="text-align: right;">1011.7</td>
+<td style="text-align: right;">-26.9</td>
+</tr>
+<tr>
+<td style="text-align: left;">Chronos2</td>
+<td style="text-align: right;">612.9</td>
+<td style="text-align: right;">877.1</td>
+<td style="text-align: right;">1360.7</td>
+<td style="text-align: right;">1817.0</td>
+<td style="text-align: right;">1166.9</td>
+<td style="text-align: right;">-46.4</td>
+</tr>
+<tr>
+<td style="text-align: left;">SeasonalNaive</td>
+<td style="text-align: right;">1288.6</td>
+<td style="text-align: right;">1288.6</td>
+<td style="text-align: right;">1288.6</td>
+<td style="text-align: right;">1288.6</td>
+<td style="text-align: right;">1288.6</td>
+<td style="text-align: right;">-61.7</td>
+</tr>
+<tr>
+<td style="text-align: left;">ChronosBolt</td>
+<td style="text-align: right;">706.7</td>
+<td style="text-align: right;">1024.2</td>
+<td style="text-align: right;">1603.4</td>
+<td style="text-align: right;">1986.0</td>
+<td style="text-align: right;">1330.1</td>
+<td style="text-align: right;">-66.9</td>
+</tr>
+</tbody>
+</table>
+<h3>Что даёт национальная информация (абляция)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Вариант</th>
+<th style="text-align: right;">MAE h=1</th>
+<th style="text-align: right;">MAE h=3</th>
+<th style="text-align: right;">MAE h=6</th>
+<th style="text-align: right;">MAE h=12</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Локальный уровень (без национальных данных)</td>
+<td style="text-align: right;">691.0</td>
+<td style="text-align: right;">815.6</td>
+<td style="text-align: right;">1005.7</td>
+<td style="text-align: right;">1534.5</td>
+</tr>
+<tr>
+<td style="text-align: left;">+ GBM без национальных данных</td>
+<td style="text-align: right;">665.9</td>
+<td style="text-align: right;">774.7</td>
+<td style="text-align: right;">930.3</td>
+<td style="text-align: right;">1165.1</td>
+</tr>
+<tr>
+<td style="text-align: left;">Национальный путь (NatPath_K3)</td>
+<td style="text-align: right;">525.6</td>
+<td style="text-align: right;">757.9</td>
+<td style="text-align: right;">757.1</td>
+<td style="text-align: right;">686.5</td>
+</tr>
+<tr>
+<td style="text-align: left;">NatPath + остаточный GBM (StructHGB)</td>
+<td style="text-align: right;">499.9</td>
+<td style="text-align: right;">736.4</td>
+<td style="text-align: right;">883.1</td>
+<td style="text-align: right;">606.2</td>
+</tr>
+</tbody>
+</table>
+<p>Национальный путь (сезонность и темп роста из рядов с 2018 г., только по данным до origin) снижает среднюю MAE с 1012 до 682 (33%). Остаточный GBM поверх национального пути даёт смешанный эффект: лучше на h=1 (526 → 500) и h=12 (687 → 606), но хуже на h=3 и h=6; в среднем 682 → 681. Основной вклад вносит национальный приор, а не нелинейная модель по МО. Причина: у МО всего 6–23 месяца истории, и ни сезонность, ни годовой рост по такому ряду оценить нельзя.</p>
+<h3>Веса ансамбля (подобраны на validation)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Модель</th>
+<th style="text-align: right;">1</th>
+<th style="text-align: right;">3</th>
+<th style="text-align: right;">6</th>
+<th style="text-align: right;">12</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Prophet</td>
+<td style="text-align: right;">0.25</td>
+<td style="text-align: right;">0.47</td>
+<td style="text-align: right;">0.27</td>
+<td style="text-align: right;">0.28</td>
+</tr>
+<tr>
+<td style="text-align: left;">SeasonalNaive_NatGrowth</td>
+<td style="text-align: right;">0.35</td>
+<td style="text-align: right;">0.41</td>
+<td style="text-align: right;">0.66</td>
+<td style="text-align: right;">0.64</td>
+</tr>
+<tr>
+<td style="text-align: left;">StructHGB</td>
+<td style="text-align: right;">0.40</td>
+<td style="text-align: right;">0.12</td>
+<td style="text-align: right;">0.06</td>
+<td style="text-align: right;">0.07</td>
+</tr>
+</tbody>
+</table>
+<p>Веса найдены линейной программой (минимум MAE на симплексе); для h=12 использованы пары h=6 и h=12, потому что на validation у h=12 один целевой месяц. Foundation-модели получили нулевой вес: на validation они не лучше выбранных кандидатов.</p>
+<h3>По категориям (среднее по 4 горизонтам)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Категория</th>
+<th style="text-align: right;">Ensemble</th>
+<th style="text-align: right;">Prophet</th>
+<th style="text-align: right;">Δ, %</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Все категории</td>
+<td style="text-align: right;">1236.3</td>
+<td style="text-align: right;">2319.8</td>
+<td style="text-align: right;">46.7</td>
+</tr>
+<tr>
+<td style="text-align: left;">Здоровье</td>
+<td style="text-align: right;">137.6</td>
+<td style="text-align: right;">201.0</td>
+<td style="text-align: right;">31.5</td>
+</tr>
+<tr>
+<td style="text-align: left;">Маркетплейсы</td>
+<td style="text-align: right;">710.7</td>
+<td style="text-align: right;">649.0</td>
+<td style="text-align: right;">-9.5</td>
+</tr>
+<tr>
+<td style="text-align: left;">Общественное питание</td>
+<td style="text-align: right;">132.7</td>
+<td style="text-align: right;">225.8</td>
+<td style="text-align: right;">41.2</td>
+</tr>
+<tr>
+<td style="text-align: left;">Продовольствие</td>
+<td style="text-align: right;">652.1</td>
+<td style="text-align: right;">1138.5</td>
+<td style="text-align: right;">42.7</td>
+</tr>
+<tr>
+<td style="text-align: left;">Транспорт</td>
+<td style="text-align: right;">135.0</td>
+<td style="text-align: right;">248.3</td>
+<td style="text-align: right;">45.6</td>
+</tr>
+</tbody>
+</table>
+<p>В категории «Маркетплейсы» с очень быстрым ростом и сильной сезонностью ансамбль не лучше Prophet — это слабое место, которое стоит исправлять отдельным национальным приором для маркетплейсов.</p>
+<h3>По размеру ряда (терцили уровня внутри категории)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Терциль</th>
+<th style="text-align: right;">Ensemble</th>
+<th style="text-align: right;">Prophet</th>
+<th style="text-align: right;">Δ, %</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">T1</td>
+<td style="text-align: right;">446.9</td>
+<td style="text-align: right;">626.0</td>
+<td style="text-align: right;">28.6</td>
+</tr>
+<tr>
+<td style="text-align: left;">T2</td>
+<td style="text-align: right;">461.7</td>
+<td style="text-align: right;">706.8</td>
+<td style="text-align: right;">34.7</td>
+</tr>
+<tr>
+<td style="text-align: left;">T3</td>
+<td style="text-align: right;">593.6</td>
+<td style="text-align: right;">1058.6</td>
+<td style="text-align: right;">43.9</td>
+</tr>
+</tbody>
+</table>
+<h3>Интервалы</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Горизонт, мес.</th>
+<th style="text-align: right;">Номинал</th>
+<th style="text-align: right;">Покрытие на тесте</th>
+<th style="text-align: right;">Средняя полуширина (отн.)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">0.900</td>
+<td style="text-align: right;">0.889</td>
+<td style="text-align: right;">0.166</td>
+</tr>
+<tr>
+<td style="text-align: right;">3.000</td>
+<td style="text-align: right;">0.900</td>
+<td style="text-align: right;">0.874</td>
+<td style="text-align: right;">0.193</td>
+</tr>
+<tr>
+<td style="text-align: right;">6.000</td>
+<td style="text-align: right;">0.900</td>
+<td style="text-align: right;">0.941</td>
+<td style="text-align: right;">0.274</td>
+</tr>
+<tr>
+<td style="text-align: right;">12.000</td>
+<td style="text-align: right;">0.900</td>
+<td style="text-align: right;">0.944</td>
+<td style="text-align: right;">0.417</td>
+</tr>
+</tbody>
+</table>
+<p>Интервалы split-conformal по относительной ошибке на validation, отдельно для горизонта и категории. На тесте покрытие близко к номиналу 0.9.</p>
+<h3>Фундаментальные модели (zero-shot)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Модель</th>
+<th style="text-align: right;">MAE h=1</th>
+<th style="text-align: right;">MAE h=3</th>
+<th style="text-align: right;">MAE h=6</th>
+<th style="text-align: right;">MAE h=12</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Chronos2</td>
+<td style="text-align: right;">612.9</td>
+<td style="text-align: right;">877.1</td>
+<td style="text-align: right;">1360.7</td>
+<td style="text-align: right;">1817.0</td>
+</tr>
+<tr>
+<td style="text-align: left;">Chronos2_NatCov</td>
+<td style="text-align: right;">506.2</td>
+<td style="text-align: right;">721.8</td>
+<td style="text-align: right;">969.8</td>
+<td style="text-align: right;">1533.3</td>
+</tr>
+<tr>
+<td style="text-align: left;">ChronosBolt</td>
+<td style="text-align: right;">706.7</td>
+<td style="text-align: right;">1024.2</td>
+<td style="text-align: right;">1603.4</td>
+<td style="text-align: right;">1986.0</td>
+</tr>
+<tr>
+<td style="text-align: left;">Prophet</td>
+<td style="text-align: right;">640.4</td>
+<td style="text-align: right;">718.6</td>
+<td style="text-align: right;">736.5</td>
+<td style="text-align: right;">1092.8</td>
+</tr>
+</tbody>
+</table>
+<p>Chronos-Bolt-small и Chronos-2 использованы без дообучения, контекст — <code>history[:origin+1]</code>. Версия <code>Chronos2_NatCov</code> получает национальный путь как known-future ковариату. Результат: на коротких рядах (6–23 точки) zero-shot модели уступают Prophet на h≥3; на h=1 Chronos-2 и особенно Chronos-2 с ковариатой чуть лучше Prophet. Ковариата заметно улучшает Chronos-2 на всех горизонтах, но не доводит его до Prophet на h≥6. Возможное пересечение обучающих корпусов чекпойнтов с 2023–2024 гг. проверить нельзя, поэтому это оценка современной модели, а не исторического deployment.</p>
+<p><strong>TimesFM-2.5 (200M)</strong> на CPU считает ~0,13 с на ряд, поэтому оценён на случайной подвыборке из 200 МО (1200 рядов, все категории; seed 42), остальные модели сравнены на тех же рядах:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Модель</th>
+<th style="text-align: right;">1</th>
+<th style="text-align: right;">3</th>
+<th style="text-align: right;">6</th>
+<th style="text-align: right;">12</th>
+<th style="text-align: right;">среднее</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Ensemble</td>
+<td style="text-align: right;">427.7</td>
+<td style="text-align: right;">498.0</td>
+<td style="text-align: right;">450.3</td>
+<td style="text-align: right;">583.4</td>
+<td style="text-align: right;">489.8</td>
+</tr>
+<tr>
+<td style="text-align: left;">SeasonalNaive_NatGrowth</td>
+<td style="text-align: right;">533.3</td>
+<td style="text-align: right;">527.0</td>
+<td style="text-align: right;">510.1</td>
+<td style="text-align: right;">590.9</td>
+<td style="text-align: right;">540.3</td>
+</tr>
+<tr>
+<td style="text-align: left;">NatPath_K3</td>
+<td style="text-align: right;">506.1</td>
+<td style="text-align: right;">723.2</td>
+<td style="text-align: right;">720.0</td>
+<td style="text-align: right;">672.2</td>
+<td style="text-align: right;">655.4</td>
+</tr>
+<tr>
+<td style="text-align: left;">Prophet</td>
+<td style="text-align: right;">622.1</td>
+<td style="text-align: right;">694.8</td>
+<td style="text-align: right;">709.2</td>
+<td style="text-align: right;">1077.6</td>
+<td style="text-align: right;">775.9</td>
+</tr>
+<tr>
+<td style="text-align: left;">Chronos2_NatCov</td>
+<td style="text-align: right;">497.1</td>
+<td style="text-align: right;">703.4</td>
+<td style="text-align: right;">946.1</td>
+<td style="text-align: right;">1494.1</td>
+<td style="text-align: right;">910.2</td>
+</tr>
+<tr>
+<td style="text-align: left;">LastValue</td>
+<td style="text-align: right;">610.4</td>
+<td style="text-align: right;">844.1</td>
+<td style="text-align: right;">1094.5</td>
+<td style="text-align: right;">1234.1</td>
+<td style="text-align: right;">945.8</td>
+</tr>
+<tr>
+<td style="text-align: left;">TimesFM</td>
+<td style="text-align: right;">549.3</td>
+<td style="text-align: right;">785.8</td>
+<td style="text-align: right;">1245.0</td>
+<td style="text-align: right;">1630.3</td>
+<td style="text-align: right;">1052.6</td>
+</tr>
+<tr>
+<td style="text-align: left;">Chronos2</td>
+<td style="text-align: right;">603.5</td>
+<td style="text-align: right;">869.3</td>
+<td style="text-align: right;">1327.6</td>
+<td style="text-align: right;">1757.5</td>
+<td style="text-align: right;">1139.5</td>
+</tr>
+</tbody>
+</table>
+<figure><img src="../artifacts/figures/mae_by_model_test.png" alt="MAE по горизонтам на тесте"><figcaption>MAE по горизонтам на тесте</figcaption></figure>
+
+<figure><img src="../artifacts/figures/gain_vs_prophet.png" alt="Снижение MAE относительно Prophet с 95% bootstrap по МО"><figcaption>Снижение MAE относительно Prophet с 95% bootstrap по МО</figcaption></figure>
+
+<figure><img src="../artifacts/figures/ensemble_weights.png" alt="Веса ансамбля"><figcaption>Веса ансамбля</figcaption></figure>
+
+<figure><img src="../artifacts/figures/mae_by_group.png" alt="MAE по категориям и размеру ряда"><figcaption>MAE по категориям и размеру ряда</figcaption></figure>
+
+<figure><img src="../artifacts/figures/map_gain_vs_prophet.png" alt="Карта выигрыша у Prophet по МО (категория «Все категории»)"><figcaption>Карта выигрыша у Prophet по МО (категория «Все категории»)</figcaption></figure>
+
+<h2>5. Структурные изменения: обнаружение и предупреждение</h2>
+<p>Детекторы CUSUM, Page–Hinkley и BOCPD подаются стандартизированными остатками прогноза h=1, выпущенного до наблюдения (национальный путь × локальный уровень). Масштаб остатка считается только по прошлому и сжимается к масштабу категории. Пороги подобраны на месяцах 10–17 при бюджете <strong>1 ложная тревога на 100 ряд-месяцев</strong>, оценка — на месяцах 18–23. Реальных размеченных шоков по МО у нас нет, поэтому оценка идёт тремя независимыми способами, и ни один из них не называется «истиной».</p>
+<h3>A. Инъекция известных сдвигов в реальные остатки</h3>
+<p>Сдвиг ±1.5/2.5/4σ добавляется в 5% рядов (604 события) на месяцы 18–20; остальные 95% остаются реальными и служат фоном для ложных тревог. Пять независимых повторов.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Метод</th>
+<th style="text-align: right;">Порог</th>
+<th style="text-align: right;">Precision</th>
+<th style="text-align: right;">Recall</th>
+<th style="text-align: right;">F1</th>
+<th style="text-align: right;">± F1 (5 повторов)</th>
+<th style="text-align: right;">Медиана задержки, мес.</th>
+<th style="text-align: right;">Ложных тревог / 100 ряд-мес.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">CUSUM</td>
+<td style="text-align: right;">10.000</td>
+<td style="text-align: right;">0.161</td>
+<td style="text-align: right;">0.449</td>
+<td style="text-align: right;">0.237</td>
+<td style="text-align: right;">0.004</td>
+<td style="text-align: right;">1.400</td>
+<td style="text-align: right;">1.914</td>
+</tr>
+<tr>
+<td style="text-align: left;">PageHinkley</td>
+<td style="text-align: right;">12.000</td>
+<td style="text-align: right;">0.090</td>
+<td style="text-align: right;">0.314</td>
+<td style="text-align: right;">0.140</td>
+<td style="text-align: right;">0.004</td>
+<td style="text-align: right;">1.200</td>
+<td style="text-align: right;">2.716</td>
+</tr>
+<tr>
+<td style="text-align: left;">BOCPD</td>
+<td style="text-align: right;">0.500</td>
+<td style="text-align: right;">0.128</td>
+<td style="text-align: right;">0.353</td>
+<td style="text-align: right;">0.188</td>
+<td style="text-align: right;">0.009</td>
+<td style="text-align: right;">1.000</td>
+<td style="text-align: right;">2.097</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Метод</th>
+<th style="text-align: right;">Recall при сдвиге 1.5σ</th>
+<th style="text-align: right;">Recall при сдвиге 2.5σ</th>
+<th style="text-align: right;">Recall при сдвиге 4.0σ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">CUSUM</td>
+<td style="text-align: right;">0.22</td>
+<td style="text-align: right;">0.37</td>
+<td style="text-align: right;">0.74</td>
+</tr>
+<tr>
+<td style="text-align: left;">PageHinkley</td>
+<td style="text-align: right;">0.15</td>
+<td style="text-align: right;">0.23</td>
+<td style="text-align: right;">0.54</td>
+</tr>
+<tr>
+<td style="text-align: left;">BOCPD</td>
+<td style="text-align: right;">0.20</td>
+<td style="text-align: right;">0.34</td>
+<td style="text-align: right;">0.51</td>
+</tr>
+</tbody>
+</table>
+<p>Частота тревог на тесте выше, чем на калибровке (~2 против ≤1 на 100 ряд-месяцев): в тесте часть тревог — настоящие шоки или сезонные промахи прогноза (Дек–Янв), а не ложные. Поэтому precision здесь консервативна.</p>
+<h3>B. Реестр датированных событий</h3>
+<p>В реестре 7 событий (паводки, теракты, обстрелы; ссылки в <code>data/external/event_registry.csv</code>). Сопоставление с МО по названию внутри региона нашло 6 территорий. Белгорода, Курска и Суджи в панели нет (не прошли порог качества СберИндекса), а для Севастополя, Дербента и Махачкалы сопоставление по названию МО не нашло. Оценимы Орск, Оренбург, Новотроицк (паводок, 04.2024) и Красногорск («Крокус», 03.2024).</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">event_id</th>
+<th style="text-align: left;">pattern</th>
+<th style="text-align: left;">method</th>
+<th style="text-align: right;">рядов</th>
+<th style="text-align: right;">доля_с_тревогой</th>
+<th style="text-align: right;">макс_z</th>
+<th style="text-align: right;">фон_все_ряды</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">EV01</td>
+<td style="text-align: left;">Новотроицк</td>
+<td style="text-align: left;">BOCPD</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0.17</td>
+<td style="text-align: right;">2.84</td>
+<td style="text-align: right;">0.07</td>
+</tr>
+<tr>
+<td style="text-align: left;">EV01</td>
+<td style="text-align: left;">Новотроицк</td>
+<td style="text-align: left;">CUSUM</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">2.84</td>
+<td style="text-align: right;">0.09</td>
+</tr>
+<tr>
+<td style="text-align: left;">EV01</td>
+<td style="text-align: left;">Новотроицк</td>
+<td style="text-align: left;">PageHinkley</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">2.84</td>
+<td style="text-align: right;">0.02</td>
+</tr>
+<tr>
+<td style="text-align: left;">EV01</td>
+<td style="text-align: left;">Оренбург</td>
+<td style="text-align: left;">BOCPD</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">2.74</td>
+<td style="text-align: right;">0.07</td>
+</tr>
+<tr>
+<td style="text-align: left;">EV01</td>
+<td style="text-align: left;">Оренбург</td>
+<td style="text-align: left;">CUSUM</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">2.74</td>
+<td style="text-align: right;">0.09</td>
+</tr>
+<tr>
+<td style="text-align: left;">EV01</td>
+<td style="text-align: left;">Оренбург</td>
+<td style="text-align: left;">PageHinkley</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">2.74</td>
+<td style="text-align: right;">0.02</td>
+</tr>
+<tr>
+<td style="text-align: left;">EV01</td>
+<td style="text-align: left;">Орск</td>
+<td style="text-align: left;">BOCPD</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0.17</td>
+<td style="text-align: right;">3.43</td>
+<td style="text-align: right;">0.07</td>
+</tr>
+<tr>
+<td style="text-align: left;">EV01</td>
+<td style="text-align: left;">Орск</td>
+<td style="text-align: left;">CUSUM</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">3.43</td>
+<td style="text-align: right;">0.09</td>
+</tr>
+<tr>
+<td style="text-align: left;">EV01</td>
+<td style="text-align: left;">Орск</td>
+<td style="text-align: left;">PageHinkley</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">3.43</td>
+<td style="text-align: right;">0.02</td>
+</tr>
+<tr>
+<td style="text-align: left;">EV05</td>
+<td style="text-align: left;">Красногорск</td>
+<td style="text-align: left;">BOCPD</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">2.80</td>
+<td style="text-align: right;">0.07</td>
+</tr>
+<tr>
+<td style="text-align: left;">EV05</td>
+<td style="text-align: left;">Красногорск</td>
+<td style="text-align: left;">CUSUM</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">2.80</td>
+<td style="text-align: right;">0.06</td>
+</tr>
+<tr>
+<td style="text-align: left;">EV05</td>
+<td style="text-align: left;">Красногорск</td>
+<td style="text-align: left;">PageHinkley</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">2.80</td>
+<td style="text-align: right;">0.01</td>
+</tr>
+</tbody>
+</table>
+<p>Отклик на реальные события слабый: максимум |z| 2.7–3.4σ, тревоги единичны (BOCPD по 1 из 6 категорий в Орске и Новотроицке), в других случаях — нет. Это не доказывает отсутствие эффекта — месячная сумма по всем категориям сглаживает локальный шок, — но и не подтверждает работоспособность детекторов на реальных событиях.</p>
+<h3>C. Offline-сегментация как proxy-разметка</h3>
+<p>F1 по меткам offline-сегментации z-рядов (3000 случайных рядов, тест). Разметка не независима от формы z и не равна истине, поэтому это анализ чувствительности: ранжирование методов зависит от типа разметки (на инъекциях выигрывает CUSUM, на offline-метках — BOCPD).</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Штраф</th>
+<th style="text-align: right;">BOCPD</th>
+<th style="text-align: right;">CUSUM</th>
+<th style="text-align: right;">PageHinkley</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">2.000</td>
+<td style="text-align: right;">0.608</td>
+<td style="text-align: right;">0.016</td>
+<td style="text-align: right;">0.220</td>
+</tr>
+<tr>
+<td style="text-align: right;">4.000</td>
+<td style="text-align: right;">0.523</td>
+<td style="text-align: right;">0.019</td>
+<td style="text-align: right;">0.183</td>
+</tr>
+<tr>
+<td style="text-align: right;">8.000</td>
+<td style="text-align: right;">0.359</td>
+<td style="text-align: right;">0.010</td>
+<td style="text-align: right;">0.209</td>
+</tr>
+</tbody>
+</table>
+<h3>D. Недельные реальные ряды (46 категорий, 151 неделя)</h3>
+<p>У недельных рядов достаточно длины для оценки на реальных данных: пороги — на первых 55% недель при бюджете 1/100, оценка — на последних 30%. Метки — offline-сегментация со штрафом 16 (чувствительность по штрафам 4/8/16/32 — в <code>artifacts/weekly_shocks/detector_metrics_proxy_labels.csv</code>).</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">method</th>
+<th style="text-align: right;">threshold</th>
+<th style="text-align: right;">n_proxy_events_test</th>
+<th style="text-align: right;">n_alarms_test</th>
+<th style="text-align: right;">event_precision</th>
+<th style="text-align: right;">event_recall</th>
+<th style="text-align: right;">event_f1</th>
+<th style="text-align: right;">false_alarms_per_100_series_weeks</th>
+<th style="text-align: right;">median_delay_weeks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">CUSUM</td>
+<td style="text-align: right;">20.000</td>
+<td style="text-align: right;">58</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">0.500</td>
+<td style="text-align: right;">0.224</td>
+<td style="text-align: right;">0.310</td>
+<td style="text-align: right;">0.614</td>
+<td style="text-align: right;">4.000</td>
+</tr>
+<tr>
+<td style="text-align: left;">PageHinkley</td>
+<td style="text-align: right;">24.000</td>
+<td style="text-align: right;">58</td>
+<td style="text-align: right;">34</td>
+<td style="text-align: right;">0.529</td>
+<td style="text-align: right;">0.310</td>
+<td style="text-align: right;">0.391</td>
+<td style="text-align: right;">0.756</td>
+<td style="text-align: right;">3.000</td>
+</tr>
+<tr>
+<td style="text-align: left;">BOCPD</td>
+<td style="text-align: right;">0.900</td>
+<td style="text-align: right;">58</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">0.357</td>
+<td style="text-align: right;">0.086</td>
+<td style="text-align: right;">0.139</td>
+<td style="text-align: right;">0.425</td>
+<td style="text-align: right;">1.000</td>
+</tr>
+</tbody>
+</table>
+<h3>E. Раннее предупреждение (вероятность сдвига в окне (t, t+k])</h3>
+<p>Признаки на момент t: z, средние и максимумы |z| за 4 недели, доля рядов с |z|&gt;2 (ширина шока), оценки трёх детекторов, изменение ключевой ставки ЦБ за 13 недель и недели с последнего изменения. Обучение — на метках, зрелых к границе; между train и test зазор 8 недель.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Окно, нед.</th>
+<th style="text-align: left;">Модель</th>
+<th style="text-align: right;">Доля событий (базовый PR-AUC)</th>
+<th style="text-align: right;">PR-AUC</th>
+<th style="text-align: right;">Brier</th>
+<th style="text-align: right;">Brier константы</th>
+<th style="text-align: right;">alarm_rate_per_100</th>
+<th style="text-align: right;">row_precision</th>
+<th style="text-align: right;">row_recall</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">HGB</td>
+<td style="text-align: right;">0.117</td>
+<td style="text-align: right;">0.162</td>
+<td style="text-align: right;">0.108</td>
+<td style="text-align: right;">0.103</td>
+<td style="text-align: right;">9.173</td>
+<td style="text-align: right;">0.202</td>
+<td style="text-align: right;">0.158</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">Logistic</td>
+<td style="text-align: right;">0.117</td>
+<td style="text-align: right;">0.113</td>
+<td style="text-align: right;">0.109</td>
+<td style="text-align: right;">0.103</td>
+<td style="text-align: right;">5.090</td>
+<td style="text-align: right;">0.135</td>
+<td style="text-align: right;">0.059</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">BOCPD_score_only</td>
+<td style="text-align: right;">0.117</td>
+<td style="text-align: right;">0.136</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">0.103</td>
+<td style="text-align: right;">4.772</td>
+<td style="text-align: right;">0.133</td>
+<td style="text-align: right;">0.054</td>
+</tr>
+<tr>
+<td style="text-align: right;">13</td>
+<td style="text-align: left;">HGB</td>
+<td style="text-align: right;">0.363</td>
+<td style="text-align: right;">0.389</td>
+<td style="text-align: right;">0.247</td>
+<td style="text-align: right;">0.232</td>
+<td style="text-align: right;">11.413</td>
+<td style="text-align: right;">0.357</td>
+<td style="text-align: right;">0.112</td>
+</tr>
+<tr>
+<td style="text-align: right;">13</td>
+<td style="text-align: left;">Logistic</td>
+<td style="text-align: right;">0.363</td>
+<td style="text-align: right;">0.351</td>
+<td style="text-align: right;">0.271</td>
+<td style="text-align: right;">0.232</td>
+<td style="text-align: right;">1.495</td>
+<td style="text-align: right;">0.455</td>
+<td style="text-align: right;">0.019</td>
+</tr>
+<tr>
+<td style="text-align: right;">13</td>
+<td style="text-align: left;">BOCPD_score_only</td>
+<td style="text-align: right;">0.363</td>
+<td style="text-align: right;">0.365</td>
+<td style="text-align: right;">nan</td>
+<td style="text-align: right;">0.232</td>
+<td style="text-align: right;">4.552</td>
+<td style="text-align: right;">0.373</td>
+<td style="text-align: right;">0.047</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Навык раннего предупреждения не подтверждён</strong>: PR-AUC лишь немного выше доли событий, Brier не лучше константного прогноза, а при бюджете ложных тревог recall низкий. Нужны размеченные события и ряды длиннее; сейчас честный вывод — детекторы реагируют на уже начавшийся сдвиг, предсказывать его заранее по этим признакам не получается.</p>
+<figure><img src="../artifacts/figures/detectors_injection.png" alt="Детекторы на инъекциях в реальные остатки"><figcaption>Детекторы на инъекциях в реальные остатки</figcaption></figure>
+
+<figure><img src="../artifacts/figures/detector_examples.png" alt="Три реальных примера: событие, ложная тревога, срабатывание"><figcaption>Три реальных примера: событие, ложная тревога, срабатывание</figcaption></figure>
+
+<figure><img src="../artifacts/figures/weekly_detectors_early_warning.png" alt="Недельные ряды: детекторы и раннее предупреждение"><figcaption>Недельные ряды: детекторы и раннее предупреждение</figcaption></figure>
+
+<h2>6. Новости и внешние события</h2>
+<p>«Новости» здесь — это <strong>датированные официальные события</strong>, а не текстовый корпус: решения Банка России по ключевой ставке (cbr.ru; <code>available_at</code> = дата вступления в силу, чтобы не заглядывать вперёд) и реестр из 7 региональных событий со ссылками. Признаки на якоре a: уровень ставки, её изменения за 3 и 6 мес., месяцев с последнего изменения, тяжесть недавних событий в МО и в регионе (окно 3 мес.). Текстовые новости (Интерфакс, Lenta, GDELT) не собирались.</p>
+<p>Сравнение — одна быстрая конфигурация HGB на одной сетке; плацебо: реестр переносится на случайные МО и месяцы (5 повторов), ставка сдвигается назад на случайные 3–12 мес. (остаётся только прошлым).</p>
+<p>Изменение MAE к базе без новостей, % (положительное — лучше). Тест:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Вариант</th>
+<th style="text-align: right;">1</th>
+<th style="text-align: right;">3</th>
+<th style="text-align: right;">6</th>
+<th style="text-align: right;">12</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">база</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+<tr>
+<td style="text-align: left;">плацебо: ставка + события</td>
+<td style="text-align: right;">-0.75</td>
+<td style="text-align: right;">-0.40</td>
+<td style="text-align: right;">-0.21</td>
+<td style="text-align: right;">0.20</td>
+</tr>
+<tr>
+<td style="text-align: left;">плацебо: события</td>
+<td style="text-align: right;">-0.05</td>
+<td style="text-align: right;">-0.15</td>
+<td style="text-align: right;">0.14</td>
+<td style="text-align: right;">0.06</td>
+</tr>
+<tr>
+<td style="text-align: left;">реальные признаки (среднее 3 вариантов)</td>
+<td style="text-align: right;">-1.01</td>
+<td style="text-align: right;">-1.87</td>
+<td style="text-align: right;">-2.50</td>
+<td style="text-align: right;">-0.15</td>
+</tr>
+</tbody>
+</table>
+<p>Validation:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Вариант</th>
+<th style="text-align: right;">1</th>
+<th style="text-align: right;">3</th>
+<th style="text-align: right;">6</th>
+<th style="text-align: right;">12</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">база</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+<tr>
+<td style="text-align: left;">плацебо: ставка + события</td>
+<td style="text-align: right;">0.85</td>
+<td style="text-align: right;">-0.11</td>
+<td style="text-align: right;">0.11</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+<tr>
+<td style="text-align: left;">плацебо: события</td>
+<td style="text-align: right;">-0.00</td>
+<td style="text-align: right;">0.07</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+<tr>
+<td style="text-align: left;">реальные признаки (среднее 3 вариантов)</td>
+<td style="text-align: right;">0.55</td>
+<td style="text-align: right;">1.92</td>
+<td style="text-align: right;">0.07</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+</tbody>
+</table>
+<p>MAE по вариантам на тесте:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Вариант</th>
+<th style="text-align: right;">1</th>
+<th style="text-align: right;">3</th>
+<th style="text-align: right;">6</th>
+<th style="text-align: right;">12</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">+key_rate</td>
+<td style="text-align: right;">500.8</td>
+<td style="text-align: right;">743.4</td>
+<td style="text-align: right;">894.2</td>
+<td style="text-align: right;">601.8</td>
+</tr>
+<tr>
+<td style="text-align: left;">+key_rate+events</td>
+<td style="text-align: right;">500.8</td>
+<td style="text-align: right;">743.4</td>
+<td style="text-align: right;">902.8</td>
+<td style="text-align: right;">601.9</td>
+</tr>
+<tr>
+<td style="text-align: left;">+regional_events</td>
+<td style="text-align: right;">493.4</td>
+<td style="text-align: right;">723.1</td>
+<td style="text-align: right;">866.0</td>
+<td style="text-align: right;">600.5</td>
+</tr>
+<tr>
+<td style="text-align: left;">base_no_news</td>
+<td style="text-align: right;">493.4</td>
+<td style="text-align: right;">723.1</td>
+<td style="text-align: right;">866.0</td>
+<td style="text-align: right;">600.5</td>
+</tr>
+<tr>
+<td style="text-align: left;">placebo_events_0</td>
+<td style="text-align: right;">493.4</td>
+<td style="text-align: right;">723.1</td>
+<td style="text-align: right;">866.0</td>
+<td style="text-align: right;">600.5</td>
+</tr>
+<tr>
+<td style="text-align: left;">placebo_events_1</td>
+<td style="text-align: right;">493.4</td>
+<td style="text-align: right;">723.1</td>
+<td style="text-align: right;">866.0</td>
+<td style="text-align: right;">600.5</td>
+</tr>
+<tr>
+<td style="text-align: left;">placebo_events_2</td>
+<td style="text-align: right;">493.4</td>
+<td style="text-align: right;">723.1</td>
+<td style="text-align: right;">866.0</td>
+<td style="text-align: right;">600.5</td>
+</tr>
+<tr>
+<td style="text-align: left;">placebo_events_3</td>
+<td style="text-align: right;">494.6</td>
+<td style="text-align: right;">728.3</td>
+<td style="text-align: right;">859.9</td>
+<td style="text-align: right;">598.8</td>
+</tr>
+<tr>
+<td style="text-align: left;">placebo_events_4</td>
+<td style="text-align: right;">493.4</td>
+<td style="text-align: right;">723.1</td>
+<td style="text-align: right;">866.0</td>
+<td style="text-align: right;">600.5</td>
+</tr>
+<tr>
+<td style="text-align: left;">placebo_rate+events_0</td>
+<td style="text-align: right;">498.0</td>
+<td style="text-align: right;">725.4</td>
+<td style="text-align: right;">856.9</td>
+<td style="text-align: right;">598.3</td>
+</tr>
+<tr>
+<td style="text-align: left;">placebo_rate+events_1</td>
+<td style="text-align: right;">501.7</td>
+<td style="text-align: right;">726.0</td>
+<td style="text-align: right;">880.7</td>
+<td style="text-align: right;">600.5</td>
+</tr>
+<tr>
+<td style="text-align: left;">placebo_rate+events_2</td>
+<td style="text-align: right;">497.3</td>
+<td style="text-align: right;">736.1</td>
+<td style="text-align: right;">888.5</td>
+<td style="text-align: right;">600.5</td>
+</tr>
+<tr>
+<td style="text-align: left;">placebo_rate+events_3</td>
+<td style="text-align: right;">490.6</td>
+<td style="text-align: right;">716.9</td>
+<td style="text-align: right;">856.1</td>
+<td style="text-align: right;">598.8</td>
+</tr>
+<tr>
+<td style="text-align: left;">placebo_rate+events_4</td>
+<td style="text-align: right;">498.0</td>
+<td style="text-align: right;">725.4</td>
+<td style="text-align: right;">856.9</td>
+<td style="text-align: right;">598.3</td>
+</tr>
+</tbody>
+</table>
+<p>Варианты «+regional_events» и часть плацебо-событий дают побитово те же прогнозы, что база: события затрагивают единицы МО из 2016, и бустинг не делает по ним разбиений. Единственные признаки, меняющие прогноз, — ставка ЦБ и её лаги, а они лишь индекс времени в панели из 24 месяцев.</p>
+<p><strong>Вывод.</strong> Реальные признаки не отличаются от плацебо: полезность новостных признаков для прогноза не подтверждена. Это ожидаемо: ставка ЦБ — признак времени, а в панели всего 24 месяца, и он не может выучиться на разрезе МО; региональные события затрагивают единицы МО из 2016.</p>
+<figure><img src="../artifacts/figures/news_ablation.png" alt="Новостные признаки против плацебо"><figcaption>Новостные признаки против плацебо</figcaption></figure>
+
+<h2>7. Недельный nowcast</h2>
+<p>Недельные ряды роста г/г идут по 27.09.2026, месячные — по 08.2026. Для целевого месяца по уже вышедшим неделям оценивается г/г и переводится в уровень: уровень = уровень_{M−12} × (1 + yoy/100). Доступность недели консервативна (период + 7 дней), поправка смещения считается только по завершённым ранее месяцам, параметры не подбирались. Национальный уровень, 12 тестовых месяцев × 5 категорий (те же, что в N01):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Метод</th>
+<th style="text-align: right;">n</th>
+<th style="text-align: right;">MAE, млрд руб.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Nowcast(weeks=1,calibrated=False)</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: right;">136.4</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nowcast(weeks=1,calibrated=True)</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: right;">72.6</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nowcast(weeks=2,calibrated=False)</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: right;">137.4</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nowcast(weeks=2,calibrated=True)</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: right;">68.9</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nowcast(weeks=3,calibrated=False)</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: right;">130.0</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nowcast(weeks=3,calibrated=True)</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: right;">65.9</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nowcast(weeks=all,calibrated=False)</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: right;">124.8</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nowcast(weeks=all,calibrated=True)</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: right;">62.0</td>
+</tr>
+<tr>
+<td style="text-align: left;">h=1 DevWeightedEnsemble</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: right;">70.1</td>
+</tr>
+<tr>
+<td style="text-align: left;">h=1 LastValue</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: right;">177.2</td>
+</tr>
+<tr>
+<td style="text-align: left;">h=1 SeasonalGrowth</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: right;">66.0</td>
+</tr>
+</tbody>
+</table>
+<p>Без поправки смещения недельный nowcast плох (MAE 125–137): ряды СберИндекса по транзакциям не равны месячному набору, согласованному с Росстатом, и поправка по прошлым месяцам обязательна. С поправкой: по одной неделе месяца — хуже h=1-ансамбля и SeasonalGrowth, по двум — лучше ансамбля, по трём сравним с SeasonalGrowth, по полному месяцу — ниже обоих (62.0 против 70.1 и 66.0). Выигрыш скромный и на 60 наблюдениях; это nowcast с частичной информацией целевого месяца, а не прогноз h=1.</p>
+<figure><img src="../artifacts/figures/nowcast.png" alt="Недельный nowcast против h=1"><figcaption>Недельный nowcast против h=1</figcaption></figure>
+
+<h2>8. Прогноз 2025 и независимая проверка</h2>
+<p>Прогноз на 12 месяцев 2025 г. построен от origin = 12.2024 и заморожен вместе с SHA256 (<code>prospective/</code>); фактов по МО за 2025 нет, и скрипт <code>scripts/score_prospective.py</code> посчитает MAE, когда они появятся.</p>
+<p>Санити-проверка по национальным фактам 2025 г. (модель их не видела): средний по МО г/г рост прогноза против национального г/г роста, среднее модуля разницы, п.п.:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">index</th>
+<th style="text-align: left;">Категория</th>
+<th style="text-align: right;">ensemble</th>
+<th style="text-align: right;">prophet</th>
+<th style="text-align: right;">structural</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">Все категории</td>
+<td style="text-align: right;">2.31</td>
+<td style="text-align: right;">5.48</td>
+<td style="text-align: right;">2.34</td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Общественное питание</td>
+<td style="text-align: right;">28.70</td>
+<td style="text-align: right;">32.63</td>
+<td style="text-align: right;">35.81</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Продовольствие</td>
+<td style="text-align: right;">3.50</td>
+<td style="text-align: right;">8.39</td>
+<td style="text-align: right;">6.43</td>
+</tr>
+</tbody>
+</table>
+<p>Это проверка согласованности (выборка МО без весов не равна стране), а не оценка точности на уровне МО. У ансамбля подразумеваемый рост ближе к национальному, чем у Prophet, во всех трёх категориях, но для «Общественного питания» разрыв велик у обеих моделей (около 29–33 п.п.): национальный общепит в 2025 г. рос заметно быстрее, чем предполагает любая из моделей; причина (состав категории, отличие от муниципальной выборки) не исследована.</p>
+<figure><img src="../artifacts/figures/forecast_2025_check.png" alt="Прогноз 2025 против национального факта"><figcaption>Прогноз 2025 против национального факта</figcaption></figure>
+
+<h2>9. Ограничения</h2>
+<ul>
+<li>Всего 24 месяца: сезонность по МО не оценивается, h=12 на validation проверяется один месяц; протокол валидации — допущение.</li>
+<li>Тест — 6 целевых месяцев; месячные интервалы поэтому широки. Общие шоки месяца (например, декабрьский пик) коррелируют по всем МО, и bootstrap по МО их не отражает.</li>
+<li>Модели обучались на последней версии данных; даты публикации и пересмотры неизвестны.</li>
+<li>Foundation-модели оценены без дообучения; TimesFM — только на подвыборке 200 МО; возможное пересечение их обучающих данных с 2023–2024 гг. проверить нельзя.</li>
+<li>Метки шоков по МО отсутствуют: оценка детекторов опирается на инъекцию, 4 события из реестра и proxy-разметку.</li>
+<li>«Новости» — не текстовый корпус, а короткий реестр и решения ЦБ.</li>
+<li>В панели 2 016 МО из 2 594 в справочнике (73 региона из 85): МО, не прошедшие порог качества СберИндекса, отсутствуют (например, Белгород, Курск, Краснодар); 1 044 неполных ряда исключены.</li>
+</ul>
+<h2>10. Воспроизведение</h2>
+<pre><code class="language-bash">conda env create -f environment.yml &amp;&amp; conda activate sber   # Python 3.12
+bash scripts/get_data.sh                                     # открытые данные конкурса -&gt; data/raw/
+make municipal                                               # Prophet, Chronos, структурная модель, ансамбль, метрики
+make shocks                                                  # детекторы и недельные ряды
+make report                                                  # отчёт, слайды, лендинг
+</code></pre></main></body></html>

@@ -1,0 +1,1501 @@
+stage,variant,model,series_id,horizon_months,mae,r2,n_predictions
+calibration,Adaptive12,Adaptive12,Всего,1,131.16366256432093,0.7451646315361022,16
+calibration,Adaptive12,Adaptive12,Всего,3,216.86683787161445,0.30528640759414316,16
+calibration,Adaptive12,Adaptive12,Всего,6,301.7767675854046,0.20223333895762807,16
+calibration,Adaptive12,Adaptive12,Всего,12,357.12917129896834,0.24103439645241231,16
+calibration,Adaptive12,Adaptive12,Непродовольственные товары,1,98.59157812788378,0.2708593184116861,16
+calibration,Adaptive12,Adaptive12,Непродовольственные товары,3,165.1965457078059,-1.727867314077868,16
+calibration,Adaptive12,Adaptive12,Непродовольственные товары,6,247.48654637135968,-1.1425957523851227,16
+calibration,Adaptive12,Adaptive12,Непродовольственные товары,12,283.1402050149045,-0.9840951741303425,16
+calibration,Adaptive12,Adaptive12,Общественное питание,1,6.238775010688755,0.8696365619617653,16
+calibration,Adaptive12,Adaptive12,Общественное питание,3,7.144291474563799,0.8219530136668648,16
+calibration,Adaptive12,Adaptive12,Общественное питание,6,9.03283904290558,0.5336563888535011,16
+calibration,Adaptive12,Adaptive12,Общественное питание,12,13.01641311900853,0.3850389947246208,16
+calibration,Adaptive12,Adaptive12,Продовольственные товары,1,40.61307754936668,0.8635648912876618,16
+calibration,Adaptive12,Adaptive12,Продовольственные товары,3,51.90011412900846,0.7038724058772112,16
+calibration,Adaptive12,Adaptive12,Продовольственные товары,6,62.07967830734381,0.6074067551425961,16
+calibration,Adaptive12,Adaptive12,Продовольственные товары,12,69.76554654677773,0.7463388179500634,16
+calibration,Adaptive12,Adaptive12,Услуги,1,21.3750937077669,0.8467288034128995,16
+calibration,Adaptive12,Adaptive12,Услуги,3,31.637136326892687,0.7664442266982537,16
+calibration,Adaptive12,Adaptive12,Услуги,6,43.61742520259584,0.6188310633867807,16
+calibration,Adaptive12,Adaptive12,Услуги,12,45.171279960111406,0.41926073311667855,16
+calibration,Adaptive12_Bias12,Adaptive12_Bias12,Всего,1,97.083269762562,0.8201779084502148,16
+calibration,Adaptive12_Bias12,Adaptive12_Bias12,Всего,3,188.9394083484089,0.4334581368738659,16
+calibration,Adaptive12_Bias12,Adaptive12_Bias12,Всего,6,325.40279311276623,-0.02189452393812852,16
+calibration,Adaptive12_Bias12,Adaptive12_Bias12,Всего,12,376.4910295867027,0.14303840583980043,16
+calibration,Adaptive12_Bias12,Adaptive12_Bias12,Непродовольственные товары,1,77.20382612713641,0.44591533470631395,16
+calibration,Adaptive12_Bias12,Adaptive12_Bias12,Непродовольственные товары,3,142.0795999661414,-1.433801713874003,16
+calibration,Adaptive12_Bias12,Adaptive12_Bias12,Непродовольственные товары,6,272.56012152503973,-1.9243430415235196,16
+calibration,Adaptive12_Bias12,Adaptive12_Bias12,Непродовольственные товары,12,299.7330060209344,-1.240195699761229,16
+calibration,Adaptive12_Bias12,Adaptive12_Bias12,Общественное питание,1,6.42315157171193,0.872060283334794,16
+calibration,Adaptive12_Bias12,Adaptive12_Bias12,Общественное питание,3,7.744124752808467,0.7931795805381532,16
+calibration,Adaptive12_Bias12,Adaptive12_Bias12,Общественное питание,6,8.627765695070357,0.5821093190343848,16
+calibration,Adaptive12_Bias12,Adaptive12_Bias12,Общественное питание,12,12.92847507525434,0.4119287604614451,16
+calibration,Adaptive12_Bias12,Adaptive12_Bias12,Продовольственные товары,1,39.08805272008887,0.8700962668563816,16
+calibration,Adaptive12_Bias12,Adaptive12_Bias12,Продовольственные товары,3,55.26174714163628,0.6816305064365054,16
+calibration,Adaptive12_Bias12,Adaptive12_Bias12,Продовольственные товары,6,68.77558550733416,0.5219444950157661,16
+calibration,Adaptive12_Bias12,Adaptive12_Bias12,Продовольственные товары,12,73.24622546673554,0.7188588275141519,16
+calibration,Adaptive12_Bias12,Adaptive12_Bias12,Услуги,1,21.239373141138124,0.8516449572146307,16
+calibration,Adaptive12_Bias12,Adaptive12_Bias12,Услуги,3,32.75603500686175,0.7026019812339239,16
+calibration,Adaptive12_Bias12,Adaptive12_Bias12,Услуги,6,50.169197071169336,0.48890601289029767,16
+calibration,Adaptive12_Bias12,Adaptive12_Bias12,Услуги,12,45.59144605025119,0.4104775798827721,16
+calibration,Adaptive12_Bias6,Adaptive12_Bias6,Всего,1,94.63024067609962,0.8255540364026166,16
+calibration,Adaptive12_Bias6,Adaptive12_Bias6,Всего,3,188.2385849082944,0.4429446180856431,16
+calibration,Adaptive12_Bias6,Adaptive12_Bias6,Всего,6,330.831692688935,-0.06493771146945404,16
+calibration,Adaptive12_Bias6,Adaptive12_Bias6,Всего,12,376.4910295867027,0.14303840583980043,16
+calibration,Adaptive12_Bias6,Adaptive12_Bias6,Непродовольственные товары,1,73.08797582882164,0.4720062799121957,16
+calibration,Adaptive12_Bias6,Adaptive12_Bias6,Непродовольственные товары,3,140.07851840940407,-1.3159962007030739,16
+calibration,Adaptive12_Bias6,Adaptive12_Bias6,Непродовольственные товары,6,274.0842191419189,-1.958858247409383,16
+calibration,Adaptive12_Bias6,Adaptive12_Bias6,Непродовольственные товары,12,299.7330060209344,-1.240195699761229,16
+calibration,Adaptive12_Bias6,Adaptive12_Bias6,Общественное питание,1,6.513470033999232,0.8789891529290473,16
+calibration,Adaptive12_Bias6,Adaptive12_Bias6,Общественное питание,3,6.748979458800182,0.8348310525765564,16
+calibration,Adaptive12_Bias6,Adaptive12_Bias6,Общественное питание,6,8.835016660546469,0.5738561865095402,16
+calibration,Adaptive12_Bias6,Adaptive12_Bias6,Общественное питание,12,12.92847507525434,0.4119287604614451,16
+calibration,Adaptive12_Bias6,Adaptive12_Bias6,Продовольственные товары,1,37.20899811776154,0.8786876718343327,16
+calibration,Adaptive12_Bias6,Adaptive12_Bias6,Продовольственные товары,3,54.44329883478669,0.6907473961536299,16
+calibration,Adaptive12_Bias6,Adaptive12_Bias6,Продовольственные товары,6,68.29259858320289,0.5207480352487401,16
+calibration,Adaptive12_Bias6,Adaptive12_Bias6,Продовольственные товары,12,73.24622546673554,0.7188588275141519,16
+calibration,Adaptive12_Bias6,Adaptive12_Bias6,Услуги,1,19.246034786718816,0.8779205495284538,16
+calibration,Adaptive12_Bias6,Adaptive12_Bias6,Услуги,3,31.932095815430543,0.7233530158224114,16
+calibration,Adaptive12_Bias6,Adaptive12_Bias6,Услуги,6,49.99544206941144,0.4906851299377557,16
+calibration,Adaptive12_Bias6,Adaptive12_Bias6,Услуги,12,45.59144605025119,0.4104775798827721,16
+calibration,Adaptive6,Adaptive6,Всего,1,125.17236731184431,0.7569521178586349,16
+calibration,Adaptive6,Adaptive6,Всего,3,217.06408551922675,0.3022850804691323,16
+calibration,Adaptive6,Adaptive6,Всего,6,301.70644202081303,0.20256325799935593,16
+calibration,Adaptive6,Adaptive6,Всего,12,357.12917129896834,0.24103439645241231,16
+calibration,Adaptive6,Adaptive6,Непродовольственные товары,1,94.77431990461106,0.29891967889294135,16
+calibration,Adaptive6,Adaptive6,Непродовольственные товары,3,164.87505803505826,-1.7223962415493475,16
+calibration,Adaptive6,Adaptive6,Непродовольственные товары,6,247.48191274470602,-1.1432519957351968,16
+calibration,Adaptive6,Adaptive6,Непродовольственные товары,12,283.1402050149045,-0.9840951741303425,16
+calibration,Adaptive6,Adaptive6,Общественное питание,1,6.23409746714567,0.8712711605167192,16
+calibration,Adaptive6,Adaptive6,Общественное питание,3,7.293150126142347,0.8118446880346599,16
+calibration,Adaptive6,Adaptive6,Общественное питание,6,9.041280803775912,0.5331628160744631,16
+calibration,Adaptive6,Adaptive6,Общественное питание,12,13.01641311900853,0.3850389947246208,16
+calibration,Adaptive6,Adaptive6,Продовольственные товары,1,38.93255416878486,0.8704179445289268,16
+calibration,Adaptive6,Adaptive6,Продовольственные товары,3,50.78598259533253,0.7136688504883615,16
+calibration,Adaptive6,Adaptive6,Продовольственные товары,6,61.98985920506891,0.6080940550255274,16
+calibration,Adaptive6,Adaptive6,Продовольственные товары,12,69.76554654677773,0.7463388179500634,16
+calibration,Adaptive6,Adaptive6,Услуги,1,21.330582002655312,0.8481773525697394,16
+calibration,Adaptive6,Adaptive6,Услуги,3,32.19206832512424,0.7556820323422786,16
+calibration,Adaptive6,Adaptive6,Услуги,6,43.633975543618675,0.618384129717263,16
+calibration,Adaptive6,Adaptive6,Услуги,12,45.171279960111406,0.41926073311667855,16
+calibration,Adaptive6_Bias12,Adaptive6_Bias12,Всего,1,95.03452191139178,0.8233440204838348,16
+calibration,Adaptive6_Bias12,Adaptive6_Bias12,Всего,3,189.68417463849164,0.4204050083506212,16
+calibration,Adaptive6_Bias12,Adaptive6_Bias12,Всего,6,325.33246754817463,-0.021388043262785317,16
+calibration,Adaptive6_Bias12,Adaptive6_Bias12,Всего,12,376.4910295867027,0.14303840583980043,16
+calibration,Adaptive6_Bias12,Adaptive6_Bias12,Непродовольственные товары,1,76.08877875295221,0.45298375840561256,16
+calibration,Adaptive6_Bias12,Adaptive6_Bias12,Непродовольственные товары,3,141.82915365675944,-1.453888335785785,16
+calibration,Adaptive6_Bias12,Adaptive6_Bias12,Непродовольственные товары,6,272.55548789838605,-1.9249286434653419,16
+calibration,Adaptive6_Bias12,Adaptive6_Bias12,Непродовольственные товары,12,299.7330060209344,-1.240195699761229,16
+calibration,Adaptive6_Bias12,Adaptive6_Bias12,Общественное питание,1,6.415749418082326,0.8737786563012357,16
+calibration,Adaptive6_Bias12,Adaptive6_Bias12,Общественное питание,3,7.893969663947388,0.7828674540937391,16
+calibration,Adaptive6_Bias12,Adaptive6_Bias12,Общественное питание,6,8.636207455940687,0.5815712575103501,16
+calibration,Adaptive6_Bias12,Adaptive6_Bias12,Общественное питание,12,12.92847507525434,0.4119287604614451,16
+calibration,Adaptive6_Bias12,Adaptive6_Bias12,Продовольственные товары,1,38.274745174874155,0.8745433867491217,16
+calibration,Adaptive6_Bias12,Adaptive6_Bias12,Продовольственные товары,3,54.74487816384176,0.6886973830503221,16
+calibration,Adaptive6_Bias12,Adaptive6_Bias12,Продовольственные товары,6,68.68576640505924,0.5228241307781458,16
+calibration,Adaptive6_Bias12,Adaptive6_Bias12,Продовольственные товары,12,73.24622546673554,0.7188588275141519,16
+calibration,Adaptive6_Bias12,Adaptive6_Bias12,Услуги,1,21.102168470345184,0.8533276884727667,16
+calibration,Adaptive6_Bias12,Adaptive6_Bias12,Услуги,3,33.31096700509329,0.6889269189808523,16
+calibration,Adaptive6_Bias12,Adaptive6_Bias12,Услуги,6,50.185747412192185,0.48838429509848424,16
+calibration,Adaptive6_Bias12,Adaptive6_Bias12,Услуги,12,45.59144605025119,0.4104775798827721,16
+calibration,Adaptive6_Bias6,Adaptive6_Bias6,Всего,1,93.2618920625734,0.8271659204835305,16
+calibration,Adaptive6_Bias6,Adaptive6_Bias6,Всего,3,189.00072897530634,0.42985830834985683,16
+calibration,Adaptive6_Bias6,Adaptive6_Bias6,Всего,6,330.76136712434334,-0.06440708757433411,16
+calibration,Adaptive6_Bias6,Adaptive6_Bias6,Всего,12,376.4910295867027,0.14303840583980043,16
+calibration,Adaptive6_Bias6,Adaptive6_Bias6,Непродовольственные товары,1,72.16562406882979,0.4745076073710106,16
+calibration,Adaptive6_Bias6,Adaptive6_Bias6,Непродовольственные товары,3,139.74278526065396,-1.3297865282562413,16
+calibration,Adaptive6_Bias6,Adaptive6_Bias6,Непродовольственные товары,6,274.07958551526525,-1.9593973804817892,16
+calibration,Adaptive6_Bias6,Adaptive6_Bias6,Непродовольственные товары,12,299.7330060209344,-1.240195699761229,16
+calibration,Adaptive6_Bias6,Adaptive6_Bias6,Общественное питание,1,6.512576736084384,0.8798780066821965,16
+calibration,Adaptive6_Bias6,Adaptive6_Bias6,Общественное питание,3,6.897062410430957,0.8270674899726589,16
+calibration,Adaptive6_Bias6,Adaptive6_Bias6,Общественное питание,6,8.846832992486302,0.5731721620179682,16
+calibration,Adaptive6_Bias6,Adaptive6_Bias6,Общественное питание,12,12.92847507525434,0.4119287604614451,16
+calibration,Adaptive6_Bias6,Adaptive6_Bias6,Продовольственные товары,1,36.598905265651894,0.882229484409473,16
+calibration,Adaptive6_Bias6,Adaptive6_Bias6,Продовольственные товары,3,54.52997963227402,0.695522677853315,16
+calibration,Adaptive6_Bias6,Adaptive6_Bias6,Продовольственные товары,6,68.24047317865809,0.521537077090513,16
+calibration,Adaptive6_Bias6,Adaptive6_Bias6,Продовольственные товары,12,73.24622546673554,0.7188588275141519,16
+calibration,Adaptive6_Bias6,Adaptive6_Bias6,Услуги,1,19.102335151051427,0.878792298184558,16
+calibration,Adaptive6_Bias6,Adaptive6_Bias6,Услуги,3,32.48045597706957,0.7111161261048198,16
+calibration,Adaptive6_Bias6,Adaptive6_Bias6,Услуги,6,50.0119924104343,0.49015960008299075,16
+calibration,Adaptive6_Bias6,Adaptive6_Bias6,Услуги,12,45.59144605025119,0.4104775798827721,16
+calibration,BaselineN01,BaselineN01,Всего,1,111.17924435955427,0.8208949041983185,16
+calibration,BaselineN01,BaselineN01,Всего,3,194.020753081699,0.4472582415612425,16
+calibration,BaselineN01,BaselineN01,Всего,6,272.438589229676,0.3484139442044778,16
+calibration,BaselineN01,BaselineN01,Всего,12,353.06104980662246,0.27809404326272413,16
+calibration,BaselineN01,BaselineN01,Непродовольственные товары,1,89.74560568308897,0.45207610699576206,16
+calibration,BaselineN01,BaselineN01,Непродовольственные товары,3,153.28425915018977,-1.1927005255797827,16
+calibration,BaselineN01,BaselineN01,Непродовольственные товары,6,225.32771174007013,-0.7842435698957602,16
+calibration,BaselineN01,BaselineN01,Непродовольственные товары,12,276.9297835245054,-0.8629358980147899,16
+calibration,BaselineN01,BaselineN01,Общественное питание,1,5.490471406702351,0.8881564306798824,16
+calibration,BaselineN01,BaselineN01,Общественное питание,3,8.295967208065287,0.769269526708039,16
+calibration,BaselineN01,BaselineN01,Общественное питание,6,13.319141545575691,0.24615250873886507,16
+calibration,BaselineN01,BaselineN01,Общественное питание,12,18.482961448670114,-0.16143922722610804,16
+calibration,BaselineN01,BaselineN01,Продовольственные товары,1,39.19108084289749,0.8694541317320937,16
+calibration,BaselineN01,BaselineN01,Продовольственные товары,3,49.84003013594959,0.7198804716623364,16
+calibration,BaselineN01,BaselineN01,Продовольственные товары,6,60.4557049018881,0.6187187192164707,16
+calibration,BaselineN01,BaselineN01,Продовольственные товары,12,76.36662710728639,0.7073079190693434,16
+calibration,BaselineN01,BaselineN01,Услуги,1,12.464824220592284,0.948891202357464,16
+calibration,BaselineN01,BaselineN01,Услуги,3,23.82170106274809,0.818690561954227,16
+calibration,BaselineN01,BaselineN01,Услуги,6,35.46629238793659,0.6718239691614998,16
+calibration,BaselineN01,BaselineN01,Услуги,12,58.84272048534615,0.12314738809179737,16
+calibration,CalibratedStatic,CalibratedStatic,Всего,1,119.52635643808895,0.8015867458692011,16
+calibration,CalibratedStatic,CalibratedStatic,Всего,3,207.2495865584728,0.36550347992953724,16
+calibration,CalibratedStatic,CalibratedStatic,Всего,6,294.5184330744587,0.24140419347160835,16
+calibration,CalibratedStatic,CalibratedStatic,Всего,12,353.720509631982,0.25338434407531985,16
+calibration,CalibratedStatic,CalibratedStatic,Непродовольственные товары,1,89.69751411721589,0.4312016229243827,16
+calibration,CalibratedStatic,CalibratedStatic,Непродовольственные товары,3,160.31260657828275,-1.5495780417650669,16
+calibration,CalibratedStatic,CalibratedStatic,Непродовольственные товары,6,245.18432933920758,-1.0819504422340969,16
+calibration,CalibratedStatic,CalibratedStatic,Непродовольственные товары,12,283.41972691619293,-0.9856589989040085,16
+calibration,CalibratedStatic,CalibratedStatic,Общественное питание,1,5.079459078761987,0.9075721998049889,16
+calibration,CalibratedStatic,CalibratedStatic,Общественное питание,3,6.410776128640634,0.8353471984540236,16
+calibration,CalibratedStatic,CalibratedStatic,Общественное питание,6,9.655427843911642,0.5295758022799055,16
+calibration,CalibratedStatic,CalibratedStatic,Общественное питание,12,13.110936529916204,0.38124229533245757,16
+calibration,CalibratedStatic,CalibratedStatic,Продовольственные товары,1,39.99109991572902,0.8682269398238761,16
+calibration,CalibratedStatic,CalibratedStatic,Продовольственные товары,3,52.29748315629833,0.7011036189501709,16
+calibration,CalibratedStatic,CalibratedStatic,Продовольственные товары,6,63.118625183138874,0.5868339323386722,16
+calibration,CalibratedStatic,CalibratedStatic,Продовольственные товары,12,68.77364056719904,0.7516659047391134,16
+calibration,CalibratedStatic,CalibratedStatic,Услуги,1,15.53751034384858,0.9299277595767164,16
+calibration,CalibratedStatic,CalibratedStatic,Услуги,3,28.131371443357615,0.8034580928721478,16
+calibration,CalibratedStatic,CalibratedStatic,Услуги,6,39.855834349416625,0.6701623722400862,16
+calibration,CalibratedStatic,CalibratedStatic,Услуги,12,44.527698662480645,0.42611900161036853,16
+calibration,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Всего,1,120.35587026709925,0.8149466055604495,16
+calibration,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Всего,3,201.15459804529854,0.37926660122599753,16
+calibration,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Всего,6,295.486801988798,0.2404006661829241,16
+calibration,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Всего,12,368.027164007751,0.2040857587635888,16
+calibration,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Непродовольственные товары,1,89.69751411721589,0.4312016229243827,16
+calibration,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Непродовольственные товары,3,160.31260657828275,-1.5495780417650669,16
+calibration,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Непродовольственные товары,6,245.18432933920758,-1.0819504422340969,16
+calibration,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Непродовольственные товары,12,283.41972691619293,-0.9856589989040085,16
+calibration,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Общественное питание,1,5.079459078761987,0.9075721998049889,16
+calibration,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Общественное питание,3,6.410776128640634,0.8353471984540236,16
+calibration,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Общественное питание,6,9.655427843911642,0.5295758022799055,16
+calibration,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Общественное питание,12,13.110936529916204,0.38124229533245757,16
+calibration,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Продовольственные товары,1,39.99109991572902,0.8682269398238761,16
+calibration,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Продовольственные товары,3,52.29748315629833,0.7011036189501709,16
+calibration,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Продовольственные товары,6,63.118625183138874,0.5868339323386722,16
+calibration,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Продовольственные товары,12,68.77364056719904,0.7516659047391134,16
+calibration,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Услуги,1,15.53751034384858,0.9299277595767164,16
+calibration,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Услуги,3,28.131371443357615,0.8034580928721478,16
+calibration,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Услуги,6,39.855834349416625,0.6701623722400862,16
+calibration,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Услуги,12,44.527698662480645,0.42611900161036853,16
+calibration,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Всего,1,120.06063289097739,0.8116826174829492,16
+calibration,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Всего,3,203.740717197984,0.3741678881094964,16
+calibration,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Всего,6,295.03722644953433,0.241609746171355,16
+calibration,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Всего,12,361.44356500224023,0.22721563516446575,16
+calibration,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Непродовольственные товары,1,89.51215787612904,0.4212954099429397,16
+calibration,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Непродовольственные товары,3,162.62882156687704,-1.574204272887986,16
+calibration,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Непродовольственные товары,6,244.77499867075716,-1.0750829482348516,16
+calibration,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Непродовольственные товары,12,278.108776716213,-0.9182449010465057,16
+calibration,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Общественное питание,1,5.062049464156024,0.9076850443420655,16
+calibration,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Общественное питание,3,6.407543888515265,0.8356017543364515,16
+calibration,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Общественное питание,6,9.649929126577092,0.5301104668642969,16
+calibration,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Общественное питание,12,13.116596882969745,0.380863764268773,16
+calibration,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Продовольственные товары,1,39.441513275168845,0.8706279668167286,16
+calibration,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Продовольственные товары,3,52.836429798063364,0.6980567967588369,16
+calibration,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Продовольственные товары,6,63.23620236530985,0.5850684018694274,16
+calibration,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Продовольственные товары,12,68.40602983071331,0.75259665970707,16
+calibration,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Услуги,1,15.491563508372288,0.9307215999534268,16
+calibration,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Услуги,3,27.743466615754528,0.8067854071669683,16
+calibration,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Услуги,6,39.72673323322425,0.6722327173143683,16
+calibration,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Услуги,12,44.39413703460359,0.4293024350071063,16
+calibration,RegimeAdaptive,RegimeAdaptive,Всего,1,131.16366256432093,0.7451646315361022,16
+calibration,RegimeAdaptive,RegimeAdaptive,Всего,3,216.86683787161445,0.30528640759414316,16
+calibration,RegimeAdaptive,RegimeAdaptive,Всего,6,301.7767675854046,0.20223333895762807,16
+calibration,RegimeAdaptive,RegimeAdaptive,Всего,12,357.12917129896834,0.24103439645241231,16
+calibration,RegimeAdaptive,RegimeAdaptive,Непродовольственные товары,1,98.59157812788378,0.2708593184116861,16
+calibration,RegimeAdaptive,RegimeAdaptive,Непродовольственные товары,3,165.1965457078059,-1.727867314077868,16
+calibration,RegimeAdaptive,RegimeAdaptive,Непродовольственные товары,6,247.48654637135968,-1.1425957523851227,16
+calibration,RegimeAdaptive,RegimeAdaptive,Непродовольственные товары,12,283.1402050149045,-0.9840951741303425,16
+calibration,RegimeAdaptive,RegimeAdaptive,Общественное питание,1,6.238775010688755,0.8696365619617653,16
+calibration,RegimeAdaptive,RegimeAdaptive,Общественное питание,3,7.144291474563799,0.8219530136668648,16
+calibration,RegimeAdaptive,RegimeAdaptive,Общественное питание,6,9.03283904290558,0.5336563888535011,16
+calibration,RegimeAdaptive,RegimeAdaptive,Общественное питание,12,13.01641311900853,0.3850389947246208,16
+calibration,RegimeAdaptive,RegimeAdaptive,Продовольственные товары,1,40.61307754936668,0.8635648912876618,16
+calibration,RegimeAdaptive,RegimeAdaptive,Продовольственные товары,3,51.90011412900846,0.7038724058772112,16
+calibration,RegimeAdaptive,RegimeAdaptive,Продовольственные товары,6,62.07967830734381,0.6074067551425961,16
+calibration,RegimeAdaptive,RegimeAdaptive,Продовольственные товары,12,69.76554654677773,0.7463388179500634,16
+calibration,RegimeAdaptive,RegimeAdaptive,Услуги,1,21.3750937077669,0.8467288034128995,16
+calibration,RegimeAdaptive,RegimeAdaptive,Услуги,3,31.637136326892687,0.7664442266982537,16
+calibration,RegimeAdaptive,RegimeAdaptive,Услуги,6,43.61742520259584,0.6188310633867807,16
+calibration,RegimeAdaptive,RegimeAdaptive,Услуги,12,45.171279960111406,0.41926073311667855,16
+calibration,Static_Bias12,Static_Bias12,Всего,1,90.37350475917611,0.8538861622621895,16
+calibration,Static_Bias12,Static_Bias12,Всего,3,183.6182074356945,0.47779651019048885,16
+calibration,Static_Bias12,Static_Bias12,Всего,6,317.80161176194144,0.047500670214300045,16
+calibration,Static_Bias12,Static_Bias12,Всего,12,372.98355562151426,0.15883564675267392,16
+calibration,Static_Bias12,Static_Bias12,Непродовольственные товары,1,72.11764983245425,0.5531233044535075,16
+calibration,Static_Bias12,Static_Bias12,Непродовольственные товары,3,138.9507724222375,-1.2913485648210394,16
+calibration,Static_Bias12,Static_Bias12,Непродовольственные товары,6,266.5904814882755,-1.794624665467265,16
+calibration,Static_Bias12,Static_Bias12,Непродовольственные товары,12,299.91349876551016,-1.2472193942094503,16
+calibration,Static_Bias12,Static_Bias12,Общественное питание,1,5.220746613093919,0.9088220182590976,16
+calibration,Static_Bias12,Static_Bias12,Общественное питание,3,6.269070724974815,0.8404517776865634,16
+calibration,Static_Bias12,Static_Bias12,Общественное питание,6,8.857181040380105,0.6162301344595726,16
+calibration,Static_Bias12,Static_Bias12,Общественное питание,12,13.223191787766343,0.38496116317245943,16
+calibration,Static_Bias12,Static_Bias12,Продовольственные товары,1,38.85331174516524,0.8740543481698118,16
+calibration,Static_Bias12,Static_Bias12,Продовольственные товары,3,55.9331288156434,0.6753052698169002,16
+calibration,Static_Bias12,Static_Bias12,Продовольственные товары,6,69.72364405346241,0.5040862563655074,16
+calibration,Static_Bias12,Static_Bias12,Продовольственные товары,12,72.30624376883952,0.7258057792874608,16
+calibration,Static_Bias12,Static_Bias12,Услуги,1,15.54002338543178,0.9254914574905122,16
+calibration,Static_Bias12,Static_Bias12,Услуги,3,29.362444276463883,0.7592428163103809,16
+calibration,Static_Bias12,Static_Bias12,Услуги,6,44.71329775743709,0.5796850690707813,16
+calibration,Static_Bias12,Static_Bias12,Услуги,12,44.88401824460385,0.41990687655516723,16
+calibration,Static_Bias6,Static_Bias6,Всего,1,89.20550863342788,0.8568943384893192,16
+calibration,Static_Bias6,Static_Bias6,Всего,3,183.17884790507014,0.481477489283615,16
+calibration,Static_Bias6,Static_Bias6,Всего,6,322.4504827136317,0.011263322626085315,16
+calibration,Static_Bias6,Static_Bias6,Всего,12,372.98355562151426,0.15883564675267392,16
+calibration,Static_Bias6,Static_Bias6,Непродовольственные товары,1,68.13611609578996,0.5746810874734692,16
+calibration,Static_Bias6,Static_Bias6,Непродовольственные товары,3,137.16633001634295,-1.178155105973727,16
+calibration,Static_Bias6,Static_Bias6,Непродовольственные товары,6,268.2340597970279,-1.831350798953428,16
+calibration,Static_Bias6,Static_Bias6,Непродовольственные товары,12,299.91349876551016,-1.2472193942094503,16
+calibration,Static_Bias6,Static_Bias6,Общественное питание,1,5.275638088861502,0.9141069071181629,16
+calibration,Static_Bias6,Static_Bias6,Общественное питание,3,5.5834686543648395,0.8696081980586838,16
+calibration,Static_Bias6,Static_Bias6,Общественное питание,6,9.121201022084604,0.6075788823458821,16
+calibration,Static_Bias6,Static_Bias6,Общественное питание,12,13.223191787766343,0.38496116317245943,16
+calibration,Static_Bias6,Static_Bias6,Продовольственные товары,1,36.84125696624507,0.8825456451373075,16
+calibration,Static_Bias6,Static_Bias6,Продовольственные товары,3,55.181578722766105,0.6827935043278563,16
+calibration,Static_Bias6,Static_Bias6,Продовольственные товары,6,68.4673623613266,0.5062262717037141,16
+calibration,Static_Bias6,Static_Bias6,Продовольственные товары,12,72.30624376883952,0.7258057792874608,16
+calibration,Static_Bias6,Static_Bias6,Услуги,1,14.086354711279483,0.9434123275729547,16
+calibration,Static_Bias6,Static_Bias6,Услуги,3,29.46288131418516,0.7598270184474896,16
+calibration,Static_Bias6,Static_Bias6,Услуги,6,44.778511171243395,0.5765873266306606,16
+calibration,Static_Bias6,Static_Bias6,Услуги,12,44.88401824460385,0.41990687655516723,16
+calibration,cb_calendar36,cb_calendar36,Всего,1,173.08671003287583,0.5432097487426415,16
+calibration,cb_calendar36,cb_calendar36,Всего,3,283.1932993186614,-0.3044717260227394,16
+calibration,cb_calendar36,cb_calendar36,Всего,6,312.20105508492304,0.11221307588486007,16
+calibration,cb_calendar36,cb_calendar36,Всего,12,319.69506914449306,0.36094084506247315,16
+calibration,cb_calendar36,cb_calendar36,Непродовольственные товары,1,151.72452947303796,-0.4204329364576649,16
+calibration,cb_calendar36,cb_calendar36,Непродовольственные товары,3,212.3998072784459,-3.378158734153361,16
+calibration,cb_calendar36,cb_calendar36,Непродовольственные товары,6,240.8728473432712,-1.1351772410799956,16
+calibration,cb_calendar36,cb_calendar36,Непродовольственные товары,12,262.94302457274284,-0.7182200192910952,16
+calibration,cb_calendar36,cb_calendar36,Общественное питание,1,7.592152272275305,0.7801974778240971,16
+calibration,cb_calendar36,cb_calendar36,Общественное питание,3,8.283960495769442,0.8092032848087496,16
+calibration,cb_calendar36,cb_calendar36,Общественное питание,6,12.290190852009363,0.26784351523134065,16
+calibration,cb_calendar36,cb_calendar36,Общественное питание,12,15.508967556077886,0.06635407807046778,16
+calibration,cb_calendar36,cb_calendar36,Продовольственные товары,1,55.35048686808274,0.7172593096718541,16
+calibration,cb_calendar36,cb_calendar36,Продовольственные товары,3,55.09516129686989,0.6058670292336106,16
+calibration,cb_calendar36,cb_calendar36,Продовольственные товары,6,65.37038417576201,0.5177047744104102,16
+calibration,cb_calendar36,cb_calendar36,Продовольственные товары,12,78.79947502780348,0.6027572119797548,16
+calibration,cb_calendar36,cb_calendar36,Услуги,1,22.87981194515349,0.8315905662468389,16
+calibration,cb_calendar36,cb_calendar36,Услуги,3,32.415702853364294,0.7076790902970393,16
+calibration,cb_calendar36,cb_calendar36,Услуги,6,37.28265213670757,0.74176000766154,16
+calibration,cb_calendar36,cb_calendar36,Услуги,12,50.367214470367756,0.2844411957104467,16
+calibration,cb_decay12,cb_decay12,Всего,1,165.82474130566771,0.5461840366537518,16
+calibration,cb_decay12,cb_decay12,Всего,3,245.3808354818825,0.04141523308703854,16
+calibration,cb_decay12,cb_decay12,Всего,6,307.2768393102877,0.12800239319538598,16
+calibration,cb_decay12,cb_decay12,Всего,12,322.0863149455874,0.34121047582992814,16
+calibration,cb_decay12,cb_decay12,Непродовольственные товары,1,123.61179413138862,0.022017934641780035,16
+calibration,cb_decay12,cb_decay12,Непродовольственные товары,3,195.40702575605667,-2.694433917392858,16
+calibration,cb_decay12,cb_decay12,Непродовольственные товары,6,250.3749577278129,-1.243548088875944,16
+calibration,cb_decay12,cb_decay12,Непродовольственные товары,12,263.8053380530493,-0.7469281405130395,16
+calibration,cb_decay12,cb_decay12,Общественное питание,1,8.017752891377903,0.7851108691259762,16
+calibration,cb_decay12,cb_decay12,Общественное питание,3,9.245741385784367,0.7445335227537413,16
+calibration,cb_decay12,cb_decay12,Общественное питание,6,11.434822525024618,0.3873669050451698,16
+calibration,cb_decay12,cb_decay12,Общественное питание,12,15.852102487848933,0.06385744725212783,16
+calibration,cb_decay12,cb_decay12,Продовольственные товары,1,51.85051245294123,0.7725876166871556,16
+calibration,cb_decay12,cb_decay12,Продовольственные товары,3,48.067112509297345,0.6622185836935728,16
+calibration,cb_decay12,cb_decay12,Продовольственные товары,6,68.37910970487317,0.4027852535854748,16
+calibration,cb_decay12,cb_decay12,Продовольственные товары,12,76.7308536673941,0.6302848580083837,16
+calibration,cb_decay12,cb_decay12,Услуги,1,16.899182445002133,0.9095170526428317,16
+calibration,cb_decay12,cb_decay12,Услуги,3,25.591169289305938,0.8294992184833767,16
+calibration,cb_decay12,cb_decay12,Услуги,6,35.07850505764513,0.7682546175551443,16
+calibration,cb_decay12,cb_decay12,Услуги,12,49.89122600640532,0.289127454156054,16
+calibration,cb_full,cb_full,Всего,1,175.968408652456,0.49970950535100644,16
+calibration,cb_full,cb_full,Всего,3,257.54922263495115,-0.01890866789385992,16
+calibration,cb_full,cb_full,Всего,6,325.925449973823,0.04480050589071527,16
+calibration,cb_full,cb_full,Всего,12,322.830888030925,0.34333852433119916,16
+calibration,cb_full,cb_full,Непродовольственные товары,1,145.6101263052372,-0.33998113308543476,16
+calibration,cb_full,cb_full,Непродовольственные товары,3,196.68410640673906,-2.7923965429371624,16
+calibration,cb_full,cb_full,Непродовольственные товары,6,250.92030368446137,-1.3311306742891462,16
+calibration,cb_full,cb_full,Непродовольственные товары,12,264.80921344916015,-0.7320515430802108,16
+calibration,cb_full,cb_full,Общественное питание,1,8.34721328061737,0.758202198131412,16
+calibration,cb_full,cb_full,Общественное питание,3,9.454882452528677,0.7385328350758908,16
+calibration,cb_full,cb_full,Общественное питание,6,12.383710433602987,0.28522172784101774,16
+calibration,cb_full,cb_full,Общественное питание,12,15.669557224953822,0.07677495086057085,16
+calibration,cb_full,cb_full,Продовольственные товары,1,54.998006852977056,0.7481874492445124,16
+calibration,cb_full,cb_full,Продовольственные товары,3,54.883071667975344,0.5891473832007839,16
+calibration,cb_full,cb_full,Продовольственные товары,6,73.12654964700515,0.34474553450338663,16
+calibration,cb_full,cb_full,Продовольственные товары,12,81.02114165089107,0.5990814089230394,16
+calibration,cb_full,cb_full,Услуги,1,17.0952167278147,0.9154261287810089,16
+calibration,cb_full,cb_full,Услуги,3,27.52364229440218,0.8023527858428956,16
+calibration,cb_full,cb_full,Услуги,6,35.60737101532794,0.7544434832720032,16
+calibration,cb_full,cb_full,Услуги,12,50.78033130964798,0.2709084665840019,16
+calibration,cb_w24,cb_w24,Всего,1,167.54365437356137,0.5202460172489993,16
+calibration,cb_w24,cb_w24,Всего,3,255.36270451166985,-0.006106071719163886,16
+calibration,cb_w24,cb_w24,Всего,6,325.925449973823,0.04480050589071527,16
+calibration,cb_w24,cb_w24,Всего,12,322.830888030925,0.34333852433119916,16
+calibration,cb_w24,cb_w24,Непродовольственные товары,1,144.77594905078155,-0.3305695265497366,16
+calibration,cb_w24,cb_w24,Непродовольственные товары,3,193.59219611614617,-2.720470204218394,16
+calibration,cb_w24,cb_w24,Непродовольственные товары,6,250.92030368446137,-1.3311306742891462,16
+calibration,cb_w24,cb_w24,Непродовольственные товары,12,264.80921344916015,-0.7320515430802108,16
+calibration,cb_w24,cb_w24,Общественное питание,1,7.69676075548856,0.7733480400896062,16
+calibration,cb_w24,cb_w24,Общественное питание,3,9.377121493251254,0.7432506335710913,16
+calibration,cb_w24,cb_w24,Общественное питание,6,12.383710433602987,0.28522172784101774,16
+calibration,cb_w24,cb_w24,Общественное питание,12,15.669557224953822,0.07677495086057085,16
+calibration,cb_w24,cb_w24,Продовольственные товары,1,52.928627465652795,0.7686684772671462,16
+calibration,cb_w24,cb_w24,Продовольственные товары,3,55.18903820113381,0.5886203132895892,16
+calibration,cb_w24,cb_w24,Продовольственные товары,6,73.12654964700515,0.34474553450338663,16
+calibration,cb_w24,cb_w24,Продовольственные товары,12,81.02114165089107,0.5990814089230394,16
+calibration,cb_w24,cb_w24,Услуги,1,16.482828002833088,0.9202898783217311,16
+calibration,cb_w24,cb_w24,Услуги,3,27.47597544125307,0.8029084659512347,16
+calibration,cb_w24,cb_w24,Услуги,6,35.60737101532794,0.7544434832720032,16
+calibration,cb_w24,cb_w24,Услуги,12,50.78033130964798,0.2709084665840019,16
+calibration,cb_w36,cb_w36,Всего,1,175.968408652456,0.49970950535100644,16
+calibration,cb_w36,cb_w36,Всего,3,257.54922263495115,-0.01890866789385992,16
+calibration,cb_w36,cb_w36,Всего,6,325.925449973823,0.04480050589071527,16
+calibration,cb_w36,cb_w36,Всего,12,322.830888030925,0.34333852433119916,16
+calibration,cb_w36,cb_w36,Непродовольственные товары,1,145.6101263052372,-0.33998113308543476,16
+calibration,cb_w36,cb_w36,Непродовольственные товары,3,196.68410640673906,-2.7923965429371624,16
+calibration,cb_w36,cb_w36,Непродовольственные товары,6,250.92030368446137,-1.3311306742891462,16
+calibration,cb_w36,cb_w36,Непродовольственные товары,12,264.80921344916015,-0.7320515430802108,16
+calibration,cb_w36,cb_w36,Общественное питание,1,8.34721328061737,0.758202198131412,16
+calibration,cb_w36,cb_w36,Общественное питание,3,9.454882452528677,0.7385328350758908,16
+calibration,cb_w36,cb_w36,Общественное питание,6,12.383710433602987,0.28522172784101774,16
+calibration,cb_w36,cb_w36,Общественное питание,12,15.669557224953822,0.07677495086057085,16
+calibration,cb_w36,cb_w36,Продовольственные товары,1,54.998006852977056,0.7481874492445124,16
+calibration,cb_w36,cb_w36,Продовольственные товары,3,54.883071667975344,0.5891473832007839,16
+calibration,cb_w36,cb_w36,Продовольственные товары,6,73.12654964700515,0.34474553450338663,16
+calibration,cb_w36,cb_w36,Продовольственные товары,12,81.02114165089107,0.5990814089230394,16
+calibration,cb_w36,cb_w36,Услуги,1,17.0952167278147,0.9154261287810089,16
+calibration,cb_w36,cb_w36,Услуги,3,27.52364229440218,0.8023527858428956,16
+calibration,cb_w36,cb_w36,Услуги,6,35.60737101532794,0.7544434832720032,16
+calibration,cb_w36,cb_w36,Услуги,12,50.78033130964798,0.2709084665840019,16
+calibration,cb_w48,cb_w48,Всего,1,175.968408652456,0.49970950535100644,16
+calibration,cb_w48,cb_w48,Всего,3,257.54922263495115,-0.01890866789385992,16
+calibration,cb_w48,cb_w48,Всего,6,325.925449973823,0.04480050589071527,16
+calibration,cb_w48,cb_w48,Всего,12,322.830888030925,0.34333852433119916,16
+calibration,cb_w48,cb_w48,Непродовольственные товары,1,145.6101263052372,-0.33998113308543476,16
+calibration,cb_w48,cb_w48,Непродовольственные товары,3,196.68410640673906,-2.7923965429371624,16
+calibration,cb_w48,cb_w48,Непродовольственные товары,6,250.92030368446137,-1.3311306742891462,16
+calibration,cb_w48,cb_w48,Непродовольственные товары,12,264.80921344916015,-0.7320515430802108,16
+calibration,cb_w48,cb_w48,Общественное питание,1,8.34721328061737,0.758202198131412,16
+calibration,cb_w48,cb_w48,Общественное питание,3,9.454882452528677,0.7385328350758908,16
+calibration,cb_w48,cb_w48,Общественное питание,6,12.383710433602987,0.28522172784101774,16
+calibration,cb_w48,cb_w48,Общественное питание,12,15.669557224953822,0.07677495086057085,16
+calibration,cb_w48,cb_w48,Продовольственные товары,1,54.998006852977056,0.7481874492445124,16
+calibration,cb_w48,cb_w48,Продовольственные товары,3,54.883071667975344,0.5891473832007839,16
+calibration,cb_w48,cb_w48,Продовольственные товары,6,73.12654964700515,0.34474553450338663,16
+calibration,cb_w48,cb_w48,Продовольственные товары,12,81.02114165089107,0.5990814089230394,16
+calibration,cb_w48,cb_w48,Услуги,1,17.0952167278147,0.9154261287810089,16
+calibration,cb_w48,cb_w48,Услуги,3,27.52364229440218,0.8023527858428956,16
+calibration,cb_w48,cb_w48,Услуги,6,35.60737101532794,0.7544434832720032,16
+calibration,cb_w48,cb_w48,Услуги,12,50.78033130964798,0.2709084665840019,16
+calibration,forest,forest,Всего,1,170.81940723893467,0.6186004547832898,16
+calibration,forest,forest,Всего,3,276.70310905572074,-0.20983063775649624,16
+calibration,forest,forest,Всего,6,310.0592537880123,0.08862716445110064,16
+calibration,forest,forest,Всего,12,377.85017556179514,0.12476345176602222,16
+calibration,forest,forest,Непродовольственные товары,1,127.7255887289056,-0.08138730352140344,16
+calibration,forest,forest,Непродовольственные товары,3,205.45999685409558,-2.8726430135084082,16
+calibration,forest,forest,Непродовольственные товары,6,263.7684089153726,-1.4533527396965398,16
+calibration,forest,forest,Непродовольственные товары,12,303.34107961598886,-1.308812572903114,16
+calibration,forest,forest,Общественное питание,1,7.27101295224791,0.8306305182854535,16
+calibration,forest,forest,Общественное питание,3,10.702742293958979,0.6658981654148812,16
+calibration,forest,forest,Общественное питание,6,12.768632731615396,0.14445449009579536,16
+calibration,forest,forest,Общественное питание,12,15.251194927326585,0.18614085173097616,16
+calibration,forest,forest,Продовольственные товары,1,51.588970556479495,0.7915199759818033,16
+calibration,forest,forest,Продовольственные товары,3,63.42475162207036,0.49795963178791003,16
+calibration,forest,forest,Продовольственные товары,6,79.08607114018014,0.3048448328806994,16
+calibration,forest,forest,Продовольственные товары,12,92.71332796857799,0.5517030332429429,16
+calibration,forest,forest,Услуги,1,20.818683166554713,0.8586925447737283,16
+calibration,forest,forest,Услуги,3,24.658369764028876,0.8381422799648317,16
+calibration,forest,forest,Услуги,6,37.57453800049235,0.7479464530180688,16
+calibration,forest,forest,Услуги,12,46.08840016235264,0.4158947185997628,16
+calibration,growth,growth,Всего,1,228.04845248332214,0.1769263652052412,16
+calibration,growth,growth,Всего,3,322.7408889477924,-0.5985953164908973,16
+calibration,growth,growth,Всего,6,413.3189248823751,-0.571490173696328,16
+calibration,growth,growth,Всего,12,403.71734809001975,-0.04199876002448799,16
+calibration,growth,growth,Непродовольственные товары,1,158.72745489471149,-0.951732659200045,16
+calibration,growth,growth,Непродовольственные товары,3,233.61363274439583,-4.340197462410797,16
+calibration,growth,growth,Непродовольственные товары,6,328.4867663638991,-2.7758532885601856,16
+calibration,growth,growth,Непродовольственные товары,12,325.1008093862197,-1.6987504396691735,16
+calibration,growth,growth,Общественное питание,1,11.924813180851569,0.41959943621174667,16
+calibration,growth,growth,Общественное питание,3,14.207428181794144,0.294640547826747,16
+calibration,growth,growth,Общественное питание,6,13.42117965642234,0.06304637401694957,16
+calibration,growth,growth,Общественное питание,12,9.778751197027187,0.5984867458736937,16
+calibration,growth,growth,Продовольственные товары,1,68.46827986374736,0.6203769272098303,16
+calibration,growth,growth,Продовольственные товары,3,89.1867414327307,0.22011974914132615,16
+calibration,growth,growth,Продовольственные товары,6,92.18103266426941,0.13580900217276126,16
+calibration,growth,growth,Продовольственные товары,12,79.95305215472509,0.6910167362157158,16
+calibration,growth,growth,Услуги,1,49.858359711780814,0.05465183667463369,16
+calibration,growth,growth,Услуги,3,61.73837143060055,-0.07207670018025292,16
+calibration,growth,growth,Услуги,6,66.49833085347771,-0.003407507556325129,16
+calibration,growth,growth,Услуги,12,46.171691542576625,0.27274282258913785,16
+calibration,hw_full,hw_full,Всего,1,74.13283006794376,0.9007822368627215,16
+calibration,hw_full,hw_full,Всего,3,200.06731914121121,0.3569753125474817,16
+calibration,hw_full,hw_full,Всего,6,285.75740218449846,0.0769538258757102,16
+calibration,hw_full,hw_full,Всего,12,372.6819565283825,0.0616579831419084,16
+calibration,hw_full,hw_full,Непродовольственные товары,1,54.035224592544694,0.7760681152898716,16
+calibration,hw_full,hw_full,Непродовольственные товары,3,111.94488713426176,-0.44763495045714485,16
+calibration,hw_full,hw_full,Непродовольственные товары,6,199.96131104868462,-0.6062011587316491,16
+calibration,hw_full,hw_full,Непродовольственные товары,12,257.81624032193827,-0.6434693666385372,16
+calibration,hw_full,hw_full,Общественное питание,1,6.483781557405411,0.823263459761274,16
+calibration,hw_full,hw_full,Общественное питание,3,14.329254114618855,0.3518786210873187,16
+calibration,hw_full,hw_full,Общественное питание,6,18.923073974271,-0.7558085934721708,16
+calibration,hw_full,hw_full,Общественное питание,12,30.85734136632209,-1.7635784412453566,16
+calibration,hw_full,hw_full,Продовольственные товары,1,33.612746437771676,0.9001452858430385,16
+calibration,hw_full,hw_full,Продовольственные товары,3,54.556384154358355,0.6937001718540274,16
+calibration,hw_full,hw_full,Продовольственные товары,6,69.5420812403406,0.5706450227352962,16
+calibration,hw_full,hw_full,Продовольственные товары,12,64.7230494845241,0.77743940478891,16
+calibration,hw_full,hw_full,Услуги,1,18.273572178374835,0.8670151946624205,16
+calibration,hw_full,hw_full,Услуги,3,52.80302327363604,0.3415442175596075,16
+calibration,hw_full,hw_full,Услуги,6,73.54789172480397,-0.14562196513277992,16
+calibration,hw_full,hw_full,Услуги,12,104.01207030225866,-1.2331627921549098,16
+calibration,hw_w24,hw_w24,Всего,1,159.89064482954257,0.6417749567709414,16
+calibration,hw_w24,hw_w24,Всего,3,193.86038388809027,0.2980380392847314,16
+calibration,hw_w24,hw_w24,Всего,6,315.69962856632566,0.00612807418957817,16
+calibration,hw_w24,hw_w24,Всего,12,336.6794238754494,0.3281128759734129,16
+calibration,hw_w24,hw_w24,Непродовольственные товары,1,122.09604142959158,0.16123113967439306,16
+calibration,hw_w24,hw_w24,Непродовольственные товары,3,161.7288308768581,-1.9389503047268613,16
+calibration,hw_w24,hw_w24,Непродовольственные товары,6,260.22325038653423,-1.6341696060999804,16
+calibration,hw_w24,hw_w24,Непродовольственные товары,12,272.1939306604786,-0.8462290006813444,16
+calibration,hw_w24,hw_w24,Общественное питание,1,13.76633355359046,0.27556679060340383,16
+calibration,hw_w24,hw_w24,Общественное питание,3,9.768410425016762,0.6700691421175938,16
+calibration,hw_w24,hw_w24,Общественное питание,6,9.98247420939639,0.5531724070866246,16
+calibration,hw_w24,hw_w24,Общественное питание,12,9.352725181324457,0.6924521720753585,16
+calibration,hw_w24,hw_w24,Продовольственные товары,1,58.9298504027187,0.7781076221835692,16
+calibration,hw_w24,hw_w24,Продовольственные товары,3,70.92362928212901,0.5357800044612651,16
+calibration,hw_w24,hw_w24,Продовольственные товары,6,72.13296629666948,0.5007944155787296,16
+calibration,hw_w24,hw_w24,Продовольственные товары,12,48.136969581721075,0.9015316160648904,16
+calibration,hw_w24,hw_w24,Услуги,1,49.134822091300634,0.0002964834392292781,16
+calibration,hw_w24,hw_w24,Услуги,3,40.03034801377376,0.5882823800881305,16
+calibration,hw_w24,hw_w24,Услуги,6,54.52198172430884,0.3929192037688082,16
+calibration,hw_w24,hw_w24,Услуги,12,47.93279139838823,0.46935553667758023,16
+calibration,hw_w36,hw_w36,Всего,1,205.18413892621408,0.4303011481274046,16
+calibration,hw_w36,hw_w36,Всего,3,230.44017983647842,0.25948892208519825,16
+calibration,hw_w36,hw_w36,Всего,6,209.2221220785695,0.5651589881881405,16
+calibration,hw_w36,hw_w36,Всего,12,222.7079489609099,0.6759029086228066,16
+calibration,hw_w36,hw_w36,Непродовольственные товары,1,137.12196036790843,-0.3056314558639446,16
+calibration,hw_w36,hw_w36,Непродовольственные товары,3,172.525981425081,-1.781772079195858,16
+calibration,hw_w36,hw_w36,Непродовольственные товары,6,205.6115650296913,-0.48718391114381676,16
+calibration,hw_w36,hw_w36,Непродовольственные товары,12,169.98876510757694,0.2698860944092195,16
+calibration,hw_w36,hw_w36,Общественное питание,1,7.772646896854793,0.6996263364483498,16
+calibration,hw_w36,hw_w36,Общественное питание,3,12.32510413359509,0.4784749730595641,16
+calibration,hw_w36,hw_w36,Общественное питание,6,17.41469127650258,-0.5652252118258985,16
+calibration,hw_w36,hw_w36,Общественное питание,12,25.400146973014078,-1.2234384505002667,16
+calibration,hw_w36,hw_w36,Продовольственные товары,1,51.73026547589322,0.8001474776534758,16
+calibration,hw_w36,hw_w36,Продовольственные товары,3,61.207271435221756,0.6009404025990588,16
+calibration,hw_w36,hw_w36,Продовольственные товары,6,67.83652106707672,0.4105822915878178,16
+calibration,hw_w36,hw_w36,Продовольственные товары,12,76.20493009522485,0.6874425645965285,16
+calibration,hw_w36,hw_w36,Услуги,1,37.031764221253304,0.5100206904765872,16
+calibration,hw_w36,hw_w36,Услуги,3,43.81395171721408,0.497322362621346,16
+calibration,hw_w36,hw_w36,Услуги,6,55.89658794575921,0.3428839374928553,16
+calibration,hw_w36,hw_w36,Услуги,12,81.12645759920241,-0.7072880193779598,16
+calibration,hw_w48,hw_w48,Всего,1,73.43729304520792,0.9006204908715378,16
+calibration,hw_w48,hw_w48,Всего,3,197.5266205439164,0.38478427536094195,16
+calibration,hw_w48,hw_w48,Всего,6,283.2309333869333,0.09536759390960248,16
+calibration,hw_w48,hw_w48,Всего,12,369.1047123931937,0.08049522395751907,16
+calibration,hw_w48,hw_w48,Непродовольственные товары,1,55.25899637610026,0.77601243115533,16
+calibration,hw_w48,hw_w48,Непродовольственные товары,3,110.49829088882603,-0.39828738952739795,16
+calibration,hw_w48,hw_w48,Непродовольственные товары,6,198.51647201548244,-0.5786941926972431,16
+calibration,hw_w48,hw_w48,Непродовольственные товары,12,255.4074689922628,-0.6143500339003658,16
+calibration,hw_w48,hw_w48,Общественное питание,1,6.3882597239742775,0.8295037048006328,16
+calibration,hw_w48,hw_w48,Общественное питание,3,14.15522335153808,0.3643517276988011,16
+calibration,hw_w48,hw_w48,Общественное питание,6,18.749400318764778,-0.7236006783573043,16
+calibration,hw_w48,hw_w48,Общественное питание,12,30.331452179455834,-1.684384673372699,16
+calibration,hw_w48,hw_w48,Продовольственные товары,1,34.144535898115265,0.9003922242806534,16
+calibration,hw_w48,hw_w48,Продовольственные товары,3,53.279636397343054,0.7044437181540744,16
+calibration,hw_w48,hw_w48,Продовольственные товары,6,69.00969738166506,0.5820858713244432,16
+calibration,hw_w48,hw_w48,Продовольственные товары,12,64.71626255912676,0.7776223821670911,16
+calibration,hw_w48,hw_w48,Услуги,1,18.13108794160354,0.8677475684856716,16
+calibration,hw_w48,hw_w48,Услуги,3,52.66166064797444,0.3451325554163337,16
+calibration,hw_w48,hw_w48,Услуги,6,73.40710815769728,-0.1406126474825351,16
+calibration,hw_w48,hw_w48,Услуги,12,103.38483093720885,-1.2117422071024837,16
+development_validation,Adaptive12,Adaptive12,Всего,1,48.071921050987235,0.9423424802083274,6
+development_validation,Adaptive12,Adaptive12,Всего,3,80.15739207122533,0.3954555191501107,6
+development_validation,Adaptive12,Adaptive12,Всего,6,81.39973903550238,0.900615688194066,6
+development_validation,Adaptive12,Adaptive12,Всего,12,46.63503451798124,0.9599915620414501,6
+development_validation,Adaptive12,Adaptive12,Непродовольственные товары,1,13.255761825798876,0.9734443820580488,6
+development_validation,Adaptive12,Adaptive12,Непродовольственные товары,3,41.17259572787399,0.44406265856250393,6
+development_validation,Adaptive12,Adaptive12,Непродовольственные товары,6,51.83883808834207,0.8277864022587486,6
+development_validation,Adaptive12,Adaptive12,Непродовольственные товары,12,149.58178590692924,-0.07515971274993216,6
+development_validation,Adaptive12,Adaptive12,Общественное питание,1,6.382121005448615,0.6370397181780014,6
+development_validation,Adaptive12,Adaptive12,Общественное питание,3,6.377060723192177,0.4844744500058682,6
+development_validation,Adaptive12,Adaptive12,Общественное питание,6,25.682243496655172,-0.485522921099393,6
+development_validation,Adaptive12,Adaptive12,Общественное питание,12,95.0750762848806,-56.49187756821054,6
+development_validation,Adaptive12,Adaptive12,Продовольственные товары,1,26.500890901240684,0.6620383515359851,6
+development_validation,Adaptive12,Adaptive12,Продовольственные товары,3,34.665243136257004,-0.14606457866513112,6
+development_validation,Adaptive12,Adaptive12,Продовольственные товары,6,36.57700386818965,0.9521251877394019,6
+development_validation,Adaptive12,Adaptive12,Продовольственные товары,12,51.708904748663294,0.2723038564866368,6
+development_validation,Adaptive12,Adaptive12,Услуги,1,11.07964882139091,0.8695882812768805,6
+development_validation,Adaptive12,Adaptive12,Услуги,3,7.454256352925502,0.9219882733641381,6
+development_validation,Adaptive12,Adaptive12,Услуги,6,8.386265831360598,0.9345531175214696,6
+development_validation,Adaptive12,Adaptive12,Услуги,12,13.724740617534053,0.7534247211324906,6
+development_validation,Adaptive12_Bias12,Adaptive12_Bias12,Всего,1,46.19270705574278,0.9229518638542229,6
+development_validation,Adaptive12_Bias12,Adaptive12_Bias12,Всего,3,117.71200075522302,-0.27570574036408635,6
+development_validation,Adaptive12_Bias12,Adaptive12_Bias12,Всего,6,148.32517388412893,0.7763590028612041,6
+development_validation,Adaptive12_Bias12,Adaptive12_Bias12,Всего,12,220.25571784388117,0.1628735729528049,6
+development_validation,Adaptive12_Bias12,Adaptive12_Bias12,Непродовольственные товары,1,50.02281328922171,0.8190688443802409,6
+development_validation,Adaptive12_Bias12,Adaptive12_Bias12,Непродовольственные товары,3,82.84195495891875,-0.5102861849464162,6
+development_validation,Adaptive12_Bias12,Adaptive12_Bias12,Непродовольственные товары,6,120.20279268090788,0.4236085022363013,6
+development_validation,Adaptive12_Bias12,Adaptive12_Bias12,Непродовольственные товары,12,308.3564483296068,-3.4298132571895774,6
+development_validation,Adaptive12_Bias12,Adaptive12_Bias12,Общественное питание,1,6.7232924225908635,0.6077986798206108,6
+development_validation,Adaptive12_Bias12,Adaptive12_Bias12,Общественное питание,3,6.725666221344663,0.45286772379547824,6
+development_validation,Adaptive12_Bias12,Adaptive12_Bias12,Общественное питание,6,24.827792752104312,-0.41759591613059865,6
+development_validation,Adaptive12_Bias12,Adaptive12_Bias12,Общественное питание,12,90.39294558451643,-51.01667311693969,6
+development_validation,Adaptive12_Bias12,Adaptive12_Bias12,Продовольственные товары,1,23.46222054608097,0.7045882923943279,6
+development_validation,Adaptive12_Bias12,Adaptive12_Bias12,Продовольственные товары,3,38.060156753286115,-0.35357972996954157,6
+development_validation,Adaptive12_Bias12,Adaptive12_Bias12,Продовольственные товары,6,35.97915210066905,0.9197152687390899,6
+development_validation,Adaptive12_Bias12,Adaptive12_Bias12,Продовольственные товары,12,38.04521416675933,0.6024116528270097,6
+development_validation,Adaptive12_Bias12,Adaptive12_Bias12,Услуги,1,11.207923327182206,0.8627859709691601,6
+development_validation,Adaptive12_Bias12,Adaptive12_Bias12,Услуги,3,6.644209275301894,0.9357634964907252,6
+development_validation,Adaptive12_Bias12,Adaptive12_Bias12,Услуги,6,15.656529635100318,0.8421791752447321,6
+development_validation,Adaptive12_Bias12,Adaptive12_Bias12,Услуги,12,36.01760749060088,-0.3307503085205006,6
+development_validation,Adaptive12_Bias6,Adaptive12_Bias6,Всего,1,45.88936212387307,0.9303382945801781,6
+development_validation,Adaptive12_Bias6,Adaptive12_Bias6,Всего,3,95.61900981381375,0.06810326971223568,6
+development_validation,Adaptive12_Bias6,Adaptive12_Bias6,Всего,6,134.43665430397505,0.7942145712444221,6
+development_validation,Adaptive12_Bias6,Adaptive12_Bias6,Всего,12,237.57108746568125,0.049943223826259264,6
+development_validation,Adaptive12_Bias6,Adaptive12_Bias6,Непродовольственные товары,1,24.06997388949655,0.9488707560624865,6
+development_validation,Adaptive12_Bias6,Adaptive12_Bias6,Непродовольственные товары,3,51.34651254072045,0.1353249778700436,6
+development_validation,Adaptive12_Bias6,Adaptive12_Bias6,Непродовольственные товары,6,93.54165374194365,0.5981237556999826,6
+development_validation,Adaptive12_Bias6,Adaptive12_Bias6,Непродовольственные товары,12,297.39098533914495,-3.1563971905917754,6
+development_validation,Adaptive12_Bias6,Adaptive12_Bias6,Общественное питание,1,6.397758496820681,0.6827791514718189,6
+development_validation,Adaptive12_Bias6,Adaptive12_Bias6,Общественное питание,3,5.841699559125762,0.5988585425338385,6
+development_validation,Adaptive12_Bias6,Adaptive12_Bias6,Общественное питание,6,23.192368757960594,-0.2679230605720051,6
+development_validation,Adaptive12_Bias6,Adaptive12_Bias6,Общественное питание,12,90.16060046845364,-50.79289372209306,6
+development_validation,Adaptive12_Bias6,Adaptive12_Bias6,Продовольственные товары,1,23.060788425032417,0.7103732395696929,6
+development_validation,Adaptive12_Bias6,Adaptive12_Bias6,Продовольственные товары,3,39.93557235343459,-0.4583443575714732,6
+development_validation,Adaptive12_Bias6,Adaptive12_Bias6,Продовольственные товары,6,34.14551142693517,0.9213577986156283,6
+development_validation,Adaptive12_Bias6,Adaptive12_Bias6,Продовольственные товары,12,21.49148563892633,0.8672514739714543,6
+development_validation,Adaptive12_Bias6,Adaptive12_Bias6,Услуги,1,12.23977583204252,0.8394131882659231,6
+development_validation,Adaptive12_Bias6,Adaptive12_Bias6,Услуги,3,6.430458861355116,0.9283554020080115,6
+development_validation,Adaptive12_Bias6,Adaptive12_Bias6,Услуги,6,13.053483736636432,0.8789016323169869,6
+development_validation,Adaptive12_Bias6,Adaptive12_Bias6,Услуги,12,31.139031918548465,-0.03247868566341938,6
+development_validation,Adaptive6,Adaptive6,Всего,1,46.6872051315078,0.9435860236161961,6
+development_validation,Adaptive6,Adaptive6,Всего,3,83.5750103125409,0.3443382799179119,6
+development_validation,Adaptive6,Adaptive6,Всего,6,83.45005317127061,0.897101098993776,6
+development_validation,Adaptive6,Adaptive6,Всего,12,43.45526410516383,0.9642300347781251,6
+development_validation,Adaptive6,Adaptive6,Непродовольственные товары,1,14.866706158843044,0.9693570009574736,6
+development_validation,Adaptive6,Adaptive6,Непродовольственные товары,3,44.894269227731534,0.33143403847100483,6
+development_validation,Adaptive6,Adaptive6,Непродовольственные товары,6,56.17516890790679,0.8040322464145403,6
+development_validation,Adaptive6,Adaptive6,Непродовольственные товары,12,144.54110878127548,-0.00407808058950998,6
+development_validation,Adaptive6,Adaptive6,Общественное питание,1,6.361641098655279,0.6329279925218836,6
+development_validation,Adaptive6,Adaptive6,Общественное питание,3,6.674724069714728,0.4321982006759497,6
+development_validation,Adaptive6,Adaptive6,Общественное питание,6,25.457972607190214,-0.48883813190391723,6
+development_validation,Adaptive6,Adaptive6,Общественное питание,12,95.12289321301489,-56.552778602047255,6
+development_validation,Adaptive6,Adaptive6,Продовольственные товары,1,27.414613811785483,0.6452338592636677,6
+development_validation,Adaptive6,Adaptive6,Продовольственные товары,3,33.67249308513518,-0.09394254655214507,6
+development_validation,Adaptive6,Adaptive6,Продовольственные товары,6,36.651897405331205,0.9483794024506119,6
+development_validation,Adaptive6,Adaptive6,Продовольственные товары,12,52.124084449957685,0.260569549265659,6
+development_validation,Adaptive6,Adaptive6,Услуги,1,11.056077792496959,0.8712809687567303,6
+development_validation,Adaptive6,Adaptive6,Услуги,3,6.889046333368317,0.9304489319494106,6
+development_validation,Adaptive6,Adaptive6,Услуги,6,7.84759835833889,0.935705883741789,6
+development_validation,Adaptive6,Adaptive6,Услуги,12,14.119609536614954,0.7362290126431262,6
+development_validation,Adaptive6_Bias12,Adaptive6_Bias12,Всего,1,50.32623749438002,0.9190328760172612,6
+development_validation,Adaptive6_Bias12,Adaptive6_Bias12,Всего,3,121.28917306892693,-0.328014706858905,6
+development_validation,Adaptive6_Bias12,Adaptive6_Bias12,Всего,6,147.36597468309947,0.770723730938688,6
+development_validation,Adaptive6_Bias12,Adaptive6_Bias12,Всего,12,215.56975711708432,0.19773558736811803,6
+development_validation,Adaptive6_Bias12,Adaptive6_Bias12,Непродовольственные товары,1,52.12781291587953,0.8046610168954005,6
+development_validation,Adaptive6_Bias12,Adaptive6_Bias12,Непродовольственные товары,3,86.02580641636678,-0.65863847735419,6
+development_validation,Adaptive6_Bias12,Adaptive6_Bias12,Непродовольственные товары,6,114.8129151093445,0.4460799078377826,6
+development_validation,Adaptive6_Bias12,Adaptive6_Bias12,Непродовольственные товары,12,303.22153628969477,-3.282903336370354,6
+development_validation,Adaptive6_Bias12,Adaptive6_Bias12,Общественное питание,1,6.689722355956349,0.6066444778105632,6
+development_validation,Adaptive6_Bias12,Adaptive6_Bias12,Общественное питание,3,7.180808109784,0.38232803782284985,6
+development_validation,Adaptive6_Bias12,Adaptive6_Bias12,Общественное питание,6,25.02715956106668,-0.44717249084390187,6
+development_validation,Adaptive6_Bias12,Adaptive6_Bias12,Общественное питание,12,90.56753635252274,-51.20931349705594,6
+development_validation,Adaptive6_Bias12,Adaptive6_Bias12,Продовольственные товары,1,24.565194707358007,0.68979804222232,6
+development_validation,Adaptive6_Bias12,Adaptive6_Bias12,Продовольственные товары,3,37.80586822841102,-0.3122132178417425,6
+development_validation,Adaptive6_Bias12,Adaptive6_Bias12,Продовольственные товары,6,39.58240032404274,0.9132289556408469,6
+development_validation,Adaptive6_Bias12,Adaptive6_Bias12,Продовольственные товары,12,38.084669812840424,0.5975314968343544,6
+development_validation,Adaptive6_Bias12,Adaptive6_Bias12,Услуги,1,11.08926075883941,0.8685695800004344,6
+development_validation,Adaptive6_Bias12,Adaptive6_Bias12,Услуги,3,5.905498574919572,0.946463506334414,6
+development_validation,Adaptive6_Bias12,Adaptive6_Bias12,Услуги,6,15.445848371579737,0.8400536387011979,6
+development_validation,Adaptive6_Bias12,Adaptive6_Bias12,Услуги,12,36.41149898413778,-0.36065349029075633,6
+development_validation,Adaptive6_Bias6,Adaptive6_Bias6,Всего,1,45.37457201748915,0.930260818803076,6
+development_validation,Adaptive6_Bias6,Adaptive6_Bias6,Всего,3,100.17619560773103,0.00030890673166095173,6
+development_validation,Adaptive6_Bias6,Adaptive6_Bias6,Всего,6,130.16626089610327,0.7982371904704365,6
+development_validation,Adaptive6_Bias6,Adaptive6_Bias6,Всего,12,232.2871733334338,0.09214644156484664,6
+development_validation,Adaptive6_Bias6,Adaptive6_Bias6,Непродовольственные товары,1,25.469680397179598,0.9450601522331996,6
+development_validation,Adaptive6_Bias6,Adaptive6_Bias6,Непродовольственные товары,3,55.44466165683866,0.006161015232229894,6
+development_validation,Adaptive6_Bias6,Adaptive6_Bias6,Непродовольственные товары,6,86.38534949489228,0.6053748249744434,6
+development_validation,Adaptive6_Bias6,Adaptive6_Bias6,Непродовольственные товары,12,291.8946812287766,-3.0062260333191073,6
+development_validation,Adaptive6_Bias6,Adaptive6_Bias6,Общественное питание,1,6.378414416696785,0.6807814936077099,6
+development_validation,Adaptive6_Bias6,Adaptive6_Bias6,Общественное питание,3,5.984723621080889,0.5545865699281158,6
+development_validation,Adaptive6_Bias6,Adaptive6_Bias6,Общественное питание,6,23.36575848224472,-0.281663126063995,6
+development_validation,Adaptive6_Bias6,Adaptive6_Bias6,Общественное питание,12,90.26250820606238,-50.90821708586297,6
+development_validation,Adaptive6_Bias6,Adaptive6_Bias6,Продовольственные товары,1,23.632305176274485,0.70063966848916,6
+development_validation,Adaptive6_Bias6,Adaptive6_Bias6,Продовольственные товары,3,39.7056362607766,-0.4196357127066721,6
+development_validation,Adaptive6_Bias6,Adaptive6_Bias6,Продовольственные товары,6,36.85695229272187,0.9155073894975068,6
+development_validation,Adaptive6_Bias6,Adaptive6_Bias6,Продовольственные товары,12,21.684429957044056,0.8666477977662632,6
+development_validation,Adaptive6_Bias6,Adaptive6_Bias6,Услуги,1,12.23004693675144,0.8402593479301101,6
+development_validation,Adaptive6_Bias6,Adaptive6_Bias6,Услуги,3,6.003105124604038,0.9300205371911565,6
+development_validation,Adaptive6_Bias6,Adaptive6_Bias6,Услуги,6,12.36393848276642,0.884151803319575,6
+development_validation,Adaptive6_Bias6,Adaptive6_Bias6,Услуги,12,31.414647595748875,-0.053579095027235235,6
+development_validation,BaselineN01,BaselineN01,Всего,1,51.6008995800856,0.9251779828921952,6
+development_validation,BaselineN01,BaselineN01,Всего,3,87.42103813906685,0.33825239840866583,6
+development_validation,BaselineN01,BaselineN01,Всего,6,106.43771452467611,0.8791957826416517,6
+development_validation,BaselineN01,BaselineN01,Всего,12,112.82049216211605,0.7341125203130898,6
+development_validation,BaselineN01,BaselineN01,Непродовольственные товары,1,20.550323395865917,0.9298414594751553,6
+development_validation,BaselineN01,BaselineN01,Непродовольственные товары,3,53.699454019392384,0.3963058173434183,6
+development_validation,BaselineN01,BaselineN01,Непродовольственные товары,6,77.36582095747478,0.7238572375823633,6
+development_validation,BaselineN01,BaselineN01,Непродовольственные товары,12,64.39382724358263,0.7315145158068355,6
+development_validation,BaselineN01,BaselineN01,Общественное питание,1,5.591780341899995,0.7227911138170271,6
+development_validation,BaselineN01,BaselineN01,Общественное питание,3,5.645412356582615,0.5541388537430544,6
+development_validation,BaselineN01,BaselineN01,Общественное питание,6,26.76589983729384,-0.5663952306533158,6
+development_validation,BaselineN01,BaselineN01,Общественное питание,12,102.12330238838554,-65.26002229153865,6
+development_validation,BaselineN01,BaselineN01,Продовольственные товары,1,22.19044379432383,0.7145023512603037,6
+development_validation,BaselineN01,BaselineN01,Продовольственные товары,3,40.44228241403531,-0.45028108730353655,6
+development_validation,BaselineN01,BaselineN01,Продовольственные товары,6,36.57549850368779,0.9455915547735303,6
+development_validation,BaselineN01,BaselineN01,Продовольственные товары,12,62.962643163005396,-0.003928378908789165,6
+development_validation,BaselineN01,BaselineN01,Услуги,1,13.763142464201186,0.8486517530828722,6
+development_validation,BaselineN01,BaselineN01,Услуги,3,10.502060501901989,0.8447292955794733,6
+development_validation,BaselineN01,BaselineN01,Услуги,6,11.88535851969588,0.8787661540789675,6
+development_validation,BaselineN01,BaselineN01,Услуги,12,22.288188990466892,0.3696379399473093,6
+development_validation,CalibratedStatic,CalibratedStatic,Всего,1,46.2219511964087,0.9439835267585656,6
+development_validation,CalibratedStatic,CalibratedStatic,Всего,3,73.29385155873342,0.4504207575359582,6
+development_validation,CalibratedStatic,CalibratedStatic,Всего,6,82.91561559607301,0.9034844190794346,6
+development_validation,CalibratedStatic,CalibratedStatic,Всего,12,36.55086632961153,0.9709849743291536,6
+development_validation,CalibratedStatic,CalibratedStatic,Непродовольственные товары,1,11.296994438963262,0.9765888400709047,6
+development_validation,CalibratedStatic,CalibratedStatic,Непродовольственные товары,3,37.99726584022793,0.46154985998666187,6
+development_validation,CalibratedStatic,CalibratedStatic,Непродовольственные товары,6,50.52929279774329,0.8350034485098468,6
+development_validation,CalibratedStatic,CalibratedStatic,Непродовольственные товары,12,142.53150468616573,0.0198534291182898,6
+development_validation,CalibratedStatic,CalibratedStatic,Общественное питание,1,6.156820394873857,0.6874698622191131,6
+development_validation,CalibratedStatic,CalibratedStatic,Общественное питание,3,5.910740016724873,0.552166915220023,6
+development_validation,CalibratedStatic,CalibratedStatic,Общественное питание,6,25.614941270473867,-0.49124072196585966,6
+development_validation,CalibratedStatic,CalibratedStatic,Общественное питание,12,95.42493480320915,-56.906683724824425,6
+development_validation,CalibratedStatic,CalibratedStatic,Продовольственные товары,1,30.443815698145425,0.5902818484965412,6
+development_validation,CalibratedStatic,CalibratedStatic,Продовольственные товары,3,36.0998645925503,-0.2359112430980248,6
+development_validation,CalibratedStatic,CalibratedStatic,Продовольственные товары,6,37.36151723808674,0.9540132080010468,6
+development_validation,CalibratedStatic,CalibratedStatic,Продовольственные товары,12,56.04860226087893,0.16677589556903272,6
+development_validation,CalibratedStatic,CalibratedStatic,Услуги,1,11.553713946852477,0.8626934164531085,6
+development_validation,CalibratedStatic,CalibratedStatic,Услуги,3,7.130602331253233,0.9311986735569617,6
+development_validation,CalibratedStatic,CalibratedStatic,Услуги,6,8.862152770338108,0.9300136166318338,6
+development_validation,CalibratedStatic,CalibratedStatic,Услуги,12,14.018452386787393,0.7510371481289021,6
+development_validation,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Всего,1,44.036409753124495,0.9461493360226696,6
+development_validation,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Всего,3,68.98865262216425,0.5571464841051873,6
+development_validation,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Всего,6,64.3733428587102,0.9429031921727409,6
+development_validation,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Всего,12,13.918234534406414,0.9959569504068354,6
+development_validation,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Непродовольственные товары,1,11.296994438963262,0.9765888400709047,6
+development_validation,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Непродовольственные товары,3,37.99726584022793,0.46154985998666187,6
+development_validation,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Непродовольственные товары,6,50.52929279774329,0.8350034485098468,6
+development_validation,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Непродовольственные товары,12,142.53150468616573,0.0198534291182898,6
+development_validation,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Общественное питание,1,6.156820394873857,0.6874698622191131,6
+development_validation,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Общественное питание,3,5.910740016724873,0.552166915220023,6
+development_validation,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Общественное питание,6,25.614941270473867,-0.49124072196585966,6
+development_validation,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Общественное питание,12,95.42493480320915,-56.906683724824425,6
+development_validation,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Продовольственные товары,1,30.443815698145425,0.5902818484965412,6
+development_validation,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Продовольственные товары,3,36.0998645925503,-0.2359112430980248,6
+development_validation,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Продовольственные товары,6,37.36151723808674,0.9540132080010468,6
+development_validation,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Продовольственные товары,12,56.04860226087893,0.16677589556903272,6
+development_validation,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Услуги,1,11.553713946852477,0.8626934164531085,6
+development_validation,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Услуги,3,7.130602331253233,0.9311986735569617,6
+development_validation,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Услуги,6,8.862152770338108,0.9300136166318338,6
+development_validation,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Услуги,12,14.018452386787393,0.7510371481289021,6
+development_validation,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Всего,1,44.81427926964685,0.9475082403589078,6
+development_validation,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Всего,3,71.0647464881866,0.5045564864972677,6
+development_validation,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Всего,6,71.53917093354691,0.9268530404281637,6
+development_validation,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Всего,12,18.724860112464892,0.9909818653054678,6
+development_validation,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Непродовольственные товары,1,13.769200429220215,0.9702347581387696,6
+development_validation,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Непродовольственные товары,3,40.87756657995586,0.32449812000599,6
+development_validation,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Непродовольственные товары,6,59.781613290247456,0.7624727307115049,6
+development_validation,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Непродовольственные товары,12,150.53834759048695,-0.07361308380303844,6
+development_validation,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Общественное питание,1,6.171360421157648,0.6877279239122867,6
+development_validation,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Общественное питание,3,5.911084832904986,0.5525184033247348,6
+development_validation,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Общественное питание,6,25.5949183872785,-0.4894809295779645,6
+development_validation,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Общественное питание,12,95.43663627766671,-56.920661680523786,6
+development_validation,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Продовольственные товары,1,29.911112789236842,0.6078574474829128,6
+development_validation,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Продовольственные товары,3,36.26949840850375,-0.23819538221249648,6
+development_validation,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Продовольственные товары,6,37.56394475014182,0.9529167333874544,6
+development_validation,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Продовольственные товары,12,55.25962844696338,0.1757308817255876,6
+development_validation,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Услуги,1,11.66016401706338,0.8610139668120118,6
+development_validation,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Услуги,3,7.186460127704284,0.9280768012798746,6
+development_validation,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Услуги,6,9.18815487624166,0.9262437016978132,6
+development_validation,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Услуги,12,14.19223386804481,0.7479446083860427,6
+development_validation,RegimeAdaptive,RegimeAdaptive,Всего,1,48.071921050987235,0.9423424802083274,6
+development_validation,RegimeAdaptive,RegimeAdaptive,Всего,3,80.15739207122533,0.3954555191501107,6
+development_validation,RegimeAdaptive,RegimeAdaptive,Всего,6,81.39973903550238,0.900615688194066,6
+development_validation,RegimeAdaptive,RegimeAdaptive,Всего,12,46.63503451798124,0.9599915620414501,6
+development_validation,RegimeAdaptive,RegimeAdaptive,Непродовольственные товары,1,13.255761825798876,0.9734443820580488,6
+development_validation,RegimeAdaptive,RegimeAdaptive,Непродовольственные товары,3,41.17259572787399,0.44406265856250393,6
+development_validation,RegimeAdaptive,RegimeAdaptive,Непродовольственные товары,6,51.83883808834207,0.8277864022587486,6
+development_validation,RegimeAdaptive,RegimeAdaptive,Непродовольственные товары,12,149.58178590692924,-0.07515971274993216,6
+development_validation,RegimeAdaptive,RegimeAdaptive,Общественное питание,1,6.382121005448615,0.6370397181780014,6
+development_validation,RegimeAdaptive,RegimeAdaptive,Общественное питание,3,6.377060723192177,0.4844744500058682,6
+development_validation,RegimeAdaptive,RegimeAdaptive,Общественное питание,6,25.682243496655172,-0.485522921099393,6
+development_validation,RegimeAdaptive,RegimeAdaptive,Общественное питание,12,95.0750762848806,-56.49187756821054,6
+development_validation,RegimeAdaptive,RegimeAdaptive,Продовольственные товары,1,26.500890901240684,0.6620383515359851,6
+development_validation,RegimeAdaptive,RegimeAdaptive,Продовольственные товары,3,34.665243136257004,-0.14606457866513112,6
+development_validation,RegimeAdaptive,RegimeAdaptive,Продовольственные товары,6,36.57700386818965,0.9521251877394019,6
+development_validation,RegimeAdaptive,RegimeAdaptive,Продовольственные товары,12,51.708904748663294,0.2723038564866368,6
+development_validation,RegimeAdaptive,RegimeAdaptive,Услуги,1,11.07964882139091,0.8695882812768805,6
+development_validation,RegimeAdaptive,RegimeAdaptive,Услуги,3,7.454256352925502,0.9219882733641381,6
+development_validation,RegimeAdaptive,RegimeAdaptive,Услуги,6,8.386265831360598,0.9345531175214696,6
+development_validation,RegimeAdaptive,RegimeAdaptive,Услуги,12,13.724740617534053,0.7534247211324906,6
+development_validation,Static_Bias12,Static_Bias12,Всего,1,45.57533808843709,0.9258912052038529,6
+development_validation,Static_Bias12,Static_Bias12,Всего,3,122.48594291359389,-0.27422248743400557,6
+development_validation,Static_Bias12,Static_Bias12,Всего,6,149.49504519093884,0.7752212612457041,6
+development_validation,Static_Bias12,Static_Bias12,Всего,12,205.7896460773583,0.26827619711791106,6
+development_validation,Static_Bias12,Static_Bias12,Непродовольственные товары,1,47.76017664845002,0.8322158504072171,6
+development_validation,Static_Bias12,Static_Bias12,Непродовольственные товары,3,91.57455568191115,-0.7574646182522495,6
+development_validation,Static_Bias12,Static_Bias12,Непродовольственные товары,6,126.27666987866496,0.3887801475367948,6
+development_validation,Static_Bias12,Static_Bias12,Непродовольственные товары,12,300.7403104244153,-3.2205257470436504,6
+development_validation,Static_Bias12,Static_Bias12,Общественное питание,1,6.54144011280611,0.6478645694601902,6
+development_validation,Static_Bias12,Static_Bias12,Общественное питание,3,6.226902174256376,0.5218875525685792,6
+development_validation,Static_Bias12,Static_Bias12,Общественное питание,6,24.886823657372343,-0.41732799347857297,6
+development_validation,Static_Bias12,Static_Bias12,Общественное питание,12,91.3990437916393,-52.15831925698892,6
+development_validation,Static_Bias12,Static_Bias12,Продовольственные товары,1,25.846774833552292,0.656079840735758,6
+development_validation,Static_Bias12,Static_Bias12,Продовольственные товары,3,38.08697447568928,-0.3825945867880054,6
+development_validation,Static_Bias12,Static_Bias12,Продовольственные товары,6,35.37298032806658,0.9261913244507123,6
+development_validation,Static_Bias12,Static_Bias12,Продовольственные товары,12,40.01424256862364,0.5377765366947278,6
+development_validation,Static_Bias12,Static_Bias12,Услуги,1,12.57843806761817,0.8491345184316564,6
+development_validation,Static_Bias12,Static_Bias12,Услуги,3,6.375554172229461,0.9433124136217906,6
+development_validation,Static_Bias12,Static_Bias12,Услуги,6,16.88777229578299,0.8204658812825961,6
+development_validation,Static_Bias12,Static_Bias12,Услуги,12,33.35590220402503,-0.16539916163091806,6
+development_validation,Static_Bias6,Static_Bias6,Всего,1,45.91414659860084,0.9322648157609091,6
+development_validation,Static_Bias6,Static_Bias6,Всего,3,94.06624003543008,0.11777970316443442,6
+development_validation,Static_Bias6,Static_Bias6,Всего,6,138.84877369140835,0.7900025922421114,6
+development_validation,Static_Bias6,Static_Bias6,Всего,12,216.53073190991867,0.2101234742998621,6
+development_validation,Static_Bias6,Static_Bias6,Непродовольственные товары,1,22.208345336326754,0.955222238918302,6
+development_validation,Static_Bias6,Static_Bias6,Непродовольственные товары,3,60.33959157494246,0.041120931228270985,6
+development_validation,Static_Bias6,Static_Bias6,Непродовольственные товары,6,101.19151317786395,0.5638320133792164,6
+development_validation,Static_Bias6,Static_Bias6,Непродовольственные товары,12,290.8076891823154,-2.9857322988903463,6
+development_validation,Static_Bias6,Static_Bias6,Общественное питание,1,6.2708020900327694,0.6993885043764516,6
+development_validation,Static_Bias6,Static_Bias6,Общественное питание,3,5.598119039879596,0.6555677559533515,6
+development_validation,Static_Bias6,Static_Bias6,Общественное питание,6,22.858914437961204,-0.25956528628512276,6
+development_validation,Static_Bias6,Static_Bias6,Общественное питание,12,92.01063451225583,-52.894974488492764,6
+development_validation,Static_Bias6,Static_Bias6,Продовольственные товары,1,25.029502930604092,0.668046945369414,6
+development_validation,Static_Bias6,Static_Bias6,Продовольственные товары,3,40.52106522736722,-0.5145213030781199,6
+development_validation,Static_Bias6,Static_Bias6,Продовольственные товары,6,34.846198788280695,0.9273109413880389,6
+development_validation,Static_Bias6,Static_Bias6,Продовольственные товары,12,23.703280899609734,0.8503719324520209,6
+development_validation,Static_Bias6,Static_Bias6,Услуги,1,14.378675180671129,0.8122398415594885,6
+development_validation,Static_Bias6,Static_Bias6,Услуги,3,6.380995804984688,0.9314183463546941,6
+development_validation,Static_Bias6,Static_Bias6,Услуги,6,13.977900139315466,0.8680267004360472,6
+development_validation,Static_Bias6,Static_Bias6,Услуги,12,26.35515567693839,0.19131199035075197,6
+development_validation,cb_calendar36,cb_calendar36,Всего,1,48.188476830004674,0.9349163991857431,6
+development_validation,cb_calendar36,cb_calendar36,Всего,3,104.31410155362089,0.12868272259779479,6
+development_validation,cb_calendar36,cb_calendar36,Всего,6,181.81399721216712,0.6963691796556439,6
+development_validation,cb_calendar36,cb_calendar36,Всего,12,62.38865240693758,0.9022051076556493,6
+development_validation,cb_calendar36,cb_calendar36,Непродовольственные товары,1,37.53091904024973,0.8939056972815963,6
+development_validation,cb_calendar36,cb_calendar36,Непродовольственные товары,3,70.49177766515352,-0.1208268789047342,6
+development_validation,cb_calendar36,cb_calendar36,Непродовольственные товары,6,108.62976403865271,0.4808508327183909,6
+development_validation,cb_calendar36,cb_calendar36,Непродовольственные товары,12,118.35634998647477,0.2622440458097859,6
+development_validation,cb_calendar36,cb_calendar36,Общественное питание,1,5.6812361219397856,0.6853169560665484,6
+development_validation,cb_calendar36,cb_calendar36,Общественное питание,3,8.009659140983766,0.16791574585218738,6
+development_validation,cb_calendar36,cb_calendar36,Общественное питание,6,27.247761542725396,-0.4549563135468626,6
+development_validation,cb_calendar36,cb_calendar36,Общественное питание,12,95.47199107987585,-56.980488808294076,6
+development_validation,cb_calendar36,cb_calendar36,Продовольственные товары,1,22.558510784413176,0.7568542597388895,6
+development_validation,cb_calendar36,cb_calendar36,Продовольственные товары,3,33.87144528437102,-0.32422673805517466,6
+development_validation,cb_calendar36,cb_calendar36,Продовольственные товары,6,44.940988958554726,0.9048926813403452,6
+development_validation,cb_calendar36,cb_calendar36,Продовольственные товары,12,55.58024011061146,0.2173649825381878,6
+development_validation,cb_calendar36,cb_calendar36,Услуги,1,12.445696171636541,0.8629858415326408,6
+development_validation,cb_calendar36,cb_calendar36,Услуги,3,9.743783467378913,0.8507650844425139,6
+development_validation,cb_calendar36,cb_calendar36,Услуги,6,10.786037388882429,0.8462560549869551,6
+development_validation,cb_calendar36,cb_calendar36,Услуги,12,17.3581788262721,0.6309751049352907,6
+development_validation,cb_decay12,cb_decay12,Всего,1,56.092888013660286,0.9234510231579784,6
+development_validation,cb_decay12,cb_decay12,Всего,3,134.3478070763093,-0.19819544663508037,6
+development_validation,cb_decay12,cb_decay12,Всего,6,121.7694504456631,0.8266077301436012,6
+development_validation,cb_decay12,cb_decay12,Всего,12,89.3304547106997,0.8381495198214737,6
+development_validation,cb_decay12,cb_decay12,Непродовольственные товары,1,19.371027559977772,0.9662903926110928,6
+development_validation,cb_decay12,cb_decay12,Непродовольственные товары,3,71.00068573405899,-0.12983313289206033,6
+development_validation,cb_decay12,cb_decay12,Непродовольственные товары,6,88.13012257919566,0.6068023340037481,6
+development_validation,cb_decay12,cb_decay12,Непродовольственные товары,12,148.4258819770952,-0.0910950740303853,6
+development_validation,cb_decay12,cb_decay12,Общественное питание,1,7.064945364490977,0.5541900232309065,6
+development_validation,cb_decay12,cb_decay12,Общественное питание,3,8.610994354073094,0.19434860911653495,6
+development_validation,cb_decay12,cb_decay12,Общественное питание,6,27.8758627037184,-0.5488089192613574,6
+development_validation,cb_decay12,cb_decay12,Общественное питание,12,95.83215803767744,-57.38058245478613,6
+development_validation,cb_decay12,cb_decay12,Продовольственные товары,1,24.098946113608765,0.7636650497715168,6
+development_validation,cb_decay12,cb_decay12,Продовольственные товары,3,23.92268581070046,0.24529061663988083,6
+development_validation,cb_decay12,cb_decay12,Продовольственные товары,6,49.61368159718222,0.9091138255022474,6
+development_validation,cb_decay12,cb_decay12,Продовольственные товары,12,43.595953537806814,0.45018955591215637,6
+development_validation,cb_decay12,cb_decay12,Услуги,1,12.104944892924777,0.8538377375219183,6
+development_validation,cb_decay12,cb_decay12,Услуги,3,7.04719714782478,0.8907662535435696,6
+development_validation,cb_decay12,cb_decay12,Услуги,6,11.868060362443808,0.8494378714623911,6
+development_validation,cb_decay12,cb_decay12,Услуги,12,18.02736858229802,0.5937358152660052,6
+development_validation,cb_full,cb_full,Всего,1,45.62208281484467,0.9440281986235425,6
+development_validation,cb_full,cb_full,Всего,3,104.14044084121376,0.14773797449416726,6
+development_validation,cb_full,cb_full,Всего,6,124.06344720409272,0.8140474449768813,6
+development_validation,cb_full,cb_full,Всего,12,62.684612078424834,0.9117357427219847,6
+development_validation,cb_full,cb_full,Непродовольственные товары,1,26.17256546222855,0.9448140071307662,6
+development_validation,cb_full,cb_full,Непродовольственные товары,3,71.04139231971756,-0.12864002282866305,6
+development_validation,cb_full,cb_full,Непродовольственные товары,6,95.78067199018604,0.5785813986638553,6
+development_validation,cb_full,cb_full,Непродовольственные товары,12,123.9368031057815,0.14615491490756094,6
+development_validation,cb_full,cb_full,Общественное питание,1,5.878437706662472,0.6534510233201036,6
+development_validation,cb_full,cb_full,Общественное питание,3,7.236746371099183,0.3871375246025466,6
+development_validation,cb_full,cb_full,Общественное питание,6,27.41949185425302,-0.4548654976583124,6
+development_validation,cb_full,cb_full,Общественное питание,12,94.65790649230478,-56.052247302161575,6
+development_validation,cb_full,cb_full,Продовольственные товары,1,24.30151060280764,0.7508557141777037,6
+development_validation,cb_full,cb_full,Продовольственные товары,3,33.75243229638446,-0.13915915974720128,6
+development_validation,cb_full,cb_full,Продовольственные товары,6,41.90124037206306,0.9302789641006929,6
+development_validation,cb_full,cb_full,Продовольственные товары,12,56.08720085524669,0.21297202085485112,6
+development_validation,cb_full,cb_full,Услуги,1,10.375512415487151,0.9081838921019163,6
+development_validation,cb_full,cb_full,Услуги,3,9.245783735370273,0.8532113328244424,6
+development_validation,cb_full,cb_full,Услуги,6,9.216718062559949,0.9060935558152481,6
+development_validation,cb_full,cb_full,Услуги,12,16.536607627742644,0.5820309146006147,6
+development_validation,cb_w24,cb_w24,Всего,1,54.0614500067198,0.9049045533788566,6
+development_validation,cb_w24,cb_w24,Всего,3,102.02219262668434,0.09224294057676041,6
+development_validation,cb_w24,cb_w24,Всего,6,130.49794516311945,0.8241911467787393,6
+development_validation,cb_w24,cb_w24,Всего,12,80.00906545487669,0.8448356892079556,6
+development_validation,cb_w24,cb_w24,Непродовольственные товары,1,40.00886293366193,0.8366948437818607,6
+development_validation,cb_w24,cb_w24,Непродовольственные товары,3,77.5661213426509,-0.4843801516973645,6
+development_validation,cb_w24,cb_w24,Непродовольственные товары,6,89.33716511756445,0.5827860395784861,6
+development_validation,cb_w24,cb_w24,Непродовольственные товары,12,140.66063122378833,-0.10377413898042609,6
+development_validation,cb_w24,cb_w24,Общественное питание,1,5.677464482216209,0.6588802355450629,6
+development_validation,cb_w24,cb_w24,Общественное питание,3,7.008869637052868,0.38313028313252906,6
+development_validation,cb_w24,cb_w24,Общественное питание,6,28.28354139841925,-0.5829438747852969,6
+development_validation,cb_w24,cb_w24,Общественное питание,12,95.02854783750588,-56.48736246666982,6
+development_validation,cb_w24,cb_w24,Продовольственные товары,1,18.4455407902567,0.8469792427806593,6
+development_validation,cb_w24,cb_w24,Продовольственные товары,3,26.380783594951556,0.05309016945942069,6
+development_validation,cb_w24,cb_w24,Продовольственные товары,6,41.41876317018099,0.9279721303173816,6
+development_validation,cb_w24,cb_w24,Продовольственные товары,12,54.24099827631259,0.05909500614322771,6
+development_validation,cb_w24,cb_w24,Услуги,1,13.216341303433333,0.8555678392015895,6
+development_validation,cb_w24,cb_w24,Услуги,3,11.724065348445,0.7604655764211851,6
+development_validation,cb_w24,cb_w24,Услуги,6,13.995200572561203,0.8596300010590607,6
+development_validation,cb_w24,cb_w24,Услуги,12,18.79703220352303,0.48519424639574893,6
+development_validation,cb_w36,cb_w36,Всего,1,62.10184897925001,0.9119768271002827,6
+development_validation,cb_w36,cb_w36,Всего,3,110.03002200579174,-0.014736094349478535,6
+development_validation,cb_w36,cb_w36,Всего,6,137.47268897016178,0.8035421581475892,6
+development_validation,cb_w36,cb_w36,Всего,12,62.684612078424834,0.9117357427219847,6
+development_validation,cb_w36,cb_w36,Непродовольственные товары,1,39.833104174230506,0.8762786996264752,6
+development_validation,cb_w36,cb_w36,Непродовольственные товары,3,74.27089483184015,-0.28471896650797435,6
+development_validation,cb_w36,cb_w36,Непродовольственные товары,6,99.89751130198374,0.5671804772941087,6
+development_validation,cb_w36,cb_w36,Непродовольственные товары,12,123.9368031057815,0.14615491490756094,6
+development_validation,cb_w36,cb_w36,Общественное питание,1,5.766382638196404,0.6499530329273733,6
+development_validation,cb_w36,cb_w36,Общественное питание,3,7.569848552572362,0.23307090234410954,6
+development_validation,cb_w36,cb_w36,Общественное питание,6,26.980332116158298,-0.47446161656063346,6
+development_validation,cb_w36,cb_w36,Общественное питание,12,94.65790649230478,-56.052247302161575,6
+development_validation,cb_w36,cb_w36,Продовольственные товары,1,22.22311636293504,0.7581785083755441,6
+development_validation,cb_w36,cb_w36,Продовольственные товары,3,34.564314340042074,-0.46214705703589787,6
+development_validation,cb_w36,cb_w36,Продовольственные товары,6,42.54059709318259,0.9245444768988665,6
+development_validation,cb_w36,cb_w36,Продовольственные товары,12,56.08720085524669,0.21297202085485112,6
+development_validation,cb_w36,cb_w36,Услуги,1,13.856655597023368,0.8572119904548701,6
+development_validation,cb_w36,cb_w36,Услуги,3,7.830565597847378,0.8997274473939705,6
+development_validation,cb_w36,cb_w36,Услуги,6,12.255164935535126,0.8769774391819911,6
+development_validation,cb_w36,cb_w36,Услуги,12,16.536607627742644,0.5820309146006147,6
+development_validation,cb_w48,cb_w48,Всего,1,45.62208281484467,0.9440281986235425,6
+development_validation,cb_w48,cb_w48,Всего,3,104.14044084121376,0.14773797449416726,6
+development_validation,cb_w48,cb_w48,Всего,6,124.06344720409272,0.8140474449768813,6
+development_validation,cb_w48,cb_w48,Всего,12,62.684612078424834,0.9117357427219847,6
+development_validation,cb_w48,cb_w48,Непродовольственные товары,1,26.17256546222855,0.9448140071307662,6
+development_validation,cb_w48,cb_w48,Непродовольственные товары,3,71.04139231971756,-0.12864002282866305,6
+development_validation,cb_w48,cb_w48,Непродовольственные товары,6,95.78067199018604,0.5785813986638553,6
+development_validation,cb_w48,cb_w48,Непродовольственные товары,12,123.9368031057815,0.14615491490756094,6
+development_validation,cb_w48,cb_w48,Общественное питание,1,5.878437706662472,0.6534510233201036,6
+development_validation,cb_w48,cb_w48,Общественное питание,3,7.236746371099183,0.3871375246025466,6
+development_validation,cb_w48,cb_w48,Общественное питание,6,27.41949185425302,-0.4548654976583124,6
+development_validation,cb_w48,cb_w48,Общественное питание,12,94.65790649230478,-56.052247302161575,6
+development_validation,cb_w48,cb_w48,Продовольственные товары,1,24.30151060280764,0.7508557141777037,6
+development_validation,cb_w48,cb_w48,Продовольственные товары,3,33.75243229638446,-0.13915915974720128,6
+development_validation,cb_w48,cb_w48,Продовольственные товары,6,41.90124037206306,0.9302789641006929,6
+development_validation,cb_w48,cb_w48,Продовольственные товары,12,56.08720085524669,0.21297202085485112,6
+development_validation,cb_w48,cb_w48,Услуги,1,10.375512415487151,0.9081838921019163,6
+development_validation,cb_w48,cb_w48,Услуги,3,9.245783735370273,0.8532113328244424,6
+development_validation,cb_w48,cb_w48,Услуги,6,9.216718062559949,0.9060935558152481,6
+development_validation,cb_w48,cb_w48,Услуги,12,16.536607627742644,0.5820309146006147,6
+development_validation,forest,forest,Всего,1,51.75403706333251,0.9360729071890049,6
+development_validation,forest,forest,Всего,3,98.02651827140471,0.2426871515939386,6
+development_validation,forest,forest,Всего,6,123.31527168191344,0.8682626614396324,6
+development_validation,forest,forest,Всего,12,62.29529374953836,0.887472683657824,6
+development_validation,forest,forest,Непродовольственные товары,1,23.483475711763123,0.9464129090690465,6
+development_validation,forest,forest,Непродовольственные товары,3,64.60414666324066,0.1264063680443801,6
+development_validation,forest,forest,Непродовольственные товары,6,123.69265358153696,0.40341100462797086,6
+development_validation,forest,forest,Непродовольственные товары,12,91.44175180143952,0.5317820729774912,6
+development_validation,forest,forest,Общественное питание,1,8.421760820295333,0.43543217351231445,6
+development_validation,forest,forest,Общественное питание,3,8.182001284191955,0.19848092162844777,6
+development_validation,forest,forest,Общественное питание,6,22.991798776827086,-0.26342255046755203,6
+development_validation,forest,forest,Общественное питание,12,93.91086432111938,-55.17845477805132,6
+development_validation,forest,forest,Продовольственные товары,1,23.198637835510755,0.7288337571436841,6
+development_validation,forest,forest,Продовольственные товары,3,43.232017855751565,-0.7333180110845108,6
+development_validation,forest,forest,Продовольственные товары,6,34.32605343106828,0.9453764618841922,6
+development_validation,forest,forest,Продовольственные товары,12,34.69186047764523,0.6043325180861967,6
+development_validation,forest,forest,Услуги,1,12.742859611125482,0.8704875826436003,6
+development_validation,forest,forest,Услуги,3,12.3385994093721,0.7376150308624854,6
+development_validation,forest,forest,Услуги,6,13.857857649880543,0.8733739130272091,6
+development_validation,forest,forest,Услуги,12,19.051472726332463,0.5092496361692779,6
+development_validation,growth,growth,Всего,1,89.32911640903376,0.7764350429386597,6
+development_validation,growth,growth,Всего,3,149.59151103729982,-0.5422863729793301,6
+development_validation,growth,growth,Всего,6,200.73162821517022,0.7208958368329935,6
+development_validation,growth,growth,Всего,12,185.44234824457135,0.41592531373724273,6
+development_validation,growth,growth,Непродовольственные товары,1,128.41085279073172,-0.28700756329833466,6
+development_validation,growth,growth,Непродовольственные товары,3,185.0500183095718,-5.888553493513527,6
+development_validation,growth,growth,Непродовольственные товары,6,220.76127991850953,-0.6167017550544451,6
+development_validation,growth,growth,Непродовольственные товары,12,298.3741110244755,-3.1398944596008382,6
+development_validation,growth,growth,Общественное питание,1,8.338352613076097,0.24237963222684245,6
+development_validation,growth,growth,Общественное питание,3,8.829655380767036,-0.01164476394849423,6
+development_validation,growth,growth,Общественное питание,6,27.9442905132163,-0.744417671314547,6
+development_validation,growth,growth,Общественное питание,12,91.21092142964977,-52.01830990884475,6
+development_validation,growth,growth,Продовольственные товары,1,37.166866293448756,0.45385990514329,6
+development_validation,growth,growth,Продовольственные товары,3,34.27262835525994,-0.2198533789110959,6
+development_validation,growth,growth,Продовольственные товары,6,28.04099664466882,0.966539345989495,6
+development_validation,growth,growth,Продовольственные товары,12,35.56389318442658,0.6395290583058464,6
+development_validation,growth,growth,Услуги,1,14.200597538599178,0.8458624634918079,6
+development_validation,growth,growth,Услуги,3,6.8022070288684136,0.8680175226061368,6
+development_validation,growth,growth,Услуги,6,6.87135862345508,0.9631283792010286,6
+development_validation,growth,growth,Услуги,12,14.205441012562497,0.7373845201142424,6
+development_validation,hw_full,hw_full,Всего,1,82.5180392523298,0.7788688543285611,6
+development_validation,hw_full,hw_full,Всего,3,82.22370563532377,0.32917680333713306,6
+development_validation,hw_full,hw_full,Всего,6,110.03030168280202,0.8712411092862348,6
+development_validation,hw_full,hw_full,Всего,12,429.1042381737772,-2.0822398891174916,6
+development_validation,hw_full,hw_full,Непродовольственные товары,1,32.097240083543966,0.8336630946687064,6
+development_validation,hw_full,hw_full,Непродовольственные товары,3,34.242756121616594,0.6778933472869341,6
+development_validation,hw_full,hw_full,Непродовольственные товары,6,73.85504576839669,0.7949734344914412,6
+development_validation,hw_full,hw_full,Непродовольственные товары,12,59.3396347397617,0.7834627386619265,6
+development_validation,hw_full,hw_full,Общественное питание,1,5.041592300842116,0.6116168295688149,6
+development_validation,hw_full,hw_full,Общественное питание,3,5.18302963009386,0.4274321407515158,6
+development_validation,hw_full,hw_full,Общественное питание,6,30.114808138402832,-1.0514013620554725,6
+development_validation,hw_full,hw_full,Общественное питание,12,124.32859253922481,-96.82835876746199,6
+development_validation,hw_full,hw_full,Продовольственные товары,1,31.19659684304558,0.5630402820856476,6
+development_validation,hw_full,hw_full,Продовольственные товары,3,49.76369970119807,-1.0874285557393422,6
+development_validation,hw_full,hw_full,Продовольственные товары,6,58.52927909511982,0.8889310558246328,6
+development_validation,hw_full,hw_full,Продовольственные товары,12,112.15473914591848,-2.2043502847243364,6
+development_validation,hw_full,hw_full,Услуги,1,22.949493757392855,0.47229929977109397,6
+development_validation,hw_full,hw_full,Услуги,3,20.62016793969182,-0.21081898961720946,6
+development_validation,hw_full,hw_full,Услуги,6,21.98666271447439,0.48399162035684706,6
+development_validation,hw_full,hw_full,Услуги,12,102.87771708082585,-8.49385365901553,6
+development_validation,hw_w24,hw_w24,Всего,1,65.58780635450103,0.9008147944564568,6
+development_validation,hw_w24,hw_w24,Всего,3,50.33677525579287,0.791423334860807,6
+development_validation,hw_w24,hw_w24,Всего,6,85.61998458652958,0.9392023552443419,6
+development_validation,hw_w24,hw_w24,Всего,12,52.55300969036534,0.9405997921073171,6
+development_validation,hw_w24,hw_w24,Непродовольственные товары,1,90.43599901824548,0.4046790956660603,6
+development_validation,hw_w24,hw_w24,Непродовольственные товары,3,90.32700997592353,-0.5875098559034915,6
+development_validation,hw_w24,hw_w24,Непродовольственные товары,6,117.34873387026141,0.4408261937399709,6
+development_validation,hw_w24,hw_w24,Непродовольственные товары,12,194.53345435366592,-0.8041515476908012,6
+development_validation,hw_w24,hw_w24,Общественное питание,1,12.692636361215088,-0.10659005609600158,6
+development_validation,hw_w24,hw_w24,Общественное питание,3,12.554096180331783,-0.5743977330820011,6
+development_validation,hw_w24,hw_w24,Общественное питание,6,34.03108387372825,-0.9410505775168863,6
+development_validation,hw_w24,hw_w24,Общественное питание,12,109.53297384575718,-75.09418852415808,6
+development_validation,hw_w24,hw_w24,Продовольственные товары,1,17.937513005437495,0.8368852859298151,6
+development_validation,hw_w24,hw_w24,Продовольственные товары,3,27.549352866009105,0.2843863136840178,6
+development_validation,hw_w24,hw_w24,Продовольственные товары,6,41.52806854202996,0.9385309198388305,6
+development_validation,hw_w24,hw_w24,Продовольственные товары,12,91.1122373311792,-1.0861264897692684,6
+development_validation,hw_w24,hw_w24,Услуги,1,17.65504185574078,0.7418804289536994,6
+development_validation,hw_w24,hw_w24,Услуги,3,23.127660438733148,0.21657327048649944,6
+development_validation,hw_w24,hw_w24,Услуги,6,22.240810369345848,0.6447986656796931,6
+development_validation,hw_w24,hw_w24,Услуги,12,35.22816177668877,-0.16635104759298724,6
+development_validation,hw_w36,hw_w36,Всего,1,63.73184142774168,0.8944947076966333,6
+development_validation,hw_w36,hw_w36,Всего,3,128.4847741566899,-0.17425137100730392,6
+development_validation,hw_w36,hw_w36,Всего,6,162.14605128509356,0.7733896688865267,6
+development_validation,hw_w36,hw_w36,Всего,12,243.79269493416874,-0.11943456778836437,6
+development_validation,hw_w36,hw_w36,Непродовольственные товары,1,29.987313520730897,0.8928607578780277,6
+development_validation,hw_w36,hw_w36,Непродовольственные товары,3,49.04581636016504,0.3711950158258599,6
+development_validation,hw_w36,hw_w36,Непродовольственные товары,6,74.84868079070846,0.7229167669601178,6
+development_validation,hw_w36,hw_w36,Непродовольственные товары,12,26.07918834332054,0.9340335032505555,6
+development_validation,hw_w36,hw_w36,Общественное питание,1,4.855890640169235,0.7708866259649698,6
+development_validation,hw_w36,hw_w36,Общественное питание,3,6.2529592900005655,0.5385643113616967,6
+development_validation,hw_w36,hw_w36,Общественное питание,6,29.95821701126897,-0.68960340681673,6
+development_validation,hw_w36,hw_w36,Общественное питание,12,107.93386963687094,-72.92073005385572,6
+development_validation,hw_w36,hw_w36,Продовольственные товары,1,29.913930309412308,0.5228149737583762,6
+development_validation,hw_w36,hw_w36,Продовольственные товары,3,41.14884210961046,-1.1311252575687623,6
+development_validation,hw_w36,hw_w36,Продовольственные товары,6,45.98671850984223,0.9232327329327737,6
+development_validation,hw_w36,hw_w36,Продовольственные товары,12,105.19222667427441,-1.6300303149484607,6
+development_validation,hw_w36,hw_w36,Услуги,1,16.31897297183889,0.7827019246545441,6
+development_validation,hw_w36,hw_w36,Услуги,3,34.497465962819206,-0.674417044348411,6
+development_validation,hw_w36,hw_w36,Услуги,6,51.05686054130782,-0.7755371833522964,6
+development_validation,hw_w36,hw_w36,Услуги,12,73.76195250095213,-4.183150323818925,6
+development_validation,hw_w48,hw_w48,Всего,1,59.322729488642075,0.9039006806025935,6
+development_validation,hw_w48,hw_w48,Всего,3,67.82500155505947,0.6315013828337228,6
+development_validation,hw_w48,hw_w48,Всего,6,107.85879214545957,0.857140361530798,6
+development_validation,hw_w48,hw_w48,Всего,12,171.74847248009837,0.3425294079026818,6
+development_validation,hw_w48,hw_w48,Непродовольственные товары,1,18.358762498680562,0.9685000992856665,6
+development_validation,hw_w48,hw_w48,Непродовольственные товары,3,37.7103828668556,0.7042200757372481,6
+development_validation,hw_w48,hw_w48,Непродовольственные товары,6,62.751885082831826,0.8280697623195619,6
+development_validation,hw_w48,hw_w48,Непродовольственные товары,12,67.78487415194991,0.639500015275577,6
+development_validation,hw_w48,hw_w48,Общественное питание,1,5.088805274827469,0.7784799753808246,6
+development_validation,hw_w48,hw_w48,Общественное питание,3,3.185571842942172,0.8917575450778528,6
+development_validation,hw_w48,hw_w48,Общественное питание,6,27.211535346457282,-0.5316037535877676,6
+development_validation,hw_w48,hw_w48,Общественное питание,12,100.4670317835557,-63.083393431280584,6
+development_validation,hw_w48,hw_w48,Продовольственные товары,1,42.059328247387306,0.2677334656822967,6
+development_validation,hw_w48,hw_w48,Продовольственные товары,3,47.045016142581744,-1.3924890073901288,6
+development_validation,hw_w48,hw_w48,Продовольственные товары,6,54.789314606931235,0.895351155719494,6
+development_validation,hw_w48,hw_w48,Продовольственные товары,12,123.59821140739162,-2.5724980667150983,6
+development_validation,hw_w48,hw_w48,Услуги,1,17.85117230483009,0.7582634942524195,6
+development_validation,hw_w48,hw_w48,Услуги,3,10.893119227718065,0.7794141571546247,6
+development_validation,hw_w48,hw_w48,Услуги,6,19.211163114930248,0.6146452256659796,6
+development_validation,hw_w48,hw_w48,Услуги,12,41.033807694881,-1.0190169798559028,6
+recheck_seen_holdout,Adaptive12,Adaptive12,Всего,1,114.0757424303735,0.9178269839292043,12
+recheck_seen_holdout,Adaptive12,Adaptive12,Всего,3,122.0748295568939,0.8899056238275267,12
+recheck_seen_holdout,Adaptive12,Adaptive12,Всего,6,141.83525145132603,0.8625282522564887,12
+recheck_seen_holdout,Adaptive12,Adaptive12,Всего,12,163.7986598430492,0.8735529053934922,12
+recheck_seen_holdout,Adaptive12,Adaptive12,Непродовольственные товары,1,94.34077419855748,0.8119607229907169,12
+recheck_seen_holdout,Adaptive12,Adaptive12,Непродовольственные товары,3,110.89202485557776,0.7308024847843445,12
+recheck_seen_holdout,Adaptive12,Adaptive12,Непродовольственные товары,6,87.20700946403367,0.8170055111083311,12
+recheck_seen_holdout,Adaptive12,Adaptive12,Непродовольственные товары,12,66.47961942007244,0.8882990613481847,12
+recheck_seen_holdout,Adaptive12,Adaptive12,Общественное питание,1,24.693495585110554,-0.2633592196418122,12
+recheck_seen_holdout,Adaptive12,Adaptive12,Общественное питание,3,37.52602595482712,-1.613021804268235,12
+recheck_seen_holdout,Adaptive12,Adaptive12,Общественное питание,6,61.43848257822436,-5.939184682203342,12
+recheck_seen_holdout,Adaptive12,Adaptive12,Общественное питание,12,76.99260588172496,-8.327873133141061,12
+recheck_seen_holdout,Adaptive12,Adaptive12,Продовольственные товары,1,47.649621312659974,0.9111675932111978,12
+recheck_seen_holdout,Adaptive12,Adaptive12,Продовольственные товары,3,60.82760638526577,0.8510770598917741,12
+recheck_seen_holdout,Adaptive12,Adaptive12,Продовольственные товары,6,87.89733440177513,0.751883107746206,12
+recheck_seen_holdout,Adaptive12,Adaptive12,Продовольственные товары,12,96.36348457584309,0.74936629112865,12
+recheck_seen_holdout,Adaptive12,Adaptive12,Услуги,1,15.374849823922261,0.8974536393740012,12
+recheck_seen_holdout,Adaptive12,Adaptive12,Услуги,3,17.63546487368571,0.861602582056813,12
+recheck_seen_holdout,Adaptive12,Adaptive12,Услуги,6,17.662651756909934,0.8901865851040635,12
+recheck_seen_holdout,Adaptive12,Adaptive12,Услуги,12,22.865702625318363,0.763958998109236,12
+recheck_seen_holdout,Adaptive12_Bias12,Adaptive12_Bias12,Всего,1,113.60851072054477,0.9139504207646345,12
+recheck_seen_holdout,Adaptive12_Bias12,Adaptive12_Bias12,Всего,3,118.58186668429153,0.8974993364136796,12
+recheck_seen_holdout,Adaptive12_Bias12,Adaptive12_Bias12,Всего,6,144.43886666194376,0.8614113598691602,12
+recheck_seen_holdout,Adaptive12_Bias12,Adaptive12_Bias12,Всего,12,284.13483835660753,0.6365525126026238,12
+recheck_seen_holdout,Adaptive12_Bias12,Adaptive12_Bias12,Непродовольственные товары,1,87.43169623393635,0.8270498858079246,12
+recheck_seen_holdout,Adaptive12_Bias12,Adaptive12_Bias12,Непродовольственные товары,3,112.12963789974367,0.7405702895729025,12
+recheck_seen_holdout,Adaptive12_Bias12,Adaptive12_Bias12,Непродовольственные товары,6,90.25639129577591,0.8009370789418013,12
+recheck_seen_holdout,Adaptive12_Bias12,Adaptive12_Bias12,Непродовольственные товары,12,122.04574821155438,0.6416275397130455,12
+recheck_seen_holdout,Adaptive12_Bias12,Adaptive12_Bias12,Общественное питание,1,22.554881845131494,-0.27143562242264885,12
+recheck_seen_holdout,Adaptive12_Bias12,Adaptive12_Bias12,Общественное питание,3,40.21265119391772,-2.1415007306570857,12
+recheck_seen_holdout,Adaptive12_Bias12,Adaptive12_Bias12,Общественное питание,6,82.00714233540998,-11.356437215615028,12
+recheck_seen_holdout,Adaptive12_Bias12,Adaptive12_Bias12,Общественное питание,12,86.98170241367241,-11.48243372159185,12
+recheck_seen_holdout,Adaptive12_Bias12,Adaptive12_Bias12,Продовольственные товары,1,43.640006063651526,0.9243459890865152,12
+recheck_seen_holdout,Adaptive12_Bias12,Adaptive12_Bias12,Продовольственные товары,3,63.94960706617477,0.8631582602837611,12
+recheck_seen_holdout,Adaptive12_Bias12,Adaptive12_Bias12,Продовольственные товары,6,95.7641286996306,0.7082629373922915,12
+recheck_seen_holdout,Adaptive12_Bias12,Adaptive12_Bias12,Продовольственные товары,12,136.17357972163754,0.5202933300516459,12
+recheck_seen_holdout,Adaptive12_Bias12,Adaptive12_Bias12,Услуги,1,14.800847418023883,0.9134745348524791,12
+recheck_seen_holdout,Adaptive12_Bias12,Adaptive12_Bias12,Услуги,3,16.648891424877757,0.8729577855935371,12
+recheck_seen_holdout,Adaptive12_Bias12,Adaptive12_Bias12,Услуги,6,17.05064165607655,0.9031940705028692,12
+recheck_seen_holdout,Adaptive12_Bias12,Adaptive12_Bias12,Услуги,12,36.83792607295546,0.6246662623871501,12
+recheck_seen_holdout,Adaptive12_Bias6,Adaptive12_Bias6,Всего,1,127.92751274030472,0.9041589139041631,12
+recheck_seen_holdout,Adaptive12_Bias6,Adaptive12_Bias6,Всего,3,147.26743587067668,0.865467922584113,12
+recheck_seen_holdout,Adaptive12_Bias6,Adaptive12_Bias6,Всего,6,142.3917706986816,0.8601478221850433,12
+recheck_seen_holdout,Adaptive12_Bias6,Adaptive12_Bias6,Всего,12,234.479487395178,0.7324350821912475,12
+recheck_seen_holdout,Adaptive12_Bias6,Adaptive12_Bias6,Непродовольственные товары,1,92.79039435446414,0.79765800510407,12
+recheck_seen_holdout,Adaptive12_Bias6,Adaptive12_Bias6,Непродовольственные товары,3,130.23655078271852,0.6318468715644411,12
+recheck_seen_holdout,Adaptive12_Bias6,Adaptive12_Bias6,Непродовольственные товары,6,84.89204211738911,0.8351020916159698,12
+recheck_seen_holdout,Adaptive12_Bias6,Adaptive12_Bias6,Непродовольственные товары,12,122.36065745680087,0.6908153259007972,12
+recheck_seen_holdout,Adaptive12_Bias6,Adaptive12_Bias6,Общественное питание,1,19.22582396069571,-0.047875322414882904,12
+recheck_seen_holdout,Adaptive12_Bias6,Adaptive12_Bias6,Общественное питание,3,37.18978747114161,-1.5637205769016798,12
+recheck_seen_holdout,Adaptive12_Bias6,Adaptive12_Bias6,Общественное питание,6,83.07931518298138,-10.82587443405873,12
+recheck_seen_holdout,Adaptive12_Bias6,Adaptive12_Bias6,Общественное питание,12,95.98919763186927,-14.401745647579913,12
+recheck_seen_holdout,Adaptive12_Bias6,Adaptive12_Bias6,Продовольственные товары,1,44.29452369280474,0.9198545001631345,12
+recheck_seen_holdout,Adaptive12_Bias6,Adaptive12_Bias6,Продовольственные товары,3,68.25011015539883,0.8323647071937289,12
+recheck_seen_holdout,Adaptive12_Bias6,Adaptive12_Bias6,Продовольственные товары,6,98.37560770302598,0.6848560874879961,12
+recheck_seen_holdout,Adaptive12_Bias6,Adaptive12_Bias6,Продовольственные товары,12,131.69250360367025,0.5535412365635586,12
+recheck_seen_holdout,Adaptive12_Bias6,Adaptive12_Bias6,Услуги,1,14.785640154059346,0.9096527632547219,12
+recheck_seen_holdout,Adaptive12_Bias6,Adaptive12_Bias6,Услуги,3,18.580824577562357,0.8621646836244684,12
+recheck_seen_holdout,Adaptive12_Bias6,Adaptive12_Bias6,Услуги,6,16.32111435439005,0.9126525466634423,12
+recheck_seen_holdout,Adaptive12_Bias6,Adaptive12_Bias6,Услуги,12,30.226869798656498,0.7202956929241064,12
+recheck_seen_holdout,Adaptive6,Adaptive6,Всего,1,113.60043700157651,0.9184846456447407,12
+recheck_seen_holdout,Adaptive6,Adaptive6,Всего,3,123.54167157090001,0.8899782880678324,12
+recheck_seen_holdout,Adaptive6,Adaptive6,Всего,6,139.62508250389587,0.8651204755524073,12
+recheck_seen_holdout,Adaptive6,Adaptive6,Всего,12,165.94147976811738,0.8686309476243753,12
+recheck_seen_holdout,Adaptive6,Adaptive6,Непродовольственные товары,1,93.88091829306659,0.815053606243372,12
+recheck_seen_holdout,Adaptive6,Adaptive6,Непродовольственные товары,3,108.98526172627153,0.7376654724090457,12
+recheck_seen_holdout,Adaptive6,Adaptive6,Непродовольственные товары,6,89.68916581126071,0.8113645859332373,12
+recheck_seen_holdout,Adaptive6,Adaptive6,Непродовольственные товары,12,68.09244389513958,0.8835540220362976,12
+recheck_seen_holdout,Adaptive6,Adaptive6,Общественное питание,1,24.762669165591515,-0.29327589886755745,12
+recheck_seen_holdout,Adaptive6,Adaptive6,Общественное питание,3,37.99167342781855,-1.7192029423299329,12
+recheck_seen_holdout,Adaptive6,Adaptive6,Общественное питание,6,61.89178265286364,-6.2137139452888,12
+recheck_seen_holdout,Adaptive6,Adaptive6,Общественное питание,12,77.34708468453314,-8.414199526807579,12
+recheck_seen_holdout,Adaptive6,Adaptive6,Продовольственные товары,1,47.47410563832602,0.9111664706477971,12
+recheck_seen_holdout,Adaptive6,Adaptive6,Продовольственные товары,3,62.25760926097613,0.8462202393980062,12
+recheck_seen_holdout,Adaptive6,Adaptive6,Продовольственные товары,6,88.42355584973207,0.7512132707407528,12
+recheck_seen_holdout,Adaptive6,Adaptive6,Продовольственные товары,12,97.22207874462292,0.7448644154367658,12
+recheck_seen_holdout,Adaptive6,Adaptive6,Услуги,1,15.142696582711798,0.8999956452240411,12
+recheck_seen_holdout,Adaptive6,Adaptive6,Услуги,3,17.761096073182273,0.8629915687899193,12
+recheck_seen_holdout,Adaptive6,Adaptive6,Услуги,6,17.878241172736335,0.8891705731734907,12
+recheck_seen_holdout,Adaptive6,Adaptive6,Услуги,12,22.829806160229072,0.7747468275859942,12
+recheck_seen_holdout,Adaptive6_Bias12,Adaptive6_Bias12,Всего,1,112.84301497181748,0.9150521235152806,12
+recheck_seen_holdout,Adaptive6_Bias12,Adaptive6_Bias12,Всего,3,120.74117520898994,0.8979195077382274,12
+recheck_seen_holdout,Adaptive6_Bias12,Adaptive6_Bias12,Всего,6,144.60346159134102,0.8603358190507541,12
+recheck_seen_holdout,Adaptive6_Bias12,Adaptive6_Bias12,Всего,12,281.9320489959767,0.6380523809268943,12
+recheck_seen_holdout,Adaptive6_Bias12,Adaptive6_Bias12,Непродовольственные товары,1,87.17579755937261,0.8300900474772509,12
+recheck_seen_holdout,Adaptive6_Bias12,Adaptive6_Bias12,Непродовольственные товары,3,110.75500756925396,0.744968809283546,12
+recheck_seen_holdout,Adaptive6_Bias12,Adaptive6_Bias12,Непродовольственные товары,6,91.60172128714805,0.8006250557909066,12
+recheck_seen_holdout,Adaptive6_Bias12,Adaptive6_Bias12,Непродовольственные товары,12,122.40962285708174,0.6394559813123704,12
+recheck_seen_holdout,Adaptive6_Bias12,Adaptive6_Bias12,Общественное питание,1,22.87929669974479,-0.33273668116174715,12
+recheck_seen_holdout,Adaptive6_Bias12,Adaptive6_Bias12,Общественное питание,3,39.9560717189917,-2.190287297471573,12
+recheck_seen_holdout,Adaptive6_Bias12,Adaptive6_Bias12,Общественное питание,6,82.06883926361299,-11.489967614894118,12
+recheck_seen_holdout,Adaptive6_Bias12,Adaptive6_Bias12,Общественное питание,12,87.21689726960169,-11.569687732587509,12
+recheck_seen_holdout,Adaptive6_Bias12,Adaptive6_Bias12,Продовольственные товары,1,44.04717106118759,0.9237479886339609,12
+recheck_seen_holdout,Adaptive6_Bias12,Adaptive6_Bias12,Продовольственные товары,3,65.66950251158134,0.8587080060827419,12
+recheck_seen_holdout,Adaptive6_Bias12,Adaptive6_Bias12,Продовольственные товары,6,95.57047751557946,0.7115712115124535,12
+recheck_seen_holdout,Adaptive6_Bias12,Adaptive6_Bias12,Продовольственные товары,12,136.50234941552608,0.5173064248400391,12
+recheck_seen_holdout,Adaptive6_Bias12,Adaptive6_Bias12,Услуги,1,14.530111810263444,0.9157362191963738,12
+recheck_seen_holdout,Adaptive6_Bias12,Adaptive6_Bias12,Услуги,3,16.53014645832612,0.8771714344044741,12
+recheck_seen_holdout,Adaptive6_Bias12,Adaptive6_Bias12,Услуги,6,17.651452667896876,0.895177919708525,12
+recheck_seen_holdout,Adaptive6_Bias12,Adaptive6_Bias12,Услуги,12,35.253676614018296,0.6563926133912928,12
+recheck_seen_holdout,Adaptive6_Bias6,Adaptive6_Bias6,Всего,1,127.25894960625669,0.9050144368602784,12
+recheck_seen_holdout,Adaptive6_Bias6,Adaptive6_Bias6,Всего,3,150.03359560682466,0.8635869085904015,12
+recheck_seen_holdout,Adaptive6_Bias6,Adaptive6_Bias6,Всего,6,143.3760797788024,0.8607428714777079,12
+recheck_seen_holdout,Adaptive6_Bias6,Adaptive6_Bias6,Всего,12,233.36203034347432,0.732813637048407,12
+recheck_seen_holdout,Adaptive6_Bias6,Adaptive6_Bias6,Непродовольственные товары,1,91.89412015145747,0.8022802550857462,12
+recheck_seen_holdout,Adaptive6_Bias6,Adaptive6_Bias6,Непродовольственные товары,3,127.66292117608577,0.645264926619301,12
+recheck_seen_holdout,Adaptive6_Bias6,Adaptive6_Bias6,Непродовольственные товары,6,85.80724631584356,0.83061684755107,12
+recheck_seen_holdout,Adaptive6_Bias6,Adaptive6_Bias6,Непродовольственные товары,12,120.64603575693252,0.6992276923243164,12
+recheck_seen_holdout,Adaptive6_Bias6,Adaptive6_Bias6,Общественное питание,1,19.625518454561753,-0.09173887919859203,12
+recheck_seen_holdout,Adaptive6_Bias6,Adaptive6_Bias6,Общественное питание,3,36.649272074409794,-1.6268542293650183,12
+recheck_seen_holdout,Adaptive6_Bias6,Adaptive6_Bias6,Общественное питание,6,83.15368788041978,-10.94111765290831,12
+recheck_seen_holdout,Adaptive6_Bias6,Adaptive6_Bias6,Общественное питание,12,96.39370004832934,-14.567092566906483,12
+recheck_seen_holdout,Adaptive6_Bias6,Adaptive6_Bias6,Продовольственные товары,1,44.51186202171914,0.9199012211877389,12
+recheck_seen_holdout,Adaptive6_Bias6,Adaptive6_Bias6,Продовольственные товары,3,70.67208188826335,0.8246674818343305,12
+recheck_seen_holdout,Adaptive6_Bias6,Adaptive6_Bias6,Продовольственные товары,6,97.57438279862151,0.6885969130518181,12
+recheck_seen_holdout,Adaptive6_Bias6,Adaptive6_Bias6,Продовольственные товары,12,132.05357513076137,0.5506392706435526,12
+recheck_seen_holdout,Adaptive6_Bias6,Adaptive6_Bias6,Услуги,1,14.554716679178,0.9113278232289389,12
+recheck_seen_holdout,Adaptive6_Bias6,Adaptive6_Bias6,Услуги,3,18.566331941930724,0.8658025645297582,12
+recheck_seen_holdout,Adaptive6_Bias6,Adaptive6_Bias6,Услуги,6,16.88313775853834,0.9082669817138866,12
+recheck_seen_holdout,Adaptive6_Bias6,Adaptive6_Bias6,Услуги,12,28.696694179655406,0.7433850090208517,12
+recheck_seen_holdout,BaselineN01,BaselineN01,Всего,1,166.67800228796418,0.8314193898399383,12
+recheck_seen_holdout,BaselineN01,BaselineN01,Всего,3,167.0810131911393,0.8284295109126987,12
+recheck_seen_holdout,BaselineN01,BaselineN01,Всего,6,155.288461084961,0.8351935768023613,12
+recheck_seen_holdout,BaselineN01,BaselineN01,Всего,12,97.42927162904509,0.9388065548436756,12
+recheck_seen_holdout,BaselineN01,BaselineN01,Непродовольственные товары,1,99.44898457665602,0.7905487308399879,12
+recheck_seen_holdout,BaselineN01,BaselineN01,Непродовольственные товары,3,141.29395104159437,0.5643625447464573,12
+recheck_seen_holdout,BaselineN01,BaselineN01,Непродовольственные товары,6,117.65483873718217,0.6852697259425238,12
+recheck_seen_holdout,BaselineN01,BaselineN01,Непродовольственные товары,12,55.82517430950774,0.9089941922304597,12
+recheck_seen_holdout,BaselineN01,BaselineN01,Общественное питание,1,12.336841864959743,0.6644701733169436,12
+recheck_seen_holdout,BaselineN01,BaselineN01,Общественное питание,3,20.95895292617214,0.06186508273615432,12
+recheck_seen_holdout,BaselineN01,BaselineN01,Общественное питание,6,41.109204262266275,-1.8299554507511502,12
+recheck_seen_holdout,BaselineN01,BaselineN01,Общественное питание,12,67.54453989154517,-6.335350555734995,12
+recheck_seen_holdout,BaselineN01,BaselineN01,Продовольственные товары,1,54.77698377676226,0.8787242224107892,12
+recheck_seen_holdout,BaselineN01,BaselineN01,Продовольственные товары,3,62.62206831069974,0.8606376793008088,12
+recheck_seen_holdout,BaselineN01,BaselineN01,Продовольственные товары,6,80.8264080094907,0.7345469037334837,12
+recheck_seen_holdout,BaselineN01,BaselineN01,Продовольственные товары,12,81.57870476363011,0.8109314358828107,12
+recheck_seen_holdout,BaselineN01,BaselineN01,Услуги,1,17.024644933298436,0.8985281419918724,12
+recheck_seen_holdout,BaselineN01,BaselineN01,Услуги,3,22.379203697915916,0.7960807636255355,12
+recheck_seen_holdout,BaselineN01,BaselineN01,Услуги,6,15.011325753838719,0.9316650583987132,12
+recheck_seen_holdout,BaselineN01,BaselineN01,Услуги,12,16.42036935922937,0.8985177112959991,12
+recheck_seen_holdout,CalibratedStatic,CalibratedStatic,Всего,1,119.2020126685821,0.9105272691332605,12
+recheck_seen_holdout,CalibratedStatic,CalibratedStatic,Всего,3,127.44246981741783,0.8859798166492455,12
+recheck_seen_holdout,CalibratedStatic,CalibratedStatic,Всего,6,141.97073646778554,0.8576798859362192,12
+recheck_seen_holdout,CalibratedStatic,CalibratedStatic,Всего,12,148.66181131106586,0.8925132082275902,12
+recheck_seen_holdout,CalibratedStatic,CalibratedStatic,Непродовольственные товары,1,95.31368790538947,0.7923785141198986,12
+recheck_seen_holdout,CalibratedStatic,CalibratedStatic,Непродовольственные товары,3,113.1402014887786,0.717041449638689,12
+recheck_seen_holdout,CalibratedStatic,CalibratedStatic,Непродовольственные товары,6,88.30413197646283,0.8102816274936189,12
+recheck_seen_holdout,CalibratedStatic,CalibratedStatic,Непродовольственные товары,12,70.55417161092832,0.8867412331476846,12
+recheck_seen_holdout,CalibratedStatic,CalibratedStatic,Общественное питание,1,17.83948743352737,0.28228491985467374,12
+recheck_seen_holdout,CalibratedStatic,CalibratedStatic,Общественное питание,3,31.824285711440336,-0.9156212756809294,12
+recheck_seen_holdout,CalibratedStatic,CalibratedStatic,Общественное питание,6,55.08875784630714,-4.730707337519207,12
+recheck_seen_holdout,CalibratedStatic,CalibratedStatic,Общественное питание,12,77.5515687580333,-8.367968795085263,12
+recheck_seen_holdout,CalibratedStatic,CalibratedStatic,Продовольственные товары,1,47.926395462070865,0.9105679232333714,12
+recheck_seen_holdout,CalibratedStatic,CalibratedStatic,Продовольственные товары,3,61.145622750226416,0.8561128859242605,12
+recheck_seen_holdout,CalibratedStatic,CalibratedStatic,Продовольственные товары,6,85.6968227287994,0.7554652785233418,12
+recheck_seen_holdout,CalibratedStatic,CalibratedStatic,Продовольственные товары,12,90.49681996114514,0.7776668497328484,12
+recheck_seen_holdout,CalibratedStatic,CalibratedStatic,Услуги,1,15.759882641584511,0.9040746840316894,12
+recheck_seen_holdout,CalibratedStatic,CalibratedStatic,Услуги,3,17.094436522150886,0.8679040611957851,12
+recheck_seen_holdout,CalibratedStatic,CalibratedStatic,Услуги,6,16.447686465121535,0.9066376021533087,12
+recheck_seen_holdout,CalibratedStatic,CalibratedStatic,Услуги,12,20.54633330710165,0.8008874871628303,12
+recheck_seen_holdout,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Всего,1,132.326542208388,0.8774594019101745,12
+recheck_seen_holdout,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Всего,3,147.8258701854232,0.8532544066993584,12
+recheck_seen_holdout,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Всего,6,176.96730890710327,0.8084894545084478,12
+recheck_seen_holdout,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Всего,12,163.35830557145573,0.873718673962299,12
+recheck_seen_holdout,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Непродовольственные товары,1,95.31368790538947,0.7923785141198986,12
+recheck_seen_holdout,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Непродовольственные товары,3,113.1402014887786,0.717041449638689,12
+recheck_seen_holdout,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Непродовольственные товары,6,88.30413197646283,0.8102816274936189,12
+recheck_seen_holdout,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Непродовольственные товары,12,70.55417161092832,0.8867412331476846,12
+recheck_seen_holdout,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Общественное питание,1,17.83948743352737,0.28228491985467374,12
+recheck_seen_holdout,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Общественное питание,3,31.824285711440336,-0.9156212756809294,12
+recheck_seen_holdout,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Общественное питание,6,55.08875784630714,-4.730707337519207,12
+recheck_seen_holdout,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Общественное питание,12,77.5515687580333,-8.367968795085263,12
+recheck_seen_holdout,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Продовольственные товары,1,47.926395462070865,0.9105679232333714,12
+recheck_seen_holdout,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Продовольственные товары,3,61.145622750226416,0.8561128859242605,12
+recheck_seen_holdout,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Продовольственные товары,6,85.6968227287994,0.7554652785233418,12
+recheck_seen_holdout,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Продовольственные товары,12,90.49681996114514,0.7776668497328484,12
+recheck_seen_holdout,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Услуги,1,15.759882641584511,0.9040746840316894,12
+recheck_seen_holdout,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Услуги,3,17.094436522150886,0.8679040611957851,12
+recheck_seen_holdout,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Услуги,6,16.447686465121535,0.9066376021533087,12
+recheck_seen_holdout,CalibratedStatic_bottom_up,CalibratedStatic_bottom_up,Услуги,12,20.54633330710165,0.8008874871628303,12
+recheck_seen_holdout,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Всего,1,127.65531006173455,0.8913933594140376,12
+recheck_seen_holdout,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Всего,3,133.2681723296042,0.873510754292855,12
+recheck_seen_holdout,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Всего,6,157.08799859107134,0.8346168778660669,12
+recheck_seen_holdout,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Всего,12,156.59531106163726,0.8839593449077869,12
+recheck_seen_holdout,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Непродовольственные товары,1,92.52473634865169,0.815452529505755,12
+recheck_seen_holdout,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Непродовольственные товары,3,109.72559615777345,0.7476092547807331,12
+recheck_seen_holdout,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Непродовольственные товары,6,90.10004454235434,0.8061512359035894,12
+recheck_seen_holdout,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Непродовольственные товары,12,83.24392170572492,0.8625373123922297,12
+recheck_seen_holdout,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Общественное питание,1,17.799278897336517,0.286789961892127,12
+recheck_seen_holdout,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Общественное питание,3,31.806210569110487,-0.9133254808016369,12
+recheck_seen_holdout,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Общественное питание,6,55.05195497911054,-4.723436408438565,12
+recheck_seen_holdout,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Общественное питание,12,77.57159254596442,-8.372681518560075,12
+recheck_seen_holdout,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Продовольственные товары,1,47.093272183983494,0.9187527654717589,12
+recheck_seen_holdout,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Продовольственные товары,3,58.9772781115494,0.8623516616687352,12
+recheck_seen_holdout,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Продовольственные товары,6,84.81795860470459,0.7590471763976908,12
+recheck_seen_holdout,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Продовольственные товары,12,89.97926468821602,0.7800564886131378,12
+recheck_seen_holdout,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Услуги,1,15.914929962217494,0.9040446395516414,12
+recheck_seen_holdout,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Услуги,3,17.69210392485466,0.8610641927762648,12
+recheck_seen_holdout,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Услуги,6,15.70643589420346,0.9139013261667277,12
+recheck_seen_holdout,CalibratedStatic_mint_shrink,CalibratedStatic_mint_shrink,Услуги,12,20.440329083284343,0.8041056091520686,12
+recheck_seen_holdout,RegimeAdaptive,RegimeAdaptive,Всего,1,114.0757424303735,0.9178269839292043,12
+recheck_seen_holdout,RegimeAdaptive,RegimeAdaptive,Всего,3,122.0748295568939,0.8899056238275267,12
+recheck_seen_holdout,RegimeAdaptive,RegimeAdaptive,Всего,6,141.83525145132603,0.8625282522564887,12
+recheck_seen_holdout,RegimeAdaptive,RegimeAdaptive,Всего,12,163.7986598430492,0.8735529053934922,12
+recheck_seen_holdout,RegimeAdaptive,RegimeAdaptive,Непродовольственные товары,1,94.34077419855748,0.8119607229907169,12
+recheck_seen_holdout,RegimeAdaptive,RegimeAdaptive,Непродовольственные товары,3,110.89202485557776,0.7308024847843445,12
+recheck_seen_holdout,RegimeAdaptive,RegimeAdaptive,Непродовольственные товары,6,87.20700946403367,0.8170055111083311,12
+recheck_seen_holdout,RegimeAdaptive,RegimeAdaptive,Непродовольственные товары,12,66.47961942007244,0.8882990613481847,12
+recheck_seen_holdout,RegimeAdaptive,RegimeAdaptive,Общественное питание,1,24.693495585110554,-0.2633592196418122,12
+recheck_seen_holdout,RegimeAdaptive,RegimeAdaptive,Общественное питание,3,37.52602595482712,-1.613021804268235,12
+recheck_seen_holdout,RegimeAdaptive,RegimeAdaptive,Общественное питание,6,61.43848257822436,-5.939184682203342,12
+recheck_seen_holdout,RegimeAdaptive,RegimeAdaptive,Общественное питание,12,76.99260588172496,-8.327873133141061,12
+recheck_seen_holdout,RegimeAdaptive,RegimeAdaptive,Продовольственные товары,1,47.649621312659974,0.9111675932111978,12
+recheck_seen_holdout,RegimeAdaptive,RegimeAdaptive,Продовольственные товары,3,60.82760638526577,0.8510770598917741,12
+recheck_seen_holdout,RegimeAdaptive,RegimeAdaptive,Продовольственные товары,6,87.89733440177513,0.751883107746206,12
+recheck_seen_holdout,RegimeAdaptive,RegimeAdaptive,Продовольственные товары,12,96.36348457584309,0.74936629112865,12
+recheck_seen_holdout,RegimeAdaptive,RegimeAdaptive,Услуги,1,15.374849823922261,0.8974536393740012,12
+recheck_seen_holdout,RegimeAdaptive,RegimeAdaptive,Услуги,3,17.63546487368571,0.861602582056813,12
+recheck_seen_holdout,RegimeAdaptive,RegimeAdaptive,Услуги,6,17.662651756909934,0.8901865851040635,12
+recheck_seen_holdout,RegimeAdaptive,RegimeAdaptive,Услуги,12,22.865702625318363,0.763958998109236,12
+recheck_seen_holdout,Static_Bias12,Static_Bias12,Всего,1,117.48349177338302,0.9063725283005775,12
+recheck_seen_holdout,Static_Bias12,Static_Bias12,Всего,3,125.9306669731177,0.8900822151793236,12
+recheck_seen_holdout,Static_Bias12,Static_Bias12,Всего,6,147.0199037164472,0.8525196450695689,12
+recheck_seen_holdout,Static_Bias12,Static_Bias12,Всего,12,263.76043593074445,0.6825334960555024,12
+recheck_seen_holdout,Static_Bias12,Static_Bias12,Непродовольственные товары,1,89.52274022863257,0.8025151409398454,12
+recheck_seen_holdout,Static_Bias12,Static_Bias12,Непродовольственные товары,3,113.87218276369617,0.72802312253143,12
+recheck_seen_holdout,Static_Bias12,Static_Bias12,Непродовольственные товары,6,91.40628343495985,0.7974400308134897,12
+recheck_seen_holdout,Static_Bias12,Static_Bias12,Непродовольственные товары,12,119.38852506120645,0.6625499186575622,12
+recheck_seen_holdout,Static_Bias12,Static_Bias12,Общественное питание,1,17.272320079095213,0.23868627020150157,12
+recheck_seen_holdout,Static_Bias12,Static_Bias12,Общественное питание,3,33.92251511415441,-1.3103474531537196,12
+recheck_seen_holdout,Static_Bias12,Static_Bias12,Общественное питание,6,75.45347524956838,-9.465425643838282,12
+recheck_seen_holdout,Static_Bias12,Static_Bias12,Общественное питание,12,87.57503456518799,-11.45375673982063,12
+recheck_seen_holdout,Static_Bias12,Static_Bias12,Продовольственные товары,1,46.30159532228166,0.9171232491455313,12
+recheck_seen_holdout,Static_Bias12,Static_Bias12,Продовольственные товары,3,64.77349617926234,0.8620191050452082,12
+recheck_seen_holdout,Static_Bias12,Static_Bias12,Продовольственные товары,6,94.80906452435283,0.70499478800353,12
+recheck_seen_holdout,Static_Bias12,Static_Bias12,Продовольственные товары,12,128.3264823878512,0.5730345057345259,12
+recheck_seen_holdout,Static_Bias12,Static_Bias12,Услуги,1,15.449819939135372,0.9143865398671883,12
+recheck_seen_holdout,Static_Bias12,Static_Bias12,Услуги,3,16.644080442055593,0.874567642608915,12
+recheck_seen_holdout,Static_Bias12,Static_Bias12,Услуги,6,16.284628791838866,0.9110546647764274,12
+recheck_seen_holdout,Static_Bias12,Static_Bias12,Услуги,12,31.260897498828246,0.7026040919139083,12
+recheck_seen_holdout,Static_Bias6,Static_Bias6,Всего,1,132.9787891071202,0.8959581630534301,12
+recheck_seen_holdout,Static_Bias6,Static_Bias6,Всего,3,153.93725251625173,0.8564218891638297,12
+recheck_seen_holdout,Static_Bias6,Static_Bias6,Всего,6,150.33780185071706,0.8442680945303409,12
+recheck_seen_holdout,Static_Bias6,Static_Bias6,Всего,12,217.9832671153913,0.7638248274321716,12
+recheck_seen_holdout,Static_Bias6,Static_Bias6,Непродовольственные товары,1,97.46801197206003,0.7709031055368998,12
+recheck_seen_holdout,Static_Bias6,Static_Bias6,Непродовольственные товары,3,133.78597565576024,0.6091072633792827,12
+recheck_seen_holdout,Static_Bias6,Static_Bias6,Непродовольственные товары,6,89.21904592428966,0.8260923856581189,12
+recheck_seen_holdout,Static_Bias6,Static_Bias6,Непродовольственные товары,12,121.60433466913446,0.6944938451988933,12
+recheck_seen_holdout,Static_Bias6,Static_Bias6,Общественное питание,1,14.993513534298819,0.3669675691109312,12
+recheck_seen_holdout,Static_Bias6,Static_Bias6,Общественное питание,3,32.054990316360865,-0.96310202828171,12
+recheck_seen_holdout,Static_Bias6,Static_Bias6,Общественное питание,6,76.98507080192981,-9.205253364326026,12
+recheck_seen_holdout,Static_Bias6,Static_Bias6,Общественное питание,12,96.90611503013629,-14.482061712127585,12
+recheck_seen_holdout,Static_Bias6,Static_Bias6,Продовольственные товары,1,49.32462084079975,0.9059623829854195,12
+recheck_seen_holdout,Static_Bias6,Static_Bias6,Продовольственные товары,3,69.35626907857268,0.8287553563604407,12
+recheck_seen_holdout,Static_Bias6,Static_Bias6,Продовольственные товары,6,99.03725238852837,0.6741076617934811,12
+recheck_seen_holdout,Static_Bias6,Static_Bias6,Продовольственные товары,12,125.73119213385321,0.5915570224494568,12
+recheck_seen_holdout,Static_Bias6,Static_Bias6,Услуги,1,15.33827877014098,0.91248386809179,12
+recheck_seen_holdout,Static_Bias6,Static_Bias6,Услуги,3,18.306382554239878,0.8632440331324606,12
+recheck_seen_holdout,Static_Bias6,Static_Bias6,Услуги,6,15.831422697125427,0.9203967835543216,12
+recheck_seen_holdout,Static_Bias6,Static_Bias6,Услуги,12,26.264730112025898,0.7733444422725461,12
+recheck_seen_holdout,cb_calendar36,cb_calendar36,Всего,1,117.72460283656012,0.9110097862158024,12
+recheck_seen_holdout,cb_calendar36,cb_calendar36,Всего,3,139.8424839460421,0.873062714251345,12
+recheck_seen_holdout,cb_calendar36,cb_calendar36,Всего,6,169.69888927435082,0.8517431401456633,12
+recheck_seen_holdout,cb_calendar36,cb_calendar36,Всего,12,197.6665476827408,0.8183447664276663,12
+recheck_seen_holdout,cb_calendar36,cb_calendar36,Непродовольственные товары,1,102.35862557821694,0.7560142239468098,12
+recheck_seen_holdout,cb_calendar36,cb_calendar36,Непродовольственные товары,3,120.76678780157488,0.6570052544454481,12
+recheck_seen_holdout,cb_calendar36,cb_calendar36,Непродовольственные товары,6,79.18503701308657,0.8283209287482429,12
+recheck_seen_holdout,cb_calendar36,cb_calendar36,Непродовольственные товары,12,69.25729904496188,0.8673768828176767,12
+recheck_seen_holdout,cb_calendar36,cb_calendar36,Общественное питание,1,19.616645222525914,0.15672362629020653,12
+recheck_seen_holdout,cb_calendar36,cb_calendar36,Общественное питание,3,31.600516124663574,-1.0078231856768718,12
+recheck_seen_holdout,cb_calendar36,cb_calendar36,Общественное питание,6,48.070896887911935,-2.6796130578918937,12
+recheck_seen_holdout,cb_calendar36,cb_calendar36,Общественное питание,12,45.09361745604671,-3.1026498686191823,12
+recheck_seen_holdout,cb_calendar36,cb_calendar36,Продовольственные товары,1,40.35110811513747,0.9317104487526183,12
+recheck_seen_holdout,cb_calendar36,cb_calendar36,Продовольственные товары,3,60.68106036675753,0.848857645564519,12
+recheck_seen_holdout,cb_calendar36,cb_calendar36,Продовольственные товары,6,85.35722442649046,0.7636708467028719,12
+recheck_seen_holdout,cb_calendar36,cb_calendar36,Продовольственные товары,12,95.53698374041305,0.7470827028805493,12
+recheck_seen_holdout,cb_calendar36,cb_calendar36,Услуги,1,15.389534222229676,0.9186757199392974,12
+recheck_seen_holdout,cb_calendar36,cb_calendar36,Услуги,3,18.867384842195975,0.8701983597573785,12
+recheck_seen_holdout,cb_calendar36,cb_calendar36,Услуги,6,26.568848328703286,0.7680614321921082,12
+recheck_seen_holdout,cb_calendar36,cb_calendar36,Услуги,12,34.20246939592355,0.5991183022672815,12
+recheck_seen_holdout,cb_decay12,cb_decay12,Всего,1,149.89990205778244,0.8749641407058835,12
+recheck_seen_holdout,cb_decay12,cb_decay12,Всего,3,161.36099897066106,0.8379311241904024,12
+recheck_seen_holdout,cb_decay12,cb_decay12,Всего,6,179.37695736498162,0.8165559132239635,12
+recheck_seen_holdout,cb_decay12,cb_decay12,Всего,12,207.9644583363494,0.7971993263437838,12
+recheck_seen_holdout,cb_decay12,cb_decay12,Непродовольственные товары,1,105.1214167459201,0.7720719181575659,12
+recheck_seen_holdout,cb_decay12,cb_decay12,Непродовольственные товары,3,120.72886188685091,0.673803152413003,12
+recheck_seen_holdout,cb_decay12,cb_decay12,Непродовольственные товары,6,86.0761644763001,0.8173266406372433,12
+recheck_seen_holdout,cb_decay12,cb_decay12,Непродовольственные товары,12,62.3506301349261,0.8977910318794444,12
+recheck_seen_holdout,cb_decay12,cb_decay12,Общественное питание,1,18.239672899752488,0.21062221930164904,12
+recheck_seen_holdout,cb_decay12,cb_decay12,Общественное питание,3,19.73658588662727,-0.06418785217998324,12
+recheck_seen_holdout,cb_decay12,cb_decay12,Общественное питание,6,55.73740082476732,-3.8030116214128125,12
+recheck_seen_holdout,cb_decay12,cb_decay12,Общественное питание,12,51.71227377174775,-4.303896009733945,12
+recheck_seen_holdout,cb_decay12,cb_decay12,Продовольственные товары,1,46.06461191049342,0.9145246979832728,12
+recheck_seen_holdout,cb_decay12,cb_decay12,Продовольственные товары,3,70.76295653376128,0.8008392933647523,12
+recheck_seen_holdout,cb_decay12,cb_decay12,Продовольственные товары,6,100.67499039119075,0.6695330914308717,12
+recheck_seen_holdout,cb_decay12,cb_decay12,Продовольственные товары,12,103.13581020012816,0.7064793930335784,12
+recheck_seen_holdout,cb_decay12,cb_decay12,Услуги,1,17.039677823279987,0.880729126578239,12
+recheck_seen_holdout,cb_decay12,cb_decay12,Услуги,3,17.35762046464845,0.869378450038654,12
+recheck_seen_holdout,cb_decay12,cb_decay12,Услуги,6,17.84786057261086,0.9011738498093758,12
+recheck_seen_holdout,cb_decay12,cb_decay12,Услуги,12,32.64030337070278,0.6627202472299234,12
+recheck_seen_holdout,cb_full,cb_full,Всего,1,147.92593301278984,0.8423071567941316,12
+recheck_seen_holdout,cb_full,cb_full,Всего,3,160.8582391575143,0.8329761494646499,12
+recheck_seen_holdout,cb_full,cb_full,Всего,6,177.58198249372413,0.824383978481584,12
+recheck_seen_holdout,cb_full,cb_full,Всего,12,201.45125492630055,0.8098410973918679,12
+recheck_seen_holdout,cb_full,cb_full,Непродовольственные товары,1,82.55560742700573,0.8355080922145561,12
+recheck_seen_holdout,cb_full,cb_full,Непродовольственные товары,3,129.89210192337916,0.5791951218823983,12
+recheck_seen_holdout,cb_full,cb_full,Непродовольственные товары,6,92.48030973334444,0.7622341582409073,12
+recheck_seen_holdout,cb_full,cb_full,Непродовольственные товары,12,65.95126094411637,0.871562334777479,12
+recheck_seen_holdout,cb_full,cb_full,Общественное питание,1,13.67519245010036,0.6155438952557051,12
+recheck_seen_holdout,cb_full,cb_full,Общественное питание,3,22.695474845654704,-0.07415946252988648,12
+recheck_seen_holdout,cb_full,cb_full,Общественное питание,6,36.8993694130284,-1.353970622804494,12
+recheck_seen_holdout,cb_full,cb_full,Общественное питание,12,39.66804980879974,-2.4799630833360604,12
+recheck_seen_holdout,cb_full,cb_full,Продовольственные товары,1,54.62389293261015,0.8858881645023644,12
+recheck_seen_holdout,cb_full,cb_full,Продовольственные товары,3,55.137651578423366,0.8931637294473336,12
+recheck_seen_holdout,cb_full,cb_full,Продовольственные товары,6,98.22726840183157,0.6765716986362668,12
+recheck_seen_holdout,cb_full,cb_full,Продовольственные товары,12,96.19524199845061,0.7467784004780479,12
+recheck_seen_holdout,cb_full,cb_full,Услуги,1,14.805702594070397,0.9094865355781134,12
+recheck_seen_holdout,cb_full,cb_full,Услуги,3,24.06978012962499,0.7941902010639563,12
+recheck_seen_holdout,cb_full,cb_full,Услуги,6,28.459177864614674,0.7515392629188956,12
+recheck_seen_holdout,cb_full,cb_full,Услуги,12,35.0296680975213,0.6098285705105064,12
+recheck_seen_holdout,cb_w24,cb_w24,Всего,1,101.710752722709,0.9300207020480106,12
+recheck_seen_holdout,cb_w24,cb_w24,Всего,3,145.35189983039223,0.8693434330829592,12
+recheck_seen_holdout,cb_w24,cb_w24,Всего,6,154.92708937095554,0.8725415715584715,12
+recheck_seen_holdout,cb_w24,cb_w24,Всего,12,206.20762087989382,0.7966620759604439,12
+recheck_seen_holdout,cb_w24,cb_w24,Непродовольственные товары,1,101.75483807081191,0.7975294792766878,12
+recheck_seen_holdout,cb_w24,cb_w24,Непродовольственные товары,3,100.39421367968482,0.780437602074901,12
+recheck_seen_holdout,cb_w24,cb_w24,Непродовольственные товары,6,82.16685499481446,0.8442910283989127,12
+recheck_seen_holdout,cb_w24,cb_w24,Непродовольственные товары,12,70.80009237183477,0.8510465874513475,12
+recheck_seen_holdout,cb_w24,cb_w24,Общественное питание,1,22.62295284434074,-0.09562178702197222,12
+recheck_seen_holdout,cb_w24,cb_w24,Общественное питание,3,22.974306169411644,-0.6410624716265056,12
+recheck_seen_holdout,cb_w24,cb_w24,Общественное питание,6,57.61250726257136,-4.0893127783462235,12
+recheck_seen_holdout,cb_w24,cb_w24,Общественное питание,12,46.71034348893206,-3.249796969801599,12
+recheck_seen_holdout,cb_w24,cb_w24,Продовольственные товары,1,70.2110389495333,0.8532115043601308,12
+recheck_seen_holdout,cb_w24,cb_w24,Продовольственные товары,3,87.99328797342685,0.7648560428296032,12
+recheck_seen_holdout,cb_w24,cb_w24,Продовольственные товары,6,98.50291217697774,0.7001468205961838,12
+recheck_seen_holdout,cb_w24,cb_w24,Продовольственные товары,12,107.41442079150723,0.6873566250623142,12
+recheck_seen_holdout,cb_w24,cb_w24,Услуги,1,16.07908926707745,0.8928528178201297,12
+recheck_seen_holdout,cb_w24,cb_w24,Услуги,3,16.257629765913048,0.8772216247277138,12
+recheck_seen_holdout,cb_w24,cb_w24,Услуги,6,21.999958402321,0.8392530162477415,12
+recheck_seen_holdout,cb_w24,cb_w24,Услуги,12,31.29182138035789,0.6331212268104254,12
+recheck_seen_holdout,cb_w36,cb_w36,Всего,1,141.9711655693261,0.8742128246707268,12
+recheck_seen_holdout,cb_w36,cb_w36,Всего,3,140.80639445561374,0.8687532822898238,12
+recheck_seen_holdout,cb_w36,cb_w36,Всего,6,164.95714714829168,0.8491702180797935,12
+recheck_seen_holdout,cb_w36,cb_w36,Всего,12,219.69636359215232,0.778933746912367,12
+recheck_seen_holdout,cb_w36,cb_w36,Непродовольственные товары,1,97.5277412889862,0.8042791533309612,12
+recheck_seen_holdout,cb_w36,cb_w36,Непродовольственные товары,3,123.53039745360059,0.67086957042676,12
+recheck_seen_holdout,cb_w36,cb_w36,Непродовольственные товары,6,80.11925239970867,0.8341483320409742,12
+recheck_seen_holdout,cb_w36,cb_w36,Непродовольственные товары,12,76.41551112908223,0.8457805285707789,12
+recheck_seen_holdout,cb_w36,cb_w36,Общественное питание,1,24.106948002897187,-0.1194693443677417,12
+recheck_seen_holdout,cb_w36,cb_w36,Общественное питание,3,25.57877654086533,-0.29187754825972556,12
+recheck_seen_holdout,cb_w36,cb_w36,Общественное питание,6,47.07493831295415,-2.4362959333194323,12
+recheck_seen_holdout,cb_w36,cb_w36,Общественное питание,12,43.314813988387776,-2.865990510341651,12
+recheck_seen_holdout,cb_w36,cb_w36,Продовольственные товары,1,47.60615755338805,0.9162930691610193,12
+recheck_seen_holdout,cb_w36,cb_w36,Продовольственные товары,3,57.8901719067804,0.8744697447232191,12
+recheck_seen_holdout,cb_w36,cb_w36,Продовольственные товары,6,82.2561178911938,0.7802303291549032,12
+recheck_seen_holdout,cb_w36,cb_w36,Продовольственные товары,12,97.21774058089268,0.741046128470447,12
+recheck_seen_holdout,cb_w36,cb_w36,Услуги,1,16.9993459661607,0.8981674656272063,12
+recheck_seen_holdout,cb_w36,cb_w36,Услуги,3,19.894907645645446,0.8554471599492068,12
+recheck_seen_holdout,cb_w36,cb_w36,Услуги,6,26.361535161167087,0.7859175337951674,12
+recheck_seen_holdout,cb_w36,cb_w36,Услуги,12,33.26128485379147,0.6254790705389303,12
+recheck_seen_holdout,cb_w48,cb_w48,Всего,1,136.63135921326162,0.87641881265159,12
+recheck_seen_holdout,cb_w48,cb_w48,Всего,3,171.13201799360226,0.824687690295546,12
+recheck_seen_holdout,cb_w48,cb_w48,Всего,6,182.2919977015497,0.8191970703973476,12
+recheck_seen_holdout,cb_w48,cb_w48,Всего,12,201.45125492630055,0.8098410973918679,12
+recheck_seen_holdout,cb_w48,cb_w48,Непродовольственные товары,1,102.163616854381,0.7770532078666893,12
+recheck_seen_holdout,cb_w48,cb_w48,Непродовольственные товары,3,125.52226197739064,0.6292810981393392,12
+recheck_seen_holdout,cb_w48,cb_w48,Непродовольственные товары,6,80.87307516515811,0.7998405208751884,12
+recheck_seen_holdout,cb_w48,cb_w48,Непродовольственные товары,12,65.95126094411637,0.871562334777479,12
+recheck_seen_holdout,cb_w48,cb_w48,Общественное питание,1,18.13273908119939,0.3485056118957206,12
+recheck_seen_holdout,cb_w48,cb_w48,Общественное питание,3,28.43549771673979,-0.6018822224378289,12
+recheck_seen_holdout,cb_w48,cb_w48,Общественное питание,6,45.135515844903004,-2.249022733253983,12
+recheck_seen_holdout,cb_w48,cb_w48,Общественное питание,12,39.66804980879974,-2.4799630833360604,12
+recheck_seen_holdout,cb_w48,cb_w48,Продовольственные товары,1,56.52151168011002,0.8880622784911405,12
+recheck_seen_holdout,cb_w48,cb_w48,Продовольственные товары,3,69.83659638538658,0.8143924471331713,12
+recheck_seen_holdout,cb_w48,cb_w48,Продовольственные товары,6,92.63549717394046,0.7307162072042208,12
+recheck_seen_holdout,cb_w48,cb_w48,Продовольственные товары,12,96.19524199845061,0.7467784004780479,12
+recheck_seen_holdout,cb_w48,cb_w48,Услуги,1,16.048739154806963,0.8813959939236727,12
+recheck_seen_holdout,cb_w48,cb_w48,Услуги,3,20.59231417693424,0.8394649796018858,12
+recheck_seen_holdout,cb_w48,cb_w48,Услуги,6,29.85795969056674,0.7088002515064551,12
+recheck_seen_holdout,cb_w48,cb_w48,Услуги,12,35.0296680975213,0.6098285705105064,12
+recheck_seen_holdout,forest,forest,Всего,1,137.5517087385891,0.893881823049238,12
+recheck_seen_holdout,forest,forest,Всего,3,153.03262384731906,0.8582574335442987,12
+recheck_seen_holdout,forest,forest,Всего,6,158.88080513447144,0.8617869737616637,12
+recheck_seen_holdout,forest,forest,Всего,12,197.999124260905,0.826394109944535,12
+recheck_seen_holdout,forest,forest,Непродовольственные товары,1,94.77058356798848,0.7664282188047598,12
+recheck_seen_holdout,forest,forest,Непродовольственные товары,3,149.53569345672122,0.49604104449773134,12
+recheck_seen_holdout,forest,forest,Непродовольственные товары,6,103.70210999397666,0.7373661209315252,12
+recheck_seen_holdout,forest,forest,Непродовольственные товары,12,65.31270166542083,0.8754058432651408,12
+recheck_seen_holdout,forest,forest,Общественное питание,1,17.972531181458567,0.2237946011080174,12
+recheck_seen_holdout,forest,forest,Общественное питание,3,47.52733972957164,-3.357712754586152,12
+recheck_seen_holdout,forest,forest,Общественное питание,6,98.57768452335308,-16.405723323744596,12
+recheck_seen_holdout,forest,forest,Общественное питание,12,97.64601789358964,-15.256011700499052,12
+recheck_seen_holdout,forest,forest,Продовольственные товары,1,69.88306005096422,0.8514841583338844,12
+recheck_seen_holdout,forest,forest,Продовольственные товары,3,86.19520845018674,0.7702954126884546,12
+recheck_seen_holdout,forest,forest,Продовольственные товары,6,101.99416876150288,0.6646055862575365,12
+recheck_seen_holdout,forest,forest,Продовольственные товары,12,110.70959156995025,0.6699661932656031,12
+recheck_seen_holdout,forest,forest,Услуги,1,18.24814200055179,0.8548627955675505,12
+recheck_seen_holdout,forest,forest,Услуги,3,22.252822175380857,0.812090002283519,12
+recheck_seen_holdout,forest,forest,Услуги,6,21.223286551887252,0.8289720573882178,12
+recheck_seen_holdout,forest,forest,Услуги,12,35.56148360495248,0.5922500005418472,12
+recheck_seen_holdout,growth,growth,Всего,1,99.2848679693637,0.9288568983021298,12
+recheck_seen_holdout,growth,growth,Всего,3,116.54537485960236,0.911719919503708,12
+recheck_seen_holdout,growth,growth,Всего,6,145.0577443157109,0.8908145695488623,12
+recheck_seen_holdout,growth,growth,Всего,12,210.75894785408255,0.7884094097231674,12
+recheck_seen_holdout,growth,growth,Непродовольственные товары,1,81.975925764667,0.8704323860594539,12
+recheck_seen_holdout,growth,growth,Непродовольственные товары,3,91.84906808188789,0.8388724867012589,12
+recheck_seen_holdout,growth,growth,Непродовольственные товары,6,94.63522515320744,0.8362275322532889,12
+recheck_seen_holdout,growth,growth,Непродовольственные товары,12,123.68589988360645,0.673675374253911,12
+recheck_seen_holdout,growth,growth,Общественное питание,1,64.21708247324192,-6.604976556660066,12
+recheck_seen_holdout,growth,growth,Общественное питание,3,77.75588788382852,-10.136081414356159,12
+recheck_seen_holdout,growth,growth,Общественное питание,6,90.20591596671382,-13.19837265376325,12
+recheck_seen_holdout,growth,growth,Общественное питание,12,74.97985521499513,-7.830637419624836,12
+recheck_seen_holdout,growth,growth,Продовольственные товары,1,64.84630699738818,0.863179925276249,12
+recheck_seen_holdout,growth,growth,Продовольственные товары,3,78.70870282611334,0.8081211592339145,12
+recheck_seen_holdout,growth,growth,Продовольственные товары,6,98.36453309494841,0.7293619681417174,12
+recheck_seen_holdout,growth,growth,Продовольственные товары,12,123.74030485654801,0.5997156914530155,12
+recheck_seen_holdout,growth,growth,Услуги,1,19.8007074442278,0.854215862609207,12
+recheck_seen_holdout,growth,growth,Услуги,3,24.195182527235374,0.7911474701925326,12
+recheck_seen_holdout,growth,growth,Услуги,6,28.508764992453013,0.7232313144176552,12
+recheck_seen_holdout,growth,growth,Услуги,12,30.630046803812434,0.63100185945446,12
+recheck_seen_holdout,hw_full,hw_full,Всего,1,217.51001792302372,0.7289291581544016,12
+recheck_seen_holdout,hw_full,hw_full,Всего,3,248.97383248355436,0.6178652819013053,12
+recheck_seen_holdout,hw_full,hw_full,Всего,6,332.55551752864625,0.4109035686527879,12
+recheck_seen_holdout,hw_full,hw_full,Всего,12,330.09262660142235,0.5264122707786809,12
+recheck_seen_holdout,hw_full,hw_full,Непродовольственные товары,1,113.62340286854794,0.7057069900999229,12
+recheck_seen_holdout,hw_full,hw_full,Непродовольственные товары,3,160.24054315404854,0.45765961587329673,12
+recheck_seen_holdout,hw_full,hw_full,Непродовольственные товары,6,169.44176276737298,0.2955902844209398,12
+recheck_seen_holdout,hw_full,hw_full,Непродовольственные товары,12,159.03839368035185,0.49651916633612425,12
+recheck_seen_holdout,hw_full,hw_full,Общественное питание,1,14.625617413172705,0.5949245470506332,12
+recheck_seen_holdout,hw_full,hw_full,Общественное питание,3,19.263056886700095,0.16706094084230427,12
+recheck_seen_holdout,hw_full,hw_full,Общественное питание,6,29.833754368188636,-1.126737078957078,12
+recheck_seen_holdout,hw_full,hw_full,Общественное питание,12,66.11647957117306,-7.44760338269807,12
+recheck_seen_holdout,hw_full,hw_full,Продовольственные товары,1,83.4208247934477,0.7789764822736154,12
+recheck_seen_holdout,hw_full,hw_full,Продовольственные товары,3,100.03422273730537,0.6949320590246628,12
+recheck_seen_holdout,hw_full,hw_full,Продовольственные товары,6,113.07540732747755,0.49597540573541943,12
+recheck_seen_holdout,hw_full,hw_full,Продовольственные товары,12,45.94157034993983,0.9286464648139605,12
+recheck_seen_holdout,hw_full,hw_full,Услуги,1,24.278434096779716,0.8089077583508257,12
+recheck_seen_holdout,hw_full,hw_full,Услуги,3,33.4569616687128,0.5051498963882561,12
+recheck_seen_holdout,hw_full,hw_full,Услуги,6,43.59908982154197,0.33073398595819714,12
+recheck_seen_holdout,hw_full,hw_full,Услуги,12,90.25281976199504,-1.0368910471340431,12
+recheck_seen_holdout,hw_w24,hw_w24,Всего,1,125.17292789539351,0.9028409169283527,12
+recheck_seen_holdout,hw_w24,hw_w24,Всего,3,122.84682884382217,0.8970050954563714,12
+recheck_seen_holdout,hw_w24,hw_w24,Всего,6,110.47385170550449,0.914096858951457,12
+recheck_seen_holdout,hw_w24,hw_w24,Всего,12,123.39541714158538,0.9120159855619285,12
+recheck_seen_holdout,hw_w24,hw_w24,Непродовольственные товары,1,92.93290939177393,0.8369238975946689,12
+recheck_seen_holdout,hw_w24,hw_w24,Непродовольственные товары,3,108.88831675555919,0.7754028370527126,12
+recheck_seen_holdout,hw_w24,hw_w24,Непродовольственные товары,6,109.33682594562053,0.7666677955082821,12
+recheck_seen_holdout,hw_w24,hw_w24,Непродовольственные товары,12,117.10566618744308,0.6835166541516782,12
+recheck_seen_holdout,hw_w24,hw_w24,Общественное питание,1,26.57954327147064,-1.0392109596281323,12
+recheck_seen_holdout,hw_w24,hw_w24,Общественное питание,3,31.822032559067907,-1.325928926474199,12
+recheck_seen_holdout,hw_w24,hw_w24,Общественное питание,6,42.69060458085439,-2.1897400724904963,12
+recheck_seen_holdout,hw_w24,hw_w24,Общественное питание,12,62.768134318742206,-6.101796777413668,12
+recheck_seen_holdout,hw_w24,hw_w24,Продовольственные товары,1,58.64259533387951,0.8670213787089212,12
+recheck_seen_holdout,hw_w24,hw_w24,Продовольственные товары,3,60.18591642436642,0.8540878616322681,12
+recheck_seen_holdout,hw_w24,hw_w24,Продовольственные товары,6,62.35685609521598,0.843543904699865,12
+recheck_seen_holdout,hw_w24,hw_w24,Продовольственные товары,12,60.459757204263234,0.8634286202772061,12
+recheck_seen_holdout,hw_w24,hw_w24,Услуги,1,16.620952041411613,0.9016379276153781,12
+recheck_seen_holdout,hw_w24,hw_w24,Услуги,3,17.54141724119499,0.8795171366540506,12
+recheck_seen_holdout,hw_w24,hw_w24,Услуги,6,18.07462340682677,0.879688320809066,12
+recheck_seen_holdout,hw_w24,hw_w24,Услуги,12,31.062498612070726,0.7120028117521371,12
+recheck_seen_holdout,hw_w36,hw_w36,Всего,1,145.09530034141622,0.8833646163813823,12
+recheck_seen_holdout,hw_w36,hw_w36,Всего,3,139.65674086668741,0.8803864353596547,12
+recheck_seen_holdout,hw_w36,hw_w36,Всего,6,130.02247701510973,0.8855167346565777,12
+recheck_seen_holdout,hw_w36,hw_w36,Всего,12,116.40649012031015,0.9245300133979305,12
+recheck_seen_holdout,hw_w36,hw_w36,Непродовольственные товары,1,108.99675876320968,0.7751217192421314,12
+recheck_seen_holdout,hw_w36,hw_w36,Непродовольственные товары,3,120.12884987183106,0.6946842717611001,12
+recheck_seen_holdout,hw_w36,hw_w36,Непродовольственные товары,6,106.03797156638639,0.7600066188017327,12
+recheck_seen_holdout,hw_w36,hw_w36,Непродовольственные товары,12,133.0850739842892,0.6164193609956746,12
+recheck_seen_holdout,hw_w36,hw_w36,Общественное питание,1,12.987765174023181,0.6350367387935313,12
+recheck_seen_holdout,hw_w36,hw_w36,Общественное питание,3,17.70616781663017,0.36254249437333375,12
+recheck_seen_holdout,hw_w36,hw_w36,Общественное питание,6,41.481583373954884,-2.5520659569869495,12
+recheck_seen_holdout,hw_w36,hw_w36,Общественное питание,12,88.03614243183439,-11.949489936304682,12
+recheck_seen_holdout,hw_w36,hw_w36,Продовольственные товары,1,59.80632367195195,0.8435407947360611,12
+recheck_seen_holdout,hw_w36,hw_w36,Продовольственные товары,3,65.95873522820284,0.8130021316965071,12
+recheck_seen_holdout,hw_w36,hw_w36,Продовольственные товары,6,75.91225956835217,0.7153919487866964,12
+recheck_seen_holdout,hw_w36,hw_w36,Продовольственные товары,12,55.04356981156741,0.8585774378887001,12
+recheck_seen_holdout,hw_w36,hw_w36,Услуги,1,19.07569692996348,0.8785747605498089,12
+recheck_seen_holdout,hw_w36,hw_w36,Услуги,3,20.680448262394616,0.8431627888574604,12
+recheck_seen_holdout,hw_w36,hw_w36,Услуги,6,21.23665205521803,0.8578456253766353,12
+recheck_seen_holdout,hw_w36,hw_w36,Услуги,12,29.47632160657177,0.7283712348950333,12
+recheck_seen_holdout,hw_w48,hw_w48,Всего,1,143.71758845888385,0.8757297507949278,12
+recheck_seen_holdout,hw_w48,hw_w48,Всего,3,163.17393986572665,0.8553923504573889,12
+recheck_seen_holdout,hw_w48,hw_w48,Всего,6,222.5179205107338,0.7013284441576427,12
+recheck_seen_holdout,hw_w48,hw_w48,Всего,12,131.5384746102794,0.9048377228580659,12
+recheck_seen_holdout,hw_w48,hw_w48,Непродовольственные товары,1,105.01317415561932,0.7222388696874442,12
+recheck_seen_holdout,hw_w48,hw_w48,Непродовольственные товары,3,118.36085521999958,0.6981961805716226,12
+recheck_seen_holdout,hw_w48,hw_w48,Непродовольственные товары,6,131.60156753556558,0.6589993029962402,12
+recheck_seen_holdout,hw_w48,hw_w48,Непродовольственные товары,12,130.15175078281712,0.6733411113418137,12
+recheck_seen_holdout,hw_w48,hw_w48,Общественное питание,1,13.502798636901352,0.636124386541485,12
+recheck_seen_holdout,hw_w48,hw_w48,Общественное питание,3,16.19244946172243,0.4189179183863758,12
+recheck_seen_holdout,hw_w48,hw_w48,Общественное питание,6,42.77443143998937,-2.8199052178436848,12
+recheck_seen_holdout,hw_w48,hw_w48,Общественное питание,12,90.55708414410485,-12.89959187560551,12
+recheck_seen_holdout,hw_w48,hw_w48,Продовольственные товары,1,58.709441981524,0.8720988558588513,12
+recheck_seen_holdout,hw_w48,hw_w48,Продовольственные товары,3,79.84949240996748,0.7789725968535024,12
+recheck_seen_holdout,hw_w48,hw_w48,Продовольственные товары,6,95.20987267446735,0.56658087586376,12
+recheck_seen_holdout,hw_w48,hw_w48,Продовольственные товары,12,38.56748916620942,0.9445907338491683,12
+recheck_seen_holdout,hw_w48,hw_w48,Услуги,1,17.389846733832428,0.895412198328849,12
+recheck_seen_holdout,hw_w48,hw_w48,Услуги,3,17.72033120100819,0.8697906211984847,12
+recheck_seen_holdout,hw_w48,hw_w48,Услуги,6,13.622565706040575,0.9383770275920286,12
+recheck_seen_holdout,hw_w48,hw_w48,Услуги,12,30.240974354510417,0.7027352626716818,12

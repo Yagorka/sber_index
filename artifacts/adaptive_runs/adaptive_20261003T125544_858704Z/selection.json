@@ -1,0 +1,82 @@
+{
+  "selected_on_development_validation": "CalibratedStatic_bottom_up",
+  "expert_ids_selected_on_calibration": [
+    "cb_decay12",
+    "hw_w48",
+    "forest",
+    "growth"
+  ],
+  "static_weights": {
+    "1": {
+      "cb_decay12": 0.2159335814590904,
+      "hw_w48": 0.42205201021556826,
+      "forest": 0.20907136557785724,
+      "growth": 0.15294304274748396
+    },
+    "3": {
+      "cb_decay12": 0.2597048487358205,
+      "hw_w48": 0.3176793113272833,
+      "forest": 0.2341088955267296,
+      "growth": 0.1885069444101666
+    },
+    "6": {
+      "cb_decay12": 0.2675000771404368,
+      "hw_w48": 0.27982862924573904,
+      "forest": 0.2558178005675125,
+      "growth": 0.1968534930463116
+    },
+    "12": {
+      "cb_decay12": 0.2778221918308195,
+      "hw_w48": 0.2458928116612811,
+      "forest": 0.24227189850789915,
+      "growth": 0.2340130980000001
+    }
+  },
+  "reconciliation_parent": "CalibratedStatic",
+  "calibration_maximum_target_index": 62,
+  "validation_start_origin_index": 63,
+  "detector_selection": {
+    "CUSUM": {
+      "method": "CUSUM",
+      "threshold": 8,
+      "event_precision": 0.0958904109589041,
+      "event_recall": 0.7,
+      "event_f1": 0.1686746987951807,
+      "median_delay_steps": 7.0,
+      "false_alarms_per_100_steps": 4.888888888888889,
+      "n_events": 40,
+      "n_alarms": 292,
+      "real_calibration_alarm_rate": 3.7037037037037033,
+      "within_alarm_budget": "False"
+    },
+    "PageHinkley": {
+      "method": "PageHinkley",
+      "threshold": 12,
+      "event_precision": 0.2926829268292683,
+      "event_recall": 0.6,
+      "event_f1": 0.39344262295081966,
+      "median_delay_steps": 6.0,
+      "false_alarms_per_100_steps": 1.0740740740740742,
+      "n_events": 40,
+      "n_alarms": 82,
+      "real_calibration_alarm_rate": 2.9629629629629632,
+      "within_alarm_budget": "True"
+    },
+    "BOCPD": {
+      "method": "BOCPD",
+      "threshold": 0.5,
+      "event_precision": 0.3333333333333333,
+      "event_recall": 0.4,
+      "event_f1": 0.3636363636363636,
+      "median_delay_steps": 1.5,
+      "false_alarms_per_100_steps": 0.5925925925925926,
+      "n_events": 40,
+      "n_alarms": 48,
+      "real_calibration_alarm_rate": 0.7407407407407408,
+      "within_alarm_budget": "True"
+    }
+  },
+  "frozen_at": "2026-10-03T12:58:08.028494+00:00",
+  "holdout_status": "previously_viewed_recheck_not_independent",
+  "independent_real_future_test_available": false
+}

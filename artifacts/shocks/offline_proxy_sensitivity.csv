@@ -1,0 +1,10 @@
+penalty_multiplier,method,n_proxy_events,n_alarms,precision,recall,f1,median_delay_months,evaluation
+2,CUSUM,437,325,0.018461538461538463,0.013729977116704805,0.015748031496062992,2.5,offline_heuristic_labels_not_verified_shocks
+2,PageHinkley,437,489,0.2085889570552147,0.2334096109839817,0.2203023758099352,2.0,offline_heuristic_labels_not_verified_shocks
+2,BOCPD,437,356,0.6769662921348315,0.551487414187643,0.6078184110970997,1.0,offline_heuristic_labels_not_verified_shocks
+4,CUSUM,210,325,0.015384615384615385,0.023809523809523808,0.018691588785046728,2.0,offline_heuristic_labels_not_verified_shocks
+4,PageHinkley,210,489,0.130879345603272,0.3047619047619048,0.18311874105865525,2.0,offline_heuristic_labels_not_verified_shocks
+4,BOCPD,210,356,0.4157303370786517,0.7047619047619048,0.5229681978798587,1.0,offline_heuristic_labels_not_verified_shocks
+8,CUSUM,95,325,0.006153846153846154,0.021052631578947368,0.009523809523809525,3.0,offline_heuristic_labels_not_verified_shocks
+8,PageHinkley,95,489,0.12474437627811862,0.6421052631578947,0.2089041095890411,2.0,offline_heuristic_labels_not_verified_shocks
+8,BOCPD,95,356,0.22752808988764045,0.8526315789473684,0.3592017738359202,1.0,offline_heuristic_labels_not_verified_shocks

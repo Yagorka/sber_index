@@ -1,0 +1,15 @@
+event_id,pattern,matched_territories,territory_ids,t_event,evaluable
+EV01,Орск,1,1673,15,True
+EV01,Оренбург,1,1665,15,True
+EV01,Новотроицк,1,1672,15,True
+EV01,Курган,0,,15,True
+EV01,Тобольск,0,,15,True
+EV02,Уссурийск,1,785,7,False
+EV02,Спасск-Дальний,1,784,7,False
+EV03,Суджанский,0,,19,True
+EV03,Курск,0,,19,True
+EV04,Белгород,0,,11,True
+EV05,Красногорск,1,1459,14,True
+EV06,Дербент,0,,17,True
+EV06,Махачкала,0,,17,True
+EV07,Севастополь,0,,17,True

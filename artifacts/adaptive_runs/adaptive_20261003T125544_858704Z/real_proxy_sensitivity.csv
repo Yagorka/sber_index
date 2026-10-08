@@ -1,0 +1,10 @@
+method,penalty_multiplier,n_proxy_events,n_alarms,proxy_precision,proxy_recall,proxy_f1,median_delay_months,evaluation
+CUSUM,1,1,4,0.0,0.0,0.0,,offline_heuristic_labels_not_verified_shocks
+PageHinkley,1,1,6,0.0,0.0,0.0,,offline_heuristic_labels_not_verified_shocks
+BOCPD,1,1,2,0.0,0.0,0.0,,offline_heuristic_labels_not_verified_shocks
+CUSUM,2,0,4,0.0,0.0,0.0,,offline_heuristic_labels_not_verified_shocks
+PageHinkley,2,0,6,0.0,0.0,0.0,,offline_heuristic_labels_not_verified_shocks
+BOCPD,2,0,2,0.0,0.0,0.0,,offline_heuristic_labels_not_verified_shocks
+CUSUM,4,0,4,0.0,0.0,0.0,,offline_heuristic_labels_not_verified_shocks
+PageHinkley,4,0,6,0.0,0.0,0.0,,offline_heuristic_labels_not_verified_shocks
+BOCPD,4,0,2,0.0,0.0,0.0,,offline_heuristic_labels_not_verified_shocks
