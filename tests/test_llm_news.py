@@ -110,3 +110,29 @@ def test_zero_baseline_is_not_used_in_log_training_and_remains_zero():
     assert np.isfinite(predictions['llm', 100, .1]).all()
     assert not predictions['llm', 100, .1][:, :, 0].any()
     assert any(row['excluded_nonpositive_training_forecasts'] > 0 for row in audits)
+
+
+def test_exponential_decay_halves_weight_and_keeps_unknown_separate():
+    p = panel()
+    cutoff = pd.Timestamp('2024-03-01', tz='Europe/Moscow')
+    publication = cutoff-pd.Timedelta(days=30)
+    row = record(historical_available_at=publication.isoformat())
+    features, _ = aggregate_features(p, pd.DataFrame([row]), half_life_days=30)
+    assert np.expm1(features[1, 1, 2]) == pytest.approx(.5)
+    assert features[1, 1, 3] == 1
+    assert features[1, 1, 13] == 0
+    future = record(duplicate_key='future', historical_available_at='2024-04-01T00:00:00+03:00')
+    combined, _ = aggregate_features(p, pd.DataFrame([row, future]), half_life_days=30)
+    np.testing.assert_array_equal(features[:3], combined[:3])
+
+
+def test_economic_filter_and_crisis_option_are_explicit():
+    from src.llm_news import economic_filter
+    rows = pd.DataFrame([record(category_mask=0, price_direction=9, topics=''),
+                         record(category_mask=0, price_direction=9, topics='', shock=1),
+                         record(category_mask=0, price_direction=9, topics='income_jobs')])
+    assert economic_filter(rows).tolist() == [False, False, True]
+    assert economic_filter(rows, retain_shocks=True).tolist() == [False, True, True]
+    features, _ = aggregate_features(panel(), rows.iloc[[1]], economic_only=True, retain_shocks=True)
+    assert features[1, 0, 2] > 0
+    assert features[1, 1, 2] == 0

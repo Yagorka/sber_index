@@ -1,0 +1,21 @@
+{
+  "region_code": 44,
+  "source_name": "Кострома.Today",
+  "endpoint": "https://kostroma.today/index.php",
+  "period_start": "2023-01-01",
+  "period_end": "2024-12-31",
+  "geography_config": "configs/news_kostroma.json",
+  "previous_news_file": null,
+  "output_file": "data/inputs/news_kostroma.csv",
+  "coverage_file": "data/inputs/news_kostroma_monthly.csv",
+  "archive_audit_file": "data/inputs/news_kostroma_archive_audit.csv",
+  "source_summary_file": "data/inputs/news_kostroma_source_summary.csv",
+  "manifest_file": "data/inputs/news_kostroma_manifest.json",
+  "cache_directory": "data/inputs/news_kostroma_archive_cache",
+  "per_page": 100,
+  "max_pages_per_month": 30,
+  "request_pause_seconds": 0.6,
+  "timeout_seconds": 30,
+  "workers": 1,
+  "feature_policy": "title_only_multi_topic_rules_and_direction_flags; no_test_fit; unknown_geography_excluded_from_thematic_features"
+}

@@ -79,3 +79,15 @@ llm-news:
 
 llm-news-evaluate:
 	OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 $(PY) scripts/evaluate_llm_news.py
+
+.PHONY: news-transfer-collect news-transfer-annotate news-decay
+news-transfer-collect:
+	$(PY) scripts/collect_transfer_news.py --config configs/news_archive_nizhny.json
+	$(PY) scripts/collect_news_archive.py --config configs/news_archive_kostroma.json
+
+news-transfer-annotate:
+	$(PY) scripts/annotate_llm_news.py --config configs/llm_news_nizhny.json
+	$(PY) scripts/annotate_llm_news.py --config configs/llm_news_kostroma.json
+
+news-decay:
+	OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 $(PY) scripts/evaluate_news_decay.py

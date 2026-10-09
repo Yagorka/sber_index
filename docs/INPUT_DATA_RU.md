@@ -70,3 +70,17 @@ python scripts/verify_research.py                       # целостность
 `bash scripts/get_data.sh` оставлен для совместимости и тоже только проверяет локальные файлы. Автоматическое скачивание исходных таблиц удалено. `make foundation` отдельно может загружать веса моделей, если их нет в локальном кеше; для проверки входов он не нужен.
 
 Старые манифесты запусков сохранены с первоначальными путями и хешами. `configs/input_migration.json` связывает старые пути с новыми; проверка целостности учитывает перенос. Контрольные суммы всех 23 перенесённых файлов совпали до и после переноса. Локальная квитанция переноса находится в `data/inputs/migration_manifest.json` и тоже исключена из Git.
+
+
+## Необязательный эксперимент: экономические новости и затухание
+
+Новостные входы и ответы LLM остаются в `data/inputs/`, вне Git. Они нужны для повторного обучения новостных поправок, а итоговые метрики и графики доступны без них в [отчёте](NEWS_DECAY_TRANSFER_RU.md).
+
+| Файлы/каталоги | Назначение и восстановление |
+|---|---|
+| `news_nizhny.csv`, `news_nizhny_manifest.json`, `news_nizhny_archive_audit.csv`, `news_nizhny_monthly.csv` | Публичный архив НИА Нижний Новгород: `python scripts/collect_transfer_news.py`; кеш `news_nizhny_archive_cache/`, повторная обработка с `--offline` |
+| `news_kostroma.csv`, `news_kostroma_manifest.json`, `news_kostroma_archive_audit.csv`, `news_kostroma_monthly.csv` | Архив Кострома.Today: `python scripts/collect_news_archive.py --config configs/news_archive_kostroma.json`; кеш `news_kostroma_archive_cache/`, повторная обработка с `--offline` |
+| `llm_news_nizhny/pilot/`, `llm_news_kostroma/pilot/` | Разметка: `python scripts/annotate_llm_news.py --config configs/llm_news_nizhny.json` и аналогично `configs/llm_news_kostroma.json`; сервер из конфигурации должен быть доступен |
+| `llm_news/pilot/` | Уже полученная Оренбургская разметка: `python scripts/annotate_llm_news.py` |
+
+В каталогах разметки сохраняются selected_news.csv, annotated_news.csv, labels.jsonl, сырые ответы, manifest.json и progress.json. Кеш возобновляет обработку только при совпадении prompt/model signature; современная LLM и текущий архив не гарантируют побитового повторения старой разметки. SHA256 исходного корпуса и готовых ответов зафиксированы в манифестах эксперимента. Недатированные объекты архива не получают выдуманную дату и не входят в признаки.

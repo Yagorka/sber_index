@@ -1,0 +1,17 @@
+{
+  "articles": 21979,
+  "csv_sha256": "0b067249fd1d6f784de642e13f34392c21bc118ba14c1726a1e55e8997798d06",
+  "config_sha256": "86497e90c7940441e20d12c84af1785fe1a339f106e193104e879a7695770af4",
+  "collected_at": "2026-10-08T15:48:51.641187+00:00",
+  "all_regional_news_complete": false,
+  "code_sha256": {
+    "scripts/collect_transfer_news.py": "920dcf403426abd5b02b451a7303cff9c11f6034796ce0db668618764ae1d5ad",
+    "src/news_collection.py": "0a2e4ef75b3bce69a4c6a3df5ebbf024189f153496809729e1b7d9d0bb5f91f4"
+  },
+  "source": "НИА Нижний Новгород",
+  "complete_archive_periods": 105,
+  "period_kind": "weeks",
+  "excluded_undated_objects": 27,
+  "period_start": "2023-01-01",
+  "period_end": "2024-12-31"
+}

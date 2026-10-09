@@ -223,11 +223,13 @@ def main():
         raise SystemExit('Нет новых записей; существующий корпус сохранён')
     additional = pd.DataFrame(rows).drop_duplicates('url').sort_values('published_at')
     # Исходный корпус МЧС сохраняется отдельно и включается в объединённый CSV.
-    old = pd.read_csv(ROOT / cfg['previous_news_file'], dtype={'territory_ids': 'string'})
-    old_tags = old.title.map(title_tags)
-    old['topics'] = old_tags.map(lambda x: ';'.join(x[0]))
-    for fact in old_tags.iloc[0][1]:
-        old[fact] = old_tags.map(lambda x: x[1][fact])
+    old = pd.DataFrame()
+    if cfg.get('previous_news_file'):
+        old = pd.read_csv(ROOT / cfg['previous_news_file'], dtype={'territory_ids': 'string'})
+        old_tags = old.title.map(title_tags)
+        old['topics'] = old_tags.map(lambda x: ';'.join(x[0]))
+        for fact in old_tags.iloc[0][1]:
+            old[fact] = old_tags.map(lambda x: x[1][fact])
     combined = pd.concat([old, additional], ignore_index=True).drop_duplicates('url').drop_duplicates('duplicate_key').sort_values('published_at')
     combined.to_csv(ROOT / cfg['output_file'], index=False)
     monthly_counts(combined, cfg['period_start'], cfg['period_end']).to_csv(ROOT / cfg['coverage_file'], index=False)
@@ -246,7 +248,8 @@ def main():
                 'code_sha256': {name: hashlib.sha256((ROOT / name).read_bytes()).hexdigest()
                                 for name in ['scripts/collect_news_archive.py', 'src/news_collection.py']}}
     (ROOT / cfg['manifest_file']).write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n')
-    collection_report(cfg, combined, audit_frame, manifest)
+    if cfg['region_code'] == 56:
+        collection_report(cfg, combined, audit_frame, manifest)
     print(f'Сохранено {len(combined)} заголовков; новый источник {len(additional)}; полных месяцев архива {manifest["complete_archive_months"]}/{len(audit)}', flush=True)
     if not audit_frame.archive_pagination_complete.all():
         raise SystemExit('Часть страниц не получена. Сохранена частичная выборка; повторный запуск продолжит по кешу.')

@@ -1,0 +1,2 @@
+base_model,variant,h,comparator,mae_difference,ci_low,ci_high,months,region
+SeasonalNaive_NatGrowth,selected_news,3,economic_coverage_decay_14d,-3.5723892999002174,-7.542357280789857,-0.1460481721885974,6,Нижегородская область

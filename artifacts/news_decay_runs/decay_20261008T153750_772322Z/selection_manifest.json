@@ -1,0 +1,13 @@
+{
+  "selection_region": 56,
+  "selection_targets": "2024-01..2024-06",
+  "frozen_at_utc": "2026-10-08T15:38:45.384321+00:00",
+  "frozen_selection_sha256": "252cb0eef9cb55712adf9e57948046539513075c21b05cf2c530a6f8be81b7e0",
+  "frozen_representations_sha256": "93010371b0564cd86515442e1ef7ba5b43e0a43499e38338057a34343cc91c02",
+  "transfer_regions": [
+    52,
+    44
+  ],
+  "transfer_refits_mature_residual_coefficients": true,
+  "transfer_retunes_hyperparameters": false
+}

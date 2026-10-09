@@ -1,0 +1,30 @@
+{
+  "region_code": 52,
+  "region_name": "Нижегородская область",
+  "series": 300,
+  "municipalities": 50,
+  "articles": 1200,
+  "unique_titles": 1198,
+  "economic_articles": 601,
+  "economic_and_shock_articles": 638,
+  "annotation_sha256": "4402325424c6933b61feef941117a45670a2457869b0158443d2fcbc0c5d9e7a",
+  "annotation_manifest_sha256": "4c0506b51b5ea5cdde1277564c70ed93a76501eb254eb592d6feca6da685157a",
+  "code_sha256": {
+    "scripts/evaluate_news_decay.py": "2363a9a32a1a885112b174c3b5b49ee3b49137228b37a2af137c365ba9e55a42",
+    "scripts/evaluate_llm_news.py": "6fdd9e41eb93377891748b51f3423b30478856837cd955a727edd59bd120f94d",
+    "src/llm_news.py": "672346903c89f5e8c789059647fa3f0bec995ff54d12e862fc24dc521da3f5df"
+  },
+  "selected_before_region_scoring": true,
+  "tuning_region": 56,
+  "cached_prediction_sha256": {
+    "artifacts/municipal_runs/municipal_20261004T140239Z/pred_Ensemble.npy": "babd1e207652fedef98ab9b292f0547f1806b2b68b03376feb9fad4ad57646b2",
+    "artifacts/research_runs/research_20261007T073840_163667Z/pred_PastOnlyBlend.npy": "f6b2cac8dbbc511667f270a6327275e60d98c563914ba3e3ece1e3fad88620fd",
+    "artifacts/municipal_runs/municipal_20261004T140239Z/pred_Prophet.npy": "c4d8fd9090165f50d7e9274aa73cb3726c2bac9de2ad1aca29267745df3f565e",
+    "artifacts/municipal_runs/municipal_20261004T140239Z/pred_SeasonalNaive_NatGrowth.npy": "fbeaa03367975229094407992006c009340a78f6bc93613b00acfaf72b3ceaed",
+    "artifacts/municipal_runs/municipal_20261004T140239Z/pred_NatPath_K3.npy": "4d2b5f01901402933f9d968c4e54749c4d0ebeed2c269a2d13a2b0d7c0d8f780",
+    "artifacts/municipal_runs/municipal_20261004T140239Z/pred_NatPath_K1.npy": "b24e92f23415d7def9bb41d1c474c929e0633f160e85e4aa4ffe9d3dff8cb7cd",
+    "artifacts/municipal_runs/municipal_20261004T140239Z/pred_StructHGB.npy": "d43b32d68a568e28fe3b24d890884c88a952d77cdedccc5456c6cdb46f702e88",
+    "artifacts/municipal_runs/municipal_20261004T140239Z/pred_Chronos2_NatCov.npy": "3c27f985e6ceea8a0b6c3644f1b52debfdb681ed2a6f928d2ec064e55fae9499"
+  },
+  "source_hyperparameters_applied_unchanged": true
+}

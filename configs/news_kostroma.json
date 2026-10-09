@@ -1,0 +1,14 @@
+{
+  "region_code": 44,
+  "region_name": "Костромская область",
+  "region_title_pattern": "\\bКостром\\w*",
+  "territory_aliases": {
+    "Кострома": "\\bКостром(?:а|е|у|ой)\\b",
+    "Буй": "\\bБу(?:й|я|е|ем)\\b",
+    "Волгореченск": "\\bВолгореченск(?:а|е|ом)?\\b",
+    "Галич": "\\bГалич(?:а|е|ем)?\\b",
+    "Мантурово": "\\bМантуров(?:о|е|а)\\b",
+    "Шарья": "\\bШарь(?:я|е|ю|и)\\b"
+  },
+  "selection_reason": "third region fixed before forecast scoring; accessible complete dated WordPress archive; no selection by forecast results"
+}

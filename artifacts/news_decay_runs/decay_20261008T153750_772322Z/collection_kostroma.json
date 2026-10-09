@@ -1,0 +1,24 @@
+{
+  "articles": 11705,
+  "csv_sha256": "e988dda15205975a382b8b657c0d0b400fd40f15e9859e0dc8bde605dd2133a3",
+  "config_sha256": "81a8091754919aea161b37ed1dd83f26d01e6a4bddf896c38dfd03f17cc8c1b4",
+  "collected_at": "2026-10-08T15:34:00.513591+00:00",
+  "all_regional_news_complete": false,
+  "code_sha256": {
+    "scripts/collect_news_archive.py": "d187229391052fb3c926574936d3d655ed6fef3f2416b4132b496bcada651a42",
+    "src/news_collection.py": "0a2e4ef75b3bce69a4c6a3df5ebbf024189f153496809729e1b7d9d0bb5f91f4"
+  },
+  "source": [
+    {
+      "source": "Кострома.Today",
+      "articles": 11705,
+      "first_publication": "2023-01-01T07:30:38+03:00",
+      "last_publication": "2024-12-31T19:20:42+03:00"
+    }
+  ],
+  "complete_archive_periods": 24,
+  "period_kind": "months",
+  "excluded_undated_objects": 0,
+  "period_start": "2023-01-01",
+  "period_end": "2024-12-31"
+}

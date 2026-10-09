@@ -77,3 +77,8 @@ report/regional_news_impact.html
 artifacts/llm_news_runs/*/predictions.csv
 artifacts/llm_news_runs/*/
 !artifacts/llm_news_runs/llm_20261008T151443_476526Z/
+
+# Economic decay experiments: retain only the accepted run and aggregate results.
+artifacts/news_decay_runs/*/
+artifacts/news_decay_runs/*/*/predictions.csv
+!artifacts/news_decay_runs/decay_20261008T153750_772322Z/

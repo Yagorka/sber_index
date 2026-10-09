@@ -1,0 +1,16 @@
+{
+  "region_code": 52,
+  "source_name": "НИА Нижний Новгород",
+  "endpoint": "https://www.niann.ru/",
+  "period_start": "2023-01-01",
+  "period_end": "2024-12-31",
+  "geography_config": "configs/news_nizhny.json",
+  "request_pause_seconds": 0.6,
+  "timeout_seconds": 30,
+  "max_pages_per_week": 12,
+  "output_file": "data/inputs/news_nizhny.csv",
+  "coverage_file": "data/inputs/news_nizhny_monthly.csv",
+  "archive_audit_file": "data/inputs/news_nizhny_archive_audit.csv",
+  "manifest_file": "data/inputs/news_nizhny_manifest.json",
+  "cache_directory": "data/inputs/news_nizhny_archive_cache"
+}

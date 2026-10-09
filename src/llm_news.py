@@ -107,7 +107,21 @@ def _territories(value):
     return result
 
 
-def aggregate_features(panel, records, delay_months=0):
+def economic_filter(records, retain_shocks=False):
+    """Fixed headline-only economic policy; crisis events are an explicit option."""
+    topics = records.get('topics', pd.Series('', index=records.index)).fillna('')
+    economic_topic = topics.str.contains(
+        r'(?:^|;)(?:prices|income_jobs|payments_support|retail_services|business_industry|transport_housing)(?:;|$)',
+        regex=True)
+    direction = records[['price_direction', 'income_direction', 'business_direction']].ne(9).any(axis=1)
+    mask = records.economic_relevance.eq(1) & (economic_topic | direction | records.category_mask.gt(0))
+    if retain_shocks:
+        mask |= records.economic_relevance.eq(1) & records.shock.eq(1)
+    return mask
+
+
+def aggregate_features(panel, records, delay_months=0, economic_only=False,
+                       half_life_days=None, retain_shocks=False):
     """(T,S,K), срезы только по publication cutoff; география из проверенного справочника.
 
     Сентимент и направления считаются среди экономических новостей, совпадающих
@@ -115,18 +129,26 @@ def aggregate_features(panel, records, delay_months=0):
     Обратные вероятности выборки оценивают интенсивность, не полноту корпуса.
     """
     rows = records.copy().drop_duplicates('duplicate_key')
+    if economic_only:
+        rows = rows[economic_filter(rows, retain_shocks)].copy()
+    if half_life_days is not None and half_life_days <= 0:
+        raise ValueError('half_life_days must be positive')
     rows['_available'] = pd.to_datetime(rows.historical_available_at, utc=True).dt.tz_convert('Europe/Moscow')
     if delay_months:
         rows['_available'] = rows['_available'].map(lambda d: d + pd.DateOffset(months=delay_months))
-    out = np.zeros((panel.n_months, panel.n_series, len(feature_names())))
+    windows = (1, 3) if half_life_days is None else (None,)
+    out = np.zeros((panel.n_months, panel.n_series, len(BASE_FEATURES)*len(windows)))
     ids = panel.meta.territory_id.to_numpy()
     codes = panel.category_code
     audits = []
     for origin in range(panel.n_months):
         end = (panel.months[origin] + pd.offsets.MonthBegin(1)).tz_localize('Europe/Moscow')
-        for wi, window in enumerate((1, 3)):
-            start = panel.months[max(0, origin-window+1)].tz_localize('Europe/Moscow')
-            known = rows[(rows._available >= start) & (rows._available < end)]
+        for wi, window in enumerate(windows):
+            start = panel.months[0 if window is None else max(0, origin-window+1)].tz_localize('Europe/Moscow')
+            known = rows[(rows._available >= start) & (rows._available < end)].copy()
+            if half_life_days is not None:
+                age = (end-known._available).dt.total_seconds()/86400
+                known['sampling_weight'] *= np.exp2(-age/half_life_days)
             total = known.sampling_weight.sum()
             block = out[origin, :, wi*len(BASE_FEATURES):(wi+1)*len(BASE_FEATURES)]
             block[:, 0] = np.log1p(total)
@@ -140,7 +162,7 @@ def aggregate_features(panel, records, delay_months=0):
                     continue
                 hit_geo = np.isin(ids, territories) if territories else np.ones(panel.n_series, dtype=bool)
                 economic_by_geo[hit_geo] += row.sampling_weight
-                if row.category_mask == 0:
+                if row.category_mask == 0 and not (retain_shocks and row.shock == 1):
                     continue
                 hit_cat = (codes == 0) | ((row.category_mask & (1 << codes)) > 0)
                 # Generic income news (bit 1) applies only to the aggregate, not every category.
@@ -152,13 +174,14 @@ def aggregate_features(panel, records, delay_months=0):
                           row.business_direction == 1, row.business_direction == -1, row.business_direction != 9,
                           row.shock == 1]
                 sums[hit] += row.sampling_weight * np.array(values)
-            den = np.maximum(sums[:, 0], 1)
+            den = np.maximum(sums[:, 0], 1e-12 if half_life_days is not None else 1)
             block[:, 1] = economic_by_geo / total if total else 0.
             block[:, 2] = np.log1p(sums[:, 0])
             block[:, 3:] = sums[:, 1:] / den[:, None]
             sentiment_den = sums[:, 0] - sums[:, 4] - sums[:, 3]
-            block[:, 7] = sums[:, 5] / np.maximum(sentiment_den, 1)
+            block[:, 7] = sums[:, 5] / np.maximum(sentiment_den, 1e-12 if half_life_days is not None else 1)
             audits.append({'origin': origin, 'window_months': window, 'annotated_articles': len(known),
                            'latest_available_at': known._available.max(), 'cutoff_exclusive': end,
-                           'delay_months': delay_months})
+                           'delay_months': delay_months, 'economic_only': economic_only,
+                           'half_life_days': half_life_days, 'retain_shocks': retain_shocks})
     return out, pd.DataFrame(audits)

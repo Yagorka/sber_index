@@ -111,7 +111,9 @@ def metadata_record(raw, dictionary, config, fetched_at):
             'operational_available_at': max(pd.Timestamp(published), pd.Timestamp(fetched_at)).isoformat(),
             'availability_status': 'historical_publication_assumption_without_vintages',
             'region_code': config['region_code'], 'region_name': config['region_name'],
-            'event_region_confirmed_in_title': bool(ids or re.search(r'Оренбур', raw['title'], re.IGNORECASE)),
+            'event_region_confirmed_in_title': bool(ids or re.search(
+                config.get('region_title_pattern', r'Оренбур' if config['region_code'] == 56 else re.escape(config['region_name'])),
+                raw['title'], re.IGNORECASE)),
             'geo_time_resolution': 'annual_dictionary_version',
             'territory_ids': ';'.join(map(str, ids)),
             'geo_status': 'ambiguous_or_unresolved' if unresolved else ('matched_title_alias' if ids else 'region_source_only'),

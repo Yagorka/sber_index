@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "checks": {
+    "complete_annotation": true,
+    "past_only_news": true,
+    "mature_training_targets": true,
+    "finite_features": true,
+    "full_prediction_coverage": true,
+    "transfer_selection_unchanged": true,
+    "selection_matches_source": true
+  }
+}

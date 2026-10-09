@@ -1,0 +1,30 @@
+{
+  "articles": 28900,
+  "csv_sha256": "808375abf29bb8d47ffd74b5583cf80993cebfee8515e97926a8f6cdbafb9ab1",
+  "config_sha256": "56f959332af570287b56d4f467e87072313a4dcd60f89d69d955174ed15f386f",
+  "collected_at": "2026-10-07T17:17:32.741055+00:00",
+  "all_regional_news_complete": false,
+  "code_sha256": {
+    "scripts/collect_news_archive.py": "5c401639e2f89d6464e5d5f58b13d7dbea1b839c2f7e4b82bce2e77340d723e7",
+    "src/news_collection.py": "e768c47c2f403460fc9808581854c49cb9d954e5e1cc6309c22342bf79d99f6e"
+  },
+  "source": [
+    {
+      "source": "ГУ МЧС России по Оренбургской области",
+      "articles": 53,
+      "first_publication": "2023-01-10T08:41:00+03:00",
+      "last_publication": "2024-12-27T07:30:00+03:00"
+    },
+    {
+      "source": "Оренбург Медиа",
+      "articles": 28847,
+      "first_publication": "2023-01-01T06:20:44+03:00",
+      "last_publication": "2024-12-31T15:35:10+03:00"
+    }
+  ],
+  "complete_archive_periods": 24,
+  "period_kind": "months",
+  "excluded_undated_objects": 0,
+  "period_start": "2023-01-01",
+  "period_end": "2024-12-31"
+}

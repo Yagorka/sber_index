@@ -1,0 +1,25 @@
+{
+  "region_code": 56,
+  "region_name": "Оренбургская область",
+  "series": 234,
+  "municipalities": 39,
+  "articles": 1200,
+  "unique_titles": 1189,
+  "economic_articles": 383,
+  "economic_and_shock_articles": 509,
+  "annotation_sha256": "f47815577eac1e43ae944d47a2d0315195ebde1a8815b42b3b6a93f3554617b0",
+  "annotation_manifest_sha256": "f9ea8f82963f4ff09af9df6be34948bc765db02f5a35531568bc659b16a010a2",
+  "selected_before_region_scoring": true,
+  "tuning_region": 56,
+  "cached_prediction_sha256": {
+    "artifacts/municipal_runs/municipal_20261004T140239Z/pred_Ensemble.npy": "babd1e207652fedef98ab9b292f0547f1806b2b68b03376feb9fad4ad57646b2",
+    "artifacts/research_runs/research_20261007T073840_163667Z/pred_PastOnlyBlend.npy": "f6b2cac8dbbc511667f270a6327275e60d98c563914ba3e3ece1e3fad88620fd",
+    "artifacts/municipal_runs/municipal_20261004T140239Z/pred_Prophet.npy": "c4d8fd9090165f50d7e9274aa73cb3726c2bac9de2ad1aca29267745df3f565e",
+    "artifacts/municipal_runs/municipal_20261004T140239Z/pred_SeasonalNaive_NatGrowth.npy": "fbeaa03367975229094407992006c009340a78f6bc93613b00acfaf72b3ceaed",
+    "artifacts/municipal_runs/municipal_20261004T140239Z/pred_NatPath_K3.npy": "4d2b5f01901402933f9d968c4e54749c4d0ebeed2c269a2d13a2b0d7c0d8f780",
+    "artifacts/municipal_runs/municipal_20261004T140239Z/pred_NatPath_K1.npy": "b24e92f23415d7def9bb41d1c474c929e0633f160e85e4aa4ffe9d3dff8cb7cd",
+    "artifacts/municipal_runs/municipal_20261004T140239Z/pred_StructHGB.npy": "d43b32d68a568e28fe3b24d890884c88a952d77cdedccc5456c6cdb46f702e88",
+    "artifacts/municipal_runs/municipal_20261004T140239Z/pred_Chronos2_NatCov.npy": "3c27f985e6ceea8a0b6c3644f1b52debfdb681ed2a6f928d2ec064e55fae9499"
+  },
+  "source_hyperparameters_applied_unchanged": false
+}

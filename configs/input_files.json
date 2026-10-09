@@ -193,17 +193,23 @@
     {
       "name": "news_orenburg_multisource.csv",
       "description": "МЧС и архив Оренбург Медиа: заголовки, 10 тем, направления, география и доступность",
-      "required_for": ["regional_news"]
+      "required_for": [
+        "regional_news"
+      ]
     },
     {
       "name": "news_orenburg_multisource_manifest.json",
       "description": "Происхождение расширенного корпуса, SHA256 кеша, кода и CSV",
-      "required_for": ["regional_news"]
+      "required_for": [
+        "regional_news"
+      ]
     },
     {
       "name": "news_orenburg_archive_audit.csv",
       "description": "Полнота пагинации датированного архива по месяцам",
-      "required_for": ["regional_news"]
+      "required_for": [
+        "regional_news"
+      ]
     },
     {
       "name": "news_orenburg_multisource_monthly.csv",
@@ -213,6 +219,51 @@
     {
       "name": "news_orenburg_source_summary.csv",
       "description": "Число публикаций и период по источникам",
+      "required_for": []
+    },
+    {
+      "name": "news_nizhny.csv",
+      "description": "Датированные заголовки НИА Нижний Новгород за 2023–2024",
+      "required_for": []
+    },
+    {
+      "name": "news_nizhny_manifest.json",
+      "description": "Полнота недельных запросов архива НИА и SHA256 корпуса",
+      "required_for": []
+    },
+    {
+      "name": "news_nizhny_archive_audit.csv",
+      "description": "Пагинация и исключённые недатированные объекты по неделям",
+      "required_for": []
+    },
+    {
+      "name": "news_kostroma.csv",
+      "description": "Датированные заголовки Кострома.Today за 2023–2024",
+      "required_for": []
+    },
+    {
+      "name": "news_kostroma_manifest.json",
+      "description": "Полнота месячных страниц WordPress и SHA256 корпуса",
+      "required_for": []
+    },
+    {
+      "name": "news_kostroma_archive_audit.csv",
+      "description": "Полнота пагинации Костромского архива по месяцам",
+      "required_for": []
+    },
+    {
+      "name": "llm_news/pilot/annotated_news.csv",
+      "description": "Оренбургская пилотная LLM-разметка, 1200 публикаций",
+      "required_for": []
+    },
+    {
+      "name": "llm_news_nizhny/pilot/annotated_news.csv",
+      "description": "Нижегородская пилотная LLM-разметка, 1200 публикаций",
+      "required_for": []
+    },
+    {
+      "name": "llm_news_kostroma/pilot/annotated_news.csv",
+      "description": "Костромская пилотная LLM-разметка, 1200 публикаций",
       "required_for": []
     }
   ]

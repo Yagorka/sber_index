@@ -43,3 +43,13 @@ def test_empty_month_is_unknown_and_advice_is_not_event():
     assert not counts.coverage_complete.any()
     assert classify_title('Как уберечься от молнии во время грозы')[1] is False
     assert classify_title('24 человека погибли на пожарах с начала 2024 года')[0] == 'summary'
+
+
+def test_region_confirmation_is_configurable_and_does_not_leak_orenburg():
+    cfg = {**settings(), 'region_code':52, 'region_name':'Нижегородская область',
+           'region_title_pattern':r'Нижегород', 'territory_aliases':{}}
+    raw = {'url':'https://www.niann.ru/?id=1','published_at':'2023-01-05T10:00:00+03:00'}
+    a = metadata_record({**raw,'title':'В Нижегородской области повысили зарплаты'},dictionary(),cfg,'2026-10-08T10:00:00+00:00')
+    b = metadata_record({**raw,'title':'В Оренбурге повысили зарплаты'},dictionary(),cfg,'2026-10-08T10:00:00+00:00')
+    assert a['event_region_confirmed_in_title']
+    assert not b['event_region_confirmed_in_title']
