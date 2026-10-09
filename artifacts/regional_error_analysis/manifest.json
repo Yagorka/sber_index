@@ -1,0 +1,32 @@
+{
+  "source_run": "artifacts/news_mass_runs/mass_20261009T155140_551755Z",
+  "input_sha256": {
+    "artifacts/news_mass_runs/mass_20261009T155140_551755Z/orenburg/pred_Ensemble.npy": "0572d02201373187e1f658d985e0921c653c9385b062a57fa45f7bc86d92264e",
+    "artifacts/news_mass_runs/mass_20261009T155140_551755Z/orenburg/pred_PastOnlyBlend.npy": "58d6d1d5e394737af94de1e2c9405b387142b139d166cfee34e8fda72d1103c9",
+    "artifacts/news_mass_runs/mass_20261009T155140_551755Z/orenburg/pred_Prophet.npy": "0306ad403637d85c80a4d44bf3414d9817191229032cac1b919a33ba01c27929",
+    "artifacts/news_mass_runs/mass_20261009T155140_551755Z/orenburg/pred_SeasonalNaive_NatGrowth.npy": "5abf4fed822d337ef4d51ddbf24bcc9ad59165bacbccac70650e6d3213dd5624",
+    "artifacts/news_mass_runs/mass_20261009T155140_551755Z/orenburg/pred_NatPath_K3.npy": "2c646252e509355402887929d57268fc64486f071d87615218dadb827d980c15",
+    "artifacts/news_mass_runs/mass_20261009T155140_551755Z/orenburg/pred_NatPath_K1.npy": "10bfd1be8e370a3a4940fb816218fce28715bf1b27149329b5e1cf99aa708311",
+    "artifacts/news_mass_runs/mass_20261009T155140_551755Z/orenburg/pred_StructHGB.npy": "bf8232641cef161da283fbfb77d13c81d60f79a0f50868db6e6caf52bda50adc",
+    "artifacts/news_mass_runs/mass_20261009T155140_551755Z/orenburg/pred_Chronos2_NatCov.npy": "95c19f6a5ad1971f91412dbca89d66443ec7407ad889b629c9eae4a0a88108a0",
+    "artifacts/news_mass_runs/mass_20261009T155140_551755Z/nizhny/pred_Ensemble.npy": "22d7d181cb50c8730af12f8b72124dbb783faa2fd772a10b62733680eb46e0c4",
+    "artifacts/news_mass_runs/mass_20261009T155140_551755Z/nizhny/pred_PastOnlyBlend.npy": "084eec0775dd9e6a1300ee996fba7ae6483ce8fec1d20194ec3212995cd9c3b2",
+    "artifacts/news_mass_runs/mass_20261009T155140_551755Z/nizhny/pred_Prophet.npy": "e46d5e5c61624f715c98e32cc937954f44996987a75173a30f0995e66d83c2f7",
+    "artifacts/news_mass_runs/mass_20261009T155140_551755Z/nizhny/pred_SeasonalNaive_NatGrowth.npy": "816f8cc7d8f498d35d686ee2d778895ad1b7e8edb2e31da20ba8aa62096e68ff",
+    "artifacts/news_mass_runs/mass_20261009T155140_551755Z/nizhny/pred_NatPath_K3.npy": "08aed0ff2884d9957e4f0f6d4d697faa7182c76be5256108d967b2c3d0e13be6",
+    "artifacts/news_mass_runs/mass_20261009T155140_551755Z/nizhny/pred_NatPath_K1.npy": "4c2f6b695e3d74a0dc8c2ee57547c324b6969e2b352de76ed83dfc57141fd48b",
+    "artifacts/news_mass_runs/mass_20261009T155140_551755Z/nizhny/pred_StructHGB.npy": "38e4ee2098662fb096f84dfa7472ed383607de39518d4a7486485f9f35eb400e",
+    "artifacts/news_mass_runs/mass_20261009T155140_551755Z/nizhny/pred_Chronos2_NatCov.npy": "550e82d0f281ba5b49dfc26ee9fac02f1436cb03daf4d6193d50d43c95e17ab5",
+    "artifacts/news_mass_runs/mass_20261009T155140_551755Z/kostroma/pred_Ensemble.npy": "7e9e1cc50a7383b97a26f75780537e1135d5e1e8f18943afb30727044351999d",
+    "artifacts/news_mass_runs/mass_20261009T155140_551755Z/kostroma/pred_PastOnlyBlend.npy": "a4f046280b5c1341962e98b9c2f66bb51cccab59cf3ad2dd39fe725a489956e6",
+    "artifacts/news_mass_runs/mass_20261009T155140_551755Z/kostroma/pred_Prophet.npy": "e3f06252e99922c0866729f5f9b606d06a9cde0a5e806a8349aea2e1b37ed38e",
+    "artifacts/news_mass_runs/mass_20261009T155140_551755Z/kostroma/pred_SeasonalNaive_NatGrowth.npy": "926dcebccc21eebffd55a738c4499f118e680de051dc020021cf0a5526c92e2b",
+    "artifacts/news_mass_runs/mass_20261009T155140_551755Z/kostroma/pred_NatPath_K3.npy": "f73459620aad5d51656c4ac9aa2471cb907e9a40e7cc1f2ce53054c2d27483a1",
+    "artifacts/news_mass_runs/mass_20261009T155140_551755Z/kostroma/pred_NatPath_K1.npy": "597f1a1cc0d5eb9bc55872496ba2cb8c769343b7040c263c428cae20f3797848",
+    "artifacts/news_mass_runs/mass_20261009T155140_551755Z/kostroma/pred_StructHGB.npy": "cf6bfb42b022d452ff1fe0bde96b8d2ab51586e1098ff893ad62ff7ba9a1eff2",
+    "artifacts/news_mass_runs/mass_20261009T155140_551755Z/kostroma/pred_Chronos2_NatCov.npy": "c677e767acc5451b8394f9c7ab44d28692f53448b128c47f321eea1768a93ba1"
+  },
+  "code_sha256": "bbb1a587c4fbd461c35bff10f4f40e4aaf1601a195b612849831dd0d7827a694",
+  "change_threshold": 0.2,
+  "selection_changed": false
+}

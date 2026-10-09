@@ -17,6 +17,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
+from src.report_language import explain_text
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
@@ -260,12 +261,12 @@ def build_report(run, metrics, records, cfg):
     figures.mkdir(exist_ok=True)
     fig, ax = plt.subplots(figsize=(10, 4))
     x = np.arange(len(summary))
-    ax.bar(x-.25, summary.baseline_mean_mae, .25, label='Original')
-    ax.bar(x, summary.financial_control_mean_mae, .25, label='Financial correction without news')
-    ax.bar(x+.25, summary.llm_mean_mae, .25, label='LLM correction, validation-selected')
+    ax.bar(x-.25, summary.baseline_mean_mae, .25, label='Исходная модель')
+    ax.bar(x, summary.financial_control_mean_mae, .25, label='Поправка без новостей')
+    ax.bar(x+.25, summary.llm_mean_mae, .25, label='Новости: метки LLM')
     ax.set_xticks(x, summary.model, rotation=20, ha='right')
-    ax.set_ylabel('MAE, RUB per resident')
-    ax.set_title('Orenburg, 2024H2: exploratory LLM news features')
+    ax.set_ylabel('MAE, руб. на жителя')
+    ax.set_title('Оренбургская область: проверка новостных признаков')
     ax.legend(fontsize=8)
     fig.tight_layout()
     fig.savefig(figures/'model_comparison.png', dpi=150)
@@ -358,6 +359,7 @@ def build_report(run, metrics, records, cfg):
 
 `python scripts/annotate_llm_news.py` — разметка с кешем и возобновлением; `--full` для всего корпуса, `--base-url` для другого адреса сервера. Затем `python scripts/evaluate_llm_news.py` (тот же `--full` при полном корпусе). Настройки: `configs/llm_news.json`. Сырые ответы и разметка: `data/inputs/llm_news/`, исключены из Git. Итоговые метрики, выбор и манифест: `{run.relative_to(ROOT)}`. Исходные прогнозы и frozen-файлы не менялись.
 '''
+    text=explain_text(text)
     (ROOT/'docs/LLM_NEWS_RESULTS_RU.md').write_text(text)
     local_text = text.replace(f'../{run.relative_to(ROOT)}/figures/', 'figures/')
     (run/'results_report.md').write_text(local_text)

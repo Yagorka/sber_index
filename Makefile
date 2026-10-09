@@ -102,3 +102,10 @@ news-mass:
 
 news-label-audit:
 	$(PY) scripts/audit_news_labels.py
+
+.PHONY: regional-error-analysis news-geography-check
+regional-error-analysis:
+	$(PY) scripts/analyze_regional_errors.py
+
+news-geography-check:
+	$(PY) scripts/check_news_geography.py

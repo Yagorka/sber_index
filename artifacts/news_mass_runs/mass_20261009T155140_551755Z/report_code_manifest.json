@@ -2,7 +2,7 @@
   "report_only_update": true,
   "model_predictions_and_csv_unchanged": true,
   "files_sha256": {
-    "scripts/evaluate_local_news.py": "8f6cb9bd89532ce9659a346ac144703d6eefbf428169f327b36e087e5952e7d7",
+    "scripts/evaluate_news_mass.py": "8f015523c5fcf8622f650a9b56c7f80568de533b14e23ac1aa8a6558104311d4",
     "src/report_language.py": "5419f44b0195fb848c593f3b849bb2341564f477c23f3b0c2adff9b02a62ccc0",
     "scripts/explain_reports.py": "9b05377b5e2242897a519f029b5524815aa4adc453e7639ffd911fccac70630e"
   }

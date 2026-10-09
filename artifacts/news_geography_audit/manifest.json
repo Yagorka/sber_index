@@ -1,0 +1,22 @@
+{
+  "input_sha256": {
+    "orenburg": {
+      "labels": "f47815577eac1e43ae944d47a2d0315195ebde1a8815b42b3b6a93f3554617b0",
+      "geo_config": "eb38e1e0e4f9f307bd9621b343c1e33c55f891898c2eb084c35cefb562d23d70"
+    },
+    "nizhny": {
+      "labels": "4402325424c6933b61feef941117a45670a2457869b0158443d2fcbc0c5d9e7a",
+      "geo_config": "f6577bf14c71715d060ee302e57c61fcfa14411317f19cb8475c35cb29b345bc"
+    },
+    "kostroma": {
+      "labels": "e62f8d7f382ad7031b7d351b6c2d69fc86f8c79e141c8fd3e8eb5e2b599cc140",
+      "geo_config": "ec815e864038085e8e198647ee69de9dff6556d59916c860dcf154f367715a25"
+    }
+  },
+  "packet_sha256": "80c67625cf7e87715f709b8e4423d55a2ceba4ab613b53cc7c1cccfadaeddfb0",
+  "code_sha256": "f61593373bdd9e4254ee0b5e49fe64406c1c640f7910797e06d92ebdeeca19e8",
+  "reviewed_by_agent": 180,
+  "requires_review": 52,
+  "labels_changed": false,
+  "human_review_completed": false
+}

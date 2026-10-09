@@ -8,6 +8,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
+from src.report_language import explain_text
 from scripts.evaluate_llm_news import fit_corrections, select_validation
 import matplotlib.pyplot as plt
 import numpy as np
@@ -298,18 +299,18 @@ def report(run):
                          evidence.to_markdown(index=False,floatfmt='.3f'))
     fig, axes = plt.subplots(1,len(chunks),figsize=(6*len(chunks),4),squeeze=False)
     for ax,(region,table) in zip(axes[0],tables.groupby('region',sort=False)):
-        x=np.arange(len(table)); ax.bar(x-.15,table.original,.3,label='Original'); ax.bar(x+.15,table.selected_news,.3,label='Frozen news selection')
-        ax.set_xticks(x,table.base_model,rotation=55,ha='right',fontsize=8);ax.set_title(region+'\nMean MAE, h=1/3/6/12');ax.set_ylabel('MAE, RUB per resident');ax.legend(fontsize=8)
+        x=np.arange(len(table)); ax.bar(x-.15,table.original,.3,label='Исходная модель'); ax.bar(x+.15,table.selected_news,.3,label='Новости: перенесённые настройки')
+        ax.set_xticks(x,table.base_model,rotation=55,ha='right',fontsize=8);ax.set_title(region+'\nСредняя MAE, 1/3/6/12 месяцев');ax.set_ylabel('MAE, руб. на жителя');ax.legend(fontsize=8)
         ax.set_ylim(0,max(table.original.max(),table.selected_news.max())*1.25)
     fig.tight_layout();(run/'figures').mkdir(exist_ok=True);fig.savefig(run/'figures/regions.png',dpi=150);plt.close(fig)
     fig, axes = plt.subplots(1,len(chunks),figsize=(6*len(chunks),4),squeeze=False)
     for ax,(region,table) in zip(axes[0],primary_all.groupby('region',sort=False)):
         x=np.arange(len(table))
-        ax.bar(x-.25,table.original,.25,label='Original')
-        ax.bar(x,table.financial_only,.25,label='Financial correction, no news')
-        ax.bar(x+.25,table.selected_news,.25,label='Frozen news selection')
+        ax.bar(x-.25,table.original,.25,label='Исходная модель')
+        ax.bar(x,table.financial_only,.25,label='Поправка без новостей')
+        ax.bar(x+.25,table.selected_news,.25,label='Новости: перенесённые настройки')
         ax.set_xticks(x,table.base_model,rotation=55,ha='right',fontsize=8)
-        ax.set_title(region+'\nMean MAE, h=1/3');ax.set_ylabel('MAE, RUB per resident');ax.legend(fontsize=8)
+        ax.set_title(region+'\nСредняя MAE, 1 и 3 месяца');ax.set_ylabel('MAE, руб. на жителя');ax.legend(fontsize=8)
         ax.set_ylim(0,max(table.original.max(),table.financial_only.max(),table.selected_news.max())*1.35)
     fig.tight_layout();fig.savefig(run/'figures/regions_primary.png',dpi=150);plt.close(fig)
     text=f'''# Экономические новости, затухание и перенос между регионами
@@ -328,15 +329,19 @@ SeasonalNaive_NatGrowth, средняя MAE по h=1/3:
 
 ## Протокол
 
-Регионы зафиксированы до оценки: Оренбургская область для выбора параметров, Нижегородская область по запросу пользователя, Костромская область по доступности датированного архива. Тверская область рассматривалась, но её проверенный endpoint не предоставил пригодный JSON-архив; Кострома выбрана до расчёта метрик. Архивы НИА Нижний Новгород (публичная форма по неделям) и Кострома.Today (WordPress по месяцам) собираются полностью в рамках выбранных запросов. Это не все новости региона. Разметка — тот же Qwen и неизменный prompt; 30 прежних relevant и 20 other в месяц, детерминированный отбор без расходов. Вес — обратная вероятность отбора.
+Области выбраны до оценки: Оренбургская для подбора настроек, Нижегородская по запросу пользователя, Костромская по доступности датированного архива. Проверенный архив Тверской области оказался недоступен для выбранного способа сбора. Архивы НИА Нижний Новгород и Кострома.Today собраны полностью в рамках заданных запросов; это не все новости региона.
 
-Экономический отбор требует economic_relevance=1 и экономической темы, явно указанного направления цен/доходов/бизнеса или связи с категорией расходов. Отдельный вариант economic_shocks_windows добавляет явно экономически релевантные ЧС; ЧС без категории действует только на совокупные расходы соответствующей территории. Обычный вариант all_windows уже фильтрует содержание по economic_relevance; новый отбор меняет и корпус, и признаки его объёма. Жёсткий отбор выполняется после LLM-разметки: общий архив сохранён для контроля покрытия.
+Qwen разметила по 50 публикаций каждого месяца: 30 из группы, заранее отобранной по ключевым словам, и 20 из остальных. Отбор не использует расходы или ошибки модели. Вес выборки учитывает долю взятых публикаций из каждой группы.
 
-Вес публикации на конец origin: sampling_weight × 2^(-возраст_в_днях / период_полураспада). Используются 14/30/90 дней; новости после origin исключены. Возраст считается по точному времени публикации; затухание использует всю уже доступную историю с января 2023, окна — 1/3 месяца. Ноль direction — явно без изменений, 9 — неизвестно; признаки доступности разделены. География и категории ограничивают применение новости.
+В экономический вариант попадают сообщения, которые LLM сочла экономически значимыми и которые содержат экономическую тему, явное направление цены/доходов/бизнеса или связь с категорией расходов. Отдельно проверяется добавление чрезвычайных событий. Если категория не указана, такие события применяются только к общему ряду расходов. Полный архив сохранён для сравнений с количеством публикаций.
 
-Затухают взвешенные числа публикаций. Доли тональности/направлений и средний сентимент — относительные статистики с теми же весами: один оставшийся заголовок может сохранять знак среднего, пока его интенсивность уменьшается. Это не гарантирует экспоненциального затухания самой прогнозной поправки. Прогноз получает одновременно интенсивность и относительные статистики.
+Проверены новости за последние 1 или 3 месяца и варианты, где вес уменьшается вдвое через 14, 30 или 90 дней. Давность считается по точному времени публикации; будущие публикации исключены. Вариант с уменьшением веса использует всю доступную историю с января 2023. Код направления 0 означает явно указанное отсутствие изменения; 9 — сведений нет.
 
-Сначала для всех восьми моделей на Оренбургской validation выбираются alpha, shrink (включая 0), лучший decay и лучший вариант окна/decay. Затем записываются frozen_selection.csv, frozen_representations.csv и их SHA256; только после этого считаются тестовые метрики. На двух других регионах эти настройки применяются без подбора. Коэффициенты Ridge обучаются локально только по уже созревшим прошлым ошибкам; это перенос настроек, не перенос коэффициентов. Контроли покрытия имеют тот же экономический отбор, географию и период затухания, но исключают сентимент и направления.
+Здесь уменьшается вес числа публикаций, но доля негативных сообщений может сохраняться: единственная старая негативная новость остаётся «100% негативных». Поэтому этот способ не гарантирует уменьшения самой прогнозной поправки. Проверка, в которой уменьшается весь сигнал, описана в [следующем эксперименте](NEWS_MASS_RESULTS_RU.md).
+
+Для восьми моделей настройки и способ расчёта признаков выбираются только на январе–июне 2024 Оренбургской области. Затем сохраняются параметры и их SHA256, и только после этого рассчитываются ошибки на июле–декабре. В двух других областях настройки не выбираются заново. Коэффициенты Ridge обучаются на местных прошлых ошибках, для которых факт уже известен. Таким образом переносится способ настройки, а коэффициенты рассчитываются в каждой области. Контрольные варианты сохраняют географию, отбор и давность, но используют только количество новостей.
+
+Объяснения обозначений — в [словаре терминов](TERMS_RU.md).
 
 Для Ensemble на h=1/3 Оренбургская validation выбрала shrink=0. Поэтому на этих горизонтах прогноз совпадает с исходным и в двух других областях по зафиксированному протоколу. Такое совпадение не доказывает бесполезность всех возможных региональных новостных моделей. На h=6 поправка ненулевая; результат показан отдельно, включая ухудшение на Оренбургском тесте. Поисковый архив НИА содержит и недатированные карточки людей: они учитываются в полноте загрузки выдачи, но исключаются из новостей, даты им не приписываются; число исключений сохранено в collection_nizhny.json.
 
@@ -353,8 +358,9 @@ SeasonalNaive_NatGrowth, средняя MAE по h=1/3:
 
 В активированном окружении sber: `python scripts/collect_transfer_news.py` и `python scripts/collect_news_archive.py --config configs/news_archive_kostroma.json`; затем `python scripts/annotate_llm_news.py --config configs/llm_news_nizhny.json` и аналогично configs/llm_news_kostroma.json. `python scripts/evaluate_news_decay.py` создаёт Оренбургский запуск и фиксирует выбор. Затем `python scripts/evaluate_news_decay.py --run {run.relative_to(ROOT)} --regions nizhny kostroma` переносит настройки. Если Make установлен, сбор и разметку объединяют цели `news-transfer-collect` и `news-transfer-annotate`. В текущей среде Make отсутствует, эксперимент выполнен командами Python. Входы, ответы, кеш и подробные прогнозы игнорируются Git; итоговые метрики, график и зафиксированные параметры сохраняются. Исходные прогнозы не изменяются.
 '''
+    text=explain_text(text)
     (ROOT/'docs/NEWS_DECAY_TRANSFER_RU.md').write_text(text)
-    (run/'results_report.md').write_text(text.replace(f'../{run.relative_to(ROOT)}/figures/','figures/'))
+    (run/'results_report.md').write_text(text.replace(f'../{run.relative_to(ROOT)}/figures/','figures/').replace('(TERMS_RU.md)','(../../../docs/TERMS_RU.md)').replace('(NEWS_MASS_RESULTS_RU.md)','(../../../docs/NEWS_MASS_RESULTS_RU.md)'))
 
 
 def main():

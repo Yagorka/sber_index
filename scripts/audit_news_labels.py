@@ -3,6 +3,7 @@ import json
 from pathlib import Path
 import sys
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+from src.report_language import explain_text
 import pandas as pd
 from scripts.evaluate_news_decay import REGIONS,hash_file
 from src.llm_news import FIELDS,economic_filter,validate_rows
@@ -90,6 +91,7 @@ def main():
 
 Всего формальных конфликтов «есть направление/категория, но экономическая значимость 0» — {int(table.direction_or_category_without_economy.sum())}. Формальная проверка не обнаруживает смысловые ошибки вроде неверного транспорта или пропущенной скидки. Главный следующий шаг — независимая проверка пакета и географии; расширение разметки без неё может тиражировать ошибки.
 '''
+    text=explain_text(text)
     (ROOT/'docs/NEWS_LABEL_AUDIT_RU.md').write_text(text)
     print(table.to_string(index=False))
 

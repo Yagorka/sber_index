@@ -1,0 +1,4 @@
+region,name,articles,no_municipality_id,explicit_municipalities,economic_municipalities,invalid_historical_ids,differing_recomputed_ids,unresolved_lookup
+56,orenburg,1200,637,37,11,0,0,0
+52,nizhny,1200,850,27,10,0,0,0
+44,kostroma,1200,760,5,1,0,0,1

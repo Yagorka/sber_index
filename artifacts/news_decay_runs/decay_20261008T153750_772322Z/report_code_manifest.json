@@ -1,5 +1,9 @@
 {
-  "generated_at_utc": "2026-10-08T16:45:09.962940+00:00",
-  "script_sha256": "d471ac07feb4b427ecd390f5e8775a5053af947faf6dd1b6d7efa0c27c3ea608",
-  "note": "Report regenerated after adding summaries; frozen settings and model metrics unchanged"
+  "report_only_update": true,
+  "model_predictions_and_csv_unchanged": true,
+  "files_sha256": {
+    "scripts/evaluate_news_decay.py": "81a8ca4a5c6d1fdceffe03835a3ed5186f0d2f7fe59fd8deec79d634b5e8f76d",
+    "src/report_language.py": "5419f44b0195fb848c593f3b849bb2341564f477c23f3b0c2adff9b02a62ccc0",
+    "scripts/explain_reports.py": "9b05377b5e2242897a519f029b5524815aa4adc453e7639ffd911fccac70630e"
+  }
 }

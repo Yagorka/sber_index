@@ -23,7 +23,7 @@
 https://sberindex.ru/ru/research/data-sense-opisanie-nabora-dannikh-khakatona-sberindeksa-po-munitsipalnim-dannim
 (данные скачаны 04.10.2026)».
 
-Геометрии МО (`data/inputs/municipal_boundaries.gpkg`, 74 МБ) в репозиторий не включены; они нужны только для карты в `make_figures.py` и берутся из набора границ СберИндекса: https://sberindex.ru/ru/research/dataset-borders-and-changes-of-municipalities.
+Геометрии МО (`data/inputs/municipal_boundaries.gpkg`, 74 МБ) в репозиторий не включены; они нужны только для карты в `make_figures.py` и берутся из набора границ СберИндекса: https://sberindex.ru/ru/research/dataset-borders-and-changes-of-Муниципалитетов.
 
 ## Доработка 07.10.2026
 

@@ -7,6 +7,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
+from src.report_language import explain_text
 from scripts.evaluate_news_decay import (REGIONS, feature_variants, apply_choices,
     add_families, hash_file, choose_representations)
 from scripts.evaluate_llm_news import fit_corrections, select_validation
@@ -216,9 +217,9 @@ def build_report(run):
     fig,axes=plt.subplots(1,2,figsize=(13,4))
     for ax,(region,table) in zip(axes,summary.groupby('region',sort=False)):
         x=np.arange(len(table))
-        for i,(key,label) in enumerate([('original','Original'),('transferred_news','Orenburg settings'),('local_news','Local economic selection'),('local_policy','Local filter selection')]):
+        for i,(key,label) in enumerate([('original','Исходная модель'),('transferred_news','Настройки Оренбургской области'),('local_news','Экономические новости: местные настройки'),('local_policy','Новости: местный выбор правил')]):
             ax.bar(x+(i-1.5)*.2,table[key],.2,label=label)
-        ax.set_xticks(x,table.base_model,rotation=55,ha='right',fontsize=8);ax.set_title(region+'\nMean MAE, h=1/3');ax.set_ylabel('RUB per resident')
+        ax.set_xticks(x,table.base_model,rotation=55,ha='right',fontsize=8);ax.set_title(region+'\nСредняя MAE, 1 и 3 месяца');ax.set_ylabel('Руб. на жителя')
         ax.set_ylim(0,table[['original','transferred_news','local_news','local_policy']].max().max()*1.35);ax.legend(fontsize=7)
     fig.tight_layout();fig.savefig(figures/'local_comparison.png',dpi=150);plt.close(fig)
     text=f'''# Местный подбор новостных признаков: Нижегородская и Костромская области
@@ -237,11 +238,13 @@ def build_report(run):
 
 ## Протокол
 
-В каждой области alpha=100/1000, shrink=0/0.1/0.25/0.5 и представление выбираются только по validation январь–июнь 2024, отдельно для каждой модели и горизонта. После выбора в ОБЕИХ областях сохраняются frozen_selection.csv, frozen_policies.csv и SHA256; только затем считаются метрики test июль–декабрь. Обучение Ridge на каждом origin использует лишь созревшие ошибки и публикации не позже origin.
+В каждой области настройки выбираются отдельно для каждой модели и горизонта на январе–июне 2024. Проверяются коэффициенты регуляризации Ridge 100 и 1000 и доли применяемой поправки 0, 0,1, 0,25 и 0,5. После выбора в обеих областях сохраняются таблицы параметров и их контрольные суммы SHA256; только затем рассчитываются ошибки на июле–декабре. На каждой дате прогноза обучение использует только публикации и фактические расходы, уже доступные к этой дате.
 
-`local_news` выбирает экономические окна 1/3 месяца или затухание 14/30/90 дней — ровно тот же набор представлений, что прежний `selected_news`. Сравнение с `transferred_news` проверяет влияние местного подбора. `local_policy` дополнительно позволяет прежний all_windows и экономический отбор с ЧС: это отдельная более широкая проверка выбора фильтра. Все её варианты и гиперпараметры также выбираются по validation, не по test.
+**Новости: настройки своей области** — выбирается период 1/3 месяца или уменьшение веса старых новостей вдвое за 14/30/90 дней. Это тот же набор способов расчёта признаков, что при переносе Оренбургских настроек. **Новости: выбор правил отбора** — дополнительно разрешает все новости и экономические новости с чрезвычайными событиями. Выбор сделан на периоде подбора, а не на проверочном периоде.
 
-`financial_only` подбирается на местной validation без новостей. `local_news_coverage` использует объём/географию/категории и точно то же выбранное окно либо затухание, но исключает сентимент и направления. Его alpha/shrink подбираются по местной validation для соответствующего контроля. Аналогичный контроль для local_policy сохранён в метриках. Все нулевые поправки допустимы. На h=12 нет созревшего обучения в точке validation — исходный прогноз сохраняется.
+**Поправка без новостей** использует прошлые расходы и ошибки модели. Для сравнения с содержанием есть варианты, учитывающие только количество новостей с той же географией, категорией и давностью. Их параметры Ridge подбираются отдельно на январе–июне. Нулевая доля поправки сохраняет исходный прогноз. Для горизонта 12 месяцев на периоде подбора ещё нет нужных прошлых примеров, поэтому поправка не применяется.
+
+Объяснения обозначений и расчётов — в [словаре терминов](TERMS_RU.md).
 
 ![Местный подбор и перенос](../{run.relative_to(ROOT)}/figures/local_comparison.png)
 
@@ -252,8 +255,9 @@ def build_report(run):
 
 В активированном окружении sber: `python scripts/evaluate_local_news.py`. Настройки — configs/local_news.json; source_run указывает сохранённый перенос. При наличии Make: `make local-news`. Сырые ответы и разметка остаются в data/inputs/, бинарные прогнозы игнорируются Git. Метрики, график, выбор и манифесты сохраняются в `{run.relative_to(ROOT)}`.
 '''
+    text=explain_text(text)
     (ROOT/'docs/LOCAL_NEWS_RESULTS_RU.md').write_text(text)
-    (run/'results_report.md').write_text(text.replace('(NEWS_DECAY_TRANSFER_RU.md)','(../../../docs/NEWS_DECAY_TRANSFER_RU.md)').replace(f'../{run.relative_to(ROOT)}/figures/','figures/'))
+    (run/'results_report.md').write_text(text.replace('(NEWS_DECAY_TRANSFER_RU.md)','(../../../docs/NEWS_DECAY_TRANSFER_RU.md)').replace(f'../{run.relative_to(ROOT)}/figures/','figures/').replace('(TERMS_RU.md)','(../../../docs/TERMS_RU.md)'))
 
 
 def main():
