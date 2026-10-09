@@ -1,0 +1,6 @@
+{
+  "configs/news_mass.json": "aadbc9320e1500dd73068cb26a5ff2cd595a6665732479dd961ea02ae998e79a",
+  "scripts/evaluate_news_mass.py": "e6ce8452e97ef48272c492a0082981e6b70b2eace9135a63b4f8a59ae7d4a3ea",
+  "src/llm_news.py": "5aa868c5ca60eea1057441913929580ab2daacf2f35cdaef3e9209b232c81a2d",
+  "scripts/evaluate_llm_news.py": "6fdd9e41eb93377891748b51f3423b30478856837cd955a727edd59bd120f94d"
+}

@@ -1,0 +1,17 @@
+{
+  "source_run": "artifacts/news_decay_runs/decay_20261008T153750_772322Z",
+  "source_files_sha256": {
+    "artifacts/news_decay_runs/decay_20261008T153750_772322Z/frozen_selection.csv": "252cb0eef9cb55712adf9e57948046539513075c21b05cf2c530a6f8be81b7e0",
+    "artifacts/news_decay_runs/decay_20261008T153750_772322Z/frozen_representations.csv": "93010371b0564cd86515442e1ef7ba5b43e0a43499e38338057a34343cc91c02",
+    "artifacts/news_decay_runs/decay_20261008T153750_772322Z/selection_manifest.json": "b576ebbc4cdc370284be994134704151298ab6906eebaacb143306133350b2ca"
+  },
+  "config_sha256": "92aac331a7634205b4ad0c65138efaf495c393431d1a656f15f093edf7c2d0d1",
+  "code_sha256": {
+    "scripts/evaluate_local_news.py": "8643155bb3d9864f23f6b2d732fb7598bfd9a2a42134abeb9329781e10ee1a08",
+    "scripts/evaluate_news_decay.py": "d471ac07feb4b427ecd390f5e8775a5053af947faf6dd1b6d7efa0c27c3ea608",
+    "scripts/evaluate_llm_news.py": "6fdd9e41eb93377891748b51f3423b30478856837cd955a727edd59bd120f94d",
+    "src/llm_news.py": "672346903c89f5e8c789059647fa3f0bec995ff54d12e862fc24dc521da3f5df"
+  },
+  "all_region_choices_saved_before_test": true,
+  "original_transfer_files_unchanged": true
+}

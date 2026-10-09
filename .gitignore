@@ -82,3 +82,11 @@ artifacts/llm_news_runs/*/
 artifacts/news_decay_runs/*/
 artifacts/news_decay_runs/*/*/predictions.csv
 !artifacts/news_decay_runs/decay_20261008T153750_772322Z/
+
+# Local regional tuning: only accepted metrics/plots, no binary predictions.
+artifacts/local_news_runs/*/
+!artifacts/local_news_runs/local_20261009T124348_521680Z/
+
+# Retain only the accepted decaying-content experiment; raw review packet stays in data/inputs.
+artifacts/news_mass_runs/*/
+!artifacts/news_mass_runs/mass_20261009T155140_551755Z/

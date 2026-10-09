@@ -1,0 +1,18 @@
+{
+  "axes": [
+    "variant",
+    "origin",
+    "horizon",
+    "series"
+  ],
+  "variants": [
+    "original",
+    "transferred_news",
+    "financial_only",
+    "local_news",
+    "local_policy",
+    "local_news_coverage",
+    "local_policy_coverage"
+  ],
+  "files": "<region>/pred_<base_model>.npy; local, ignored by Git"
+}

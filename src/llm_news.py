@@ -121,7 +121,7 @@ def economic_filter(records, retain_shocks=False):
 
 
 def aggregate_features(panel, records, delay_months=0, economic_only=False,
-                       half_life_days=None, retain_shocks=False):
+                       half_life_days=None, retain_shocks=False, content_mass=False):
     """(T,S,K), срезы только по publication cutoff; география из проверенного справочника.
 
     Сентимент и направления считаются среди экономических новостей, совпадающих
@@ -133,6 +133,8 @@ def aggregate_features(panel, records, delay_months=0, economic_only=False,
         rows = rows[economic_filter(rows, retain_shocks)].copy()
     if half_life_days is not None and half_life_days <= 0:
         raise ValueError('half_life_days must be positive')
+    if content_mass and half_life_days is None:
+        raise ValueError('content_mass requires a decay half-life')
     rows['_available'] = pd.to_datetime(rows.historical_available_at, utc=True).dt.tz_convert('Europe/Moscow')
     if delay_months:
         rows['_available'] = rows['_available'].map(lambda d: d + pd.DateOffset(months=delay_months))
@@ -180,8 +182,14 @@ def aggregate_features(panel, records, delay_months=0, economic_only=False,
             block[:, 3:] = sums[:, 1:] / den[:, None]
             sentiment_den = sums[:, 0] - sums[:, 4] - sums[:, 3]
             block[:, 7] = sums[:, 5] / np.maximum(sentiment_den, 1e-12 if half_life_days is not None else 1)
+            if content_mass:
+                # Absolute weighted event masses: no denominator cancels decay.
+                # Signed log compresses sampling weights and keeps direction.
+                block[:, 1] = np.log1p(economic_by_geo)
+                block[:, 3:] = np.sign(sums[:, 1:]) * np.log1p(np.abs(sums[:, 1:]))
             audits.append({'origin': origin, 'window_months': window, 'annotated_articles': len(known),
                            'latest_available_at': known._available.max(), 'cutoff_exclusive': end,
                            'delay_months': delay_months, 'economic_only': economic_only,
-                           'half_life_days': half_life_days, 'retain_shocks': retain_shocks})
+                           'half_life_days': half_life_days, 'retain_shocks': retain_shocks,
+                           'content_mass': content_mass})
     return out, pd.DataFrame(audits)

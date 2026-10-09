@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "checks": {
+    "full_prediction_coverage": true,
+    "past_only_news": true,
+    "mature_training_targets": true,
+    "local_selection_unchanged": true,
+    "transfer_metrics_reproduced": true
+  }
+}

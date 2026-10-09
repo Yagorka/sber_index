@@ -1,0 +1,26 @@
+{
+  "selection_region": 52,
+  "selection_targets": "2024-01..2024-06",
+  "test_targets": "2024-07..2024-12",
+  "frozen_at_utc": "2026-10-09T12:44:59.366975+00:00",
+  "frozen_selection_sha256": "34ca95cd5d6c0986576ad1a5674638b4f31704d54bc1433402c3fa5d13de931b",
+  "frozen_policies_sha256": "d41336d7f63d6c0e55c8f9de08386edeb7300ab7f7079715c16760e404b572c0",
+  "annotation_sha256": "4402325424c6933b61feef941117a45670a2457869b0158443d2fcbc0c5d9e7a",
+  "source_transfer_run": "artifacts/news_decay_runs/decay_20261008T153750_772322Z",
+  "cached_prediction_sha256": {
+    "artifacts/municipal_runs/municipal_20261004T140239Z/pred_Ensemble.npy": "babd1e207652fedef98ab9b292f0547f1806b2b68b03376feb9fad4ad57646b2",
+    "artifacts/research_runs/research_20261007T073840_163667Z/pred_PastOnlyBlend.npy": "f6b2cac8dbbc511667f270a6327275e60d98c563914ba3e3ece1e3fad88620fd",
+    "artifacts/municipal_runs/municipal_20261004T140239Z/pred_Prophet.npy": "c4d8fd9090165f50d7e9274aa73cb3726c2bac9de2ad1aca29267745df3f565e",
+    "artifacts/municipal_runs/municipal_20261004T140239Z/pred_SeasonalNaive_NatGrowth.npy": "fbeaa03367975229094407992006c009340a78f6bc93613b00acfaf72b3ceaed",
+    "artifacts/municipal_runs/municipal_20261004T140239Z/pred_NatPath_K3.npy": "4d2b5f01901402933f9d968c4e54749c4d0ebeed2c269a2d13a2b0d7c0d8f780",
+    "artifacts/municipal_runs/municipal_20261004T140239Z/pred_NatPath_K1.npy": "b24e92f23415d7def9bb41d1c474c929e0633f160e85e4aa4ffe9d3dff8cb7cd",
+    "artifacts/municipal_runs/municipal_20261004T140239Z/pred_StructHGB.npy": "d43b32d68a568e28fe3b24d890884c88a952d77cdedccc5456c6cdb46f702e88",
+    "artifacts/municipal_runs/municipal_20261004T140239Z/pred_Chronos2_NatCov.npy": "3c27f985e6ceea8a0b6c3644f1b52debfdb681ed2a6f928d2ec064e55fae9499"
+  },
+  "region_name": "Нижегородская область",
+  "series": 300,
+  "municipalities": 50,
+  "articles": 1200,
+  "selection_before_current_test_scoring": true,
+  "status": "exploratory; regional test previously inspected"
+}

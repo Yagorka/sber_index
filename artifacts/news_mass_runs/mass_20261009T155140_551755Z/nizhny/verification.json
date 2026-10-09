@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "checks": {
+    "coverage": true,
+    "past_only_news": true,
+    "mature_targets": true,
+    "selection_unchanged": true
+  }
+}

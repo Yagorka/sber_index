@@ -1,0 +1,4 @@
+region,articles,economic_retained,aligned_articles,economic_blocked_no_title_region,economic_ambiguous,known_directions,direction_or_category_without_economy,mixed_sentiment,unknown_sentiment,review_months
+orenburg,1200,383,173,99,0,72,2,4,0,21
+nizhny,1200,601,171,225,0,88,1,2,0,24
+kostroma,1200,436,265,66,0,88,1,4,0,22

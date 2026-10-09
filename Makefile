@@ -91,3 +91,14 @@ news-transfer-annotate:
 
 news-decay:
 	OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 $(PY) scripts/evaluate_news_decay.py
+
+.PHONY: local-news
+local-news:
+	OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 $(PY) scripts/evaluate_local_news.py
+
+.PHONY: news-mass news-label-audit
+news-mass:
+	OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 $(PY) scripts/evaluate_news_mass.py
+
+news-label-audit:
+	$(PY) scripts/audit_news_labels.py
