@@ -1,0 +1,40 @@
+{
+  "model": "/models/qwen",
+  "base_url": "http://172.22.0.5:8001/v1",
+  "news_file": "data/inputs/news_orenburg_multisource.csv",
+  "output_directory": "data/inputs/llm_news",
+  "scope": "pilot",
+  "sample_per_month_relevant": 30,
+  "sample_per_month_other": 20,
+  "seed": 42,
+  "batch_size": 12,
+  "temperature": 0,
+  "timeout_seconds": 180,
+  "region_code": 56,
+  "evaluation_scope": "Orenburg region only: identical 39 municipalities and 234 series for all comparisons",
+  "base_models": [
+    "Ensemble",
+    "PastOnlyBlend",
+    "Prophet",
+    "SeasonalNaive_NatGrowth",
+    "NatPath_K3",
+    "NatPath_K1",
+    "StructHGB",
+    "Chronos2_NatCov"
+  ],
+  "ridge_alphas": [
+    100,
+    1000
+  ],
+  "correction_shrinks": [
+    0,
+    0.1,
+    0.25,
+    0.5
+  ],
+  "maximum_log_correction": 0.15,
+  "minimum_training_pairs": 2,
+  "bootstrap_replicates": 1000,
+  "selection": "per_model_and_horizon_by_validation_MAE_including_zero_correction",
+  "evaluation_status": "exploratory_after_test_inspection; modern_LLM_historical_knowledge_not_excluded"
+}

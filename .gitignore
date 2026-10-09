@@ -72,3 +72,8 @@ artifacts/eda/municipal_data_audit.html
 presentation/research_slides.fragment.html
 report/research_audit.html
 report/regional_news_impact.html
+
+# Подробные выходы LLM-эксперимента; метрики, манифесты и графики сохраняются.
+artifacts/llm_news_runs/*/predictions.csv
+artifacts/llm_news_runs/*/
+!artifacts/llm_news_runs/llm_20261008T151443_476526Z/

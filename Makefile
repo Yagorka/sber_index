@@ -72,3 +72,10 @@ regional-news-archive:
 regional-news-impact:
 	OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 nice -n 15 $(PY) scripts/evaluate_news_impact.py
 	OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 nice -n 15 $(PY) scripts/build_news_impact_report.py
+
+.PHONY: llm-news llm-news-evaluate
+llm-news:
+	OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 $(PY) scripts/annotate_llm_news.py
+
+llm-news-evaluate:
+	OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 $(PY) scripts/evaluate_llm_news.py
